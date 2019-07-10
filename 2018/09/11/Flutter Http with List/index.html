@@ -4,12 +4,14 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Flutter Getting start-Mac, Air">
-    <meta name="description" content="Flutter Getting start-Mac
+    <meta name="keywords" content="Flutter Http with List, Air">
+    <meta name="description" content="Flutter Http and Async Await and List
 
-目录：1、Install（安装）2、Set up an editor（设置编辑器）3、Test drive（试驾）4、Write your first app（编写你的第一个应用）
-
-
+本篇汇集：网络交互、数据解析、列表展示、对话框显示、列表加载等待的显示
+&gt;目录：
+&gt;1、Flutter http using
+2、JSON
+3、ListView
 ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -18,7 +20,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Flutter Getting start-Mac | Air</title>
+    <title>Flutter Http with List | Air</title>
     <link rel="icon" type="image/jpeg" href="/medias/avatar.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -271,7 +273,7 @@
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Flutter Getting start-Mac
+                        Flutter Http with List
                     </div>
                 </div>
             </div>
@@ -406,21 +408,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2018-09-07
+                    2018-09-11
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        526
+                        783
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        4 分
                     </div>
                     
                 
@@ -436,119 +438,65 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Flutter Getting start-Mac</p>
-<blockquote>
-<p>目录：<br>1、Install（安装）<br>2、Set up an editor（设置编辑器）<br>3、Test drive（试驾）<br>4、Write your first app（编写你的第一个应用）</p>
-</blockquote>
-<blockquote>
-<p>1、Install（安装）</p>
-</blockquote>
-<p>1、系统环境要求</p>
-<ul>
-<li>操作系统：macOS（64）</li>
-<li>磁盘空间：700MB</li>
-</ul>
+                <p>Flutter Http and Async Await and List</p>
 <hr>
-2、Get the Flutter SDK
-- Download Flutter SDK
-请到官网下载最新版本
+本篇汇集：网络交互、数据解析、列表展示、对话框显示、列表加载等待的显示
+>目录：
+>1、Flutter http using
+2、JSON
+3、ListView
+4、ListView- loading status
+5、ListView- Item and item event
+6、本篇汇总的效果
 
-<ul>
-<li><p>Run flutter doctor</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//在Terminal（终端/命令窗口）中输入，用以“检查验证是否已正确设置所有内容，并输出相关的信息”</span><br><span class="line">flutter doctor</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Update your path<br>步骤一：确定放置Flutter SDK的目录<br>步骤二：打开.bash_profile，进行配置环境变量<br>步骤三：添加以下行并更改[PATH_TO_FLUTTER_GIT_DIRECTORY]为克隆Flutter的git repo的路径：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH=&quot;$PATH:[PATH_TO_FLUTTER_GIT_DIRECTORY]/flutter/bin&quot;</span><br></pre></td></tr></table></figure>
 
-</li>
-</ul>
-<p>步骤四：运行source $HOME/.base_profile刷新当前窗口</p>
-<p>步骤五：”flutter/bin”将出现在通过下面命令后出现的目录中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo $PATH</span><br></pre></td></tr></table></figure>
+<p>1、Flutter http using</p>
+<p>依赖：在pubspec.yaml文件中添加Flutter网路模块的依赖</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dependencies:</span><br><span class="line">  ...</span><br><span class="line">  http: ^0.11.3+16</span><br></pre></td></tr></table></figure>
 
-<p>如下图所示：<br><img src="https://upload-images.jianshu.io/upload_images/8264781-9c2da7d3107ea804.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="效果图"></p>
-<hr>
-
-<p>3、Platform setup</p>
-<ul>
-<li>MacOS支持为IOS和Android开发Flutter应用程序。</li>
-<li>Windows默认只支持Android开发Flutter应用程序。或则装个“黑苹果”系统进行支持IOS开发</li>
-</ul>
-<hr>
-
-<p>4、IOS setup（IOS配置）</p>
-<ul>
-<li><p>Install Xcode（安装IOS原生开发工具）<br>安装:version&gt;=Xcode9.0</p>
-</li>
-<li><p>Set up the iOS simulator（设置IOS模拟器）<br>Xcode中自带IOS simulator </p>
-</li>
-<li><p>Create and run a simple flutter app（创建、并运行Flutter 应用）<br>创建flutter项目</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter create my_app</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p>进入项目中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd my_app</span><br></pre></td></tr></table></figure>
-
-<p>运行flutter项目到模拟器中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter run</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>Deploy to ios devices（部署到IOS设备）</li>
-</ul>
-<p>要将flutter应用程序部署到物理IOS设备，您需要一起其他工具和Apple账号。</p>
-<p>开发证书，AppleID，Apple Developer</p>
-<hr>
-
-<p>5、Android setup（安卓配置）</p>
-<ul>
-<li><p>Install Android Studio（安装Android原生开发工具）<br>Download and setup Android studio</p>
-</li>
-<li><p>Set up your Android device（设置Android设备）<br>使用USB将手机插入计算机，并按照提示进行操作</p>
-</li>
-<li><p>Set up the Android emulator（设置Android模拟器）</p>
-</li>
-</ul>
-<p>Android Studio自带Android enumerator（AVD）</p>
-<hr>
+<p>网络操作</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import &apos;package:flutter/material.dart&apos;;</span><br><span class="line">import &apos;package:http/http.dart&apos; as http;</span><br><span class="line"></span><br><span class="line">  loadData() async &#123;</span><br><span class="line">    String dataURL = &quot;https://jsonplaceholder.typicode.com/posts&quot;;</span><br><span class="line">    http.Response response = await http.get(dataURL);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>2、Set up an editor（设置编辑器）</p>
+<p>2、JSON</p>
 </blockquote>
-<p>开发工具：<br>Android Studio</p>
-<p>Visual Studio Code</p>
-<p>or<br>other IntelliJ  tools</p>
+<p>导包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import &apos;dart:convert&apos;;</span><br></pre></td></tr></table></figure>
+
+<p>数据解析</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">List widgets = [];</span><br><span class="line"></span><br><span class="line">  setState(() &#123;</span><br><span class="line">    widgets = json.decode(response.body);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<p>3、Test drive（试驾）</p>
+<p>3、ListView</p>
 </blockquote>
-<table>
-<thead>
-<tr>
-<th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-0c45678f99249731.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Android studio 工具栏.jpg"></th>
-<th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-584580b0a6e998dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="运行效果图"></th>
-</tr>
-</thead>
-</table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">body: ListView.builder(</span><br><span class="line">    itemCount: getItemCount(),</span><br><span class="line">    itemBuilder: (BuildContext context, int position) &#123;</span><br><span class="line">      return getItemWidget(position);</span><br><span class="line">    &#125;));</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">int getItemCount() &#123;</span><br><span class="line">  if (widgets.isEmpty) &#123;</span><br><span class="line">    return 5;</span><br><span class="line">  &#125;</span><br><span class="line">  return widgets.length;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Widget getItemWidget(int position) &#123;</span><br><span class="line">  if (widgets.isEmpty) &#123;</span><br><span class="line">    return getEmptyLoadingWidget();</span><br><span class="line">  &#125;</span><br><span class="line">  return getRow(position);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
-<p>4、Write your first app（编写你的第一个应用）</p>
+<p>4、ListView- loading status</p>
 </blockquote>
-<p>编辑lib/main.dart（Dart代码的所在地）</p>
-<table>
-<thead>
-<tr>
-<th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-e869fd8d5a3fba77.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></th>
-</tr>
-</thead>
-</table>
-<p>编辑代码后运行如下</p>
-<table>
-<thead>
-<tr>
-<th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-853ae69c55a2f3f2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Android "></th>
-<th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-0d4f45e90b5d4324.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="IOS"></th>
-</tr>
-</thead>
-</table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Widget getEmptyLoadingWidget() &#123;</span><br><span class="line">  return Padding(</span><br><span class="line">    padding: EdgeInsets.all(10.0),</span><br><span class="line">    child: Card(</span><br><span class="line">      child: Column(</span><br><span class="line">        children: &lt;Widget&gt;[</span><br><span class="line">          ListTile(</span><br><span class="line">            leading: CircleAvatar(</span><br><span class="line">              child: Text(&apos;**&apos;),</span><br><span class="line">            ),</span><br><span class="line">            title: Text(</span><br><span class="line">              &quot;******&quot;,</span><br><span class="line">              maxLines: 1,</span><br><span class="line">              style: TextStyle(</span><br><span class="line">                color: Colors.blue,</span><br><span class="line">              ),</span><br><span class="line">              semanticsLabel: &apos;semanticsLabel&apos;,</span><br><span class="line">            ),</span><br><span class="line">            subtitle: Text(&quot;******&quot;),</span><br><span class="line">            trailing: Text(&apos;******&apos;),</span><br><span class="line">          ),</span><br><span class="line">          Text(&apos;努力加载中...&apos;),</span><br><span class="line">        ],</span><br><span class="line">      ),</span><br><span class="line">    ),</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>5、ListView- Item and item event</p>
+</blockquote>
+<p>item event</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">onLongPress: () &#123;</span><br><span class="line">  if (widgets.isNotEmpty) &#123;</span><br><span class="line">    showAboutDialog(</span><br><span class="line">      applicationName: &quot;Name&quot;,</span><br><span class="line">      context: context,</span><br><span class="line">      children: &lt;Widget&gt;[</span><br><span class="line">        Text(&apos;Title:$&#123;widgets[i][&quot;title&quot;]&#125;&apos;),</span><br><span class="line">        Divider(),</span><br><span class="line">        Text(&apos;Body:$&#123;widgets[i][&quot;body&quot;]&#125;&apos;),</span><br><span class="line">      ],</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<p>item</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Widget getRow(int i) &#123;</span><br><span class="line">  return Padding(</span><br><span class="line">    padding: EdgeInsets.all(10.0),</span><br><span class="line">    child: Card(</span><br><span class="line">      child: ListTile(</span><br><span class="line">        leading: CircleAvatar(</span><br><span class="line">          child: Text(&apos;$&#123;widgets[i][&quot;id&quot;]&#125;&apos;),</span><br><span class="line">        ),</span><br><span class="line">        title: Text(</span><br><span class="line">          &quot;Row $&#123;widgets[i][&quot;title&quot;]&#125;&quot;,</span><br><span class="line">          maxLines: 1,</span><br><span class="line">          style: TextStyle(</span><br><span class="line">            color: Colors.blue,</span><br><span class="line">          ),</span><br><span class="line">          semanticsLabel: &apos;semanticsLabel&apos;,</span><br><span class="line">        ),</span><br><span class="line">        subtitle: Text(&quot;Row $&#123;widgets[i][&quot;body&quot;]&#125;&quot;),</span><br><span class="line">        trailing: Text(&apos;userId:$&#123;widgets[i][&quot;userId&quot;]&#125;&apos;),</span><br><span class="line">        onTap: () &#123;&#125;,</span><br><span class="line">        onLongPress: () &#123;</span><br><span class="line">          if (widgets.isNotEmpty) &#123;</span><br><span class="line">            showAboutDialog(</span><br><span class="line">              applicationName: &quot;Name&quot;,</span><br><span class="line">              context: context,</span><br><span class="line">              children: &lt;Widget&gt;[</span><br><span class="line">                Text(&apos;Title:$&#123;widgets[i][&quot;title&quot;]&#125;&apos;),</span><br><span class="line">                Divider(),</span><br><span class="line">                Text(&apos;Body:$&#123;widgets[i][&quot;body&quot;]&#125;&apos;),</span><br><span class="line">              ],</span><br><span class="line">            );</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">      ),</span><br><span class="line">    ),</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>6、本篇汇总的效果</p>
+</blockquote>
+<p><img src="https://upload-images.jianshu.io/upload_images/8264781-8494b8baecae15f8.gif?imageMogr2/auto-orient/strip" alt="Flutter-Http.gif"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br></pre></td><td class="code"><pre><span class="line">import &apos;dart:convert&apos;;</span><br><span class="line">import &apos;package:flutter/material.dart&apos;;</span><br><span class="line">import &apos;package:http/http.dart&apos; as http;</span><br><span class="line"></span><br><span class="line">class ListPage extends StatefulWidget &#123;</span><br><span class="line">  BuildContext mPreContext;</span><br><span class="line">  ListPage(BuildContext preContext) &#123;</span><br><span class="line">    mPreContext = preContext;</span><br><span class="line">  &#125;</span><br><span class="line">  @override</span><br><span class="line">  _ListState createState() &#123;</span><br><span class="line">    // TODO: implement createState</span><br><span class="line">    return _ListState();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class _ListState extends State&lt;ListPage&gt; &#123;</span><br><span class="line">  List widgets = [];</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  void initState() &#123;</span><br><span class="line">    super.initState();</span><br><span class="line"></span><br><span class="line">    loadData();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  int getItemCount() &#123;</span><br><span class="line">    if (widgets.isEmpty) &#123;</span><br><span class="line">      return 5;</span><br><span class="line">    &#125;</span><br><span class="line">    return widgets.length;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  Widget getItemWidget(int position) &#123;</span><br><span class="line">    if (widgets.isEmpty) &#123;</span><br><span class="line">      return getEmptyLoadingWidget();</span><br><span class="line">    &#125;</span><br><span class="line">    return getRow(position);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  Widget getEmptyLoadingWidget() &#123;</span><br><span class="line">    return Padding(</span><br><span class="line">      padding: EdgeInsets.all(10.0),</span><br><span class="line">      child: Card(</span><br><span class="line">        child: Column(</span><br><span class="line">          children: &lt;Widget&gt;[</span><br><span class="line">            ListTile(</span><br><span class="line">              leading: CircleAvatar(</span><br><span class="line">                child: Text(&apos;**&apos;),</span><br><span class="line">              ),</span><br><span class="line">              title: Text(</span><br><span class="line">                &quot;******&quot;,</span><br><span class="line">                maxLines: 1,</span><br><span class="line">                style: TextStyle(</span><br><span class="line">                  color: Colors.blue,</span><br><span class="line">                ),</span><br><span class="line">                semanticsLabel: &apos;semanticsLabel&apos;,</span><br><span class="line">              ),</span><br><span class="line">              subtitle: Text(&quot;******&quot;),</span><br><span class="line">              trailing: Text(&apos;******&apos;),</span><br><span class="line">            ),</span><br><span class="line">            Text(&apos;努力加载中...&apos;),</span><br><span class="line">          ],</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    return Scaffold(</span><br><span class="line">        appBar: AppBar(</span><br><span class="line">          title: Text(&quot;Sample HTTP&quot;),</span><br><span class="line">        ),</span><br><span class="line">        body: ListView.builder(</span><br><span class="line">            itemCount: getItemCount(),</span><br><span class="line">            itemBuilder: (BuildContext context, int position) &#123;</span><br><span class="line">              return getItemWidget(position);</span><br><span class="line">            &#125;));</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  Widget getRow(int i) &#123;</span><br><span class="line">    return Padding(</span><br><span class="line">      padding: EdgeInsets.all(10.0),</span><br><span class="line">      child: Card(</span><br><span class="line">        child: ListTile(</span><br><span class="line">          leading: CircleAvatar(</span><br><span class="line">            child: Text(&apos;$&#123;widgets[i][&quot;id&quot;]&#125;&apos;),</span><br><span class="line">          ),</span><br><span class="line">          title: Text(</span><br><span class="line">            &quot;Row $&#123;widgets[i][&quot;title&quot;]&#125;&quot;,</span><br><span class="line">            maxLines: 1,</span><br><span class="line">            style: TextStyle(</span><br><span class="line">              color: Colors.blue,</span><br><span class="line">            ),</span><br><span class="line">            semanticsLabel: &apos;semanticsLabel&apos;,</span><br><span class="line">          ),</span><br><span class="line">          subtitle: Text(&quot;Row $&#123;widgets[i][&quot;body&quot;]&#125;&quot;),</span><br><span class="line">          trailing: Text(&apos;userId:$&#123;widgets[i][&quot;userId&quot;]&#125;&apos;),</span><br><span class="line">          onTap: () &#123;&#125;,</span><br><span class="line">          onLongPress: () &#123;</span><br><span class="line">            if (widgets.isNotEmpty) &#123;</span><br><span class="line">              showAboutDialog(</span><br><span class="line">                applicationName: &quot;Name&quot;,</span><br><span class="line">                context: context,</span><br><span class="line">                children: &lt;Widget&gt;[</span><br><span class="line">                  Text(&apos;Title:$&#123;widgets[i][&quot;title&quot;]&#125;&apos;),</span><br><span class="line">                  Divider(),</span><br><span class="line">                  Text(&apos;Body:$&#123;widgets[i][&quot;body&quot;]&#125;&apos;),</span><br><span class="line">                ],</span><br><span class="line">              );</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;,</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  loadData() async &#123;</span><br><span class="line">    String dataURL = &quot;https://jsonplaceholder.typicode.com/posts&quot;;</span><br><span class="line">    http.Response response = await http.get(dataURL);</span><br><span class="line">    setState(() &#123;</span><br><span class="line">      widgets = json.decode(response.body);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+
 <p>未完待续。。。</p>
 
             </div>
@@ -708,9 +656,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Flutter Getting start-Mac》
+                    《Flutter Http with List》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2018/09/07/Flutter Getting start-Mac/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2018/09/11/Flutter Http with List/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Air
             </a> 采用
@@ -754,23 +702,23 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2018/09/08/Flutter Widget/">
+                <a href="/2018/09/12/Flutter Resource Using/">
                     <div class="card-image">
                         
-                        <img src="/images/flutter_logo.jpg" class="responsive-img" alt="Flutter Widget">
+                        <img src="/images/flutter_logo.jpg" class="responsive-img" alt="Flutter Resource Using">
                         
-                        <span class="card-title">Flutter Widget</span>
+                        <span class="card-title">Flutter Resource Using</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Flutter Widget
+                            Flutter Resource Using
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-09-08
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-09-12
                         </span>
                         <span class="publish-author">
                             
@@ -802,35 +750,43 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2016/07/09/目录/">
+                <a href="/2018/09/10/Flutter Stepper/">
                     <div class="card-image">
                         
+                        <img src="/images/flutter_logo.jpg" class="responsive-img" alt="Flutter Stepper">
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Air博客集">
-                        
-                        <span class="card-title">Air博客集</span>
+                        <span class="card-title">Flutter Stepper</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            欢迎进入Air的个人博客！
-简书### 
-简书博客: 点击进入
-
+                            Flutter Stepper
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2016-07-09
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-09-10
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            Air
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/跨平台/" class="post-category" target="_blank">
+                                    跨平台
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Flutter/" target="_blank">
+                        <span class="chip bg-color">Flutter</span>
+                    </a>
+                    
                 </div>
                 
             </div>

@@ -4,11 +4,15 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Air博客集, Air">
-    <meta name="description" content="欢迎进入Air的个人博客！
-简书### 
-简书博客: 点击进入
-">
+    <meta name="keywords" content="Flutter Resource Using, Air">
+    <meta name="description" content="Flutter的项目结构和资源的存放、使用（图像的适配、字符串的本地化和国际化、项目依赖）
+
+
+
+目录：1、存储不同分辨率的图片资源2、存储String字符串资源3、添加依赖4、如何国际化和本地化？Flutter推荐使用intl实现
+
+
+1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -16,7 +20,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Air博客集 | Air</title>
+    <title>Flutter Resource Using | Air</title>
     <link rel="icon" type="image/jpeg" href="/medias/avatar.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -263,13 +267,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/images/flutter_logo.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Air博客集
+                        Flutter Resource Using
                     </div>
                 </div>
             </div>
@@ -378,12 +382,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Flutter/" target="_blank">
+                                <span class="chip bg-color">Flutter</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/跨平台/" class="post-category" target="_blank">
+                                跨平台
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -391,14 +408,14 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2016-07-09
+                    2018-09-12
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        20
+                        352
                     </div>
                     
 
@@ -421,9 +438,45 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>欢迎进入Air的个人博客！</p>
-<h2 id="简书"><a href="#简书" class="headerlink" title="简书"></a>简书</h2><p>### </p>
-<p>简书博客: <a href="https://www.jianshu.com/u/6e69026af6b4" target="_blank" rel="noopener">点击进入</a></p>
+                <p>Flutter的项目结构和资源的存放、使用（图像的适配、字符串的本地化和国际化、项目依赖）</p>
+<hr>
+
+<blockquote>
+<p>目录：<br>1、存储不同分辨率的图片资源<br>2、存储String字符串资源<br>3、添加依赖<br>4、如何国际化和本地化？<a href="https://pub.dev/packages/intl" target="_blank" rel="noopener">Flutter推荐使用intl实现</a></p>
+</blockquote>
+<blockquote>
+<p>1、存储不同分辨率的图片资源</p>
+</blockquote>
+<p>分辨率对应的资源格式<br><img src="https://upload-images.jianshu.io/upload_images/8264781-cdd73ed0d3488837.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/480" alt="image.png"></p>
+<p>存储不同分辨率下的图片资源进行适配<br><img src="https://upload-images.jianshu.io/upload_images/8264781-40104864f089eba7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/480" alt="image.png"></p>
+<p>创建图像文件夹<br><img src="https://upload-images.jianshu.io/upload_images/8264781-c318ea9b745fd24e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/480" alt="image.png"></p>
+<p>在pubspec.yaml中引入图像资源</p>
+<p>方式一：此种方式表示，引入images文件夹中所有的资源</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">assets:</span><br><span class="line">  - images/</span><br></pre></td></tr></table></figure>
+
+<p>方式二：此种方式表示，引入images文件夹下的具体的某一资源</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">assets:</span><br><span class="line">  - images/one.jpg</span><br></pre></td></tr></table></figure>
+
+<p>使用图像资源</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Image.asset(&quot;images/one.jpg&quot;,width: 100,height: 100,),</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>2、存储String字符串资源</p>
+</blockquote>
+<p>Flutter目前没有专门的字符串资源系统。目前最佳做法是将字符串作为静态变量保存在类中，并从哪里访问他们。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">class Strings &#123; static String welcomeMessage = “Welcome to Flutter” ; &#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Text(Strings.welcomeMessage)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>3、添加依赖</p>
+</blockquote>
+<p>虽然Android或IOS项目下有各自的原生依赖系统。但是，那些只是针对各不同的平台的依赖。</p>
+<p>如果要实现Flutter项目的依赖，在pubspec.yaml文件中具体的依赖项。</p>
+<blockquote>
+<p>4、如何国际化和本地化？<a href="https://pub.dev/packages/intl" target="_blank" rel="noopener">Flutter推荐使用intl实现</a></p>
+</blockquote>
 
             </div>
             <hr/>
@@ -582,9 +635,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Air博客集》
+                    《Flutter Resource Using》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2016/07/09/目录/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2018/09/12/Flutter Resource Using/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Air
             </a> 采用
@@ -628,23 +681,23 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2018/09/07/Flutter Getting start-Mac/">
+                <a href="/2018/09/13/Flutter lifecycle/">
                     <div class="card-image">
                         
-                        <img src="/images/flutter_logo.jpg" class="responsive-img" alt="Flutter Getting start-Mac">
+                        <img src="/images/flutter_logo.jpg" class="responsive-img" alt="Flutter lifecycle">
                         
-                        <span class="card-title">Flutter Getting start-Mac</span>
+                        <span class="card-title">Flutter lifecycle</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            编写您的第一个Flutter跨平台应用
+                            Flutter lifecycle
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-09-07
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-09-13
                         </span>
                         <span class="publish-author">
                             
@@ -673,40 +726,47 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2016/07/09/目录/">
+                <a href="/2018/09/11/Flutter Http with List/">
                     <div class="card-image">
                         
+                        <img src="/images/flutter_logo.jpg" class="responsive-img" alt="Flutter Http with List">
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Air博客集">
-                        
-                        <span class="card-title">Air博客集</span>
+                        <span class="card-title">Flutter Http with List</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            欢迎进入Air的个人博客！
-简书### 
-简书博客: 点击进入
-
+                            Flutter Http with List
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2016-07-09
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-09-11
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            Air
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/跨平台/" class="post-category" target="_blank">
+                                    跨平台
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Flutter/" target="_blank">
+                        <span class="chip bg-color">Flutter</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
