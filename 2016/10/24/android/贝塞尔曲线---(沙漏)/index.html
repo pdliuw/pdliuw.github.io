@@ -4,10 +4,18 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Kotlin Functions, Air">
-    <meta name="description" content="Kotlin Functions(科特林函数/方法)
+    <meta name="keywords" content="贝塞尔曲线---(沙漏), Air">
+    <meta name="description" content="
+####贝塞尔曲线
 
-目录：1、Function Declarations（函数的定义）2、Function Usage（函数的用法）3、Parameters（参数）4、Default Arguments（">
+#####贝塞尔曲线的几个步骤
+######1、起始点
+######2、控制点
+######3、控制点
+######4、结束点
+######为了大家更好地理解这几个概念，附上下图
+
+######嗯，我们开始实现沙漏曲">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +23,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Kotlin Functions | Air</title>
+    <title>贝塞尔曲线---(沙漏) | Air</title>
     <link rel="icon" type="image/jpeg" href="/medias/avatar.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -262,13 +270,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/images/kotlin_logo.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/images/android_logo.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Kotlin Functions
+                        贝塞尔曲线---(沙漏)
                     </div>
                 </div>
             </div>
@@ -379,8 +387,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Kotlin/" target="_blank">
-                                <span class="chip bg-color">Kotlin</span>
+                            <a href="/tags/Java/" target="_blank">
+                                <span class="chip bg-color">Java</span>
+                            </a>
+                        
+                            <a href="/tags/贝塞尔曲线/" target="_blank">
+                                <span class="chip bg-color">贝塞尔曲线</span>
                             </a>
                         
                     </div>
@@ -403,21 +415,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2017-06-18
+                    2016-10-24
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.3k
+                        857
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        5 分
+                        4 分
                     </div>
                     
                 
@@ -433,126 +445,182 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Kotlin Functions(科特林函数/方法)</p>
-<blockquote>
-<p>目录：<br>1、Function Declarations（函数的定义）<br>2、Function Usage（函数的用法）<br>3、Parameters（参数）<br>4、Default Arguments（默认参数）<br>5、Named Arguments（命名参数）<br>6、Unit-returning functions（函数返回类型为:Unit）<br>7、Single-Expression functions（单个表达式的函数）<br>8、Variable number of arguments（Varargs）(可变数量参数)<br>9、Infix notation（中缀表示法）<br>10、Function Scope（函数范围）<br>11、Generic Functions（通用函数/泛型函数）<br>12、Tail recursive functions（尾递归函数）</p>
+                <blockquote>
+<p>####贝塞尔曲线</p>
 </blockquote>
-<blockquote>
-<p>1、Function Declarations（函数/方法的定义）<br>使用fun关键字进行定义函数</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fun double(x: Int): Int &#123;</span><br><span class="line">    return 2 * x</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>#####贝塞尔曲线的几个步骤</p>
+<p>######1、起始点</p>
+<p>######2、控制点</p>
+<p>######3、控制点</p>
+<p>######4、结束点</p>
+<p>######为了大家更好地理解这几个概念，附上下图</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/8264781-a3e80e03c23d7e90.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="贝塞尔曲线示意图"></p>
+<p>######嗯，我们开始实现沙漏曲线</p>
+<p>######1、我们看一下，实现的最终的效果图<br><img src="https://upload-images.jianshu.io/upload_images/8264781-e4e9f9eff04bb8f2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="最终实现效果图"></p>
+<p>######2、我们分析一下：起始点、控制点、结束点的位置<br><img src="https://upload-images.jianshu.io/upload_images/8264781-0bd93455c95c8ff5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="贝塞尔曲线--关键点位"></p>
+<p>######3、代码实现<br>我们把 沙漏 的整体部分，分为四部分：<br>1、上、左部分<br>2、上、右部分<br>3、下、左部分<br>4、下、右部分<br>各部分的实现原理都相同，实现了其中一个，其余部分也轻而易举的实现出来。<br>▲上、左部分的实现：<br>核心代码：</p>
+<pre><code>//Top left
+Path glassArcPathTopLeft = new Path();
+glassArcPathTopLeft.moveTo(hourglassArcStartedPointLeftBound, hourglassArcStartedPointTopBound);
+glassArcPathTopLeft.cubicTo(hourglassArcOneControlPoint.x, hourglassArcOneControlPoint.y, hourglassArcTwoControlPoint.x, hourglassArcTwoControlPoint.y, hourglassCenterX, hourglassCenterY);
+canvas.drawPath(glassArcPathTopLeft , mHourglassArcPaint);</code></pre><p>1、Path.moveTo(startPointX, startPointY);<br>【startPointX, 起始点的X坐标，startPointY，起始点的Y坐标】<br>2、Path.cubicTo(controlOnePointX, controlOnePointY, controlTwoPointX, controlTwoPointY, endPointX, endPointY);<br>【控制点1的X坐标，控制点1的Y坐标，控制点2的X坐标，控制点2的Y坐标，结束点的X坐标，结束点的Y坐标】<br>3、Canvas.drawPath(Path, Paint);<br>【绘制】</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/8264781-68ce71ebb160ab1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="左、上部分的实现效果"></p>
+<p>######3.2、全部代码<br>在开发中我们还要考虑到，padding，wrap_content等诸多情况<br>下面是全部的绘制核心代码</p>
+<pre><code>private void drawGlass(Canvas canvas) {
 
-<blockquote>
-<p>2、Function Usage（函数的使用/调用）<br>调用函数使用传统方法</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">val result = double(2)</span><br></pre></td></tr></table></figure>
+    /*
+    Canvas rectangle.
+     */
+    int drawableLeftBound = getLeft() + getPaddingLeft();
+    int drawableTopBound = getTop() + getPaddingTop();
+    int drawableRightBound = getRight() - getPaddingRight();
+    int drawableBottomBound = getBottom() - getPaddingBottom();
 
-<p>使用点符号调用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Sample().foo()</span><br></pre></td></tr></table></figure>
+    /*
+    Save drawable rectangle layer.
+     */
+    RectF rectF = new RectF();
+    rectF.left = drawableLeftBound;
+    rectF.top = drawableTopBound;
+    rectF.right = drawableRightBound;
+    rectF.bottom = drawableBottomBound;
+    canvas.saveLayerAlpha(rectF, 200);
 
-<blockquote>
-<p>3、Parameters（参数）<br>函数参数的定义格式：name:Type，以“，”分隔参数</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fun double(x: Int, y: Int): Int &#123;</span><br><span class="line">    return 2 * (x + y)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    float drawableDiameterY = (rectF.bottom - rectF.top);
+    float drawableRadiusY = drawableDiameterY / 2f;
 
-<blockquote>
-<p>4、Default Arguments（参数的默认值）</p>
-</blockquote>
-<p>函数的参数可以有一个默认的值，</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fun double(x: Int = 0, y: Int = 0): Int &#123;</span><br><span class="line">    return 2 * (x + y)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    float drawableDiameterX = (rectF.right - rectF.left);
+    float drawableRadiusX = drawableDiameterX / 2f;
 
-<p>覆盖方法始终使用与基本方法相同的默认参数值。使用默认参数值覆盖方法时，忽略参数默认值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">open class A &#123;</span><br><span class="line">    open fun foo(i: Int = 10) &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class B : A() &#123;</span><br><span class="line">    //// no default value allowed</span><br><span class="line">    override fun foo(i: Int) &#123;</span><br><span class="line">        super.foo(i)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    /*
+    中心位置
+     */
+    float hourglassCenterX = rectF.left + drawableRadiusX;
+    float hourglassCenterY = rectF.top + drawableRadiusY;
 
-<p>调用函数，使用函数的默认参数值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fun defaultParam(a: Int = 0, b: Int): Int &#123;</span><br><span class="line"></span><br><span class="line">    return a + b;</span><br><span class="line">&#125;</span><br><span class="line">//使用defaultParam(b = 2)，等同于defaultParam(a = 0,b = 2)</span><br><span class="line">val defaultParamResult = defaultParam(b = 2)</span><br></pre></td></tr></table></figure>
+    /*
+    Bounds
+     */
+    float hourglassLeftBound = rectF.left + mHourglassPaintWidth;
+    float hourglassTopBound = rectF.top + mHourglassPaintWidth;
+    float hourglassRightBound = rectF.right + mHourglassPaintWidth;
+    float hourglassBottomBound = rectF.bottom + mHourglassPaintWidth;
+    //Arc started bounds.
+    float hourglassArcStartedPointLeftBound = rectF.left + drawableDiameterY / 8f;
+    float hourglassArcStartedPointTopBound = rectF.top;
+    float hourglassArcStartedPointRightBound = rectF.right - drawableDiameterY / 8f;
+    float hourglassArcStartedPointBottomBound = rectF.bottom;
 
-<p>如果默认参数之后的最后一个参数是lambda，他可以作为命名参数传递，也可以在括号之外传递</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fun fooFunction(bar: Int = 1, baz: Int = 1, lamb: () -&gt; Int): Int &#123;</span><br><span class="line">    println(&quot;foo: lambda result=$&#123;lamb()&#125;&quot;)</span><br><span class="line">    return lamb()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    /*
+    Eight control point
+     */
+    PointF hourglassArcOneControlPoint = new PointF();
+    hourglassArcOneControlPoint.x = hourglassLeftBound;
+    hourglassArcOneControlPoint.y = drawableTopBound + drawableRadiusY / 4F;
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">  //括号之外传递</span><br><span class="line">val lambdaParamOutResult = fooFunction &#123;</span><br><span class="line">    &quot;&quot;</span><br><span class="line">    1</span><br><span class="line">&#125;</span><br><span class="line">//括号之内传递</span><br><span class="line">val lambdaParamInResult = fooFunction(lamb = &#123;</span><br><span class="line">    &quot;&quot;</span><br><span class="line">    1</span><br><span class="line">&#125;)</span><br><span class="line">//括号之内传递，并且全参数赋值</span><br><span class="line">val lambdaParamFullResult = fooFunction(1, 2, lamb = &#123;</span><br><span class="line">    &quot;&quot;</span><br><span class="line">    1</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+    PointF hourglassArcTwoControlPoint = new PointF();
+    hourglassArcTwoControlPoint.x = hourglassLeftBound;
+    hourglassArcTwoControlPoint.y = drawableTopBound + drawableRadiusY / 2F;
 
-<blockquote>
-<p>5、命名参数-&gt;使代码更具可读性<br>调用函数时可以命名函数参数。当函数具有大量参数或默认参数时，这非常方便。</p>
-</blockquote>
-<p>如下函数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fun reformat(str: String,</span><br><span class="line">             normalizeCase: Boolean = true,</span><br><span class="line">             upperCaseFirstLetter: Boolean = true,</span><br><span class="line">             divideByCamelHumps: Boolean = false,</span><br><span class="line">             wordSeparator: Char = &apos; &apos;) &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    PointF hourglassArcThreeControlPoint = new PointF();
+    hourglassArcThreeControlPoint.x = hourglassRightBound;
+    hourglassArcThreeControlPoint.y = drawableTopBound + drawableRadiusY / 4F;
 
-<p>使用默认参数调用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">val str = &quot;&quot;;</span><br><span class="line">reformat(str)</span><br></pre></td></tr></table></figure>
+    PointF hourglassArcFourControlPoint = new PointF();
+    hourglassArcFourControlPoint.x = hourglassRightBound;
+    hourglassArcFourControlPoint.y = drawableTopBound + drawableRadiusY / 2F;
 
-<p>使用非默认参数调用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">val str = &quot;&quot;;</span><br><span class="line">reformat(str, true, true, false, &apos;_&apos;)</span><br></pre></td></tr></table></figure>
+    PointF hourglassArcFiveControlPoint = new PointF();
+    hourglassArcFiveControlPoint.x = hourglassLeftBound;
+    hourglassArcFiveControlPoint.y = drawableBottomBound - drawableRadiusY / 4F;
 
-<p>使用命名参数调用-&gt;使代码更具可读性：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">val str = &quot;&quot;;</span><br><span class="line">reformat(str, normalizeCase = true, upperCaseFirstLetter = true, divideByCamelHumps = false, wordSeparator = &apos;_&apos;)</span><br></pre></td></tr></table></figure>
+    PointF hourglassArcSixControlPoint = new PointF();
+    hourglassArcSixControlPoint.x = hourglassLeftBound;
+    hourglassArcSixControlPoint.y = drawableBottomBound - drawableRadiusY / 2F;
 
-<p>使用命名参数调用-&gt;不需要所有的参数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">val str = &quot;&quot;;</span><br><span class="line">reformat(str, wordSeparator = &apos;_&apos;)</span><br></pre></td></tr></table></figure>
+    PointF hourglassArcSevenControlPoint = new PointF();
+    hourglassArcSevenControlPoint.x = hourglassRightBound;
+    hourglassArcSevenControlPoint.y = drawableBottomBound - drawableRadiusY / 4F;
 
-<p>当使用位置参数和命名参数调用函数时，所有位置参数应放在第一个命名参数之前。例如，f(1,y=1)允许，f(x=1,2)不允许</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">fun reformatTwo(</span><br><span class="line">    str: String = &quot;&quot;,</span><br><span class="line">    normalizeCase: Boolean,</span><br><span class="line">    upperCaseFirstLetter: Boolean = true,</span><br><span class="line">    divideByCamelHumps: Boolean = false,</span><br><span class="line">    wordSeparator: Char = &apos; &apos;</span><br><span class="line">) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    PointF hourglassArcEightControlPoint = new PointF();
+    hourglassArcEightControlPoint.x = hourglassRightBound;
+    hourglassArcEightControlPoint.y = drawableBottomBound - drawableRadiusY / 2F;
 
-<p>不允许此调用方式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//is not allowed.</span><br><span class="line">reformatTwo(str = &quot;&quot;, false)</span><br><span class="line">//is allowed</span><br><span class="line">reformatTwo(str = &quot;&quot;, normalizeCase = false)</span><br></pre></td></tr></table></figure>
+    Paint paint = new Paint();
+    paint.setStrokeWidth(15);
+    paint.setColor(Color.GREEN);
+    canvas.drawPoint(hourglassArcOneControlPoint.x, hourglassArcOneControlPoint.y, paint);
+    canvas.drawPoint(hourglassArcTwoControlPoint.x, hourglassArcTwoControlPoint.y, paint);
+    canvas.drawPoint(hourglassArcThreeControlPoint.x, hourglassArcThreeControlPoint.y, paint);
+    canvas.drawPoint(hourglassArcFourControlPoint.x, hourglassArcFourControlPoint.y, paint);
+    canvas.drawPoint(hourglassArcFiveControlPoint.x, hourglassArcFiveControlPoint.y, paint);
+    canvas.drawPoint(hourglassArcSixControlPoint.x, hourglassArcSixControlPoint.y, paint);
+    canvas.drawPoint(hourglassArcSevenControlPoint.x, hourglassArcSevenControlPoint.y, paint);
+    canvas.drawPoint(hourglassArcEightControlPoint.x, hourglassArcEightControlPoint.y, paint);
 
-<p>允许此调用方式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//is allowed</span><br><span class="line">reformatTwo(str = &quot;&quot;, normalizeCase = false)</span><br></pre></td></tr></table></figure>
+    /*
+    Glass top.
+     */
+    //Top left
+    Path glassArcPathTopLeft = new Path();
+    glassArcPathTopLeft.moveTo(hourglassArcStartedPointLeftBound, hourglassArcStartedPointTopBound);
+    glassArcPathTopLeft.cubicTo(hourglassArcOneControlPoint.x, hourglassArcOneControlPoint.y, hourglassArcTwoControlPoint.x, hourglassArcTwoControlPoint.y, hourglassCenterX, hourglassCenterY);
 
-<blockquote>
-<p>6、Unit-returning functions<br>如果一个函数没有返回值，那么他的返回值类型是Unit</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fun nullReturnType(): Unit &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    Path glassArcPathTopCenter = new Path();
+    glassArcPathTopCenter.moveTo(getRight() / 8f, getTop());
+    glassArcPathTopCenter.lineTo(hourglassRightBound - getRight() / 8f, getTop());
+    glassArcPathTopCenter.lineTo(hourglassCenterX, hourglassCenterY);
 
-<p>Unit可省略</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fun nullReturnType() &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>7、Single-Expression functions<br>当函数返回单个表达式时，可以省略花括号，并在‘=’符号后指定‘函数体’</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fun singleExpression(a: Int, b: Int): Int = a + b;</span><br></pre></td></tr></table></figure>
+    //Top right.
+    Path glassArcPathTopRight = new Path();
+    glassArcPathTopRight.moveTo(hourglassArcStartedPointRightBound, hourglassArcStartedPointTopBound);
+    glassArcPathTopRight.cubicTo(hourglassArcThreeControlPoint.x, hourglassArcThreeControlPoint.y, hourglassArcFourControlPoint.x, hourglassArcFourControlPoint.y, hourglassCenterX, hourglassCenterY);
 
-<p>显示声明的返回类型是可选的/可省略的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fun singleExpression(a: Int, b: Int) = a + b;</span><br></pre></td></tr></table></figure>
+    /*
+    Glass bottom.
+     */
+    //Bottom left.
+    Path glassArcPathBottomLeft = new Path();
+    glassArcPathBottomLeft.moveTo(hourglassArcStartedPointLeftBound, hourglassArcStartedPointBottomBound);
+    glassArcPathBottomLeft.cubicTo(hourglassArcFiveControlPoint.x, hourglassArcFiveControlPoint.y, hourglassArcSixControlPoint.x, hourglassArcSixControlPoint.y, hourglassCenterX, hourglassCenterY);
 
-<blockquote>
-<p>8、Variable number of arguments(varargs)<br>可变数量的参数</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fun varargParameter(vararg parameters: String): Int &#123;</span><br><span class="line"></span><br><span class="line">    return parameters.size;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    //Bottom right.
+    Path glassArcPathBottomRight = new Path();
+    glassArcPathBottomRight.moveTo(hourglassArcStartedPointRightBound, hourglassArcStartedPointBottomBound);
+    glassArcPathBottomRight.cubicTo(hourglassArcSevenControlPoint.x, hourglassArcSevenControlPoint.y, hourglassArcEightControlPoint.x, hourglassArcEightControlPoint.y, hourglassCenterX, hourglassCenterY);
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">varargParameter(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;);</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>9、Infix notation（中缀表示法）<br>中缀表示法：省略点和括号<br>1、必须是成员函数或扩展函数<br>2、必须有一个参数<br>3、参数不能接收可变数量的参数，不能有默认值</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">infix fun Int.complete(num: Int) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    /*
+    The whole glass.
+     */
+    Path glassPath = new Path();
+    glassPath.addPath(glassArcPathTopLeft);
+    glassPath.addPath(glassArcPathTopRight);
+    glassPath.addPath(glassArcPathBottomLeft);
+    glassPath.addPath(glassArcPathBottomRight);
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//正常的调用函数</span><br><span class="line">1.complete(1)</span><br><span class="line"></span><br><span class="line">//使用&quot;中缀表达法&quot;调用函数</span><br><span class="line">1 complete 1</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>10、Function Scope<br>1、Local Functions（函数内的函数）<br>2、Member Functions（成员函数）</p>
-</blockquote>
-<p>Local Functions（定义在函数内的函数）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">fun function(name: String) &#123;</span><br><span class="line">    fun localFunction(name: String): String &#123;</span><br><span class="line">        return &quot;local-&gt;$name&quot;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    val result = localFunction(name)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    canvas.drawPath(glassPath, mHourglassArcPaint);
 
-<p>Member Functions（定义在类/对象中的函数）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class Sample()&#123;</span><br><span class="line">    fun foo()&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>11、Generic Functions（通用函数/泛型函数）</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fun &lt;T&gt; singletonList(item: T): List&lt;T&gt; &#123;</span><br><span class="line">    return listOf&lt;T&gt;(item)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    //Close top bottom bounds.
+    Path glassPathTopClosed = new Path();
+    glassPathTopClosed.moveTo(hourglassArcStartedPointLeftBound, hourglassArcStartedPointTopBound);
+    glassPathTopClosed.lineTo(hourglassArcStartedPointRightBound, hourglassArcStartedPointTopBound);
 
-<blockquote>
-<p>12、Tail recursive functions（尾递归函数）<br>Kotlin支持一种称为“尾递归”的函数式变成。这允许一些通常使用循环编写的算法改为使用尾递归函数编写，但没有溢出的风险。当一个函数用tailrec修饰符标记并满足所需的形式时，编译器会优化递归，而是留下一个快速有效的基于循环的版本：</p>
-</blockquote>
-<p>tailrec修饰的尾递归的函数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">tailrec修饰符关键字：将函数标记为‘尾递归’</span><br><span class="line">尾递归函数</span><br><span class="line"> */</span><br><span class="line">const val EPS = 10</span><br><span class="line">tailrec fun findFixPoint(x: Double = 1.0): Double =</span><br><span class="line">    if (Math.abs((x - Math.cos(x))) &lt; EPS) x else findFixPoint(Math.cos(x))</span><br></pre></td></tr></table></figure>
+    Path glassPathBottomClosed = new Path();
+    glassPathBottomClosed.moveTo(hourglassArcStartedPointLeftBound, hourglassArcStartedPointBottomBound);
+    glassPathBottomClosed.lineTo(hourglassArcStartedPointRightBound, hourglassArcStartedPointBottomBound);
 
-<p>等同于：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">const val EPS = 10</span><br><span class="line">fun findFixPoint(): Double &#123;</span><br><span class="line">    var x = 1.0</span><br><span class="line">    while (true) &#123;</span><br><span class="line">        val y = Math.cos(x)</span><br><span class="line">        if (Math.abs(x - y) &lt; EPS) &#123;</span><br><span class="line">            return x</span><br><span class="line">        &#125;</span><br><span class="line">        x = Math.cos(x)</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>未完待续。。。</p>
+    Path glassDecorPath = new Path();
+    glassDecorPath.addPath(glassPathTopClosed);
+    glassDecorPath.addPath(glassPathBottomClosed);
+
+    canvas.drawPath(glassDecorPath, mHourglassDecorPaint);
+
+}</code></pre><p>俗话说：欲速则不达，关于贝塞尔曲线的简单小案例就讲到这里了，如果你还意犹未尽，那么不要悲伤，请查看作者的其他文章，更多干货等着你…..<br>切记，不要吃得太饱哦，多消化消化。</p>
 
             </div>
             <hr/>
@@ -711,9 +779,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Kotlin Functions》
+                    《贝塞尔曲线---(沙漏)》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2017/06/18/kotlin/Kotlin Functions/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2016/10/24/android/贝塞尔曲线---(沙漏)/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Air
             </a> 采用
@@ -757,23 +825,23 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2017/06/19/kotlin/Higher-Order Functions and Lambdas/">
+                <a href="/2017/06/11/kotlin/Kotlin basic syntax/">
                     <div class="card-image">
                         
-                        <img src="/images/kotlin_logo.jpg" class="responsive-img" alt="Higher-Order Functions and Lambdas">
+                        <img src="/images/kotlin_logo.jpg" class="responsive-img" alt="Kotlin basic syntax">
                         
-                        <span class="card-title">Higher-Order Functions and Lambdas</span>
+                        <span class="card-title">Kotlin basic syntax</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Higher-Order Functions and Lambdas
+                            Kotlin basic syntax
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2017-06-19
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2017-06-11
                         </span>
                         <span class="publish-author">
                             
@@ -805,43 +873,35 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2017/06/16/kotlin/Kotlin keywords and operators/">
+                <a href="/2016/07/09/目录/">
                     <div class="card-image">
                         
-                        <img src="/images/kotlin_logo.jpg" class="responsive-img" alt="Kotlin keywords and operators">
                         
-                        <span class="card-title">Kotlin keywords and operators</span>
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Air博客集">
+                        
+                        <span class="card-title">Air博客集</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Kotlin keywords and operators
+                            欢迎进入Air的个人博客！
+简书### 
+简书博客: 点击进入
+
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2017-06-16
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2016-07-09
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Android/" class="post-category" target="_blank">
-                                    Android
-                                </a>
-                            
+                            <i class="fa fa-user fa-fw"></i>
+                            Air
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Kotlin/" target="_blank">
-                        <span class="chip bg-color">Kotlin</span>
-                    </a>
-                    
                 </div>
                 
             </div>
