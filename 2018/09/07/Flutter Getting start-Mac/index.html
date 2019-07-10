@@ -4,10 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Air博客集, Air">
-    <meta name="description" content="欢迎进入Air的个人博客！
-简书### 
-简书博客: 点击进入
+    <meta name="keywords" content="Flutter Getting start-Mac, Air">
+    <meta name="description" content="Flutter Getting start-Mac
+
+目录：1、Install（安装）2、Set up an editor（设置编辑器）3、Test drive（试驾）4、Write your first app（编写你的第一个应用）
+
+
 ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Air博客集 | Air</title>
+    <title>Flutter Getting start-Mac | Air</title>
     <link rel="icon" type="image/jpeg" href="/medias/avatar.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -263,13 +265,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/source/images/flutter_logo.jpeg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Air博客集
+                        Flutter Getting start-Mac
                     </div>
                 </div>
             </div>
@@ -378,12 +380,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Flutter/" target="_blank">
+                                <span class="chip bg-color">Flutter</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/跨平台/" class="post-category" target="_blank">
+                                跨平台
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -391,21 +406,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2016-07-09
+                    2018-09-07
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        20
+                        526
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        2 分
                     </div>
                     
                 
@@ -421,9 +436,120 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>欢迎进入Air的个人博客！</p>
-<h2 id="简书"><a href="#简书" class="headerlink" title="简书"></a>简书</h2><p>### </p>
-<p>简书博客: <a href="https://www.jianshu.com/u/6e69026af6b4" target="_blank" rel="noopener">点击进入</a></p>
+                <p>Flutter Getting start-Mac</p>
+<blockquote>
+<p>目录：<br>1、Install（安装）<br>2、Set up an editor（设置编辑器）<br>3、Test drive（试驾）<br>4、Write your first app（编写你的第一个应用）</p>
+</blockquote>
+<blockquote>
+<p>1、Install（安装）</p>
+</blockquote>
+<p>1、系统环境要求</p>
+<ul>
+<li>操作系统：macOS（64）</li>
+<li>磁盘空间：700MB</li>
+</ul>
+<hr>
+2、Get the Flutter SDK
+- Download Flutter SDK
+请到官网下载最新版本
+
+<ul>
+<li><p>Run flutter doctor</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//在Terminal（终端/命令窗口）中输入，用以“检查验证是否已正确设置所有内容，并输出相关的信息”</span><br><span class="line">flutter doctor</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Update your path<br>步骤一：确定放置Flutter SDK的目录<br>步骤二：打开.bash_profile，进行配置环境变量<br>步骤三：添加以下行并更改[PATH_TO_FLUTTER_GIT_DIRECTORY]为克隆Flutter的git repo的路径：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH=&quot;$PATH:[PATH_TO_FLUTTER_GIT_DIRECTORY]/flutter/bin&quot;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>步骤四：运行source $HOME/.base_profile刷新当前窗口</p>
+<p>步骤五：”flutter/bin”将出现在通过下面命令后出现的目录中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo $PATH</span><br></pre></td></tr></table></figure>
+
+<p>如下图所示：<br><img src="https://upload-images.jianshu.io/upload_images/8264781-9c2da7d3107ea804.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="效果图"></p>
+<hr>
+
+<p>3、Platform setup</p>
+<ul>
+<li>MacOS支持为IOS和Android开发Flutter应用程序。</li>
+<li>Windows默认只支持Android开发Flutter应用程序。或则装个“黑苹果”系统进行支持IOS开发</li>
+</ul>
+<hr>
+
+<p>4、IOS setup（IOS配置）</p>
+<ul>
+<li><p>Install Xcode（安装IOS原生开发工具）<br>安装:version&gt;=Xcode9.0</p>
+</li>
+<li><p>Set up the iOS simulator（设置IOS模拟器）<br>Xcode中自带IOS simulator </p>
+</li>
+<li><p>Create and run a simple flutter app（创建、并运行Flutter 应用）<br>创建flutter项目</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter create my_app</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>进入项目中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd my_app</span><br></pre></td></tr></table></figure>
+
+<p>运行flutter项目到模拟器中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter run</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Deploy to ios devices（部署到IOS设备）</li>
+</ul>
+<p>要将flutter应用程序部署到物理IOS设备，您需要一起其他工具和Apple账号。</p>
+<p>开发证书，AppleID，Apple Developer</p>
+<hr>
+
+<p>5、Android setup（安卓配置）</p>
+<ul>
+<li><p>Install Android Studio（安装Android原生开发工具）<br>Download and setup Android studio</p>
+</li>
+<li><p>Set up your Android device（设置Android设备）<br>使用USB将手机插入计算机，并按照提示进行操作</p>
+</li>
+<li><p>Set up the Android emulator（设置Android模拟器）</p>
+</li>
+</ul>
+<p>Android Studio自带Android enumerator（AVD）</p>
+<hr>
+
+<blockquote>
+<p>2、Set up an editor（设置编辑器）</p>
+</blockquote>
+<p>开发工具：<br>Android Studio</p>
+<p>Visual Studio Code</p>
+<p>or<br>other IntelliJ  tools</p>
+<blockquote>
+<p>3、Test drive（试驾）</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-0c45678f99249731.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Android studio 工具栏.jpg"></th>
+<th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-584580b0a6e998dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="运行效果图"></th>
+</tr>
+</thead>
+</table>
+<blockquote>
+<p>4、Write your first app（编写你的第一个应用）</p>
+</blockquote>
+<p>编辑lib/main.dart（Dart代码的所在地）</p>
+<table>
+<thead>
+<tr>
+<th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-e869fd8d5a3fba77.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></th>
+</tr>
+</thead>
+</table>
+<p>编辑代码后运行如下</p>
+<table>
+<thead>
+<tr>
+<th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-853ae69c55a2f3f2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Android "></th>
+<th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-0d4f45e90b5d4324.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="IOS"></th>
+</tr>
+</thead>
+</table>
+<p>未完待续。。。</p>
 
             </div>
             <hr/>
@@ -582,9 +708,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Air博客集》
+                    《Flutter Getting start-Mac》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2016/07/09/目录/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2018/09/07/Flutter Getting start-Mac/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Air
             </a> 采用
@@ -624,9 +750,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2018/09/07/Flutter Getting start-Mac/">
                     <div class="card-image">
@@ -643,9 +770,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-09-07
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-09-07
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -658,6 +785,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -673,7 +801,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2016/07/09/目录/">
@@ -706,7 +834,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
