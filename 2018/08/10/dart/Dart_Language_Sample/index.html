@@ -458,36 +458,36 @@ Interface and Abs">
 <hr>
 <h3 id="1-Hello-world！"><a href="#1-Hello-world！" class="headerlink" title="1.    Hello world！"></a>1.    Hello world！</h3><p>每个应用都有一个main()函数，Dart的主函数如下：</p>
 <pre><code>void main() {
-print(&apos;Hello, World!&apos;);
+    print(&apos;Hello, World!&apos;);
 }</code></pre><h3 id="2-Variables"><a href="#2-Variables" class="headerlink" title="2.    Variables"></a>2.    Variables</h3><p>Dart语言是类型安全的强类型语言，因此，在定义属性时需要定义类型。<br>如果属性有初始化值时，Dart会默认推测出此属性的类型，因此不需要显式地声明类型；<br>如果属性没有初始化值，则必须要为属性显式声明类型。</p>
 <pre><code>var name = &apos;Voyager I&apos;;
 var year = 1977;
 var antennaDiameter = 3.7;
 var flybyObjects = [&apos;Jupiter&apos;, &apos;Saturn&apos;, &apos;Uranus&apos;, &apos;Neptune&apos;];
 var image = {
-&apos;tags&apos;: [&apos;saturn&apos;],
-&apos;url&apos;: &apos;//path/to/saturn.jpg&apos;
+    &apos;tags&apos;: [&apos;saturn&apos;],
+    &apos;url&apos;: &apos;//path/to/saturn.jpg&apos;
 };</code></pre><h3 id="3-Control-Flow-Statement"><a href="#3-Control-Flow-Statement" class="headerlink" title="3.    Control Flow Statement"></a>3.    Control Flow Statement</h3><p>Dart的控制流类似Java、JavaScript、Kotlin等语言，这里不再累述！</p>
 <pre><code>if (year &gt;= 2001) {
-print(&apos;21st century&apos;);
+    print(&apos;21st century&apos;);
 } else if (year &gt;= 1901) {
-print(&apos;20th century&apos;);
+    print(&apos;20th century&apos;);
 }
 
 for (var object in flybyObjects) {
-print(object);
+    print(object);
 }
 
 for (int month = 1; month &lt;= 12; month++) {
-print(month);
+    print(month);
 }
 
 while (year &lt; 2016) {
-year += 1;
+    year += 1;
 }</code></pre><h3 id="4-Functions"><a href="#4-Functions" class="headerlink" title="4.    Functions"></a>4.    Functions</h3><p>Dart的函数支持</p>
 <pre><code>int fibonacci(int n) {
 if (n == 0 || n == 1) return n;
-return fibonacci(n - 1) + fibonacci(n - 2);
+    return fibonacci(n - 1) + fibonacci(n - 2);
 }
 
 var result = fibonacci(20);</code></pre><p>Dart使用 =&gt; 表示拥有单行表达式的函数的简写的指示器</p>
