@@ -6,8 +6,12 @@
     <meta charset="utf-8">
     <meta name="keywords" content="Kotlin basic syntax, Air">
     <meta name="description" content="Kotlin basic syntax(科特林基本语法)
-
-目录一览：  1、Defining packages  2、Defining functions  3、Defining variables  4、Comment  5、Using">
+目录一览：
+Defining packages
+Defining functions
+Defining variables
+Comment
+Using string template">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -410,7 +414,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.5k
+                        1.4k
                     </div>
                     
 
@@ -434,124 +438,235 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>Kotlin basic syntax(科特林基本语法)</p>
-<blockquote>
-<p>目录一览：<br>  1、Defining packages<br>  2、Defining functions<br>  3、Defining variables<br>  4、Comment<br>  5、Using string templates<br>  6、Using conditional expressions<br>  7、Using nullable values and checking for null<br>  8、Using type checks and automatic casts<br>  9、Using a for loop<br>10、Using a while loop<br>11、Using when expression<br>12、Using ranges<br>13、Using collections<br>14、创建类以及实例</p>
-</blockquote>
-<blockquote>
-<p>1、Defining packages(定义包)</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">package my.demo</span><br><span class="line"></span><br><span class="line">import java.util.*</span><br><span class="line">//应该在文件的头部指定包</span><br><span class="line">//....</span><br></pre></td></tr></table></figure>
+<h3 id="目录一览："><a href="#目录一览：" class="headerlink" title="目录一览："></a>目录一览：</h3><ol>
+<li>Defining packages</li>
+<li>Defining functions</li>
+<li>Defining variables</li>
+<li>Comment</li>
+<li>Using string templates</li>
+<li>Using conditional expressions</li>
+<li>Using nullable values and checking for null</li>
+<li>Using type checks and automatic casts</li>
+<li>Using a for loop<ol start="10">
+<li>Using a while loop</li>
+<li>Using when expression</li>
+<li>Using ranges</li>
+<li>Using collections<br>14 . 创建类以及实例</li>
+</ol>
+</li>
+</ol>
+<h4 id="1、Defining-packages-定义包"><a href="#1、Defining-packages-定义包" class="headerlink" title="1、Defining packages(定义包)"></a>1、Defining packages(定义包)</h4><pre><code>package my.demo
 
-<blockquote>
-<p>2、Defining functions(定义函数/方法)</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//拥有两个Int类型的参数，以及一个Int的返回类型</span><br><span class="line">fun sum(a: Int, b: Int): Int &#123;</span><br><span class="line">    return a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+import java.util.*
+//应该在文件的头部指定包
+//....</code></pre><h4 id="2、Defining-functions-定义函数-方法"><a href="#2、Defining-functions-定义函数-方法" class="headerlink" title="2、Defining functions(定义函数/方法)"></a>2、Defining functions(定义函数/方法)</h4><pre><code>//拥有两个Int类型的参数，以及一个Int的返回类型
+fun sum(a: Int, b: Int): Int {
+    return a + b;
+}</code></pre><hr>
+<pre><code>//具有表达式主体和推断返回类型的函数：
+fun sum(a: Int, b: Int) = a + b;
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//具有表达式主体和推断返回类型的函数：</span><br><span class="line">fun sum(a: Int, b: Int) = a + b;</span><br><span class="line"></span><br><span class="line">sum(5,6);//Result = 5+6;</span><br></pre></td></tr></table></figure>
+sum(5,6);//Result = 5+6;</code></pre><hr>
+<pre><code>//函数返回没有意义的值（概念同：没有返回值，或返回值为空）
+fun sumReturnNoMeaningful(a: Int, b: Int): Unit {
+    println(&quot;sum of a and b is ${a + b}&quot;);
+}</code></pre><hr>
+<pre><code>//可省略的Unit：函数返回没有意义的值（概念同：没有返回值，或返回值为空）
+fun sumReturnOmitted(a: Int, b: Int) {
+    println(&quot;sum of a and b is ${a + b}&quot;);
+}</code></pre><h4 id="3、Defining-variables-定义属性"><a href="#3、Defining-variables-定义属性" class="headerlink" title="3、Defining variables(定义属性)"></a>3、Defining variables(定义属性)</h4><ol>
+<li><p>不可变属性（常量，用val修饰）</p>
+</li>
+<li><p>可变属性（变量，用var修饰）</p>
+<p> /*<br> /*<br> 常量使用val修饰<br> */<br> val a: Int = 1  // 定义一个显式的Int类型的常量a<br> val b = 2   // 根据2推断出：b是一个Int的常量<br> val c: Int  // 当属性未初始化数据时，此时必须显式地声明属性的类型<br> println(c);//无法通过编译（在调用属性前需要赋值）<br> c = 3       // 延期赋值<br> println(c);//正常通过编译</p>
+</li>
+</ol>
+<hr>
+<pre><code>/*
+变量使用var修饰
+*/
+var x = 5 // 当为属性赋默认值时，编译器可推算出属性的类型
+x += 1
+println(x);</code></pre><h4 id="4、Comment（注释）"><a href="#4、Comment（注释）" class="headerlink" title="4、Comment（注释）"></a>4、Comment（注释）</h4><ol>
+<li><p>同Java、JavaScript，Kotlin支持相同的注释</p>
+</li>
+<li><p>与Java不同，Kotlin中的块注释可以嵌套。</p>
+</li>
+</ol>
+<pre><code>// This is an end-of-line comment
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//函数返回没有意义的值（概念同：没有返回值，或返回值为空）</span><br><span class="line">fun sumReturnNoMeaningful(a: Int, b: Int): Unit &#123;</span><br><span class="line">    println(&quot;sum of a and b is $&#123;a + b&#125;&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+/* This is a block comment
+on multiple lines. */
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//可省略的Unit：函数返回没有意义的值（概念同：没有返回值，或返回值为空）</span><br><span class="line">fun sumReturnOmitted(a: Int, b: Int) &#123;</span><br><span class="line">    println(&quot;sum of a and b is $&#123;a + b&#125;&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>3、Defining variables(定义属性)</p>
-<blockquote>
-<p>3.1不可变属性（常量，用val修饰）<br>3.2可变属性（变量，用var修饰）</p>
-</blockquote>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">/*</span><br><span class="line">常量使用val修饰</span><br><span class="line"> */</span><br><span class="line">val a: Int = 1  // 定义一个显式的Int类型的常量a</span><br><span class="line">val b = 2   // 根据2推断出：b是一个Int的常量</span><br><span class="line">val c: Int  // 当属性未初始化数据时，此时必须显式地声明属性的类型</span><br><span class="line">println(c);//无法通过编译（在调用属性前需要赋值）</span><br><span class="line">c = 3       // 延期赋值</span><br><span class="line">println(c);//正常通过编译</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">变量使用var修饰</span><br><span class="line"> */</span><br><span class="line">var x = 5 // 当为属性赋默认值时，编译器可推算出属性的类型</span><br><span class="line">x += 1</span><br><span class="line">println(x);</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>4、Comment（注释）</p>
-<blockquote>
-<p>4.1、同Java、JavaScript，Kotlin支持相同的注释<br>4.2、与Java不同，Kotlin中的块注释可以嵌套。</p>
-</blockquote>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// This is an end-of-line comment</span><br><span class="line"></span><br><span class="line">/* This is a block comment</span><br><span class="line">   on multiple lines. */</span><br></pre></td></tr></table></figure>
+/*
+This is nest block comment-&gt;start.
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">This is nest block comment-&gt;start.</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">This is first block comment.</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">This is second block comment.</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">This is nest block comment-&gt;end.</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>
+/*
+This is first block comment.
+*/
 
-<blockquote>
-<p>5、Using string templates（使用字符串）</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">var a = 1</span><br><span class="line">// (任意名称)simple name in template:</span><br><span class="line">val s1 = &quot;a is $a&quot;</span><br><span class="line"></span><br><span class="line">a = 2</span><br><span class="line">// (任意表达式)arbitrary expression in template:</span><br><span class="line">val s2 = &quot;$&#123;s1.replace(&quot;is&quot;, &quot;was&quot;)&#125;, but now is $a&quot;</span><br></pre></td></tr></table></figure>
+/*
+This is second block comment.
+*/
 
-<blockquote>
-<p>6、Using conditional expressions（使用条件表达式）</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">fun maxOf(a: Int, b: Int): Int &#123;</span><br><span class="line">    if (a &gt; b) &#123;</span><br><span class="line">        return a</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        return b</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+This is nest block comment-&gt;end.
+*/</code></pre><h4 id="5、Using-string-templates（使用字符串）"><a href="#5、Using-string-templates（使用字符串）" class="headerlink" title="5、Using string templates（使用字符串）"></a>5、Using string templates（使用字符串）</h4><pre><code>var a = 1
+// (任意名称)simple name in template:
+val s1 = &quot;a is $a&quot;
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fun maxOf(a: Int, b: Int) = if (a &gt; b) a else b</span><br></pre></td></tr></table></figure>
+a = 2
+// (任意表达式)arbitrary expression in template:
+val s2 = &quot;${s1.replace(&quot;is&quot;, &quot;was&quot;)}, but now is $a&quot;</code></pre><h4 id="6、Using-conditional-expressions（使用条件表达式）"><a href="#6、Using-conditional-expressions（使用条件表达式）" class="headerlink" title="6、Using conditional expressions（使用条件表达式）"></a>6、Using conditional expressions（使用条件表达式）</h4><pre><code>fun maxOf(a: Int, b: Int): Int {
+    if (a &gt; b) {
+        return a
+    } else {
+        return b
+    }
+}</code></pre><hr>
+<pre><code>fun maxOf(a: Int, b: Int) = if (a &gt; b) a else b</code></pre><h4 id="7、Using-nullable-values-and-checking-for-null（使用可为空的值，并检查是否为空）"><a href="#7、Using-nullable-values-and-checking-for-null（使用可为空的值，并检查是否为空）" class="headerlink" title="7、Using nullable values and checking for null（使用可为空的值，并检查是否为空）"></a>7、Using nullable values and checking for null（使用可为空的值，并检查是否为空）</h4><p>描述：当null值可能时，必须将引用明确标记为可为空,”?”代表nullable</p>
+<pre><code>//如果str不支持Int类型，则返回null
+fun parseInt(str: String): Int? {
+    // ...
+}
 
-<blockquote>
-<p>7、Using nullable values and checking for null（使用可为空的值，并检查是否为空）<br>描述：当null值可能时，必须将引用明确标记为可为空,”?”代表nullable</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//如果str不支持Int类型，则返回null</span><br><span class="line">fun parseInt(str: String): Int? &#123;</span><br><span class="line">    // ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//</span><br><span class="line">fun printProduct(arg1: String, arg2: String) &#123;</span><br><span class="line">    val x = parseInt(arg1)</span><br><span class="line">    val y = parseInt(arg2)</span><br><span class="line"></span><br><span class="line">    // 使用x,y会产生错误，因为他们支持为null,因此执行null校验</span><br><span class="line">    if (x != null &amp;&amp; y != null) &#123;</span><br><span class="line">        // x and y are automatically cast to non-nullable after null check</span><br><span class="line">        println(x * y)</span><br><span class="line">    &#125;</span><br><span class="line">    else &#123;</span><br><span class="line">        println(&quot;either &apos;$arg1&apos; or &apos;$arg2&apos; is not a number&quot;)</span><br><span class="line">    &#125;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>or</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// ...</span><br><span class="line">if (x == null) &#123;</span><br><span class="line">    println(&quot;Wrong number format in arg1: &apos;$arg1&apos;&quot;)</span><br><span class="line">    return</span><br><span class="line">&#125;</span><br><span class="line">if (y == null) &#123;</span><br><span class="line">    println(&quot;Wrong number format in arg2: &apos;$arg2&apos;&quot;)</span><br><span class="line">    return</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 在空检查后，x和y会自动转换为不可为空</span><br><span class="line">println(x * y)</span><br></pre></td></tr></table></figure>
+//
+fun printProduct(arg1: String, arg2: String) {
+    val x = parseInt(arg1)
+    val y = parseInt(arg2)
 
-<blockquote>
-<p>8、Using type checks and automatic casts（使用类型检查和自动转换）</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">fun getStringLength(obj: Any): Int? &#123;</span><br><span class="line">    if (obj is String) &#123;</span><br><span class="line">        // `obj` is automatically cast to `String` in this branch</span><br><span class="line">        //obj 自动转换成 String类型</span><br><span class="line">        return obj.length</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //在转换体外部时，&apos;obj&apos;依然是Any类型</span><br><span class="line">    obj//Any type.</span><br><span class="line">    return null</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    // 使用x,y会产生错误，因为他们支持为null,因此执行null校验
+    if (x != null &amp;&amp; y != null) {
+        // x and y are automatically cast to non-nullable after null check
+        println(x * y)
+    }
+    else {
+        println(&quot;either &apos;$arg1&apos; or &apos;$arg2&apos; is not a number&quot;)
+    }    
+}</code></pre><p>or</p>
+<pre><code>// ...
+if (x == null) {
+    println(&quot;Wrong number format in arg1: &apos;$arg1&apos;&quot;)
+    return
+}
+if (y == null) {
+    println(&quot;Wrong number format in arg2: &apos;$arg2&apos;&quot;)
+    return
+}
 
-<p>or</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fun getStringLength(obj: Any): Int? &#123;</span><br><span class="line">    if (obj !is String) return null</span><br><span class="line"></span><br><span class="line">    // `obj` is automatically cast to `String` in this branch</span><br><span class="line">    return obj.length</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+// 在空检查后，x和y会自动转换为不可为空
+println(x * y)</code></pre><h4 id="8、Using-type-checks-and-automatic-casts（使用类型检查和自动转换）"><a href="#8、Using-type-checks-and-automatic-casts（使用类型检查和自动转换）" class="headerlink" title="8、Using type checks and automatic casts（使用类型检查和自动转换）"></a>8、Using type checks and automatic casts（使用类型检查和自动转换）</h4><pre><code>fun getStringLength(obj: Any): Int? {
+    if (obj is String) {
+        // `obj` is automatically cast to `String` in this branch
+        //obj 自动转换成 String类型
+        return obj.length
+    }
 
-<p>or even</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">fun getStringLength(obj: Any): Int? &#123;</span><br><span class="line">    // `obj` is automatically cast to `String` on the right-hand side of `&amp;&amp;`</span><br><span class="line">    if (obj is String &amp;&amp; obj.length &gt; 0) &#123;</span><br><span class="line">        return obj.length</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return null</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    //在转换体外部时，&apos;obj&apos;依然是Any类型
+    obj//Any type.
+    return null
+}</code></pre><p>or</p>
+<pre><code>fun getStringLength(obj: Any): Int? {
+    if (obj !is String) return null
 
-<blockquote>
-<p>9、Using a for loop（使用for循环）<br> 描述：1、遍历内容(item)<br>描述：2、遍历索引(index)</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">遍历元素</span><br><span class="line"> */</span><br><span class="line">val items = listOf(&quot;apple&quot;, &quot;banana&quot;, &quot;kiwifruit&quot;)</span><br><span class="line">for (item in items) &#123;</span><br><span class="line">    println(item)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    // `obj` is automatically cast to `String` in this branch
+    return obj.length
+}</code></pre><p>or even</p>
+<pre><code>fun getStringLength(obj: Any): Int? {
+    // `obj` is automatically cast to `String` on the right-hand side of `&amp;&amp;`
+    if (obj is String &amp;&amp; obj.length &gt; 0) {
+        return obj.length
+    }
 
-<p>or</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">遍历索引</span><br><span class="line"> */</span><br><span class="line">val items = listOf(&quot;apple&quot;, &quot;banana&quot;, &quot;kiwifruit&quot;)</span><br><span class="line">for (index in items.indices) &#123;</span><br><span class="line">    println(&quot;item at $index is $&#123;items[index]&#125;&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>10、Using a while loop（使用while循环）</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">While 循环</span><br><span class="line"> */</span><br><span class="line">val items = listOf(&quot;apple&quot;, &quot;banana&quot;, &quot;kiwifruit&quot;)</span><br><span class="line">var index = 0</span><br><span class="line">while (index &lt; items.size) &#123;</span><br><span class="line">    println(&quot;item at $index is $&#123;items[index]&#125;&quot;)</span><br><span class="line">    index++</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>11、Using when expression（使用when表达式）</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">传入参数类型：Any，返回值参数类型：String</span><br><span class="line"> */</span><br><span class="line">fun describe(obj: Any): String =</span><br><span class="line">    when (obj) &#123;</span><br><span class="line">        1 -&gt; &quot;One&quot;</span><br><span class="line">        &quot;Hello&quot; -&gt; &quot;Greeting&quot;</span><br><span class="line">        is Long -&gt; &quot;Long&quot;</span><br><span class="line">        !is String -&gt; &quot;Not a string&quot;</span><br><span class="line">        else -&gt; &quot;Unknown&quot;</span><br><span class="line">    &#125;</span><br><span class="line">//调用函数</span><br><span class="line">val result: String = describe(1);</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>12、Using ranges（区间）<br>描述：1、检查是否在区间内<br>描述：2、检查是否超出区间<br>描述：3、在区间内进行遍历</p>
-</blockquote>
+    return null
+}</code></pre><h4 id="9、Using-a-for-loop（使用for循环）"><a href="#9、Using-a-for-loop（使用for循环）" class="headerlink" title="9、Using a for loop（使用for循环）"></a>9、Using a for loop（使用for循环）</h4><p>描述：1、遍历内容(item)<br>描述：2、遍历索引(index)</p>
+<pre><code>/*
+遍历元素
+ */
+val items = listOf(&quot;apple&quot;, &quot;banana&quot;, &quot;kiwifruit&quot;)
+for (item in items) {
+    println(item)
+}</code></pre><p>or</p>
+<pre><code>/*
+遍历索引
+ */
+val items = listOf(&quot;apple&quot;, &quot;banana&quot;, &quot;kiwifruit&quot;)
+for (index in items.indices) {
+    println(&quot;item at $index is ${items[index]}&quot;)
+}</code></pre><h4 id="10、Using-a-while-loop（使用while循环）"><a href="#10、Using-a-while-loop（使用while循环）" class="headerlink" title="10、Using a while loop（使用while循环）"></a>10、Using a while loop（使用while循环）</h4><pre><code>/*
+While 循环
+ */
+val items = listOf(&quot;apple&quot;, &quot;banana&quot;, &quot;kiwifruit&quot;)
+var index = 0
+while (index &lt; items.size) {
+    println(&quot;item at $index is ${items[index]}&quot;)
+    index++
+}</code></pre><h4 id="11、Using-when-expression（使用when表达式）"><a href="#11、Using-when-expression（使用when表达式）" class="headerlink" title="11、Using when expression（使用when表达式）"></a>11、Using when expression（使用when表达式）</h4><pre><code>/*
+传入参数类型：Any，返回值参数类型：String
+ */
+fun describe(obj: Any): String =
+    when (obj) {
+        1 -&gt; &quot;One&quot;
+        &quot;Hello&quot; -&gt; &quot;Greeting&quot;
+        is Long -&gt; &quot;Long&quot;
+        !is String -&gt; &quot;Not a string&quot;
+        else -&gt; &quot;Unknown&quot;
+    }
+//调用函数
+val result: String = describe(1);</code></pre><h4 id="12、Using-ranges（区间）"><a href="#12、Using-ranges（区间）" class="headerlink" title="12、Using ranges（区间）"></a>12、Using ranges（区间）</h4><p>描述：1、检查是否在区间内<br>描述：2、检查是否超出区间<br>描述：3、在区间内进行遍历</p>
 <p>检查数是否在区间中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">检查数是否在区间中</span><br><span class="line"> */</span><br><span class="line">val x = 10</span><br><span class="line">val y = 9</span><br><span class="line">if (x in 1..y+1) &#123;</span><br><span class="line">    println(&quot;fits in range&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>/*
+检查数是否在区间中
+ */
+val x = 10
+val y = 9
+if (x in 1..y+1) {
+    println(&quot;fits in range&quot;)
+}</code></pre><p>检查是否超出区间</p>
+<pre><code>/*
+检查是否超出区间
+ */
+val list = listOf(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)
 
-<p>检查是否超出区间</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">检查是否超出区间</span><br><span class="line"> */</span><br><span class="line">val list = listOf(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)</span><br><span class="line"></span><br><span class="line">if (-1 !in 0..list.lastIndex) &#123;</span><br><span class="line">    println(&quot;-1 is out of range&quot;)</span><br><span class="line">&#125;</span><br><span class="line">if (list.size !in list.indices) &#123;</span><br><span class="line">    println(&quot;list size is out of valid list indices range, too&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+if (-1 !in 0..list.lastIndex) {
+    println(&quot;-1 is out of range&quot;)
+}
+if (list.size !in list.indices) {
+    println(&quot;list size is out of valid list indices range, too&quot;)
+}</code></pre><p>在区间内进行迭代、遍历</p>
+<pre><code>/*
+在区间范围内迭代、遍历
+ */
+for (x in 1..5) {
+    print(x)
+}
 
-<p>在区间内进行迭代、遍历</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">在区间范围内迭代、遍历</span><br><span class="line"> */</span><br><span class="line">for (x in 1..5) &#123;</span><br><span class="line">    print(x)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">for (x in 1..10 step 2) &#123;</span><br><span class="line">    print(x)</span><br><span class="line">&#125;</span><br><span class="line">println()</span><br><span class="line">for (x in 9 downTo 0 step 3) &#123;</span><br><span class="line">    print(x)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>13、Using collections（使用集合）<br>描述：1、迭代集合<br>描述：2、检查集合是否包含某对象<br>描述：3、使用lambda表达式过滤集合</p>
-</blockquote>
+for (x in 1..10 step 2) {
+    print(x)
+}
+println()
+for (x in 9 downTo 0 step 3) {
+    print(x)
+}</code></pre><h4 id="13、Using-collections（使用集合）"><a href="#13、Using-collections（使用集合）" class="headerlink" title="13、Using collections（使用集合）"></a>13、Using collections（使用集合）</h4><p>描述：1、迭代集合<br>描述：2、检查集合是否包含某对象<br>描述：3、使用lambda表达式过滤集合</p>
 <p>迭代集合（Iterating over a collection:）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for (item in items) &#123;</span><br><span class="line">    println(item)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>检查集合是否包含某对象（Checking if a collection contains an object using in operator:）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">when &#123;</span><br><span class="line">    &quot;orange&quot; in items -&gt; println(&quot;juicy&quot;)</span><br><span class="line">    &quot;apple&quot; in items -&gt; println(&quot;apple is fine too&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>使用lambda表达式过滤集合（Using lambda expressions to filter and map collections:）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">val fruits = listOf(&quot;banana&quot;, &quot;avocado&quot;, &quot;apple&quot;, &quot;kiwifruit&quot;)</span><br><span class="line">fruits</span><br><span class="line">  .filter &#123; it.startsWith(&quot;a&quot;) &#125;</span><br><span class="line">  .sortedBy &#123; it &#125;</span><br><span class="line">  .map &#123; it.toUpperCase() &#125;</span><br><span class="line">  .forEach &#123; println(it) &#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>14、创建类以及实例</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">val rectangle = Rectangle(5.0, 2.0) //no &apos;new&apos; keyword required</span><br><span class="line">val triangle = Triangle(3.0, 4.0, 5.0)</span><br></pre></td></tr></table></figure>
+<pre><code>for (item in items) {
+    println(item)
+}</code></pre><p>检查集合是否包含某对象（Checking if a collection contains an object using in operator:）</p>
+<pre><code>when {
+    &quot;orange&quot; in items -&gt; println(&quot;juicy&quot;)
+    &quot;apple&quot; in items -&gt; println(&quot;apple is fine too&quot;)
+}</code></pre><p>使用lambda表达式过滤集合（Using lambda expressions to filter and map collections:）</p>
+<pre><code>val fruits = listOf(&quot;banana&quot;, &quot;avocado&quot;, &quot;apple&quot;, &quot;kiwifruit&quot;)
+fruits
+.filter { it.startsWith(&quot;a&quot;) }
+.sortedBy { it }
+.map { it.toUpperCase() }
+.forEach { println(it) }</code></pre><h4 id="14、创建类以及实例"><a href="#14、创建类以及实例" class="headerlink" title="14、创建类以及实例"></a>14、创建类以及实例</h4><pre><code>val rectangle = Rectangle(5.0, 2.0) //no &apos;new&apos; keyword required
+val triangle = Triangle(3.0, 4.0, 5.0)</code></pre>
             </div>
             <hr/>
 
@@ -962,7 +1077,7 @@
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">15.5k</span>
+                <span class="white-color">15.3k</span>
             
 
             

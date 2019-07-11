@@ -6,8 +6,10 @@
     <meta charset="utf-8">
     <meta name="keywords" content="Kotlin idioms, Air">
     <meta name="description" content="Kotlin idioms(科特林惯用语法)
-
-目录：1、创建DTO（POJO/POCO）（Create DTO/POJO/POCO）2、函数参数的默认值（Default values for function parameters）3、过">
+目录：
+创建DTO（POJO/POCO）（Create DTO/POJO/POCO）
+函数参数的默认值（Default values for function parameters）
+过滤列表（">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -410,14 +412,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.7k
+                        1.5k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        9 分
+                        8 分
                     </div>
                     
                 
@@ -434,168 +436,290 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>Kotlin idioms(科特林惯用语法)</p>
-<blockquote>
-<p>目录：<br>1、创建DTO（POJO/POCO）（Create DTO/POJO/POCO）<br>2、函数参数的默认值（Default values for function parameters）<br>3、过滤列表（Filtering a list）<br>4、字符串插值(String interpolation)<br>5、实例检查(Instance Checks)<br>6、遍历地图(map)/对(key,value)列表<br>7、使用范围（using range）<br>8、只读列表（Read-only list）<br>9、只读地图（Read-only map）<br>10、访问地图（Accessing a map）<br>11、懒惰的属性（lazy property）<br>12、扩展功能（Extension function）<br>13、创建单例对象（Create singleton）<br>14、如果不是null速记<br>15、如果不是null而是速记<br>16、如果为null则执行语句<br>17、获取可能为空的集合的第一项<br>18、如果不为null则执行<br>19、如果不为null，则映射可空值<br>20、在声明时返回<br>21、try/catch表达式<br>22、if表达式<br>23、返回的方法的Builder样式用法Unit<br>24、单表达式函数<br>25、在对象实例上调用多个方法<br>26、Java7尝试使用资源<br>27、方便的通用函数形式，需要通用类型信息<br>29、使用可以为空的布尔值<br>30、交换两个变量</p>
-</blockquote>
-<blockquote>
-<p>1、Create DTO/POJO/POCO {创建DTO（POJO/POCO）}<br>描述：类似于JavaBean</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">使用DTO</span><br><span class="line"> */</span><br><span class="line">fun useCustomBean() &#123;</span><br><span class="line">    //Create data type object with name:James,age:5. </span><br><span class="line">    val bean = CustomBean(&quot;James&quot;, 5);</span><br><span class="line">&#125;</span><br><span class="line">/*</span><br><span class="line">主要用于保存数据的类（类似于Java语言的：JavaBean）</span><br><span class="line">自定义数据类型</span><br><span class="line"> */</span><br><span class="line">data class CustomBean(val name: String, val age: Int) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h3><ol>
+<li>创建DTO（POJO/POCO）（Create DTO/POJO/POCO）</li>
+<li>函数参数的默认值（Default values for function parameters）</li>
+<li>过滤列表（Filtering a list）</li>
+<li>字符串插值(String interpolation)</li>
+<li>实例检查(Instance Checks)</li>
+<li>遍历地图(map)/对(key,value)列表</li>
+<li>使用范围（using range）</li>
+<li>只读列表（Read-only list）</li>
+<li>只读地图（Read-only map）</li>
+<li>访问地图（Accessing a map）</li>
+<li>懒惰的属性（lazy property）</li>
+<li>扩展功能（Extension function）</li>
+<li>创建单例对象（Create singleton）</li>
+<li>如果不是null速记</li>
+<li>如果不是null而是速记</li>
+<li>如果为null则执行语句</li>
+<li>获取可能为空的集合的第一项</li>
+<li>如果不为null则执行</li>
+<li>如果不为null，则映射可空值</li>
+<li>在声明时返回</li>
+<li>try/catch表达式</li>
+<li>if表达式</li>
+<li>返回的方法的Builder样式用法Unit</li>
+<li>单表达式函数</li>
+<li>在对象实例上调用多个方法</li>
+<li>Java7尝试使用资源</li>
+<li>方便的通用函数形式，需要通用类型信息</li>
+<li>使用可以为空的布尔值</li>
+<li>交换两个变量</li>
+</ol>
+<h4 id="1、Create-DTO-POJO-POCO-创建DTO（POJO-POCO）"><a href="#1、Create-DTO-POJO-POCO-创建DTO（POJO-POCO）" class="headerlink" title="1、Create DTO/POJO/POCO {创建DTO（POJO/POCO）}"></a>1、Create DTO/POJO/POCO {创建DTO（POJO/POCO）}</h4><p>描述：类似于JavaBean</p>
+<pre><code>/*
+使用DTO
+*/
+fun useCustomBean() {
+    //Create data type object with name:James,age:5. 
+    val bean = CustomBean(&quot;James&quot;, 5);
+}
+/*
+主要用于保存数据的类（类似于Java语言的：JavaBean）
+自定义数据类型
+*/
+data class CustomBean(val name: String, val age: Int) {
 
-<blockquote>
-<p>2、Default values for function parameters (函数参数的默认值)</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">Default values for function parameters</span><br><span class="line"> */</span><br><span class="line">fun foo(name: String = &quot;defaultName&quot;, age: Int = 1) &#123;</span><br><span class="line">    print(&quot;name:$name,age:$age&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+}</code></pre><h4 id="2、Default-values-for-function-parameters-函数参数的默认值"><a href="#2、Default-values-for-function-parameters-函数参数的默认值" class="headerlink" title="2、Default values for function parameters (函数参数的默认值)"></a>2、Default values for function parameters (函数参数的默认值)</h4><pre><code>/*
+Default values for function parameters
+*/
+fun foo(name: String = &quot;defaultName&quot;, age: Int = 1) {
+    print(&quot;name:$name,age:$age&quot;)
+}</code></pre><h4 id="3、Filtering-a-list（过滤列表）"><a href="#3、Filtering-a-list（过滤列表）" class="headerlink" title="3、Filtering a list（过滤列表）"></a>3、Filtering a list（过滤列表）</h4><pre><code>/*
+过滤集合
+*/
+fun filterList() {
+    val list = listOf&lt;String&gt;(&quot;James&quot;, &quot;John&quot;, &quot;Jack&quot;);
 
-<blockquote>
-<p>3、Filtering a list（过滤列表）</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">过滤集合</span><br><span class="line"> */</span><br><span class="line">fun filterList() &#123;</span><br><span class="line">    val list = listOf&lt;String&gt;(&quot;James&quot;, &quot;John&quot;, &quot;Jack&quot;);</span><br><span class="line"></span><br><span class="line">    //过滤James</span><br><span class="line">    val listWithoutJames = list.filter &#123; x -&gt; x == &quot;James&quot; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    //过滤James
+    val listWithoutJames = list.filter { x -&gt; x == &quot;James&quot; }
+}</code></pre><p>or ，event shorter：</p>
+<pre><code>/*
+过滤集合(缩减版/简介版)
+*/
+fun filterList() {
+    val list = listOf&lt;String&gt;(&quot;James&quot;, &quot;John&quot;, &quot;Jack&quot;);
 
-<p>or ，event shorter：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">过滤集合(缩减版/简介版)</span><br><span class="line"> */</span><br><span class="line">fun filterList() &#123;</span><br><span class="line">    val list = listOf&lt;String&gt;(&quot;James&quot;, &quot;John&quot;, &quot;Jack&quot;);</span><br><span class="line"></span><br><span class="line">    //过滤James</span><br><span class="line">    val listWithoutJames = list.filter &#123; it == &quot;James&quot; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    //过滤James
+    val listWithoutJames = list.filter { it == &quot;James&quot; }
+}</code></pre><h4 id="4、String-interpolation（字符串插值）"><a href="#4、String-interpolation（字符串插值）" class="headerlink" title="4、String interpolation（字符串插值）"></a>4、String interpolation（字符串插值）</h4><pre><code>fun stringInterpolation(name: String = &quot;James&quot;, age: Int = 10) {
 
-<blockquote>
-<p>4、String interpolation（字符串插值）</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fun stringInterpolation(name: String = &quot;James&quot;, age: Int = 10) &#123;</span><br><span class="line">    </span><br><span class="line">    print(&quot;Name:$name,Age:$age&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    print(&quot;Name:$name,Age:$age&quot;);
+}</code></pre><h4 id="5、Instance-Checks（实例-对象检查）"><a href="#5、Instance-Checks（实例-对象检查）" class="headerlink" title="5、Instance Checks（实例/对象检查）"></a>5、Instance Checks（实例/对象检查）</h4><pre><code>fun instanceCheck(x: Any) {
 
-<blockquote>
-<p>5、Instance Checks（实例/对象检查）</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">fun instanceCheck(x: Any) &#123;</span><br><span class="line"></span><br><span class="line">    val instanceTypeDescription = when (x) &#123;</span><br><span class="line"></span><br><span class="line">        is String -&gt; &quot;String&quot;;</span><br><span class="line">        is Int -&gt; &quot;Int&quot;;</span><br><span class="line">        is Boolean -&gt; &quot;Boolean&quot;;</span><br><span class="line">        else -&gt; &quot;Unknown object&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    val instanceTypeDescription = when (x) {
 
-<blockquote>
-<p>6、Traversing a map/list of pairs（遍历Map/List of pairs）</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">fun traversingMapOrPair() &#123;</span><br><span class="line">    println()</span><br><span class="line">    println()</span><br><span class="line">    val map = mapOf(</span><br><span class="line">        Pair(&quot;OneKey&quot;, &quot;OneValue&quot;),</span><br><span class="line">        Pair(&quot;TwoKey&quot;, &quot;TwoValue&quot;)</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    /*</span><br><span class="line">    print result:</span><br><span class="line"></span><br><span class="line">    key:OneKey,value:OneValue</span><br><span class="line">    key:TwoKey,value:TwoValue</span><br><span class="line">     */</span><br><span class="line"></span><br><span class="line">    for ((key, value) in map) &#123;</span><br><span class="line">        println(&quot;key:$key,value:$value&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        is String -&gt; &quot;String&quot;;
+        is Int -&gt; &quot;Int&quot;;
+        is Boolean -&gt; &quot;Boolean&quot;;
+        else -&gt; &quot;Unknown object&quot;;
+    }
+}</code></pre><h4 id="6、Traversing-a-map-list-of-pairs（遍历Map-List-of-pairs）"><a href="#6、Traversing-a-map-list-of-pairs（遍历Map-List-of-pairs）" class="headerlink" title="6、Traversing a map/list of pairs（遍历Map/List of pairs）"></a>6、Traversing a map/list of pairs（遍历Map/List of pairs）</h4><pre><code>fun traversingMapOrPair() {
+    println()
+    println()
+    val map = mapOf(
+        Pair(&quot;OneKey&quot;, &quot;OneValue&quot;),
+        Pair(&quot;TwoKey&quot;, &quot;TwoValue&quot;)
+    )
 
-<blockquote>
-<p>7、Using range（使用区间/范围）</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">fun usingRange() &#123;</span><br><span class="line">    for (i in 1..100) &#123;</span><br><span class="line">    &#125;  // closed range: includes 100</span><br><span class="line">    for (i in 1 until 100) &#123;</span><br><span class="line">    &#125; // half-open range: does not include 100</span><br><span class="line">    for (x in 2..10 step 2) &#123;</span><br><span class="line">    &#125;</span><br><span class="line">    for (x in 10 downTo 1) &#123;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    val y = 0;</span><br><span class="line">    if (y in 1..10) &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    /*
+    print result:
 
-<blockquote>
-<p>8、Read-only list（只读列表/集合）</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fun readOnlyOfList()&#123;</span><br><span class="line">    val list = listOf&lt;String&gt;(&quot;c&quot;,&quot;b&quot;,&quot;c&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    key:OneKey,value:OneValue
+    key:TwoKey,value:TwoValue
+    */
 
-<blockquote>
-<p>9、Read-only map（只读Map/(key,vlaue))</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">fun readOnlyOfMap() &#123;</span><br><span class="line">    </span><br><span class="line">    val map = mapOf&lt;String, String&gt;(</span><br><span class="line">        &quot;a&quot; to &quot;A&quot;,</span><br><span class="line">        &quot;b&quot; to &quot;B&quot;,</span><br><span class="line">        &quot;c&quot; to &quot;C&quot;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    for ((key, value) in map) {
+        println(&quot;key:$key,value:$value&quot;);
+    }
+}</code></pre><h4 id="7、Using-range（使用区间-范围）"><a href="#7、Using-range（使用区间-范围）" class="headerlink" title="7、Using range（使用区间/范围）"></a>7、Using range（使用区间/范围）</h4><pre><code>fun usingRange() {
+    for (i in 1..100) {
+    }  // closed range: includes 100
+    for (i in 1 until 100) {
+    } // half-open range: does not include 100
+    for (x in 2..10 step 2) {
+    }
+    for (x in 10 downTo 1) {
+    }
 
-<blockquote>
-<p>10、Accessing a map(访问Map)</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">fun accessingMap()&#123;</span><br><span class="line">    val map = mapOf&lt;String, String&gt;(</span><br><span class="line">        &quot;a&quot; to &quot;A&quot;,</span><br><span class="line">        &quot;b&quot; to &quot;B&quot;,</span><br><span class="line">        &quot;c&quot; to &quot;C&quot;</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    println(&quot;&quot;&quot;map a =$&#123;map[&quot;a&quot;]&#125;&quot;&quot;&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    val y = 0;
+    if (y in 1..10) {
+    }
+}</code></pre><h4 id="8、Read-only-list（只读列表-集合）"><a href="#8、Read-only-list（只读列表-集合）" class="headerlink" title="8、Read-only list（只读列表/集合）"></a>8、Read-only list（只读列表/集合）</h4><pre><code>fun readOnlyOfList(){
+    val list = listOf&lt;String&gt;(&quot;c&quot;,&quot;b&quot;,&quot;c&quot;)
+}</code></pre><h4 id="9、Read-only-map（只读Map-key-vlaue"><a href="#9、Read-only-map（只读Map-key-vlaue" class="headerlink" title="9、Read-only map（只读Map/(key,vlaue))"></a>9、Read-only map（只读Map/(key,vlaue))</h4><pre><code>fun readOnlyOfMap() {
 
-<blockquote>
-<p>11、Lazy property(懒加载属性)</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">fun lazyProperty() &#123;</span><br><span class="line">    val lazyVar: String by lazy &#123;</span><br><span class="line">        &quot;Lazy&quot;</span><br><span class="line">    &#125;</span><br><span class="line">    println(lazyVar)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    val map = mapOf&lt;String, String&gt;(
+        &quot;a&quot; to &quot;A&quot;,
+        &quot;b&quot; to &quot;B&quot;,
+        &quot;c&quot; to &quot;C&quot;
+    )
+}</code></pre><h4 id="10、Accessing-a-map-访问Map"><a href="#10、Accessing-a-map-访问Map" class="headerlink" title="10、Accessing a map(访问Map)"></a>10、Accessing a map(访问Map)</h4><pre><code>fun accessingMap(){
+    val map = mapOf&lt;String, String&gt;(
+        &quot;a&quot; to &quot;A&quot;,
+        &quot;b&quot; to &quot;B&quot;,
+        &quot;c&quot; to &quot;C&quot;
+    )
 
-<blockquote>
-<p>12、Extension function （拓展功能）<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">fun String.extensionSample(input: String): String &#123;</span><br><span class="line">    println()</span><br><span class="line">    println(&quot;Input data:$input&quot;);</span><br><span class="line">    var outer: String = input;</span><br><span class="line"></span><br><span class="line">    outer = outer + &quot; extension&quot;;</span><br><span class="line"></span><br><span class="line">    println(&quot;Out data:$outer&quot;);</span><br><span class="line">    return outer;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<p>call</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot;.extensionSample(&quot;Hello world&quot;);</span><br></pre></td></tr></table></figure>
+    println(&quot;&quot;&quot;map a =${map[&quot;a&quot;]}&quot;&quot;&quot;)
+}</code></pre><h4 id="11、Lazy-property-懒加载属性"><a href="#11、Lazy-property-懒加载属性" class="headerlink" title="11、Lazy property(懒加载属性)"></a>11、Lazy property(懒加载属性)</h4><pre><code>fun lazyProperty() {
+    val lazyVar: String by lazy {
+        &quot;Lazy&quot;
+    }
+    println(lazyVar)
+}</code></pre><h4 id="12、Extension-function-（拓展功能）"><a href="#12、Extension-function-（拓展功能）" class="headerlink" title="12、Extension function （拓展功能）"></a>12、Extension function （拓展功能）</h4><pre><code>fun String.extensionSample(input: String): String {
+    println()
+    println(&quot;Input data:$input&quot;);
+    var outer: String = input;
 
-<p>print result</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input data:Hello world</span><br><span class="line">Out data:Hello world extension</span><br></pre></td></tr></table></figure>
+    outer = outer + &quot; extension&quot;;
 
-<blockquote>
-<p>13、Creating a singleton (创建单例对象)</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">object Singleton&#123;</span><br><span class="line">    var name = &quot;using object to define singleton object&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    println(&quot;Out data:$outer&quot;);
+    return outer;
+}</code></pre><p>call</p>
+<pre><code>&quot;&quot;.extensionSample(&quot;Hello world&quot;);</code></pre><p>print result</p>
+<pre><code>Input data:Hello world
+Out data:Hello world extension</code></pre><h4 id="13、Creating-a-singleton-创建单例对象"><a href="#13、Creating-a-singleton-创建单例对象" class="headerlink" title="13、Creating a singleton (创建单例对象)"></a>13、Creating a singleton (创建单例对象)</h4><pre><code>object Singleton{
+    var name = &quot;using object to define singleton object&quot;
+}</code></pre><h4 id="14、If-not-null-shorthand（速记：如果不为null）"><a href="#14、If-not-null-shorthand（速记：如果不为null）" class="headerlink" title="14、If not null shorthand（速记：如果不为null）"></a>14、If not null shorthand（速记：如果不为null）</h4><pre><code>fun ifNotNull(){
+    val files = File(&quot;file&quot;);
 
-<blockquote>
-<p>14、If not null shorthand（速记：如果不为null）</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">fun ifNotNull()&#123;</span><br><span class="line">    val files = File(&quot;file&quot;);</span><br><span class="line"></span><br><span class="line">    //if not null shorthand</span><br><span class="line">    //files is not null,then call function:isFile</span><br><span class="line">    var isFile = files?.isFile;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    //if not null shorthand
+    //files is not null,then call function:isFile
+    var isFile = files?.isFile;
+}</code></pre><h4 id="15、If-not-null-and-else-shorthand（速记：如果不为null，反之-）"><a href="#15、If-not-null-and-else-shorthand（速记：如果不为null，反之-）" class="headerlink" title="15、If not null and else shorthand（速记：如果不为null，反之..）"></a>15、If not null and else shorthand（速记：如果不为null，反之..）</h4><pre><code>fun ifNotNullAndElse() {
+    val files = File(&quot;file&quot;).listFiles();
 
-<blockquote>
-<p>15、If not null and else shorthand（速记：如果不为null，反之..）</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">fun ifNotNullAndElse() &#123;</span><br><span class="line">    val files = File(&quot;file&quot;).listFiles();</span><br><span class="line"></span><br><span class="line">    //if not null shorthand</span><br><span class="line">    //files is not null,then call function:isFile</span><br><span class="line">    println(files?.size ?: &quot;files is null object&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    //if not null shorthand
+    //files is not null,then call function:isFile
+    println(files?.size ?: &quot;files is null object&quot;);
+}</code></pre><h4 id="16、Executing-a-statement-if-null（如果为null，执行表达式）"><a href="#16、Executing-a-statement-if-null（如果为null，执行表达式）" class="headerlink" title="16、Executing a statement if null（如果为null，执行表达式）"></a>16、Executing a statement if null（如果为null，执行表达式）</h4><pre><code>fun ifNullExecutingStatement() {
+    val values = arrayOf(&quot;A&quot;, null);
 
-<blockquote>
-<p>16、Executing a statement if null（如果为null，执行表达式）</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">fun ifNullExecutingStatement() &#123;</span><br><span class="line">    val values = arrayOf(&quot;A&quot;, null);</span><br><span class="line"></span><br><span class="line">    val email = values[0] ?: throw IllegalStateException(&quot;Email is missing!&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    val email = values[0] ?: throw IllegalStateException(&quot;Email is missing!&quot;)
+}</code></pre><h4 id="17、Get-first-item-of-a-possibly-empty-collection-获取可能为null的集合的第一项"><a href="#17、Get-first-item-of-a-possibly-empty-collection-获取可能为null的集合的第一项" class="headerlink" title="17、Get first item of a possibly empty collection.(获取可能为null的集合的第一项)"></a>17、Get first item of a possibly empty collection.(获取可能为null的集合的第一项)</h4><pre><code>fun getFirstItemOfPossiblyOfCollection() {
+    var values = listOf(&quot;James&quot;, null);
 
-<blockquote>
-<p>17、Get first item of a possibly empty collection.(获取可能为null的集合的第一项)</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fun getFirstItemOfPossiblyOfCollection() &#123;</span><br><span class="line">    var values = listOf(&quot;James&quot;, null);</span><br><span class="line"></span><br><span class="line">    val value = values.firstOrNull() ?: &quot;&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    val value = values.firstOrNull() ?: &quot;&quot;;
+}</code></pre><h4 id="18、Execute-if-not-null（如果不为null，则执行）"><a href="#18、Execute-if-not-null（如果不为null，则执行）" class="headerlink" title="18、Execute if not null（如果不为null，则执行）"></a>18、Execute if not null（如果不为null，则执行）</h4><pre><code>fun ifNotNullExecute() {
+    println()
+    println();
+    var values = listOf(&quot;James&quot;, null);
 
-<blockquote>
-<p>18、Execute if not null（如果不为null，则执行）</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">fun ifNotNullExecute() &#123;</span><br><span class="line">    println()</span><br><span class="line">    println();</span><br><span class="line">    var values = listOf(&quot;James&quot;, null);</span><br><span class="line"></span><br><span class="line">    values?.let &#123;</span><br><span class="line">        /*</span><br><span class="line">        if values != null</span><br><span class="line">        for loop values.</span><br><span class="line">         */</span><br><span class="line">        for (item in it) &#123;</span><br><span class="line">            print(&quot;$&#123;item&#125;,&quot;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    values?.let {
+        /*
+        if values != null
+        for loop values.
+        */
+        for (item in it) {
+            print(&quot;${item},&quot;)
+        }
+    }
+}</code></pre><h4 id="19、Map-nullable-value-if-not-null（如果可为null的map，不为null）"><a href="#19、Map-nullable-value-if-not-null（如果可为null的map，不为null）" class="headerlink" title="19、Map nullable value if not null（如果可为null的map，不为null）"></a>19、Map nullable value if not null（如果可为null的map，不为null）</h4><pre><code>fun ifNotNullMapNullable() {
+    println();
+    println();
 
-<blockquote>
-<p>19、Map nullable value if not null（如果可为null的map，不为null）</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">fun ifNotNullMapNullable() &#123;</span><br><span class="line">    println();</span><br><span class="line">    println();</span><br><span class="line"></span><br><span class="line">    var values = mapOf&lt;String?, String?&gt;(</span><br><span class="line">        &quot;A&quot; to &quot;1&quot;,</span><br><span class="line">        &quot;B&quot; to &quot;2&quot;,</span><br><span class="line">        &quot;C&quot; to null</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    val value = values?.let &#123;</span><br><span class="line">        //values is not null.</span><br><span class="line">        for ((key, value) in it) &#123;</span><br><span class="line">            print(&quot;key:$key -&gt; value:$value&quot;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; ?: &quot;defaultValue&quot;;</span><br><span class="line"></span><br><span class="line">    println(&quot;$value&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    var values = mapOf&lt;String?, String?&gt;(
+        &quot;A&quot; to &quot;1&quot;,
+        &quot;B&quot; to &quot;2&quot;,
+        &quot;C&quot; to null
+    )
 
-<blockquote>
-<p>20、Return on when statement（when表达式中返回值）</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">fun transformColor(color: String): Int &#123;</span><br><span class="line"></span><br><span class="line">    return when (color) &#123;</span><br><span class="line">        &quot;Red&quot; -&gt; 0</span><br><span class="line">        &quot;Green&quot; -&gt; 1</span><br><span class="line">        &quot;Blue&quot; -&gt; 2</span><br><span class="line">        else -&gt; throw IllegalArgumentException(&quot;Invalid argument!&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    val value = values?.let {
+        //values is not null.
+        for ((key, value) in it) {
+            print(&quot;key:$key -&gt; value:$value&quot;)
+        }
+    } ?: &quot;defaultValue&quot;;
 
-<blockquote>
-<p>21、try/catch expression（try/catch表达式）</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">fun tryCatchExpression() &#123;</span><br><span class="line">    val result = try &#123;</span><br><span class="line">        /*</span><br><span class="line">        Do something</span><br><span class="line">         */</span><br><span class="line">        println(&quot;Do something&quot;);</span><br><span class="line">        &quot;Do&quot;</span><br><span class="line">    &#125; catch (e: Exception) &#123;</span><br><span class="line">        println(e);</span><br><span class="line">        &quot;Error&quot;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    println(result);//Result = Do or Error.</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    println(&quot;$value&quot;)
+}</code></pre><h4 id="20、Return-on-when-statement（when表达式中返回值）"><a href="#20、Return-on-when-statement（when表达式中返回值）" class="headerlink" title="20、Return on when statement（when表达式中返回值）"></a>20、Return on when statement（when表达式中返回值）</h4><pre><code>fun transformColor(color: String): Int {
 
-<blockquote>
-<p>22、if expression（If表达式）</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">fun ifExpression(parameter:Int)&#123;</span><br><span class="line"></span><br><span class="line">    val result = if(parameter == 1)&#123;</span><br><span class="line">        &quot;1&quot;</span><br><span class="line">    &#125;else if(parameter == 2)&#123;</span><br><span class="line">        &quot;2&quot;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        &quot;Unknown&quot;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    println(result)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    return when (color) {
+        &quot;Red&quot; -&gt; 0
+        &quot;Green&quot; -&gt; 1
+        &quot;Blue&quot; -&gt; 2
+        else -&gt; throw IllegalArgumentException(&quot;Invalid argument!&quot;);
+    }
+}</code></pre><h4 id="21、try-catch-expression（try-catch表达式）"><a href="#21、try-catch-expression（try-catch表达式）" class="headerlink" title="21、try/catch expression（try/catch表达式）"></a>21、try/catch expression（try/catch表达式）</h4><pre><code>fun tryCatchExpression() {
+    val result = try {
+        /*
+        Do something
+        */
+        println(&quot;Do something&quot;);
+        &quot;Do&quot;
+    } catch (e: Exception) {
+        println(e);
+        &quot;Error&quot;
+    }
 
-<blockquote>
-<p>23、Builder-style usage of methods that return Unit</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fun arrayOfMinusOnes(size: Int): IntArray &#123;</span><br><span class="line"></span><br><span class="line">    return IntArray(size).apply &#123; fill(-1) &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    println(result);//Result = Do or Error.
+}</code></pre><h4 id="22、if-expression（If表达式）"><a href="#22、if-expression（If表达式）" class="headerlink" title="22、if expression（If表达式）"></a>22、if expression（If表达式）</h4><pre><code>fun ifExpression(parameter:Int){
 
-<blockquote>
-<p>24、Single-expression function（单个表达式的函数）</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fun theAnswer = 42;</span><br></pre></td></tr></table></figure>
+    val result = if(parameter == 1){
+        &quot;1&quot;
+    }else if(parameter == 2){
+        &quot;2&quot;
+    }else{
+        &quot;Unknown&quot;
+    }
 
-<p>This is equivalent to (等价于)<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fun theAnswer():Int&#123;</span><br><span class="line">    return 42</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>25、This can be effectively combined with other idioms,leading to short code.（这可以与其他语法一起使用，以缩短代码）</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">fun transform(color: String): Int = when (color) &#123;</span><br><span class="line">    &quot;Red&quot; -&gt; 0</span><br><span class="line">    &quot;Green&quot; -&gt; 1</span><br><span class="line">    &quot;Blue&quot; -&gt; 2</span><br><span class="line">    else -&gt; -1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    println(result)
+}</code></pre><h4 id="23、Builder-style-usage-of-methods-that-return-Unit"><a href="#23、Builder-style-usage-of-methods-that-return-Unit" class="headerlink" title="23、Builder-style usage of methods that return Unit"></a>23、Builder-style usage of methods that return Unit</h4><pre><code>fun arrayOfMinusOnes(size: Int): IntArray {
 
-<blockquote>
-<p>26、Calling multiple methods on an object instance(with) （在对象实例上调用多个函数）</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">fun multipleMethods() &#123;</span><br><span class="line"></span><br><span class="line">    val animal = Animal();</span><br><span class="line"></span><br><span class="line">    /*</span><br><span class="line">    使用&quot;with&quot;可以调用多个函数</span><br><span class="line">     */</span><br><span class="line">    with(animal) &#123;</span><br><span class="line">        //调用animal对象的fly</span><br><span class="line">        fly()</span><br><span class="line"></span><br><span class="line">        //接着，调用animal对象的run</span><br><span class="line">        run()</span><br><span class="line"></span><br><span class="line">        //再接着，调用animal对象的eat</span><br><span class="line">        eat()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    return IntArray(size).apply { fill(-1) }
 
-<blockquote>
-<p>27、Java7‘s try with resource（Java7的使用资源）</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">@RequiresApi(Build.VERSION_CODES.O)</span><br><span class="line">fun useResources() &#123;</span><br><span class="line">    val stream = Files.newInputStream(Paths.get(&quot;/some/file.txt&quot;))</span><br><span class="line">    stream.buffered().reader().use &#123; reader -&gt;</span><br><span class="line">        println(reader.readText())</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+}</code></pre><h4 id="24、Single-expression-function（单个表达式的函数）"><a href="#24、Single-expression-function（单个表达式的函数）" class="headerlink" title="24、Single-expression function（单个表达式的函数）"></a>24、Single-expression function（单个表达式的函数）</h4><pre><code>fun theAnswer = 42;</code></pre><p>This is equivalent to (等价于)</p>
+<pre><code>fun theAnswer():Int{
+    return 42
+}</code></pre><h4 id="25、This-can-be-effectively-combined-with-other-idioms-leading-to-short-code-（这可以与其他语法一起使用，以缩短代码）"><a href="#25、This-can-be-effectively-combined-with-other-idioms-leading-to-short-code-（这可以与其他语法一起使用，以缩短代码）" class="headerlink" title="25、This can be effectively combined with other idioms,leading to short code.（这可以与其他语法一起使用，以缩短代码）"></a>25、This can be effectively combined with other idioms,leading to short code.（这可以与其他语法一起使用，以缩短代码）</h4><pre><code>fun transform(color: String): Int = when (color) {
+    &quot;Red&quot; -&gt; 0
+    &quot;Green&quot; -&gt; 1
+    &quot;Blue&quot; -&gt; 2
+    else -&gt; -1
+}</code></pre><h4 id="26、Calling-multiple-methods-on-an-object-instance-with-（在对象实例上调用多个函数）"><a href="#26、Calling-multiple-methods-on-an-object-instance-with-（在对象实例上调用多个函数）" class="headerlink" title="26、Calling multiple methods on an object instance(with) （在对象实例上调用多个函数）"></a>26、Calling multiple methods on an object instance(with) （在对象实例上调用多个函数）</h4><pre><code>fun multipleMethods() {
 
-<blockquote>
-<p>28、Convenient form for a generic function that requires the generic type information（方便的通用函数形式，需要通用类型信息）</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//     ...</span><br><span class="line">//     public &lt;T&gt; T fromJson(JsonElement json, Class&lt;T&gt; classOfT) throws JsonSyntaxException &#123;</span><br><span class="line">//     ...</span><br><span class="line"></span><br><span class="line">inline fun &lt;reified T : Any&gt; Gson.fromJson(json: JsonElement): T = this.fromJson(json, T::class.java)</span><br></pre></td></tr></table></figure>
+    val animal = Animal();
 
-<blockquote>
-<p>29、Consuming  a nullable Boolean（消耗/使用 可为null的布尔值）</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">fun useNullableBoolean(b: Boolean?) &#123;</span><br><span class="line"></span><br><span class="line">    if (b == true) &#123;</span><br><span class="line">        //b is true</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        //b is false or null</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    /*
+    使用&quot;with&quot;可以调用多个函数
+    */
+    with(animal) {
+        //调用animal对象的fly
+        fly()
 
-<blockquote>
-<p>30、Swapping two variables（交换两个变量）</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">fun swap() &#123;</span><br><span class="line">    var a = 1;</span><br><span class="line">    var b = 1;</span><br><span class="line"></span><br><span class="line">    a = b.also &#123;</span><br><span class="line">        b = a</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        //接着，调用animal对象的run
+        run()
 
+        //再接着，调用animal对象的eat
+        eat()
+    }
+}</code></pre><h4 id="27、Java7‘s-try-with-resource（Java7的使用资源）"><a href="#27、Java7‘s-try-with-resource（Java7的使用资源）" class="headerlink" title="27、Java7‘s try with resource（Java7的使用资源）"></a>27、Java7‘s try with resource（Java7的使用资源）</h4><pre><code>@RequiresApi(Build.VERSION_CODES.O)
+fun useResources() {
+    val stream = Files.newInputStream(Paths.get(&quot;/some/file.txt&quot;))
+    stream.buffered().reader().use { reader -&gt;
+        println(reader.readText())
+    }
+}</code></pre><h4 id="28、Convenient-form-for-a-generic-function-that-requires-the-generic-type-information（方便的通用函数形式，需要通用类型信息）"><a href="#28、Convenient-form-for-a-generic-function-that-requires-the-generic-type-information（方便的通用函数形式，需要通用类型信息）" class="headerlink" title="28、Convenient form for a generic function that requires the generic type information（方便的通用函数形式，需要通用类型信息）"></a>28、Convenient form for a generic function that requires the generic type information（方便的通用函数形式，需要通用类型信息）</h4><pre><code>//     ...
+//     public &lt;T&gt; T fromJson(JsonElement json, Class&lt;T&gt; classOfT) throws JsonSyntaxException {
+//     ...
 
+inline fun &lt;reified T : Any&gt; Gson.fromJson(json: JsonElement): T = this.fromJson(json, T::class.java)</code></pre><h4 id="29、Consuming-a-nullable-Boolean（消耗-使用-可为null的布尔值）"><a href="#29、Consuming-a-nullable-Boolean（消耗-使用-可为null的布尔值）" class="headerlink" title="29、Consuming  a nullable Boolean（消耗/使用 可为null的布尔值）"></a>29、Consuming  a nullable Boolean（消耗/使用 可为null的布尔值）</h4><pre><code>fun useNullableBoolean(b: Boolean?) {
+
+    if (b == true) {
+        //b is true
+    } else {
+        //b is false or null
+    }
+}</code></pre><h4 id="30、Swapping-two-variables（交换两个变量）"><a href="#30、Swapping-two-variables（交换两个变量）" class="headerlink" title="30、Swapping two variables（交换两个变量）"></a>30、Swapping two variables（交换两个变量）</h4><pre><code>fun swap() {
+    var a = 1;
+    var b = 1;
+
+    a = b.also {
+        b = a
+    }
+}</code></pre>
             </div>
             <hr/>
 
@@ -1002,7 +1126,7 @@
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">15.5k</span>
+                <span class="white-color">15.3k</span>
             
 
             
