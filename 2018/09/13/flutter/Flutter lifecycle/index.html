@@ -7,12 +7,12 @@
     <meta name="keywords" content="Flutter lifecycle, Air">
     <meta name="description" content="Flutter 生命周期实际测试出来的与Flutter官网描述的有些不同，具体往下看
 
-
-
-目录：1、Flutter 生命周期2、Todo：自己实测与Flutter官网描述出现的不一致情况！
+目录：
+ 1、Flutter 生命周期 2、Todo：自己实测与Flutter官网描述出现的不一致情况！
 
 1、Flutter 生命周期
-官网介绍如下Ap">
+官网介绍如下
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -419,7 +419,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        495
+                        479
                     </div>
                     
 
@@ -444,30 +444,77 @@
             <div id="articleContent">
                 <p>Flutter 生命周期实际测试出来的与Flutter官网描述的有些不同，具体往下看</p>
 <hr>
-
-<blockquote>
-<p>目录：<br>1、Flutter 生命周期<br>2、Todo：自己实测与Flutter官网描述出现的不一致情况！</p>
+<h3 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h3><blockquote>
+<p> 1、Flutter 生命周期<br> 2、Todo：自己实测与Flutter官网描述出现的不一致情况！</p>
 </blockquote>
-<p>1、Flutter 生命周期</p>
-<p>官网介绍如下<br>AppLifecycleState：Flutter widget 生命周期状态</p>
+<h3 id="1、Flutter-生命周期"><a href="#1、Flutter-生命周期" class="headerlink" title="1、Flutter 生命周期"></a>1、Flutter 生命周期</h3><blockquote>
+<p>官网介绍如下</p>
+</blockquote>
+<p>AppLifecycleState：Flutter widget 生命周期状态</p>
 <p>–官网介绍如下图：<br>|<img src="https://upload-images.jianshu.io/upload_images/8264781-49fed0ba677c59c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080" alt="Flutter 官网介绍生命周期.png">|<br>|:-|</p>
-<p>–实测<br>1.1:AppLifecycleState.resumed<br>可见，并且响应用户输入</p>
+<blockquote>
+<p>实测</p>
+</blockquote>
+<p>1.1:AppLifecycleState.resumed  </p>
+<p>可见，并且响应用户输入</p>
 <p>1.2:AppLifecycleState.inactive<br>或许可见，但一定不响应用户输入；此状态表明，应用程序处于非活动状态；在Android和IOS上测试都会出现：inactive出现在resumed和paused之前。</p>
 <p>1.3:AppLifecycleState.paused<br>不可见，进入后台；此状态表明，将随时进入suspending</p>
 <p>1.4:AppLifecycleState.suspending<br>在Android和IOS上，暂时未测出此状态的出现</p>
-<blockquote>
-<p>2、Todo</p>
-</blockquote>
+<h3 id="2、Todo"><a href="#2、Todo" class="headerlink" title="2、Todo"></a>2、Todo</h3><blockquote>
 <p>2、Todo：自己实测与Flutter官网描述出现的不一致情况！</p>
+</blockquote>
 <p>官网测试代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">import &apos;package:flutter/widgets.dart&apos;;</span><br><span class="line"></span><br><span class="line">class LifecycleWatcher extends StatefulWidget &#123;</span><br><span class="line">  @override</span><br><span class="line">  _LifecycleWatcherState createState() =&gt; _LifecycleWatcherState();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class _LifecycleWatcherState extends State&lt;LifecycleWatcher&gt; with WidgetsBindingObserver &#123;</span><br><span class="line">  AppLifecycleState _lastLifecycleState;</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  void initState() &#123;</span><br><span class="line">    super.initState();</span><br><span class="line">    WidgetsBinding.instance.addObserver(this);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  void dispose() &#123;</span><br><span class="line">    WidgetsBinding.instance.removeObserver(this);</span><br><span class="line">    super.dispose();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  void didChangeAppLifecycleState(AppLifecycleState state) &#123;</span><br><span class="line">    setState(() &#123;</span><br><span class="line">      _lastLifecycleState = state;</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    if (_lastLifecycleState == null)</span><br><span class="line">      return Text(&apos;This widget has not observed any lifecycle changes.&apos;, textDirection: TextDirection.ltr);</span><br><span class="line"></span><br><span class="line">    return Text(&apos;The most recent lifecycle state this widget observed was: $_lastLifecycleState.&apos;,</span><br><span class="line">        textDirection: TextDirection.ltr);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void main() &#123;</span><br><span class="line">  runApp(Center(child: LifecycleWatcher()));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>import &apos;package:flutter/widgets.dart&apos;;
 
+class LifecycleWatcher extends StatefulWidget {
+  @override
+  _LifecycleWatcherState createState() =&gt; _LifecycleWatcherState();
+}
+
+class _LifecycleWatcherState extends State&lt;LifecycleWatcher&gt; with WidgetsBindingObserver {
+  AppLifecycleState _lastLifecycleState;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    setState(() {
+      _lastLifecycleState = state;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (_lastLifecycleState == null)
+      return Text(&apos;This widget has not observed any lifecycle changes.&apos;, textDirection: TextDirection.ltr);
+
+    return Text(&apos;The most recent lifecycle state this widget observed was: $_lastLifecycleState.&apos;,
+        textDirection: TextDirection.ltr);
+  }
+}
+
+void main() {
+  runApp(Center(child: LifecycleWatcher()));
+}</code></pre><blockquote>
 <p>描述1:<br>此测试代码不够完善，因为：“此代码只能测试resumed一个状态，其他的状态是测试不出来的”</p>
+</blockquote>
+<blockquote>
 <p>描述2:<br>Flutter的渲染机制：调用setState((){})函数时，会启动Flutter重绘制机制，进而调用build(BuildContext context)函数。</p>
+</blockquote>
+<blockquote>
 <p>问题：<br>当实际测试时并非如描述2那般一模一样。如上图代码所示，在didChangeAppLifecycleState函数中调用setState，在build中显示AppLifecycleState(也就是widget的生命周期状态)当Widget生命周期状态切换为inactive或paused状态时，实际测试出的结果是，并没有调用build函数进行重绘</p>
+</blockquote>
 <hr>
-
-
 <p>未完待续。。。</p>
 
             </div>
@@ -886,7 +933,7 @@
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">12.4k</span>
+                <span class="white-color">12k</span>
             
 
             

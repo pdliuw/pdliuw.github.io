@@ -8,11 +8,10 @@
     <meta name="description" content="Flutter的项目结构和资源的存放、使用（图像的适配、字符串的本地化和国际化、项目依赖）
 
 
-
 目录：1、存储不同分辨率的图片资源2、存储String字符串资源3、添加依赖4、如何国际化和本地化？Flutter推荐使用intl实现
 
 
-1">
+1、">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -419,7 +418,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        352
+                        350
                     </div>
                     
 
@@ -444,7 +443,6 @@
             <div id="articleContent">
                 <p>Flutter的项目结构和资源的存放、使用（图像的适配、字符串的本地化和国际化、项目依赖）</p>
 <hr>
-
 <blockquote>
 <p>目录：<br>1、存储不同分辨率的图片资源<br>2、存储String字符串资源<br>3、添加依赖<br>4、如何国际化和本地化？<a href="https://pub.dev/packages/intl" target="_blank" rel="noopener">Flutter推荐使用intl实现</a></p>
 </blockquote>
@@ -456,24 +454,16 @@
 <p>创建图像文件夹<br><img src="https://upload-images.jianshu.io/upload_images/8264781-c318ea9b745fd24e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/480" alt="image.png"></p>
 <p>在pubspec.yaml中引入图像资源</p>
 <p>方式一：此种方式表示，引入images文件夹中所有的资源</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">assets:</span><br><span class="line">  - images/</span><br></pre></td></tr></table></figure>
-
-<p>方式二：此种方式表示，引入images文件夹下的具体的某一资源</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">assets:</span><br><span class="line">  - images/one.jpg</span><br></pre></td></tr></table></figure>
-
-<p>使用图像资源</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Image.asset(&quot;images/one.jpg&quot;,width: 100,height: 100,),</span><br></pre></td></tr></table></figure>
-
-<blockquote>
+<pre><code>assets:
+  - images/</code></pre><p>方式二：此种方式表示，引入images文件夹下的具体的某一资源</p>
+<pre><code>assets:
+  - images/one.jpg</code></pre><p>使用图像资源</p>
+<pre><code>Image.asset(&quot;images/one.jpg&quot;,width: 100,height: 100,),</code></pre><blockquote>
 <p>2、存储String字符串资源</p>
 </blockquote>
 <p>Flutter目前没有专门的字符串资源系统。目前最佳做法是将字符串作为静态变量保存在类中，并从哪里访问他们。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">class Strings &#123; static String welcomeMessage = “Welcome to Flutter” ; &#125;</span><br></pre></td></tr></table></figure>
-
-<p>使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Text(Strings.welcomeMessage)</span><br></pre></td></tr></table></figure>
-
-<blockquote>
+<pre><code>class Strings { static String welcomeMessage = “Welcome to Flutter” ; }  </code></pre><p>使用</p>
+<pre><code>Text(Strings.welcomeMessage)</code></pre><blockquote>
 <p>3、添加依赖</p>
 </blockquote>
 <p>虽然Android或IOS项目下有各自的原生依赖系统。但是，那些只是针对各不同的平台的依赖。</p>
@@ -896,7 +886,7 @@
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">12.4k</span>
+                <span class="white-color">12k</span>
             
 
             

@@ -419,7 +419,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        783
+                        690
                     </div>
                     
 
@@ -456,50 +456,265 @@
 
 <p>1、Flutter http using</p>
 <p>依赖：在pubspec.yaml文件中添加Flutter网路模块的依赖</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dependencies:</span><br><span class="line">  ...</span><br><span class="line">  http: ^0.11.3+16</span><br></pre></td></tr></table></figure>
+<pre><code>dependencies:
+  ...
+  http: ^0.11.3+16</code></pre><p>网络操作</p>
+<pre><code>import &apos;package:flutter/material.dart&apos;;
+import &apos;package:http/http.dart&apos; as http;
 
-<p>网络操作</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import &apos;package:flutter/material.dart&apos;;</span><br><span class="line">import &apos;package:http/http.dart&apos; as http;</span><br><span class="line"></span><br><span class="line">  loadData() async &#123;</span><br><span class="line">    String dataURL = &quot;https://jsonplaceholder.typicode.com/posts&quot;;</span><br><span class="line">    http.Response response = await http.get(dataURL);</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  loadData() async {
+    String dataURL = &quot;https://jsonplaceholder.typicode.com/posts&quot;;
+    http.Response response = await http.get(dataURL);
 
-<blockquote>
+  }
+}</code></pre><blockquote>
 <p>2、JSON</p>
 </blockquote>
 <p>导包</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import &apos;dart:convert&apos;;</span><br></pre></td></tr></table></figure>
+<pre><code>import &apos;dart:convert&apos;;</code></pre><p>数据解析</p>
+<pre><code>List widgets = [];
 
-<p>数据解析</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">List widgets = [];</span><br><span class="line"></span><br><span class="line">  setState(() &#123;</span><br><span class="line">    widgets = json.decode(response.body);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
-
-<blockquote>
+setState(() {
+  widgets = json.decode(response.body);
+});</code></pre><blockquote>
 <p>3、ListView</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">body: ListView.builder(</span><br><span class="line">    itemCount: getItemCount(),</span><br><span class="line">    itemBuilder: (BuildContext context, int position) &#123;</span><br><span class="line">      return getItemWidget(position);</span><br><span class="line">    &#125;));</span><br></pre></td></tr></table></figure>
+<pre><code>  body: ListView.builder(
+      itemCount: getItemCount(),
+      itemBuilder: (BuildContext context, int position) {
+        return getItemWidget(position);
+      }));
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">int getItemCount() &#123;</span><br><span class="line">  if (widgets.isEmpty) &#123;</span><br><span class="line">    return 5;</span><br><span class="line">  &#125;</span><br><span class="line">  return widgets.length;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Widget getItemWidget(int position) &#123;</span><br><span class="line">  if (widgets.isEmpty) &#123;</span><br><span class="line">    return getEmptyLoadingWidget();</span><br><span class="line">  &#125;</span><br><span class="line">  return getRow(position);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<blockquote>
+
+int getItemCount() {
+  if (widgets.isEmpty) {
+    return 5;
+  }
+  return widgets.length;
+}
+
+
+
+
+
+Widget getItemWidget(int position) {
+  if (widgets.isEmpty) {
+    return getEmptyLoadingWidget();
+  }
+  return getRow(position);
+}</code></pre><blockquote>
 <p>4、ListView- loading status</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Widget getEmptyLoadingWidget() &#123;</span><br><span class="line">  return Padding(</span><br><span class="line">    padding: EdgeInsets.all(10.0),</span><br><span class="line">    child: Card(</span><br><span class="line">      child: Column(</span><br><span class="line">        children: &lt;Widget&gt;[</span><br><span class="line">          ListTile(</span><br><span class="line">            leading: CircleAvatar(</span><br><span class="line">              child: Text(&apos;**&apos;),</span><br><span class="line">            ),</span><br><span class="line">            title: Text(</span><br><span class="line">              &quot;******&quot;,</span><br><span class="line">              maxLines: 1,</span><br><span class="line">              style: TextStyle(</span><br><span class="line">                color: Colors.blue,</span><br><span class="line">              ),</span><br><span class="line">              semanticsLabel: &apos;semanticsLabel&apos;,</span><br><span class="line">            ),</span><br><span class="line">            subtitle: Text(&quot;******&quot;),</span><br><span class="line">            trailing: Text(&apos;******&apos;),</span><br><span class="line">          ),</span><br><span class="line">          Text(&apos;努力加载中...&apos;),</span><br><span class="line">        ],</span><br><span class="line">      ),</span><br><span class="line">    ),</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
+<pre><code>Widget getEmptyLoadingWidget() {
+  return Padding(
+    padding: EdgeInsets.all(10.0),
+    child: Card(
+      child: Column(
+        children: &lt;Widget&gt;[
+          ListTile(
+            leading: CircleAvatar(
+              child: Text(&apos;**&apos;),
+            ),
+            title: Text(
+              &quot;******&quot;,
+              maxLines: 1,
+              style: TextStyle(
+                color: Colors.blue,
+              ),
+              semanticsLabel: &apos;semanticsLabel&apos;,
+            ),
+            subtitle: Text(&quot;******&quot;),
+            trailing: Text(&apos;******&apos;),
+          ),
+          Text(&apos;努力加载中...&apos;),
+        ],
+      ),
+    ),
+  );
+}</code></pre><blockquote>
 <p>5、ListView- Item and item event</p>
 </blockquote>
 <p>item event</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">onLongPress: () &#123;</span><br><span class="line">  if (widgets.isNotEmpty) &#123;</span><br><span class="line">    showAboutDialog(</span><br><span class="line">      applicationName: &quot;Name&quot;,</span><br><span class="line">      context: context,</span><br><span class="line">      children: &lt;Widget&gt;[</span><br><span class="line">        Text(&apos;Title:$&#123;widgets[i][&quot;title&quot;]&#125;&apos;),</span><br><span class="line">        Divider(),</span><br><span class="line">        Text(&apos;Body:$&#123;widgets[i][&quot;body&quot;]&#125;&apos;),</span><br><span class="line">      ],</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-
-<p>item</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Widget getRow(int i) &#123;</span><br><span class="line">  return Padding(</span><br><span class="line">    padding: EdgeInsets.all(10.0),</span><br><span class="line">    child: Card(</span><br><span class="line">      child: ListTile(</span><br><span class="line">        leading: CircleAvatar(</span><br><span class="line">          child: Text(&apos;$&#123;widgets[i][&quot;id&quot;]&#125;&apos;),</span><br><span class="line">        ),</span><br><span class="line">        title: Text(</span><br><span class="line">          &quot;Row $&#123;widgets[i][&quot;title&quot;]&#125;&quot;,</span><br><span class="line">          maxLines: 1,</span><br><span class="line">          style: TextStyle(</span><br><span class="line">            color: Colors.blue,</span><br><span class="line">          ),</span><br><span class="line">          semanticsLabel: &apos;semanticsLabel&apos;,</span><br><span class="line">        ),</span><br><span class="line">        subtitle: Text(&quot;Row $&#123;widgets[i][&quot;body&quot;]&#125;&quot;),</span><br><span class="line">        trailing: Text(&apos;userId:$&#123;widgets[i][&quot;userId&quot;]&#125;&apos;),</span><br><span class="line">        onTap: () &#123;&#125;,</span><br><span class="line">        onLongPress: () &#123;</span><br><span class="line">          if (widgets.isNotEmpty) &#123;</span><br><span class="line">            showAboutDialog(</span><br><span class="line">              applicationName: &quot;Name&quot;,</span><br><span class="line">              context: context,</span><br><span class="line">              children: &lt;Widget&gt;[</span><br><span class="line">                Text(&apos;Title:$&#123;widgets[i][&quot;title&quot;]&#125;&apos;),</span><br><span class="line">                Divider(),</span><br><span class="line">                Text(&apos;Body:$&#123;widgets[i][&quot;body&quot;]&#125;&apos;),</span><br><span class="line">              ],</span><br><span class="line">            );</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">      ),</span><br><span class="line">    ),</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
+<pre><code>onLongPress: () {
+  if (widgets.isNotEmpty) {
+    showAboutDialog(
+      applicationName: &quot;Name&quot;,
+      context: context,
+      children: &lt;Widget&gt;[
+        Text(&apos;Title:${widgets[i][&quot;title&quot;]}&apos;),
+        Divider(),
+        Text(&apos;Body:${widgets[i][&quot;body&quot;]}&apos;),
+      ],
+    );
+  }
+},</code></pre><p>item</p>
+<pre><code>Widget getRow(int i) {
+  return Padding(
+    padding: EdgeInsets.all(10.0),
+    child: Card(
+      child: ListTile(
+        leading: CircleAvatar(
+          child: Text(&apos;${widgets[i][&quot;id&quot;]}&apos;),
+        ),
+        title: Text(
+          &quot;Row ${widgets[i][&quot;title&quot;]}&quot;,
+          maxLines: 1,
+          style: TextStyle(
+            color: Colors.blue,
+          ),
+          semanticsLabel: &apos;semanticsLabel&apos;,
+        ),
+        subtitle: Text(&quot;Row ${widgets[i][&quot;body&quot;]}&quot;),
+        trailing: Text(&apos;userId:${widgets[i][&quot;userId&quot;]}&apos;),
+        onTap: () {},
+        onLongPress: () {
+          if (widgets.isNotEmpty) {
+            showAboutDialog(
+              applicationName: &quot;Name&quot;,
+              context: context,
+              children: &lt;Widget&gt;[
+                Text(&apos;Title:${widgets[i][&quot;title&quot;]}&apos;),
+                Divider(),
+                Text(&apos;Body:${widgets[i][&quot;body&quot;]}&apos;),
+              ],
+            );
+          }
+        },
+      ),
+    ),
+  );
+}</code></pre><blockquote>
 <p>6、本篇汇总的效果</p>
 </blockquote>
 <p><img src="https://upload-images.jianshu.io/upload_images/8264781-8494b8baecae15f8.gif?imageMogr2/auto-orient/strip" alt="Flutter-Http.gif"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br></pre></td><td class="code"><pre><span class="line">import &apos;dart:convert&apos;;</span><br><span class="line">import &apos;package:flutter/material.dart&apos;;</span><br><span class="line">import &apos;package:http/http.dart&apos; as http;</span><br><span class="line"></span><br><span class="line">class ListPage extends StatefulWidget &#123;</span><br><span class="line">  BuildContext mPreContext;</span><br><span class="line">  ListPage(BuildContext preContext) &#123;</span><br><span class="line">    mPreContext = preContext;</span><br><span class="line">  &#125;</span><br><span class="line">  @override</span><br><span class="line">  _ListState createState() &#123;</span><br><span class="line">    // TODO: implement createState</span><br><span class="line">    return _ListState();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class _ListState extends State&lt;ListPage&gt; &#123;</span><br><span class="line">  List widgets = [];</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  void initState() &#123;</span><br><span class="line">    super.initState();</span><br><span class="line"></span><br><span class="line">    loadData();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  int getItemCount() &#123;</span><br><span class="line">    if (widgets.isEmpty) &#123;</span><br><span class="line">      return 5;</span><br><span class="line">    &#125;</span><br><span class="line">    return widgets.length;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  Widget getItemWidget(int position) &#123;</span><br><span class="line">    if (widgets.isEmpty) &#123;</span><br><span class="line">      return getEmptyLoadingWidget();</span><br><span class="line">    &#125;</span><br><span class="line">    return getRow(position);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  Widget getEmptyLoadingWidget() &#123;</span><br><span class="line">    return Padding(</span><br><span class="line">      padding: EdgeInsets.all(10.0),</span><br><span class="line">      child: Card(</span><br><span class="line">        child: Column(</span><br><span class="line">          children: &lt;Widget&gt;[</span><br><span class="line">            ListTile(</span><br><span class="line">              leading: CircleAvatar(</span><br><span class="line">                child: Text(&apos;**&apos;),</span><br><span class="line">              ),</span><br><span class="line">              title: Text(</span><br><span class="line">                &quot;******&quot;,</span><br><span class="line">                maxLines: 1,</span><br><span class="line">                style: TextStyle(</span><br><span class="line">                  color: Colors.blue,</span><br><span class="line">                ),</span><br><span class="line">                semanticsLabel: &apos;semanticsLabel&apos;,</span><br><span class="line">              ),</span><br><span class="line">              subtitle: Text(&quot;******&quot;),</span><br><span class="line">              trailing: Text(&apos;******&apos;),</span><br><span class="line">            ),</span><br><span class="line">            Text(&apos;努力加载中...&apos;),</span><br><span class="line">          ],</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @override</span><br><span class="line">  Widget build(BuildContext context) &#123;</span><br><span class="line">    return Scaffold(</span><br><span class="line">        appBar: AppBar(</span><br><span class="line">          title: Text(&quot;Sample HTTP&quot;),</span><br><span class="line">        ),</span><br><span class="line">        body: ListView.builder(</span><br><span class="line">            itemCount: getItemCount(),</span><br><span class="line">            itemBuilder: (BuildContext context, int position) &#123;</span><br><span class="line">              return getItemWidget(position);</span><br><span class="line">            &#125;));</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  Widget getRow(int i) &#123;</span><br><span class="line">    return Padding(</span><br><span class="line">      padding: EdgeInsets.all(10.0),</span><br><span class="line">      child: Card(</span><br><span class="line">        child: ListTile(</span><br><span class="line">          leading: CircleAvatar(</span><br><span class="line">            child: Text(&apos;$&#123;widgets[i][&quot;id&quot;]&#125;&apos;),</span><br><span class="line">          ),</span><br><span class="line">          title: Text(</span><br><span class="line">            &quot;Row $&#123;widgets[i][&quot;title&quot;]&#125;&quot;,</span><br><span class="line">            maxLines: 1,</span><br><span class="line">            style: TextStyle(</span><br><span class="line">              color: Colors.blue,</span><br><span class="line">            ),</span><br><span class="line">            semanticsLabel: &apos;semanticsLabel&apos;,</span><br><span class="line">          ),</span><br><span class="line">          subtitle: Text(&quot;Row $&#123;widgets[i][&quot;body&quot;]&#125;&quot;),</span><br><span class="line">          trailing: Text(&apos;userId:$&#123;widgets[i][&quot;userId&quot;]&#125;&apos;),</span><br><span class="line">          onTap: () &#123;&#125;,</span><br><span class="line">          onLongPress: () &#123;</span><br><span class="line">            if (widgets.isNotEmpty) &#123;</span><br><span class="line">              showAboutDialog(</span><br><span class="line">                applicationName: &quot;Name&quot;,</span><br><span class="line">                context: context,</span><br><span class="line">                children: &lt;Widget&gt;[</span><br><span class="line">                  Text(&apos;Title:$&#123;widgets[i][&quot;title&quot;]&#125;&apos;),</span><br><span class="line">                  Divider(),</span><br><span class="line">                  Text(&apos;Body:$&#123;widgets[i][&quot;body&quot;]&#125;&apos;),</span><br><span class="line">                ],</span><br><span class="line">              );</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;,</span><br><span class="line">        ),</span><br><span class="line">      ),</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  loadData() async &#123;</span><br><span class="line">    String dataURL = &quot;https://jsonplaceholder.typicode.com/posts&quot;;</span><br><span class="line">    http.Response response = await http.get(dataURL);</span><br><span class="line">    setState(() &#123;</span><br><span class="line">      widgets = json.decode(response.body);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>import &apos;dart:convert&apos;;
+import &apos;package:flutter/material.dart&apos;;
+import &apos;package:http/http.dart&apos; as http;
 
-<hr>
+class ListPage extends StatefulWidget {
+  BuildContext mPreContext;
+  ListPage(BuildContext preContext) {
+    mPreContext = preContext;
+  }
+  @override
+  _ListState createState() {
+    // TODO: implement createState
+    return _ListState();
+  }
+}
+
+class _ListState extends State&lt;ListPage&gt; {
+  List widgets = [];
+
+  @override
+  void initState() {
+    super.initState();
+
+    loadData();
+  }
+
+  int getItemCount() {
+    if (widgets.isEmpty) {
+      return 5;
+    }
+    return widgets.length;
+  }
+
+  Widget getItemWidget(int position) {
+    if (widgets.isEmpty) {
+      return getEmptyLoadingWidget();
+    }
+    return getRow(position);
+  }
+
+  Widget getEmptyLoadingWidget() {
+    return Padding(
+      padding: EdgeInsets.all(10.0),
+      child: Card(
+        child: Column(
+          children: &lt;Widget&gt;[
+            ListTile(
+              leading: CircleAvatar(
+                child: Text(&apos;**&apos;),
+              ),
+              title: Text(
+                &quot;******&quot;,
+                maxLines: 1,
+                style: TextStyle(
+                  color: Colors.blue,
+                ),
+                semanticsLabel: &apos;semanticsLabel&apos;,
+              ),
+              subtitle: Text(&quot;******&quot;),
+              trailing: Text(&apos;******&apos;),
+            ),
+            Text(&apos;努力加载中...&apos;),
+          ],
+        ),
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text(&quot;Sample HTTP&quot;),
+        ),
+        body: ListView.builder(
+            itemCount: getItemCount(),
+            itemBuilder: (BuildContext context, int position) {
+              return getItemWidget(position);
+            }));
+  }
+
+  Widget getRow(int i) {
+    return Padding(
+      padding: EdgeInsets.all(10.0),
+      child: Card(
+        child: ListTile(
+          leading: CircleAvatar(
+            child: Text(&apos;${widgets[i][&quot;id&quot;]}&apos;),
+          ),
+          title: Text(
+            &quot;Row ${widgets[i][&quot;title&quot;]}&quot;,
+            maxLines: 1,
+            style: TextStyle(
+              color: Colors.blue,
+            ),
+            semanticsLabel: &apos;semanticsLabel&apos;,
+          ),
+          subtitle: Text(&quot;Row ${widgets[i][&quot;body&quot;]}&quot;),
+          trailing: Text(&apos;userId:${widgets[i][&quot;userId&quot;]}&apos;),
+          onTap: () {},
+          onLongPress: () {
+            if (widgets.isNotEmpty) {
+              showAboutDialog(
+                applicationName: &quot;Name&quot;,
+                context: context,
+                children: &lt;Widget&gt;[
+                  Text(&apos;Title:${widgets[i][&quot;title&quot;]}&apos;),
+                  Divider(),
+                  Text(&apos;Body:${widgets[i][&quot;body&quot;]}&apos;),
+                ],
+              );
+            }
+          },
+        ),
+      ),
+    );
+  }
+
+  loadData() async {
+    String dataURL = &quot;https://jsonplaceholder.typicode.com/posts&quot;;
+    http.Response response = await http.get(dataURL);
+    setState(() {
+      widgets = json.decode(response.body);
+    });
+  }
+}</code></pre><hr>
 
 <p>未完待续。。。</p>
 
@@ -917,7 +1132,7 @@
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">12.4k</span>
+                <span class="white-color">12k</span>
             
 
             
