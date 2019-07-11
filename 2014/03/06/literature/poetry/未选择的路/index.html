@@ -5,11 +5,8 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     <meta name="keywords" content="未选择的路, Air">
-    <meta name="description" content="Flutter Widget
-
-Flutter的小部件是屏幕上显示的所有内容的基础，类似于Android和IOS的View概念
-
-1、显示小部件2、更新小部件的状态信息3、摆放小部件4、添加、删除小部件5、小部件设置动画6、使用Canvas">
+    <meta name="description" content="未选择的路
+123456789101112131415161718192021222324252627282930《未选择的路》黄色的树林里分出两条路，可惜我不能同时去涉足，我在那路口久久伫立，我向着一条路极目望去，直到它消失在丛林深处。但">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -264,7 +261,7 @@ Flutter的小部件是屏幕上显示的所有内容的基础，类似于Android
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/images/flutter_logo.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/images/literature_logo.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -381,10 +378,6 @@ Flutter的小部件是屏幕上显示的所有内容的基础，类似于Android
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Dart/" target="_blank">
-                                <span class="chip bg-color">Dart</span>
-                            </a>
-                        
                             <a href="/tags/诗词/" target="_blank">
                                 <span class="chip bg-color">诗词</span>
                             </a>
@@ -416,14 +409,14 @@ Flutter的小部件是屏幕上显示的所有内容的基础，类似于Android
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.7k
+                        210
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        9 分
+                        1 分
                     </div>
                     
                 
@@ -439,587 +432,8 @@ Flutter的小部件是屏幕上显示的所有内容的基础，类似于Android
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Flutter Widget</p>
-<hr>
-<p>Flutter的小部件是屏幕上显示的所有内容的基础，类似于Android和IOS的View概念</p>
-<blockquote>
-<p>1、显示小部件<br>2、更新小部件的状态信息<br>3、摆放小部件<br>4、添加、删除小部件<br>5、小部件设置动画<br>6、使用Canvas绘画<br>7、自定义Widget<br>8、全篇汇总效果图</p>
-</blockquote>
-<blockquote>
-<p>1、显示视图/小部件</p>
-</blockquote>
-<pre><code>import &apos;package:flutter/material.dart&apos;;
-
-void main() {
-  runApp(MaterialApp(
-    home: Scaffold(
-        body: Center(
-      child: Text(
-        &apos;I like Flutter!&apos;,
-        style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 16,
-            color: Colors.blueAccent),
-      ),
-    )),
-  ));
-}</code></pre><p>效果：</p>
-<table>
-<thead>
-<tr>
-<th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-ec326879e2c3a3df.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360" alt="view/widget"></th>
-</tr>
-</thead>
-</table>
-<blockquote>
-<p>2、更新视图/小部件的状态/显示信息</p>
-</blockquote>
-<pre><code>import &apos;package:flutter/material.dart&apos;;
-
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: &apos;Flutter Demo&apos;,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: &apos;Flutter Demo Home Page&apos;),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-
-  final String title;
-
-//  @override
-//  _MyHomePageState createState() =&gt; _MyHomePageState();
-  @override
-  State&lt;StatefulWidget&gt; createState() {
-    return _MyHomePageState();
-  }
-}
-
-class _MyHomePageState extends State&lt;MyHomePage&gt; {
-  int _counter = 0;
-
-  static String textToShowOne = &quot;I like flutter!&quot;;
-  static String textToShowTwo = &quot;Flutter is Awesome!&quot;;
-
-  String textToShow = textToShowOne;
-
-  void _incrementCounter() {
-    /*
-    更新状态
-    调用setState方法，将会触发build()调用
-     */
-    setState(() {
-      //
-      _counter++;
-    });
-  }
-
-  void switchShowText() {
-    setState(() {
-      //operate something.
-      _counter ++;
-      if (_counter % 2 == 0) {
-        textToShow = textToShowTwo;
-      } else {
-        textToShow = textToShowOne;
-      }
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-
-    return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: &lt;Widget&gt;[
-            Text(
-              &apos;Click counter:$_counter&apos;,
-              style: TextStyle(fontSize: 16),
-            ),
-            Text(
-              &apos;$textToShow&apos;,
-              style: Theme.of(context).textTheme.display1,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          switchShowText();
-        },
-        tooltip: &apos;Increment&apos;,
-        child: Icon(Icons.plus_one),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
-  }
-}</code></pre><table>
-<thead>
-<tr>
-<th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-90d571f11056a92d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360" alt="状态1"></th>
-<th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-6212b4daf0d13de5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360" alt="状态2"></th>
-</tr>
-</thead>
-</table>
-<blockquote>
-<p>3、摆放小部件</p>
-</blockquote>
-<p>Android和IOS既可以使用代码创建视图、摆放视图，又可以使用XML和Storyboard；<br>而Flutter类似于React native只可以使用代码创建视图、摆放视图。</p>
-<pre><code>@override
-Widget build(BuildContext context) {
-  return Scaffold(
-    appBar: AppBar(
-      title: Text(&quot;Sample App&quot;),
-    ),
-    body: Center(
-      child: MaterialButton(
-        onPressed: () {},
-        child: Text(&apos;Hello&apos;),
-        padding: EdgeInsets.only(left: 10.0, right: 10.0),
-      ),
-    ),
-  );
-}</code></pre><blockquote>
-<p>4、添加、删除小部件</p>
-</blockquote>
-<p>在Android中，可以调用父项的addChild()和removeChild()在父项上动态的添加和删除子视图。在Flutter中，因为小部件是不可变的，所以没有直接的addChild()等价物。相反，可以将函数传递给窗口小部件的父级，并使用布尔标志控制该子级的创建。</p>
-<p>核心示例：</p>
-<pre><code>dynamic getWidget() {
-  if (_counter % 2 == 0) {
-    return Text(&apos;This is a text widget!&apos;);
-  } else {
-    return RaisedButton(
-      onPressed: () {},
-      child: Text(&apos;This is a button widget!&apos;),
-      color: Colors.blueAccent,
-      textColor: Colors.white,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))),
-    );
-  }
-}</code></pre><p>全部示例：</p>
-<pre><code>import &apos;package:flutter/material.dart&apos;;
-
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: &apos;Flutter Demo&apos;,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: &apos;Flutter Demo Home Page&apos;),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
-//  @override
-//  _MyHomePageState createState() =&gt; _MyHomePageState();
-  @override
-  State&lt;StatefulWidget&gt; createState() {
-    return _MyHomePageState();
-  }
-}
-
-class _MyHomePageState extends State&lt;MyHomePage&gt; {
-  int _counter = 0;
-
-  static String textToShowOne = &quot;I like flutter!&quot;;
-  static String textToShowTwo = &quot;Flutter is Awesome!&quot;;
-
-  String textToShow = textToShowOne;
-
-  void _incrementCounter() {
-    /*
-    更新状态
-    调用setState方法，将会触发build()调用
-     */
-    setState(() {
-      //
-      _counter++;
-    });
-  }
-
-  void switchShowText() {
-    setState(() {
-      //operate something.
-      _counter++;
-      if (_counter % 2 == 0) {
-        textToShow = textToShowTwo;
-      } else {
-        textToShow = textToShowOne;
-      }
-    });
-  }
-
-  dynamic getWidget() {
-    if (_counter % 2 == 0) {
-      return Text(&apos;This is a text widget!&apos;);
-    } else {
-      return RaisedButton(
-        onPressed: () {},
-        child: Text(&apos;This is a button widget!&apos;),
-        color: Colors.blueAccent,
-        textColor: Colors.white,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))),
-      );
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: &lt;Widget&gt;[
-            Text(
-              &apos;Click counter:$_counter&apos;,
-              style: TextStyle(fontSize: 16),
-            ),
-            Text(
-              &apos;$textToShow&apos;,
-              style: Theme.of(context).textTheme.display1,
-            ),
-            getWidget(),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          switchShowText();
-        },
-        tooltip: &apos;Increment&apos;,
-        child: Icon(Icons.plus_one),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
-  }
-}</code></pre><table>
-<thead>
-<tr>
-<th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-6bab9ac363fd8d5e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360" alt="小部件1"></th>
-<th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-7b99e7d585bd2dcf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360" alt="小部件2"></th>
-</tr>
-</thead>
-</table>
-<blockquote>
-<p>5、小部件设置动画</p>
-</blockquote>
-<p>核心示例：</p>
-<pre><code>AnimationController controller;
-CurvedAnimation curve;
-
-@override
-void initState() {
-  super.initState();
-  controller = AnimationController(
-      duration: const Duration(milliseconds: 2000), vsync: this);
-  curve = CurvedAnimation(parent: controller, curve: Curves.easeIn);
-}
-
-      ......此处省略若干
-
-
-      FadeTransition(
-          opacity: curve,
-          child: FlutterLogo(
-            size: 100.0,
-          )),
-      FloatingActionButton(
-        onPressed: () {
-          /*
-          start animation.
-           */
-
-          if(controller.isAnimating){
-            return;
-          }
-          if(controller.isCompleted){
-            controller.reverse();
-            return;
-          }
-
-          controller.forward();
-        },
-        tooltip: &apos;play animation&apos;,
-        child: Icon(Icons.brush),
-      ),</code></pre><p>全部示例：</p>
-<pre><code>import &apos;package:flutter/material.dart&apos;;
-
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: &apos;Flutter Demo&apos;,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: &apos;Flutter Demo Home Page&apos;),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
-//  @override
-//  _MyHomePageState createState() =&gt; _MyHomePageState();
-  @override
-  State&lt;StatefulWidget&gt; createState() {
-    return _MyHomePageState();
-  }
-}
-
-class _MyHomePageState extends State&lt;MyHomePage&gt; with TickerProviderStateMixin {
-  int _counter = 0;
-
-  static String textToShowOne = &quot;I like flutter!&quot;;
-  static String textToShowTwo = &quot;Flutter is Awesome!&quot;;
-
-  String textToShow = textToShowOne;
-
-  AnimationController controller;
-  CurvedAnimation curve;
-
-  @override
-  void initState() {
-    super.initState();
-    controller = AnimationController(
-        duration: const Duration(milliseconds: 2000), vsync: this);
-    curve = CurvedAnimation(parent: controller, curve: Curves.easeIn);
-  }
-
-  void _incrementCounter() {
-    /*
-    更新状态
-    调用setState方法，将会触发build()调用
-     */
-    setState(() {
-      //
-      _counter++;
-    });
-  }
-
-  void switchShowText() {
-    setState(() {
-      //operate something.
-      _counter++;
-      if (_counter % 2 == 0) {
-        textToShow = textToShowTwo;
-      } else {
-        textToShow = textToShowOne;
-      }
-    });
-  }
-
-  dynamic getWidget() {
-    if (_counter % 2 == 0) {
-      return Text(&apos;This is a text widget!&apos;);
-    } else {
-      return RaisedButton(
-        onPressed: () {},
-        child: Text(&apos;This is a button widget!&apos;),
-        color: Colors.blueAccent,
-        textColor: Colors.white,
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.all(Radius.circular(10))),
-      );
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: &lt;Widget&gt;[
-            Text(
-              &apos;Click counter:$_counter&apos;,
-              style: TextStyle(fontSize: 16),
-            ),
-            Text(
-              &apos;$textToShow&apos;,
-              style: Theme.of(context).textTheme.display1,
-            ),
-            getWidget(),
-            FadeTransition(
-                opacity: curve,
-                child: FlutterLogo(
-                  size: 100.0,
-                )),
-            FloatingActionButton(
-              onPressed: () {
-                /*
-                start animation.
-                 */
-
-                if(controller.isAnimating){
-                  return;
-                }
-                if(controller.isCompleted){
-                  controller.reverse();
-                  return;
-                }
-
-                controller.forward();
-              },
-              tooltip: &apos;play animation&apos;,
-              child: Icon(Icons.brush),
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          switchShowText();
-        },
-        tooltip: &apos;Increment&apos;,
-        child: Icon(Icons.plus_one),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
-  }
-}</code></pre><table>
-<thead>
-<tr>
-<th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-364fe9db2ac99727.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360" alt="初始状态"></th>
-<th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-e04d0a829f9de0c9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360" alt="动画完成状态"></th>
-<th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-74fa6ad9daffddbd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360" alt="动画反转状态"></th>
-</tr>
-</thead>
-</table>
-<blockquote>
-<p>6、使用Canvas绘画<br>在Android中，可以使用Canvas和Drawables在屏幕上绘制图像和形状。<br>Flutter也有类似的CanvasAPI，因为他基于相同的低级渲染引擎Skia。Flutter中的CustomPaint和CustomPainter是绘制帮助类。</p>
-</blockquote>
-<pre><code>import &apos;package:flutter/material.dart&apos;;
-
-void main() =&gt; runApp(MaterialApp(home: DemoApp()));
-
-class DemoApp extends StatelessWidget {
-  Widget build(BuildContext context) =&gt; Scaffold(body: Signature());
-}
-
-class Signature extends StatefulWidget {
-  SignatureState createState() =&gt; SignatureState();
-}
-
-class SignatureState extends State&lt;Signature&gt; {
-  List&lt;Offset&gt; _points = &lt;Offset&gt;[];
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onPanUpdate: (DragUpdateDetails details) {
-        setState(() {
-          RenderBox referenceBox = context.findRenderObject();
-          Offset localPosition =
-          referenceBox.globalToLocal(details.globalPosition);
-          _points = List.from(_points)..add(localPosition);
-        });
-      },
-      onPanEnd: (DragEndDetails details) =&gt; _points.add(null),
-      child: CustomPaint(painter: SignaturePainter(_points), size: Size.infinite),
-    );
-  }
-}
-
-class SignaturePainter extends CustomPainter {
-  SignaturePainter(this.points);
-  final List&lt;Offset&gt; points;
-  void paint(Canvas canvas, Size size) {
-    var paint = Paint()
-      ..color = Colors.black
-      ..strokeCap = StrokeCap.round
-      ..strokeWidth = 5.0;
-    for (int i = 0; i &lt; points.length - 1; i++) {
-      if (points[i] != null &amp;&amp; points[i + 1] != null)
-        canvas.drawLine(points[i], points[i + 1], paint);
-    }
-  }
-  bool shouldRepaint(SignaturePainter other) =&gt; other.points != points;
-}</code></pre><blockquote>
-<p>7、自定义Widget</p>
-</blockquote>
-<p>在Flutter中，通过组合小部件来构建自定义小部件。<br>类似于在Android中通过组合来实现ViewGroup。</p>
-<p>自定义小部件</p>
-<pre><code>class CustomButton extends StatelessWidget {
-  final String label;
-
-  CustomButton(this.label);
-
-  @override
-  Widget build(BuildContext context) {
-    return RaisedButton(onPressed: () {}, child: Text(label));
-  }
-}</code></pre><p>使用自定义的小部件</p>
-<pre><code>@override
-Widget build(BuildContext context) {
-  return Center(
-    child: CustomButton(&quot;Hello&quot;),
-  );
-}</code></pre><table>
-<thead>
-<tr>
-<th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-aaccde79b8dfbd4e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360" alt="自定义小部件"></th>
-</tr>
-</thead>
-</table>
-<blockquote>
-<p>8、全篇汇总效果图</p>
-</blockquote>
-<p><img src="https://upload-images.jianshu.io/upload_images/8264781-ab09693c5cf0edca.gif?imageMogr2/auto-orient/strip" alt="汇总效果图.gif"></p>
-<hr>
-<p>未完待续。。。</p>
-
+                <h3 id="未选择的路"><a href="#未选择的路" class="headerlink" title="未选择的路"></a>未选择的路</h3><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">《未选择的路》</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">黄色的树林里分出两条路，</span><br><span class="line">可惜我不能同时去涉足，</span><br><span class="line">我在那路口久久伫立，</span><br><span class="line">我向着一条路极目望去，</span><br><span class="line">直到它消失在丛林深处。</span><br><span class="line"></span><br><span class="line">但我选了另一条路，</span><br><span class="line">它荒草萋萋，十分幽寂，</span><br><span class="line">显得更诱人，更美丽。</span><br><span class="line"></span><br><span class="line">虽然在这两条小路上，</span><br><span class="line">都很少留下旅人的足迹。</span><br><span class="line"></span><br><span class="line">虽然那天清晨落叶满地，</span><br><span class="line">两条路都未经脚印污染。</span><br><span class="line"></span><br><span class="line">啊，留下一条路等改日再见！</span><br><span class="line">但我知道路径延绵无尽头，</span><br><span class="line">恐怕我难以再回返。</span><br><span class="line"></span><br><span class="line">也许多少年后在某个地方，</span><br><span class="line">我将轻声叹息将往事回顾：</span><br><span class="line"></span><br><span class="line">一片树林里分出两条路</span><br><span class="line">而我选择了人迹更少的一条，</span><br><span class="line">从此决定了我一生的道路。</span><br></pre></td></tr></table></figure>
             </div>
             <hr/>
 
@@ -1223,43 +637,35 @@ Widget build(BuildContext context) {
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2014/03/06/poetry/未选择的路/">
+                <a href="/2016/07/09/目录/">
                     <div class="card-image">
                         
-                        <img src="/images/literature_logo.jpg" class="responsive-img" alt="未选择的路">
                         
-                        <span class="card-title">未选择的路</span>
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Air博客集">
+                        
+                        <span class="card-title">Air博客集</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            未选择的路
+                            欢迎进入Air的个人博客！
+简书### 
+简书博客: 点击进入
+
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2014-03-06
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2016-07-09
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/文学/" class="post-category" target="_blank">
-                                    文学
-                                </a>
-                            
+                            <i class="fa fa-user fa-fw"></i>
+                            Air
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/诗词/" target="_blank">
-                        <span class="chip bg-color">诗词</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -1274,7 +680,7 @@ Widget build(BuildContext context) {
                 <a href="/2014/03/06/literature/poetry/未选择的路/">
                     <div class="card-image">
                         
-                        <img src="/images/flutter_logo.jpg" class="responsive-img" alt="未选择的路">
+                        <img src="/images/literature_logo.jpg" class="responsive-img" alt="未选择的路">
                         
                         <span class="card-title">未选择的路</span>
                     </div>
@@ -1304,10 +710,6 @@ Widget build(BuildContext context) {
 
                 
                 <div class="card-action article-tags">
-                    
-                    <a href="/tags/Dart/" target="_blank">
-                        <span class="chip bg-color">Dart</span>
-                    </a>
                     
                     <a href="/tags/诗词/" target="_blank">
                         <span class="chip bg-color">诗词</span>
@@ -1431,7 +833,7 @@ Widget build(BuildContext context) {
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">13.8k</span>
+                <span class="white-color">12.2k</span>
             
 
             
