@@ -6,8 +6,10 @@
     <meta charset="utf-8">
     <meta name="keywords" content="Higher-Order Functions and Lambdas, Air">
     <meta name="description" content="Higher-Order Functions and Lambdas(高阶函数和Lambdas)
-
-目录：1、Higher-Order Functions（高阶函数）2、Function types（函数类型）3、Lambda Expres">
+目录：
+Higher-Order Functions（高阶函数）
+Function types（函数类型）
+Lambda Expression">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -410,14 +412,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        924
+                        871
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        4 分
+                        3 分
                     </div>
                     
                 
@@ -434,69 +436,111 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>Higher-Order Functions and Lambdas(高阶函数和Lambdas)</p>
-<blockquote>
-<p>目录：<br>1、Higher-Order Functions（高阶函数）<br>2、Function types（函数类型）<br>3、Lambda Expressions and Anonymous Functions（lambda表达式和匿名函数）</p>
-</blockquote>
-<blockquote>
-<p>1、Higher-Order Functions（高阶函数）<br>高阶函数是：“将函数作为参数或返回函数”的函数</p>
-</blockquote>
+<h3 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h3><ol>
+<li>Higher-Order Functions（高阶函数）</li>
+<li>Function types（函数类型）</li>
+<li>Lambda Expressions and Anonymous Functions（lambda表达式和匿名函数）</li>
+</ol>
+<h3 id="1、Higher-Order-Functions（高阶函数）"><a href="#1、Higher-Order-Functions（高阶函数）" class="headerlink" title="1、Higher-Order Functions（高阶函数）"></a>1、Higher-Order Functions（高阶函数）</h3><p>高阶函数是：“将函数作为参数或返回函数”的函数</p>
 <p>将函数作为参数的函数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fun fooFunction(bar: Int = 1, baz: Int = 1, lamb: () -&gt; Int): Int &#123;</span><br><span class="line">    println(&quot;foo: lambda result=$&#123;lamb()&#125;&quot;)</span><br><span class="line">    return lamb()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>fun fooFunction(bar: Int = 1, baz: Int = 1, lamb: () -&gt; Int): Int {
+    println(&quot;foo: lambda result=${lamb()}&quot;)
+    return lamb()
+}</code></pre><p>返回函数的函数</p>
+<pre><code>fun fooFunction(a: Int): () -&gt; Int {
 
-<p>返回函数的函数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fun fooFunction(a: Int): () -&gt; Int &#123;</span><br><span class="line"></span><br><span class="line">    a + 1</span><br><span class="line"></span><br><span class="line">    return fun(): Int = a</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    a + 1
 
-<blockquote>
-<p>2、Function types（函数类型）<br>如同Int，String，Boolean类型一样，当函数作为参数时，也需要定义类型</p>
-</blockquote>
+    return fun(): Int = a
+}</code></pre><h3 id="2、Function-types（函数类型）"><a href="#2、Function-types（函数类型）" class="headerlink" title="2、Function types（函数类型）"></a>2、Function types（函数类型）</h3><p>如同Int，String，Boolean类型一样，当函数作为参数时，也需要定义类型</p>
 <p>kotlin使用一系列函数类型，例如(Int) -&gt; String处理函数的声明：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//此时，(String) -&gt; Unit 定义的onClick是一个函数，等同于：fun onClick(x:String):Unit&#123;&#125;</span><br><span class="line">val onClick: (String) -&gt; Unit = &#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line">onClick(&quot;string&quot;)</span><br></pre></td></tr></table></figure>
+<pre><code>//此时，(String) -&gt; Unit 定义的onClick是一个函数，等同于：fun onClick(x:String):Unit{}
+val onClick: (String) -&gt; Unit = {
 
-<p>编译器可推断变量的函数类型，如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">val simplyFunctiontype = &#123; x: Int, y: Int -&gt;</span><br><span class="line">    x + y</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>等同于：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">val simplyFunctiontype: (Int, Int) -&gt; Int = &#123; x, y -&gt;</span><br><span class="line">    x + y</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>3、Lambda Expressions and Anonymous Functions（lambda表达式和匿名函数）</p>
-</blockquote>
-<p>1、Lambda表达式和匿名函数是“函数文字”，即未声明但立即作为表达式传递的函数，</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">fun compare(a: String, b: String): Boolean = a.length &lt; b.length;</span><br></pre></td></tr></table></figure>
-
-<p>2、Lambda expression syntax(Lambda表达式语法)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">/*</span><br><span class="line">Lambda表达式的全部语法</span><br><span class="line"> */</span><br><span class="line">val sum = &#123; x: Int, y: Int -&gt; x + y &#125;</span><br></pre></td></tr></table></figure>
-
-<p>lambda表达式总是被花括号括起来，完整语法形式的参数声明进入花括号内部并具有可选的类型注释，主体在-&gt;符号后面，如果lambda的推断返回类型不是Unit，则lambda主体内的最后一个（或可能是单个）表达式将被视为返回值</p>
+}
+onClick(&quot;string&quot;)</code></pre><p>编译器可推断变量的函数类型，如下：</p>
+<pre><code>val simplyFunctiontype = { x: Int, y: Int -&gt;
+    x + y
+}</code></pre><p>等同于：</p>
+<pre><code>val simplyFunctiontype: (Int, Int) -&gt; Int = { x, y -&gt;
+    x + y
+}</code></pre><h3 id="3-Lambda-Expressions-and-Anonymous-Functions（lambda表达式和匿名函数）"><a href="#3-Lambda-Expressions-and-Anonymous-Functions（lambda表达式和匿名函数）" class="headerlink" title="3. Lambda Expressions and Anonymous Functions（lambda表达式和匿名函数）"></a>3. Lambda Expressions and Anonymous Functions（lambda表达式和匿名函数）</h3><h4 id="1-Lambda表达式和匿名函数是“函数文字”，即未声明但立即作为表达式传递的函数，"><a href="#1-Lambda表达式和匿名函数是“函数文字”，即未声明但立即作为表达式传递的函数，" class="headerlink" title="1. Lambda表达式和匿名函数是“函数文字”，即未声明但立即作为表达式传递的函数，"></a>1. Lambda表达式和匿名函数是“函数文字”，即未声明但立即作为表达式传递的函数，</h4><pre><code>fun compare(a: String, b: String): Boolean = a.length &lt; b.length;</code></pre><h4 id="2-Lambda-expression-syntax-Lambda表达式语法"><a href="#2-Lambda-expression-syntax-Lambda表达式语法" class="headerlink" title="2. Lambda expression syntax(Lambda表达式语法)"></a>2. Lambda expression syntax(Lambda表达式语法)</h4><p>全部语法</p>
+<pre><code>/*
+Lambda表达式的全部语法
+*/
+val sum = { x: Int, y: Int -&gt; x + y }</code></pre><p>lambda表达式总是被花括号括起来，完整语法形式的参数声明进入花括号内部并具有可选的类型注释，主体在-&gt;符号后面，如果lambda的推断返回类型不是Unit，则lambda主体内的最后一个（或可能是单个）表达式将被视为返回值</p>
+<hr>
 <p>如果我们将所有可选的注释都留下，那么剩下的就是下面这样：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//Full version：Lambda expression syntax</span><br><span class="line">val lambdaSumWithExplicitly: (Int, Int) -&gt; Int = &#123; oneParam, twoParam -&gt;</span><br><span class="line">    //lambda将最后一行表达式作为返回的值</span><br><span class="line">    oneParam * twoParam</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>//Full version：Lambda expression syntax
+val lambdaSumWithExplicitly: (Int, Int) -&gt; Int = { oneParam, twoParam -&gt;
+    //lambda将最后一行表达式作为返回的值
+    oneParam * twoParam
+}</code></pre><h4 id="3-Passing-a-lambda-to-the-last-parameter（将lambda表达式作为函数的最后一个参数）"><a href="#3-Passing-a-lambda-to-the-last-parameter（将lambda表达式作为函数的最后一个参数）" class="headerlink" title="3. Passing a lambda to the last parameter（将lambda表达式作为函数的最后一个参数）"></a>3. Passing a lambda to the last parameter（将lambda表达式作为函数的最后一个参数）</h4><p>将Lambda表达式作为函数参数</p>
+<pre><code>fun fooFunction(bar: Int = 1, baz: Int = 1, lamb: () -&gt; Int): Int {
+    println(&quot;foo: lambda result=${lamb()}&quot;)
+    return lamb()
+}</code></pre><p>调用带有lambda表达式参数的函数</p>
+<pre><code>  //括号之外传递
+val lambdaParamOutResult = fooFunction {
+    &quot;&quot;
+    1
+}
+//括号之内传递
+val lambdaParamInResult = fooFunction(lamb = {
+    &quot;&quot;
+    1
+})
+//括号之内传递，并且全参数赋值
+val lambdaParamFullResult = fooFunction(1, 2, lamb = {
+    &quot;&quot;
+    1
+})</code></pre><h4 id="4-it-implicit-name-of-a-single-parameter（it：一个参数的隐式名称）"><a href="#4-it-implicit-name-of-a-single-parameter（it：一个参数的隐式名称）" class="headerlink" title="4. it:implicit name of a single parameter（it：一个参数的隐式名称）"></a>4. it:implicit name of a single parameter（it：一个参数的隐式名称）</h4><pre><code>//it:implicit name of a single parameter
+val lambdaImplicitIt: (Int) -&gt; Int = {
+    it * it
+}
 
-<p>3、Passing a lambda to the last parameter（将lambda表达式作为函数的最后一个参数）</p>
-<p>将Lambda表达式作为函数参数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fun fooFunction(bar: Int = 1, baz: Int = 1, lamb: () -&gt; Int): Int &#123;</span><br><span class="line">    println(&quot;foo: lambda result=$&#123;lamb()&#125;&quot;)</span><br><span class="line">    return lamb()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+println(&quot;lambdaImplicitIt:${lambdaImplicitIt(5)}&quot;)//result=5*5</code></pre><h4 id="5-Returning-a-value-from-a-lambda-expression（lambda表达式返回值）"><a href="#5-Returning-a-value-from-a-lambda-expression（lambda表达式返回值）" class="headerlink" title="5. Returning a value from a lambda expression（lambda表达式返回值）"></a>5. Returning a value from a lambda expression（lambda表达式返回值）</h4><pre><code>隐式返回最后一个表达式的值
 
-<p>调用带有lambda表达式参数的函数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">  //括号之外传递</span><br><span class="line">val lambdaParamOutResult = fooFunction &#123;</span><br><span class="line">    &quot;&quot;</span><br><span class="line">    1</span><br><span class="line">&#125;</span><br><span class="line">//括号之内传递</span><br><span class="line">val lambdaParamInResult = fooFunction(lamb = &#123;</span><br><span class="line">    &quot;&quot;</span><br><span class="line">    1</span><br><span class="line">&#125;)</span><br><span class="line">//括号之内传递，并且全参数赋值</span><br><span class="line">val lambdaParamFullResult = fooFunction(1, 2, lamb = &#123;</span><br><span class="line">    &quot;&quot;</span><br><span class="line">    1</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
-<p>4、it:implicit name of a single parameter（it：一个参数的隐式名称）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//it:implicit name of a single parameter</span><br><span class="line">val lambdaImplicitIt: (Int) -&gt; Int = &#123;</span><br><span class="line">    it * it</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">println(&quot;lambdaImplicitIt:$&#123;lambdaImplicitIt(5)&#125;&quot;)//result=5*5</span><br></pre></td></tr></table></figure>
+    //it:implicit name of a single parameter
+    val lambdaImplicitIt: (Int) -&gt; Int = {
+        val result = it * it
+        result//implicit return result
+    }</code></pre><h4 id="6-Underscope-for-unused-variables（使用’-’作为未使用参数）"><a href="#6-Underscope-for-unused-variables（使用’-’作为未使用参数）" class="headerlink" title="6. Underscope for unused variables（使用’_’作为未使用参数）"></a>6. Underscope for unused variables（使用’_’作为未使用参数）</h4><pre><code>如果lambda参数未使用，则可以放置下划线代替其名称
 
-<p>5、Returning a value from a lambda expression（lambda表达式返回值）</p>
-<p>隐式返回最后一个表达式的值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//it:implicit name of a single parameter</span><br><span class="line">val lambdaImplicitIt: (Int) -&gt; Int = &#123;</span><br><span class="line">    val result = it * it</span><br><span class="line">    result//implicit return result</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    //使用:&quot;_&quot;代替未使用的参数的名称
+    val lambdaProduct: (Int, Int) -&gt; Int = { _, y -&gt;
+        y * y
+    }</code></pre><h4 id="7-Anonymous-functions（匿名函数）"><a href="#7-Anonymous-functions（匿名函数）" class="headerlink" title="7. Anonymous functions（匿名函数）"></a>7. Anonymous functions（匿名函数）</h4><p>匿名函数与常规函数的区别：匿名函数省略了常规函数的函数名</p>
+<pre><code>val anonymousFunction = fun(x: Int): Int {
+    return x * x
+}
+println(&quot;Anonymous function:${anonymousFunction(5)}&quot;)
 
-<p>6、Underscope for unused variables（使用’_’作为未使用参数）</p>
-<p>如果lambda参数未使用，则可以放置下划线代替其名称</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//使用:&quot;_&quot;代替未使用的参数的名称</span><br><span class="line">val lambdaProduct: (Int, Int) -&gt; Int = &#123; _, y -&gt;</span><br><span class="line">    y * y</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>7、Anonymous functions（匿名函数）<br>匿名函数与常规函数的区别：匿名函数省略了常规函数的函数名</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">val anonymousFunction = fun(x: Int): Int &#123;</span><br><span class="line">    return x * x</span><br><span class="line">&#125;</span><br><span class="line">println(&quot;Anonymous function:$&#123;anonymousFunction(5)&#125;&quot;)</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">val anonymousFunction = fun(x: Int) = x * x</span><br><span class="line">println(&quot;Anonymous function:$&#123;anonymousFunction(5)&#125;&quot;)</span><br></pre></td></tr></table></figure>
 
-<p>8、Expansion Anonymous Function（‘拓展+匿名’的函数）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">fun expansionAnonymous() &#123;</span><br><span class="line">    println();</span><br><span class="line">    /*</span><br><span class="line">    常规匿名函数的定义</span><br><span class="line">     */</span><br><span class="line">    val commonFunction = fun(num: Int): Int &#123;</span><br><span class="line">        return num * num</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /*</span><br><span class="line">    拓展匿名函数的定义</span><br><span class="line">     */</span><br><span class="line">    val expansionAnonymousFunction = fun Int.(param: Int): Int &#123;</span><br><span class="line">        return param * param</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    val a = 1;</span><br><span class="line">    println(&quot;expansionAnonymousFunction:$&#123;a.expansionAnonymousFunction(5)&#125;&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+val anonymousFunction = fun(x: Int) = x * x
+println(&quot;Anonymous function:${anonymousFunction(5)}&quot;)</code></pre><h4 id="8-Expansion-Anonymous-Function（‘拓展-匿名’的函数）"><a href="#8-Expansion-Anonymous-Function（‘拓展-匿名’的函数）" class="headerlink" title="8. Expansion Anonymous Function（‘拓展+匿名’的函数）"></a>8. Expansion Anonymous Function（‘拓展+匿名’的函数）</h4><pre><code>fun expansionAnonymous() {
+    println();
+    /*
+    常规匿名函数的定义
+     */
+    val commonFunction = fun(num: Int): Int {
+        return num * num
+    }
+
+    /*
+    拓展匿名函数的定义
+     */
+    val expansionAnonymousFunction = fun Int.(param: Int): Int {
+        return param * param
+    }
+
+    val a = 1;
+    println(&quot;expansionAnonymousFunction:${a.expansionAnonymousFunction(5)}&quot;)
+}</code></pre><hr>
 <p>未完待续。。。</p>
 
             </div>
@@ -905,7 +949,7 @@
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">14.8k</span>
+                <span class="white-color">14.7k</span>
             
 
             

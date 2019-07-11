@@ -6,10 +6,11 @@
     <meta charset="utf-8">
     <meta name="keywords" content="Dart-Functions, Air">
     <meta name="description" content="Dart-Functions（函数）
-1234/*Dart 是一种真正的面向对象语言，因此即使是函数也是对象并且具有类型Function这意味着函数可以分配给变量或作为参数传递给其他函数，您也可以调用Dart类的实例*/
-
-
-目录：1、de">
+/*
+Dart 是一种真正的面向对象语言，因此即使是函数也是对象并且具有类型Function
+这意味着函数可以分配给变量或作为参数传递给其他函数，您也可以调用Dart类的实例
+*/
+目录：1、defin">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -412,7 +413,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        584
+                        525
                     </div>
                     
 
@@ -436,58 +437,111 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>Dart-Functions（函数）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">Dart 是一种真正的面向对象语言，因此即使是函数也是对象并且具有类型Function</span><br><span class="line">这意味着函数可以分配给变量或作为参数传递给其他函数，您也可以调用Dart类的实例</span><br><span class="line">*/</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>目录：<br>1、define function（定义函数）<br>2、ignore return type（省略返回类型的定义）<br>3、dynamic return type（动态返回类型的定义）<br>4、optional parameter（函数的可选参数）<br>5、Required parameters（必选参数）<br>6、anonymousFunction（匿名函数）<br>7、nestFunction（嵌套函数）<br>8、Function type（函数也是一种具有Function类型的对象）</p>
+<pre><code>/*
+Dart 是一种真正的面向对象语言，因此即使是函数也是对象并且具有类型Function
+这意味着函数可以分配给变量或作为参数传递给其他函数，您也可以调用Dart类的实例
+*/</code></pre><blockquote>
+<h3 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h3><p>1、define function（定义函数）<br>2、ignore return type（省略返回类型的定义）<br>3、dynamic return type（动态返回类型的定义）<br>4、optional parameter（函数的可选参数）<br>5、Required parameters（必选参数）<br>6、anonymousFunction（匿名函数）<br>7、nestFunction（嵌套函数）<br>8、Function type（函数也是一种具有Function类型的对象）</p>
 </blockquote>
-<blockquote>
-<p>1、define function（定义函数）</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">/*</span><br><span class="line">Define function.</span><br><span class="line"> */</span><br><span class="line">bool isBool(int a, int b) &#123;</span><br><span class="line">  return a == b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1、define-function（定义函数）"><a href="#1、define-function（定义函数）" class="headerlink" title="1、define function（定义函数）"></a>1、define function（定义函数）</h3><pre><code>/*
+Define function.
+ */
+bool isBool(int a, int b) {
+  return a == b;
+}</code></pre><p>对于只包含一个表达式的函数，可以使用简写语法：</p>
+<pre><code>bool isNobel(int a, int b) =&gt; a == b;</code></pre><h3 id="2、ignore-return-type（省略返回类型的定义）"><a href="#2、ignore-return-type（省略返回类型的定义）" class="headerlink" title="2、ignore return type（省略返回类型的定义）"></a>2、ignore return type（省略返回类型的定义）</h3><pre><code>/*
+ignore the define of return type:bool
+ */
+isBoolTwo(int a, int b) {
+  return a == b;
+}</code></pre><h3 id="3、dynamic-return-type（动态返回类型的定义）"><a href="#3、dynamic-return-type（动态返回类型的定义）" class="headerlink" title="3、dynamic return type（动态返回类型的定义）"></a>3、dynamic return type（动态返回类型的定义）</h3><pre><code>/*
+this function&apos;s return type is dynamic,
+is int
+is bool
+is String
+ */
+isBoolThree(int a, int b) {
+  if (a &lt; b) {
+    return a;
+  } else if (a == b) {
+    return true;
+  } else if (a &gt; b) {
+    return &quot;min:${b}&quot;;
+  }
+}</code></pre><h3 id="4、optional-parameter（可选参数的函数）"><a href="#4、optional-parameter（可选参数的函数）" class="headerlink" title="4、optional parameter（可选参数的函数）"></a>4、optional parameter（可选参数的函数）</h3><pre><code>/*
+Optional parameters
+可选函数、命名函数
+ */
+isBoolFour({int a, int b}) {
+  if (a &lt; b) {
+    return a;
+  } else if (a == b) {
+    return true;
+  } else if (a &gt; b) {
+    return &quot;min:${b}&quot;;
+  }
+}
 
-<p>对于只包含一个表达式的函数，可以使用简写语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">bool isNobel(int a, int b) =&gt; a == b;</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>2、ignore return type（省略返回类型的定义）</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">/*</span><br><span class="line">ignore the define of return type:bool</span><br><span class="line"> */</span><br><span class="line">isBoolTwo(int a, int b) &#123;</span><br><span class="line">  return a == b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  //调用可选/命名参数时，传递的参数的
+  print(&quot;optional parameters:${isBoolFour(b: 1, a: 2)}&quot;);</code></pre><p>一组函数参数<br>[]</p>
+<pre><code>dynamic functionArray(String name, [String arguments]) {
+  return arguments?.length;
+}</code></pre><h3 id="5、Required-parameters（必选参数）"><a href="#5、Required-parameters（必选参数）" class="headerlink" title="5、Required parameters（必选参数）"></a>5、Required parameters（必选参数）</h3><p>@required</p>
+<pre><code>/*
+Required parameters
+ */
+isBoolFive({int a = 0, @required int b}) {
+  if (a == null) {
+    return b;
+  } else {
+    return a + b;
+  }
+}
 
-<blockquote>
-<p>3、dynamic return type（动态返回类型的定义）</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">this function&apos;s return type is dynamic,</span><br><span class="line">is int</span><br><span class="line">is bool</span><br><span class="line">is String</span><br><span class="line"> */</span><br><span class="line">isBoolThree(int a, int b) &#123;</span><br><span class="line">  if (a &lt; b) &#123;</span><br><span class="line">    return a;</span><br><span class="line">  &#125; else if (a == b) &#123;</span><br><span class="line">    return true;</span><br><span class="line">  &#125; else if (a &gt; b) &#123;</span><br><span class="line">    return &quot;min:$&#123;b&#125;&quot;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<blockquote>
-<p>4、optional parameter（可选参数的函数）</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">Optional parameters</span><br><span class="line">可选函数、命名函数</span><br><span class="line"> */</span><br><span class="line">isBoolFour(&#123;int a, int b&#125;) &#123;</span><br><span class="line">  if (a &lt; b) &#123;</span><br><span class="line">    return a;</span><br><span class="line">  &#125; else if (a == b) &#123;</span><br><span class="line">    return true;</span><br><span class="line">  &#125; else if (a &gt; b) &#123;</span><br><span class="line">    return &quot;min:$&#123;b&#125;&quot;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  //调用可选/命名参数时，传递的参数的</span><br><span class="line">  print(&quot;optional parameters:$&#123;isBoolFour(b: 1, a: 2)&#125;&quot;);</span><br></pre></td></tr></table></figure>
+  //调用带有必须参数的，命名函数
+  print(&quot;required parameters:${isBoolFive(b: 5)}&quot;);</code></pre><h3 id="6、anonymousFunction（匿名函数）"><a href="#6、anonymousFunction（匿名函数）" class="headerlink" title="6、anonymousFunction（匿名函数）"></a>6、anonymousFunction（匿名函数）</h3><pre><code>/*
+Define anonymous function
+ */
+anonymousFunction() {
+  print(&quot;&quot;);
+  print(&quot;Anonymous function.&quot;);
+  var list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-<p>一组函数参数<br>[]</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">dynamic functionArray(String name, [String arguments]) &#123;</span><br><span class="line">  return arguments?.length;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  list.forEach((item) {
+    print(&quot;item:${item}&quot;);
+  });
+}</code></pre><h3 id="7、nestFunction（嵌套函数）"><a href="#7、nestFunction（嵌套函数）" class="headerlink" title="7、nestFunction（嵌套函数）"></a>7、nestFunction（嵌套函数）</h3><pre><code>bool topLevel = true;
 
-<blockquote>
-<p>5、Required parameters（必选参数）</p>
-</blockquote>
-<p>@required</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">/*</span><br><span class="line">Required parameters</span><br><span class="line"> */</span><br><span class="line">isBoolFive(&#123;int a = 0, @required int b&#125;) &#123;</span><br><span class="line">  if (a == null) &#123;</span><br><span class="line">    return b;</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    return a + b;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  //调用带有必须参数的，命名函数</span><br><span class="line">  print(&quot;required parameters:$&#123;isBoolFive(b: 5)&#125;&quot;);</span><br></pre></td></tr></table></figure>
+void nestTopLevelFunction() {
+  var insideMain = true;
 
-<blockquote>
-<p>6、anonymousFunction（匿名函数）</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">Define anonymous function</span><br><span class="line"> */</span><br><span class="line">anonymousFunction() &#123;</span><br><span class="line">  print(&quot;&quot;);</span><br><span class="line">  print(&quot;Anonymous function.&quot;);</span><br><span class="line">  var list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];</span><br><span class="line"></span><br><span class="line">  list.forEach((item) &#123;</span><br><span class="line">    print(&quot;item:$&#123;item&#125;&quot;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  void myFunction() {
+    var insideFunction = true;
 
-<blockquote>
-<p>7、nestFunction（嵌套函数）</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">bool topLevel = true;</span><br><span class="line"></span><br><span class="line">void nestTopLevelFunction() &#123;</span><br><span class="line">  var insideMain = true;</span><br><span class="line"></span><br><span class="line">  void myFunction() &#123;</span><br><span class="line">    var insideFunction = true;</span><br><span class="line"></span><br><span class="line">    void nestedFunction() &#123;</span><br><span class="line">      var insideNestedFunction = true;</span><br><span class="line"></span><br><span class="line">      print(topLevel);</span><br><span class="line">      print(insideMain);</span><br><span class="line">      print(insideFunction);</span><br><span class="line">      print(insideNestedFunction);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    nestedFunction();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  myFunction();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    void nestedFunction() {
+      var insideNestedFunction = true;
 
-<blockquote>
-<p>8、Function type（函数也是一种具有Function类型的对象）</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">void functionType(num a) &#123;</span><br><span class="line">  num a;</span><br><span class="line">  int b;</span><br><span class="line">  double c;</span><br><span class="line">  String d;</span><br><span class="line">  bool e;</span><br><span class="line">  Function f;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      print(topLevel);
+      print(insideMain);
+      print(insideFunction);
+      print(insideNestedFunction);
+    }
 
+    nestedFunction();
+  }
+
+  myFunction();
+}</code></pre><h3 id="8、Function-type（函数也是一种具有Function类型的对象）"><a href="#8、Function-type（函数也是一种具有Function类型的对象）" class="headerlink" title="8、Function type（函数也是一种具有Function类型的对象）"></a>8、Function type（函数也是一种具有Function类型的对象）</h3><pre><code>void functionType(num a) {
+  num a;
+  int b;
+  double c;
+  String d;
+  bool e;
+  Function f;
+
+}</code></pre><hr>
 <p>未完待续。。。</p>
 
             </div>
@@ -900,7 +954,7 @@
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">14.8k</span>
+                <span class="white-color">14.7k</span>
             
 
             
