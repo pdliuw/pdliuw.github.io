@@ -4,9 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="做小人物并不可悲, Air">
-    <meta name="description" content="做小人物并不可悲
-人与人的差距更多体现在思想方法上，虽然起初大家站在同一起点，但日积月累就会越拉越大。所以要时常审视与他人的差距并及时总结，方能迎头赶上。你要善于观察、学习、思考和总结，你不能逃避，也不应该一味地苦干奋斗、埋头拉车，这会导致">
+    <meta name="keywords" content="Window background and translucent, Air">
+    <meta name="description" content="Window background and translucent
+涉及知识点：Activity、Window、Dialog、View 关联
+前言：今天有人问我一个问题（如下）。秉着分享使我快乐的原则，在解决问题后，作此篇
+问题：
+wind">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>做小人物并不可悲 | Air</title>
+    <title>Window background and translucent | Air</title>
     <link rel="icon" type="image/jpeg" href="/medias/avatar.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -261,13 +264,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/images/daily_note_logo.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/images/android_two_logo.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        做小人物并不可悲
+                        Window background and translucent
                     </div>
                 </div>
             </div>
@@ -378,8 +381,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/日常随记/" target="_blank">
-                                <span class="chip bg-color">日常随记</span>
+                            <a href="/tags/Java/" target="_blank">
+                                <span class="chip bg-color">Java</span>
+                            </a>
+                        
+                            <a href="/tags/Window/" target="_blank">
+                                <span class="chip bg-color">Window</span>
                             </a>
                         
                     </div>
@@ -390,8 +397,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/随记/" class="post-category" target="_blank">
-                                随记
+                            <a href="/categories/Android/" class="post-category" target="_blank">
+                                Android
                             </a>
                         
                     </div>
@@ -402,14 +409,14 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2014-05-06
+                    2016-10-19
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        241
+                        328
                     </div>
                     
 
@@ -432,10 +439,64 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="做小人物并不可悲"><a href="#做小人物并不可悲" class="headerlink" title="做小人物并不可悲"></a>做小人物并不可悲</h3><hr>
-<p>人与人的差距更多体现在思想方法上，虽然起初大家站在同一起点，但日积月累就会越拉越大。所以要时常审视与他人的差距并及时总结，方能迎头赶上。你要善于观察、学习、思考和总结，你不能逃避，也不应该一味地苦干奋斗、埋头拉车，这会导致一个人原地踏步，总是重复过去犯下的错误。</p>
-<p>成功的规则未必这样笃定，你要有很高的悟性，学会自己去发现和总结。面对差距和挑战，要及时调整心态，增强自信心，要学会独立思考、多谋善断、随机应变。这是我的心路历程，我今日的成就就是我从底层打拼，不懈奋斗的结果。</p>
-<p>做小人物并不可悲，可悲的是没有从小人物做起的勇气。</p>
+                <p>Window background and translucent</p>
+<h3 id="涉及知识点："><a href="#涉及知识点：" class="headerlink" title="涉及知识点："></a>涉及知识点：</h3><p>Activity、Window、Dialog、View 关联</p>
+<h3 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h3><p>今天有人问我一个问题（如下）。秉着分享使我快乐的原则，在解决问题后，作此篇</p>
+<h4 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h4><ol>
+<li>windowBackground为透明时, windowIsTranslucent为false, Activity背景为何还是黑色，为什么不是透明？</li>
+<li>windowBackground为红色时, windowIsTranslucent为true, Activity背景还是红色，为什么不是透明？</li>
+</ol>
+<h4 id="解决："><a href="#解决：" class="headerlink" title="解决："></a>解决：</h4><p>单刀直入核心主题：<br>windowBackground 、windowIsTranslucent顾名思义是Window属性，但是具体的实现是在哪里呢？是在RootView中———也就是DecorView类中</p>
+<ol>
+<li><p>我们进入DecorView类中：</p>
+</li>
+<li><p>找到setWindowBackground方法</p>
+<pre><code>public void setWindowBackground(Drawable drawable) {
+    if (getBackground() != drawable) {
+        setBackgroundDrawable(drawable);
+        if (drawable != null) {
+            mResizingBackgroundDrawable = enforceNonTranslucentBackground(drawable,
+                    mWindow.isTranslucent() || mWindow.isShowingWallpaper());
+        } else {
+            mResizingBackgroundDrawable = getResizingBackgroundDrawable(
+                    getContext(), 0, mWindow.mBackgroundFallbackResource,
+                    mWindow.isTranslucent() || mWindow.isShowingWallpaper());
+        }
+        if (mResizingBackgroundDrawable != null) {
+            mResizingBackgroundDrawable.getPadding(mBackgroundPadding);
+        } else {
+            mBackgroundPadding.setEmpty();
+        }
+        drawableChanged();
+    }
+}</code></pre><p>我们可以看到enforceNonTranslucentBackground中使用到 Window.isTranslucent()，于是我们向下进一步寻找</p>
+</li>
+</ol>
+<ol start="3">
+<li><p>找到 enforceNonTranslucentBackground </p>
+<pre><code>/**
+* Enforces a drawable to be non-translucent to act as a background if needed, i.e. if the
+* window is not translucent.
+*/
+private static Drawable enforceNonTranslucentBackground(Drawable drawable,
+        boolean windowTranslucent) {
+    if (!windowTranslucent &amp;&amp; drawable instanceof ColorDrawable) {
+        ColorDrawable colorDrawable = (ColorDrawable) drawable;
+        int color = colorDrawable.getColor();
+        if (Color.alpha(color) != 255) {
+            ColorDrawable copy = (ColorDrawable) colorDrawable.getConstantState().newDrawable()
+                    .mutate();
+            copy.setColor(
+                    Color.argb(255, Color.red(color), Color.green(color), Color.blue(color)));
+            return copy;
+        }
+    }
+    return drawable;
+}</code></pre><p>enforceNonTranslucentBackground中的大致逻辑：当windowTranslucent == false,enforceNonTranslucentBackground会强制将背景更改为不透明背景（PS: 即使windowBackground 是 透明的 ）</p>
+</li>
+</ol>
+<hr>
+<p>未完待续。。。</p>
 
             </div>
             <hr/>
@@ -594,9 +655,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《做小人物并不可悲》
+                    《Window background and translucent》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2014/05/06/DailyNote/做小人物并不可悲/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2016/10/19/android/Android windowIsTranslucent与windowBackground/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Air
             </a> 采用
@@ -640,30 +701,30 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2014/06/06/DailyNote/潜能/">
+                <a href="/2016/10/21/android/Android自定义View之圆形头像/">
                     <div class="card-image">
                         
-                        <img src="/images/daily_note_logo.jpg" class="responsive-img" alt="潜能">
+                        <img src="/images/android_one_logo.jpg" class="responsive-img" alt="Android自定义View之圆形头像">
                         
-                        <span class="card-title">潜能</span>
+                        <span class="card-title">Android自定义View之圆形头像</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            潜能
+                            自定义View之圆形头像
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2014-06-06
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2016-10-21
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/随记/" class="post-category" target="_blank">
-                                    随记
+                            <a href="/categories/Android/" class="post-category" target="_blank">
+                                    Android
                                 </a>
                             
                             
@@ -673,8 +734,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/日常随记/" target="_blank">
-                        <span class="chip bg-color">日常随记</span>
+                    <a href="/tags/Java/" target="_blank">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/Customize-View/" target="_blank">
+                        <span class="chip bg-color">Customize View</span>
                     </a>
                     
                 </div>
@@ -688,30 +753,30 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2014/04/06/DailyNote/读书与健身/">
+                <a href="/2016/10/10/android/Android 事件分发机制/">
                     <div class="card-image">
                         
-                        <img src="/images/daily_note_logo.jpg" class="responsive-img" alt="读书与健身">
+                        <img src="/images/android_one_logo.jpg" class="responsive-img" alt="Android 事件分发机制">
                         
-                        <span class="card-title">读书与健身</span>
+                        <span class="card-title">Android 事件分发机制</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            读书与健身
+                            Android 事件分发机制
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2014-04-06
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2016-10-10
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/随记/" class="post-category" target="_blank">
-                                    随记
+                            <a href="/categories/Android/" class="post-category" target="_blank">
+                                    Android
                                 </a>
                             
                             
@@ -721,8 +786,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/日常随记/" target="_blank">
-                        <span class="chip bg-color">日常随记</span>
+                    <a href="/tags/Java/" target="_blank">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/Touch-Event/" target="_blank">
+                        <span class="chip bg-color">Touch Event</span>
                     </a>
                     
                 </div>
