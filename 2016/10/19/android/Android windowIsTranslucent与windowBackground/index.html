@@ -6,10 +6,10 @@
     <meta charset="utf-8">
     <meta name="keywords" content="Window background and translucent, Air">
     <meta name="description" content="Window background and translucent
-涉及知识点：Activity、Window、Dialog、View 关联
+涉及知识点：Activity、Window、Dialog、View 相关知识点
 前言：发现很多同学在线上都会问到这个问题；遂，作此篇！
 问题：
-windowBackground为">
+windowBackgrou">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -389,6 +389,10 @@ windowBackground为">
                                 <span class="chip bg-color">Window</span>
                             </a>
                         
+                            <a href="/tags/View/" target="_blank">
+                                <span class="chip bg-color">View</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -416,7 +420,7 @@ windowBackground为">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        317
+                        312
                     </div>
                     
 
@@ -440,13 +444,13 @@ windowBackground为">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>Window background and translucent</p>
-<h3 id="涉及知识点："><a href="#涉及知识点：" class="headerlink" title="涉及知识点："></a>涉及知识点：</h3><p>Activity、Window、Dialog、View 关联</p>
+<h3 id="涉及知识点："><a href="#涉及知识点：" class="headerlink" title="涉及知识点："></a>涉及知识点：</h3><p>Activity、Window、Dialog、View 相关知识点</p>
 <h3 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h3><p>发现很多同学在线上都会问到这个问题；遂，作此篇！</p>
 <h4 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h4><ol>
 <li>windowBackground为透明时, windowIsTranslucent为false, Activity背景为何还是黑色，为什么不是透明？</li>
 <li>windowBackground为红色时, windowIsTranslucent为true, Activity背景还是红色，为什么不是透明？</li>
 </ol>
-<h4 id="解决："><a href="#解决：" class="headerlink" title="解决："></a>解决：</h4><p>单刀直入核心主题：<br>windowBackground 、windowIsTranslucent顾名思义是Window属性，但是具体的实现是在哪里呢？是在RootView中———也就是DecorView类中</p>
+<h4 id="解决："><a href="#解决：" class="headerlink" title="解决："></a>解决：</h4><p>windowBackground 、windowIsTranslucent顾名思义是Window属性，但是具体的实现是在哪里呢？是在RootView中———也就是DecorView类中</p>
 <ol>
 <li><p>我们进入DecorView类中：</p>
 </li>
