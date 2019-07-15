@@ -4,15 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Flutter lifecycle, Air">
-    <meta name="description" content="Flutter 生命周期实际测试出来的与Flutter官网描述的有些不同，具体往下看
+    <meta name="keywords" content="Android自定义View之圆形头像, Air">
+    <meta name="description" content="
+本篇：自定义圆形View并显示圆形的头像
 
-目录：
- 1、Flutter 生命周期 2、Todo：自己实测与Flutter官网描述出现的不一致情况！
-
-1、Flutter 生命周期
-官网介绍如下
-">
+目录：1.  预备：阅读本篇文章，需具备View的绘制基本知识。2.  讲解：PorterDuff.Mode https://developer.android.com/reference/an">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +16,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Flutter lifecycle | Air</title>
+    <title>Android自定义View之圆形头像 | Air</title>
     <link rel="icon" type="image/jpeg" href="/medias/avatar.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -267,13 +263,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/images/flutter_logo.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/images/android_one_logo.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Flutter lifecycle
+                        Android自定义View之圆形头像
                     </div>
                 </div>
             </div>
@@ -384,12 +380,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Dart/" target="_blank">
-                                <span class="chip bg-color">Dart</span>
+                            <a href="/tags/Java/" target="_blank">
+                                <span class="chip bg-color">Java</span>
                             </a>
                         
-                            <a href="/tags/Flutter/" target="_blank">
-                                <span class="chip bg-color">Flutter</span>
+                            <a href="/tags/Customize-View/" target="_blank">
+                                <span class="chip bg-color">Customize View</span>
                             </a>
                         
                     </div>
@@ -400,8 +396,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/跨平台/" class="post-category" target="_blank">
-                                跨平台
+                            <a href="/categories/Android/" class="post-category" target="_blank">
+                                Android
                             </a>
                         
                     </div>
@@ -412,14 +408,14 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2018-09-13
+                    2016-10-21
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        479
+                        527
                     </div>
                     
 
@@ -442,79 +438,166 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Flutter 生命周期实际测试出来的与Flutter官网描述的有些不同，具体往下看</p>
+                <hr>
+<p>本篇：自定义圆形View并显示圆形的头像</p>
 <hr>
-<h3 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h3><blockquote>
-<p> 1、Flutter 生命周期<br> 2、Todo：自己实测与Flutter官网描述出现的不一致情况！</p>
-</blockquote>
-<h3 id="1、Flutter-生命周期"><a href="#1、Flutter-生命周期" class="headerlink" title="1、Flutter 生命周期"></a>1、Flutter 生命周期</h3><blockquote>
-<p>官网介绍如下</p>
-</blockquote>
-<p>AppLifecycleState：Flutter widget 生命周期状态</p>
-<p>–官网介绍如下图：<br>|<img src="https://upload-images.jianshu.io/upload_images/8264781-49fed0ba677c59c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080" alt="Flutter 官网介绍生命周期.png">|<br>|:-|</p>
-<blockquote>
-<p>实测</p>
-</blockquote>
-<p>1.1:AppLifecycleState.resumed  </p>
-<p>可见，并且响应用户输入</p>
-<p>1.2:AppLifecycleState.inactive<br>或许可见，但一定不响应用户输入；此状态表明，应用程序处于非活动状态；在Android和IOS上测试都会出现：inactive出现在resumed和paused之前。</p>
-<p>1.3:AppLifecycleState.paused<br>不可见，进入后台；此状态表明，将随时进入suspending</p>
-<p>1.4:AppLifecycleState.suspending<br>在Android和IOS上，暂时未测出此状态的出现</p>
-<h3 id="2、Todo"><a href="#2、Todo" class="headerlink" title="2、Todo"></a>2、Todo</h3><blockquote>
-<p>2、Todo：自己实测与Flutter官网描述出现的不一致情况！</p>
-</blockquote>
-<p>官网测试代码</p>
-<pre><code>import &apos;package:flutter/widgets.dart&apos;;
+<h3 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h3><h4 id="1-预备：阅读本篇文章，需具备View的绘制基本知识。"><a href="#1-预备：阅读本篇文章，需具备View的绘制基本知识。" class="headerlink" title="1.  预备：阅读本篇文章，需具备View的绘制基本知识。"></a>1.  预备：阅读本篇文章，需具备View的绘制基本知识。</h4><h4 id="2-讲解：PorterDuff-Mode-https-developer-android-com-reference-android-graphics-PorterDuff-Mode"><a href="#2-讲解：PorterDuff-Mode-https-developer-android-com-reference-android-graphics-PorterDuff-Mode" class="headerlink" title="2.  讲解：PorterDuff.Mode https://developer.android.com/reference/android/graphics/PorterDuff.Mode"></a>2.  讲解：PorterDuff.Mode <a href="https://developer.android.com/reference/android/graphics/PorterDuff.Mode" target="_blank" rel="noopener">https://developer.android.com/reference/android/graphics/PorterDuff.Mode</a></h4><h4 id="3-实战：使用PorterDuff-Mode实现圆形头像。"><a href="#3-实战：使用PorterDuff-Mode实现圆形头像。" class="headerlink" title="3.  实战：使用PorterDuff.Mode实现圆形头像。"></a>3.  实战：使用PorterDuff.Mode实现圆形头像。</h4><p>核心代码：</p>
+<pre><code>paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_ATOP));</code></pre><h3 id="PorterDuff-Mode"><a href="#PorterDuff-Mode" class="headerlink" title="PorterDuff.Mode"></a>PorterDuff.Mode</h3><h4 id="1-SRC"><a href="#1-SRC" class="headerlink" title="1.  SRC"></a>1.  SRC</h4><h5 id="PorterDuff-Mode-SRC"><a href="#PorterDuff-Mode-SRC" class="headerlink" title="PorterDuff.Mode.SRC"></a>PorterDuff.Mode.SRC</h5><p><img src="https://upload-images.jianshu.io/upload_images/8264781-9ae9e8950b2d41b1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="composite_SRC.png"></p>
+<h5 id="PorterDuff-Mode-SRC-OVER"><a href="#PorterDuff-Mode-SRC-OVER" class="headerlink" title="PorterDuff.Mode.SRC_OVER"></a>PorterDuff.Mode.SRC_OVER</h5><p><img src="https://upload-images.jianshu.io/upload_images/8264781-d0ea7489088d5047.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="composite_SRC_OVER.png"></p>
+<h5 id="PorterDuff-Mode-SRC-IN"><a href="#PorterDuff-Mode-SRC-IN" class="headerlink" title="PorterDuff.Mode.SRC_IN"></a>PorterDuff.Mode.SRC_IN</h5><p><img src="https://upload-images.jianshu.io/upload_images/8264781-e2eca49324b5f534.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="composite_SRC_IN.png"></p>
+<h5 id="PorterDuff-Mode-SRC-OUT"><a href="#PorterDuff-Mode-SRC-OUT" class="headerlink" title="PorterDuff.Mode.SRC_OUT"></a>PorterDuff.Mode.SRC_OUT</h5><p><img src="https://upload-images.jianshu.io/upload_images/8264781-151e1d6565932522.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="composite_SRC_OUT.png"></p>
+<h5 id="PorterDuff-Mode-SRC-ATOP"><a href="#PorterDuff-Mode-SRC-ATOP" class="headerlink" title="PorterDuff.Mode.SRC_ATOP"></a>PorterDuff.Mode.SRC_ATOP</h5><p><img src="https://upload-images.jianshu.io/upload_images/8264781-7c3f1ad8704d3941.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="composite_SRC_ATOP.png"></p>
+<h4 id="2-Destination"><a href="#2-Destination" class="headerlink" title="2.  Destination"></a>2.  Destination</h4><h5 id="PorterDuff-Mode-DST"><a href="#PorterDuff-Mode-DST" class="headerlink" title="PorterDuff.Mode.DST"></a>PorterDuff.Mode.DST</h5><p><img src="https://upload-images.jianshu.io/upload_images/8264781-eaaa41fb6562f54f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="composite_DST.png"></p>
+<h5 id="PorterDuff-Mode-DST-OVER"><a href="#PorterDuff-Mode-DST-OVER" class="headerlink" title="PorterDuff.Mode.DST_OVER"></a>PorterDuff.Mode.DST_OVER</h5><p><img src="https://upload-images.jianshu.io/upload_images/8264781-11ef4e19912e9708.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="composite_DST_OVER.png"></p>
+<h5 id="PorterDuff-Mode-DST-IN"><a href="#PorterDuff-Mode-DST-IN" class="headerlink" title="PorterDuff.Mode.DST_IN"></a>PorterDuff.Mode.DST_IN</h5><p><img src="https://upload-images.jianshu.io/upload_images/8264781-39218d68f264c2ab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="composite_DST_IN.png"></p>
+<h5 id="PorterDuff-Mode-DST-OUT"><a href="#PorterDuff-Mode-DST-OUT" class="headerlink" title="PorterDuff.Mode.DST_OUT"></a>PorterDuff.Mode.DST_OUT</h5><p><img src="https://upload-images.jianshu.io/upload_images/8264781-f22bbf19d51ff247.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="composite_DST_OUT.png"></p>
+<h5 id="PorterDuff-Mode-DST-ATOP"><a href="#PorterDuff-Mode-DST-ATOP" class="headerlink" title="PorterDuff.Mode.DST_ATOP"></a>PorterDuff.Mode.DST_ATOP</h5><p><img src="https://upload-images.jianshu.io/upload_images/8264781-1417b20245dc235e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="composite_DST_ATOP.png"></p>
+<h4 id="4-Clear"><a href="#4-Clear" class="headerlink" title="4.  Clear"></a>4.  Clear</h4><p>######PorterDuff.Mode.CLEAR<br><img src="https://upload-images.jianshu.io/upload_images/8264781-7239e7e2d85dacfd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="composite_CLEAR.png"></p>
+<h3 id="3-Exclusive-or"><a href="#3-Exclusive-or" class="headerlink" title="3.  Exclusive or"></a>3.  Exclusive or</h3><h4 id="PorterDuff-Mode-XOR"><a href="#PorterDuff-Mode-XOR" class="headerlink" title="PorterDuff.Mode.XOR"></a>PorterDuff.Mode.XOR</h4><p><img src="https://upload-images.jianshu.io/upload_images/8264781-616372208bd62af7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="composite_XOR.png"></p>
+<h3 id="PorterDuff-Mode-实现圆形头像-（支持Padding、wrap-content属性）"><a href="#PorterDuff-Mode-实现圆形头像-（支持Padding、wrap-content属性）" class="headerlink" title="PorterDuff.Mode,实现圆形头像 （支持Padding、wrap_content属性）"></a>PorterDuff.Mode,实现圆形头像 （支持Padding、wrap_content属性）</h3><h4 id="1-核心代码"><a href="#1-核心代码" class="headerlink" title="1.    核心代码"></a>1.    核心代码</h4><pre><code>public class AirXfermodeCircleView extends ImageView {
 
-class LifecycleWatcher extends StatefulWidget {
-  @override
-  _LifecycleWatcherState createState() =&gt; _LifecycleWatcherState();
-}
+    private static final String TAG = &quot;AirXfermodeCircleView&quot;;
 
-class _LifecycleWatcherState extends State&lt;LifecycleWatcher&gt; with WidgetsBindingObserver {
-  AppLifecycleState _lastLifecycleState;
+    private static final int MIN_SIZE_DEFAULT = 100;
 
-  @override
-  void initState() {
-    super.initState();
-    WidgetsBinding.instance.addObserver(this);
-  }
+    private Paint mDrawablePaint;
 
-  @override
-  void dispose() {
-    WidgetsBinding.instance.removeObserver(this);
-    super.dispose();
-  }
+    public AirXfermodeCircleView(Context context) {
+        this(context, null);
+    }
 
-  @override
-  void didChangeAppLifecycleState(AppLifecycleState state) {
-    setState(() {
-      _lastLifecycleState = state;
-    });
-  }
+    public AirXfermodeCircleView(Context context, @Nullable AttributeSet attrs) {
+        this(context, attrs, 0);
+    }
 
-  @override
-  Widget build(BuildContext context) {
-    if (_lastLifecycleState == null)
-      return Text(&apos;This widget has not observed any lifecycle changes.&apos;, textDirection: TextDirection.ltr);
+    public AirXfermodeCircleView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+        this(context, attrs, defStyleAttr, 0);
+    }
 
-    return Text(&apos;The most recent lifecycle state this widget observed was: $_lastLifecycleState.&apos;,
-        textDirection: TextDirection.ltr);
-  }
-}
+    public AirXfermodeCircleView(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        super(context, attrs, defStyleAttr, defStyleRes);
 
-void main() {
-  runApp(Center(child: LifecycleWatcher()));
-}</code></pre><blockquote>
-<p>描述1:<br>此测试代码不够完善，因为：“此代码只能测试resumed一个状态，其他的状态是测试不出来的”</p>
-</blockquote>
-<blockquote>
-<p>描述2:<br>Flutter的渲染机制：调用setState((){})函数时，会启动Flutter重绘制机制，进而调用build(BuildContext context)函数。</p>
-</blockquote>
-<blockquote>
-<p>问题：<br>当实际测试时并非如描述2那般一模一样。如上图代码所示，在didChangeAppLifecycleState函数中调用setState，在build中显示AppLifecycleState(也就是widget的生命周期状态)当Widget生命周期状态切换为inactive或paused状态时，实际测试出的结果是，并没有调用build函数进行重绘</p>
-</blockquote>
-<hr>
+
+        initializePaints();
+    }
+
+    private void initializePaints() {
+
+        mDrawablePaint = new Paint();
+        mDrawablePaint.setAntiAlias(true);
+
+    }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+
+        int widthMode = MeasureSpec.getMode(widthMeasureSpec);
+        int widthSize = MeasureSpec.getSize(widthMeasureSpec);
+
+        int heightMode = MeasureSpec.getMode(heightMeasureSpec);
+        int heightSize = MeasureSpec.getSize(heightMeasureSpec);
+
+
+        switch (widthMode) {
+            case MeasureSpec.AT_MOST:
+                widthSize = dpToPx(MIN_SIZE_DEFAULT);
+                break;
+        }
+
+        switch (heightMode) {
+            case MeasureSpec.AT_MOST:
+                heightSize = dpToPx(MIN_SIZE_DEFAULT);
+                break;
+        }
+
+        int minSize = Math.min(widthSize, heightSize);
+
+        //Update measured dimension.
+        setMeasuredDimension(minSize, minSize);
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+
+        //Canvas circle image.
+        drawCircleImage(canvas);
+
+    }
+
+    /**
+    * Draw circle image with paint PorterDuff.
+    *
+    * @param canvas
+    *         canvas.
+    */
+    private void drawCircleImage(Canvas canvas) {
+
+        //Save layer with parameter.
+        canvas.saveLayerAlpha(getLeft(), getTop(), getRight(), getBottom(), 200);
+
+        //Get drawable source.
+        Drawable drawable = getDrawable();
+        BitmapDrawable bitmapDrawable = (BitmapDrawable) drawable;
+        Bitmap bitmap = bitmapDrawable.getBitmap();
+
+        //Computer circle image radius.
+        float radiusX = (getWidth() - getPaddingLeft() - getPaddingRight()) / 2f;
+        float radiusY = (getHeight() - getPaddingTop() - getPaddingBottom()) / 2f;
+        float radius = Math.min(radiusX, radiusY);
+
+        //Computer
+        Rect rectF = new Rect();
+        rectF.left = getLeft() + getPaddingLeft();
+        rectF.top = getTop() + getPaddingTop();
+        rectF.right = getRight() - getPaddingRight();
+        rectF.bottom = getBottom() - getPaddingBottom();
+
+        int targetBitmapWidth = rectF.right - rectF.left;
+        int targetBitmapHeight = rectF.bottom - rectF.top;
+
+        int diameter = (int) (radius * 2 + 0.5);
+
+        float circleX = getPaddingLeft() + radius;
+        float circleY = getPaddingTop() + radius;
+
+        Bitmap scaledBitmap = Bitmap.createScaledBitmap(bitmap, targetBitmapWidth, targetBitmapHeight, false);
+
+        /*
+        Draw destination bitmap.
+        */
+        Bitmap bitmapDestination = Bitmap.createBitmap(targetBitmapWidth, targetBitmapHeight, Bitmap.Config.ARGB_8888);
+        Canvas canvasDestination = new Canvas(bitmapDestination);
+        //Draw circle.
+        canvasDestination.drawCircle(circleX, circleY, radius, mDrawablePaint);
+        //Draw destination bitmap.
+        canvas.drawBitmap(bitmapDestination, 0, 0, mDrawablePaint);
+
+        /*
+        Set  paint&apos;s porterDuffMode
+        */
+        mDrawablePaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
+
+        /*
+        Draw source bitmap.
+        */
+        canvas.drawBitmap(scaledBitmap, rectF, rectF, mDrawablePaint);
+
+        //Reset mode value.
+        mDrawablePaint.setXfermode(null);
+        //Restore.
+        canvas.restore();
+    }
+
+
+    private int dpToPx(int dp) {
+        return (int) (dp * getResources().getDisplayMetrics().density + 0.5);
+    }
+}</code></pre><p><img src="https://upload-images.jianshu.io/upload_images/8264781-89113eac13573c78.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="圆形头像效果图"></p>
+<p><strong>* 如果，您认为到这里就万事大吉了，那么很遗憾：请看下图 *</strong></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/8264781-7a31ace42d6945ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="收尾点"></p>
+<p>所以，在绘制完成后，切记要加上：</p>
+<pre><code>Paint.setXfermode(null);</code></pre><hr>
 <p>未完待续。。。</p>
 
             </div>
@@ -674,9 +757,9 @@ void main() {
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Flutter lifecycle》
+                    《Android自定义View之圆形头像》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2018/09/13/flutter/Flutter lifecycle/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2016/10/21/android/Android自定义View之圆形头像/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Air
             </a> 采用
@@ -720,30 +803,30 @@ void main() {
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/01/12/vs/Java_Kotlin_Swift_Dart_JavaScript/">
+                <a href="/2016/10/24/android/贝塞尔曲线---(沙漏)/">
                     <div class="card-image">
                         
-                        <img src="/images/vs_logo.jpg" class="responsive-img" alt="Java_Kotlin_Swift_Dart_JavaScript对决">
+                        <img src="/images/android_one_logo.jpg" class="responsive-img" alt="贝塞尔曲线---(沙漏)">
                         
-                        <span class="card-title">Java_Kotlin_Swift_Dart_JavaScript对决</span>
+                        <span class="card-title">贝塞尔曲线---(沙漏)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Java_Kotlin_Swift_Dart_JavaScript对决
+                            贝塞尔曲线---(沙漏)
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-12
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2016-10-24
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/VS/" class="post-category" target="_blank">
-                                    VS
+                            <a href="/categories/Android/" class="post-category" target="_blank">
+                                    Android
                                 </a>
                             
                             
@@ -757,20 +840,8 @@ void main() {
                         <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/tags/Kotlin/" target="_blank">
-                        <span class="chip bg-color">Kotlin</span>
-                    </a>
-                    
-                    <a href="/tags/Dart/" target="_blank">
-                        <span class="chip bg-color">Dart</span>
-                    </a>
-                    
-                    <a href="/tags/Swift/" target="_blank">
-                        <span class="chip bg-color">Swift</span>
-                    </a>
-                    
-                    <a href="/tags/JavaScript/" target="_blank">
-                        <span class="chip bg-color">JavaScript</span>
+                    <a href="/tags/贝塞尔曲线/" target="_blank">
+                        <span class="chip bg-color">贝塞尔曲线</span>
                     </a>
                     
                 </div>
@@ -784,30 +855,30 @@ void main() {
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/09/12/flutter/Flutter Resource Using/">
+                <a href="/2016/10/10/android/Android 事件分发机制/">
                     <div class="card-image">
                         
-                        <img src="/images/flutter_logo.jpg" class="responsive-img" alt="Flutter Resource Using">
+                        <img src="/images/android_one_logo.jpg" class="responsive-img" alt="Android 事件分发机制">
                         
-                        <span class="card-title">Flutter Resource Using</span>
+                        <span class="card-title">Android 事件分发机制</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Flutter Resource Using
+                            Android 事件分发机制
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-09-12
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2016-10-10
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/跨平台/" class="post-category" target="_blank">
-                                    跨平台
+                            <a href="/categories/Android/" class="post-category" target="_blank">
+                                    Android
                                 </a>
                             
                             
@@ -817,12 +888,12 @@ void main() {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Dart/" target="_blank">
-                        <span class="chip bg-color">Dart</span>
+                    <a href="/tags/Java/" target="_blank">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/tags/Flutter/" target="_blank">
-                        <span class="chip bg-color">Flutter</span>
+                    <a href="/tags/Touch-Event/" target="_blank">
+                        <span class="chip bg-color">Touch Event</span>
                     </a>
                     
                 </div>
