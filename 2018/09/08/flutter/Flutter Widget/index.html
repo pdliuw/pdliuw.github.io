@@ -8,8 +8,14 @@
     <meta name="description" content="Flutter Widget
 
 Flutter的小部件是屏幕上显示的所有内容的基础，类似于Android和IOS的View概念
-
-1、显示小部件2、更新小部件的状态信息3、摆放小部件4、添加、删除小部件5、小部件设置动画6、使用Canvas">
+目录
+显示小部件
+更新小部件的状态信息
+摆放小部件
+添加、删除小部件
+小部件设置动画
+使用Canvas绘画
+自定">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -442,13 +448,17 @@ Flutter的小部件是屏幕上显示的所有内容的基础，类似于Android
                 <p>Flutter Widget</p>
 <hr>
 <p>Flutter的小部件是屏幕上显示的所有内容的基础，类似于Android和IOS的View概念</p>
-<blockquote>
-<p>1、显示小部件<br>2、更新小部件的状态信息<br>3、摆放小部件<br>4、添加、删除小部件<br>5、小部件设置动画<br>6、使用Canvas绘画<br>7、自定义Widget<br>8、全篇汇总效果图</p>
-</blockquote>
-<blockquote>
-<p>1、显示视图/小部件</p>
-</blockquote>
-<pre><code>import &apos;package:flutter/material.dart&apos;;
+<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ol>
+<li>显示小部件</li>
+<li>更新小部件的状态信息</li>
+<li>摆放小部件</li>
+<li>添加、删除小部件</li>
+<li>小部件设置动画</li>
+<li>使用Canvas绘画</li>
+<li>自定义Widget</li>
+<li>全篇汇总效果图</li>
+</ol>
+<h4 id="1-显示视图-小部件"><a href="#1-显示视图-小部件" class="headerlink" title="1.  显示视图/小部件"></a>1.  显示视图/小部件</h4><pre><code>import &apos;package:flutter/material.dart&apos;;
 
 void main() {
   runApp(MaterialApp(
@@ -467,14 +477,11 @@ void main() {
 <table>
 <thead>
 <tr>
-<th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-ec326879e2c3a3df.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360" alt="view/widget"></th>
+<th align="left"><img src="http://puidw7hq5.bkt.clouddn.com/flutter_widget_widget_show.png" alt="widget_show"></th>
 </tr>
 </thead>
 </table>
-<blockquote>
-<p>2、更新视图/小部件的状态/显示信息</p>
-</blockquote>
-<pre><code>import &apos;package:flutter/material.dart&apos;;
+<h4 id="2-更新视图-小部件的状态-显示信息"><a href="#2-更新视图-小部件的状态-显示信息" class="headerlink" title="2.  更新视图/小部件的状态/显示信息"></a>2.  更新视图/小部件的状态/显示信息</h4><pre><code>import &apos;package:flutter/material.dart&apos;;
 
 void main() {
   runApp(MyApp());
@@ -577,15 +584,12 @@ class _MyHomePageState extends State&lt;MyHomePage&gt; {
 }</code></pre><table>
 <thead>
 <tr>
-<th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-90d571f11056a92d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360" alt="状态1"></th>
-<th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-6212b4daf0d13de5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360" alt="状态2"></th>
+<th align="left"><img src="http://puidw7hq5.bkt.clouddn.com/flutter_widget_widget_state_one.png" alt="状态1"></th>
+<th align="left"><img src="http://puidw7hq5.bkt.clouddn.com/flutter_widget_widget_state_two.png" alt="状态2"></th>
 </tr>
 </thead>
 </table>
-<blockquote>
-<p>3、摆放小部件</p>
-</blockquote>
-<p>Android和IOS既可以使用代码创建视图、摆放视图，又可以使用XML和Storyboard；<br>而Flutter类似于React native只可以使用代码创建视图、摆放视图。</p>
+<h4 id="3-摆放小部件"><a href="#3-摆放小部件" class="headerlink" title="3.  摆放小部件"></a>3.  摆放小部件</h4><p>Android和IOS既可以使用代码创建视图、摆放视图，又可以使用XML和Storyboard；<br>而Flutter类似于React native只可以使用代码创建视图、摆放视图。</p>
 <pre><code>@override
 Widget build(BuildContext context) {
   return Scaffold(
@@ -600,10 +604,7 @@ Widget build(BuildContext context) {
       ),
     ),
   );
-}</code></pre><blockquote>
-<p>4、添加、删除小部件</p>
-</blockquote>
-<p>在Android中，可以调用父项的addChild()和removeChild()在父项上动态的添加和删除子视图。在Flutter中，因为小部件是不可变的，所以没有直接的addChild()等价物。相反，可以将函数传递给窗口小部件的父级，并使用布尔标志控制该子级的创建。</p>
+}</code></pre><h4 id="4-添加、删除小部件"><a href="#4-添加、删除小部件" class="headerlink" title="4.  添加、删除小部件"></a>4.  添加、删除小部件</h4><p>在Android中，可以调用父项的addChild()和removeChild()在父项上动态的添加和删除子视图。在Flutter中，因为小部件是不可变的，所以没有直接的addChild()等价物。相反，可以将函数传递给窗口小部件的父级，并使用布尔标志控制该子级的创建。</p>
 <p>核心示例：</p>
 <pre><code>dynamic getWidget() {
   if (_counter % 2 == 0) {
@@ -734,15 +735,12 @@ class _MyHomePageState extends State&lt;MyHomePage&gt; {
 }</code></pre><table>
 <thead>
 <tr>
-<th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-6bab9ac363fd8d5e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360" alt="小部件1"></th>
-<th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-7b99e7d585bd2dcf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360" alt="小部件2"></th>
+<th align="left"><img src="http://puidw7hq5.bkt.clouddn.com/flutter_add_or_delete_widget_one.png" alt="添加或删除小部件1"></th>
+<th align="left"><img src="http://puidw7hq5.bkt.clouddn.com/flutter_add_or_delete_widget_two.png" alt="添加或删除小部件2"></th>
 </tr>
 </thead>
 </table>
-<blockquote>
-<p>5、小部件设置动画</p>
-</blockquote>
-<p>核心示例：</p>
+<h4 id="5-小部件设置动画"><a href="#5-小部件设置动画" class="headerlink" title="5.  小部件设置动画"></a>5.  小部件设置动画</h4><p>核心示例：</p>
 <pre><code>AnimationController controller;
 CurvedAnimation curve;
 
@@ -933,15 +931,13 @@ class _MyHomePageState extends State&lt;MyHomePage&gt; with TickerProviderStateM
 }</code></pre><table>
 <thead>
 <tr>
-<th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-364fe9db2ac99727.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360" alt="初始状态"></th>
-<th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-e04d0a829f9de0c9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360" alt="动画完成状态"></th>
-<th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-74fa6ad9daffddbd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360" alt="动画反转状态"></th>
+<th align="left"><img src="http://puidw7hq5.bkt.clouddn.com/flutter_animation_normal_image.png" alt="Flutter animation normal"></th>
+<th align="left"><img src="http://puidw7hq5.bkt.clouddn.com/flutter_animation_complete_image.png" alt="Flutter animation complete"></th>
+<th align="left"><img src="http://puidw7hq5.bkt.clouddn.com/flutter_animation_reverse_image.png" alt="Flutter animation reverse"></th>
 </tr>
 </thead>
 </table>
-<blockquote>
-<p>6、使用Canvas绘画<br>在Android中，可以使用Canvas和Drawables在屏幕上绘制图像和形状。<br>Flutter也有类似的CanvasAPI，因为他基于相同的低级渲染引擎Skia。Flutter中的CustomPaint和CustomPainter是绘制帮助类。</p>
-</blockquote>
+<h4 id="6-使用Canvas绘画"><a href="#6-使用Canvas绘画" class="headerlink" title="6. 使用Canvas绘画"></a>6. 使用Canvas绘画</h4><p>在Android中，可以使用Canvas和Drawables在屏幕上绘制图像和形状。<br>Flutter也有类似的CanvasAPI，因为他基于相同的低级渲染引擎Skia。Flutter中的CustomPaint和CustomPainter是绘制帮助类。</p>
 <pre><code>import &apos;package:flutter/material.dart&apos;;
 
 void main() =&gt; runApp(MaterialApp(home: DemoApp()));
@@ -986,10 +982,7 @@ class SignaturePainter extends CustomPainter {
     }
   }
   bool shouldRepaint(SignaturePainter other) =&gt; other.points != points;
-}</code></pre><blockquote>
-<p>7、自定义Widget</p>
-</blockquote>
-<p>在Flutter中，通过组合小部件来构建自定义小部件。<br>类似于在Android中通过组合来实现ViewGroup。</p>
+}</code></pre><h4 id="7-自定义Widget"><a href="#7-自定义Widget" class="headerlink" title="7. 自定义Widget"></a>7. 自定义Widget</h4><p>在Flutter中，通过组合小部件来构建自定义小部件。<br>类似于在Android中通过组合来实现ViewGroup。</p>
 <p>自定义小部件</p>
 <pre><code>class CustomButton extends StatelessWidget {
   final String label;
@@ -1009,14 +1002,17 @@ Widget build(BuildContext context) {
 }</code></pre><table>
 <thead>
 <tr>
-<th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-aaccde79b8dfbd4e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360" alt="自定义小部件"></th>
+<th align="left"><img src="http://puidw7hq5.bkt.clouddn.com/flutter_customize_widget_image.png" alt="自定义小部件"></th>
 </tr>
 </thead>
 </table>
-<blockquote>
-<p>8、全篇汇总效果图</p>
-</blockquote>
-<p><img src="https://upload-images.jianshu.io/upload_images/8264781-ab09693c5cf0edca.gif?imageMogr2/auto-orient/strip" alt="汇总效果图.gif"></p>
+<h4 id="8-全篇汇总效果图"><a href="#8-全篇汇总效果图" class="headerlink" title="8. 全篇汇总效果图"></a>8. 全篇汇总效果图</h4><table>
+<thead>
+<tr>
+<th align="left"><img src="http://puidw7hq5.bkt.clouddn.com/flutter_widget_total_summary_image.gif" alt="汇总效果图.gif"></th>
+</tr>
+</thead>
+</table>
 <hr>
 <p>未完待续。。。</p>
 
