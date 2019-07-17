@@ -31,6 +31,33 @@
     
     
     <entry>
+      <title>Flutter Web Start</title>
+      <link href="/2019/04/08/flutter/Flutter%20Web%20Start/"/>
+      <url>/2019/04/08/flutter/Flutter%20Web%20Start/</url>
+      
+        <content type="html"><![CDATA[<p>Flutter Web Start</p><hr><p>使用Flutter搭建Web环境，并开发Web应用！</p><ol><li>Flutter搭建Web环境</li><li>创建Flutter Web项目并运行</li><li>搭建过程中所遇到问题并解决</li></ol><h3 id="1-Flutter搭建Web环境"><a href="#1-Flutter搭建Web环境" class="headerlink" title="1.  Flutter搭建Web环境"></a>1.  Flutter搭建Web环境</h3><h4 id="1-从github上面把flutter-web项目克隆到本地"><a href="#1-从github上面把flutter-web项目克隆到本地" class="headerlink" title="1.  从github上面把flutter_web项目克隆到本地"></a>1.  从github上面把flutter_web项目克隆到本地</h4><pre><code>git clone https://github.com/flutter/flutter_web.git</code></pre><h4 id="2-安装flutter-web的编译工具webdev"><a href="#2-安装flutter-web的编译工具webdev" class="headerlink" title="2.  安装flutter_web的编译工具webdev"></a>2.  安装flutter_web的编译工具webdev</h4><pre><code>//默认为方式一即可//方式一：环境变量只配置了flutter sdk而没有配置dart sdkflutter pub global activate webdev//方式二：环境变量已经配置了dart sdkpub global activate webdev</code></pre><p>如果出现如下信息，则安装成功</p><pre><code>Precompiling executables…Precompiled webdev:webdev.Installed executable webdev.Activated webdev 2.0.6</code></pre><p>上述信息中可能有一个Warning提示需要配置环境变量，按提示将$HOME/.pub-cache/bin配置到环境变量即可</p><pre><code>在.base_profile文件中配置环境变量</code></pre><h3 id="2-创建Flutter-Web项目并运行"><a href="#2-创建Flutter-Web项目并运行" class="headerlink" title="2.  创建Flutter Web项目并运行"></a>2.  创建Flutter Web项目并运行</h3><ol><li><p>使用现有项目</p><p>flutter_web目录下有examples几个demo项目，比如：hello_world</p><pre><code>cd &lt;flutter_web目录&gt;/examples/hello_world</code></pre><p>执行</p><pre><code>flutter pub upgrade 或 pub upgrade或flutter pub get 或 pub get</code></pre><p>如果出现</p><pre><code>RandyWeideMacBook-Pro:hello_world wei$ flutter pub get! flutter_web 0.0.0 from path ../../packages/flutter_web                ! flutter_web_ui 0.0.0 from path ../../packages/flutter_web_ui          Running &quot;flutter packages get&quot; in hello_world...                   21.9s</code></pre><p>说明项目配置成功了，然后就是启动本地服务</p><pre><code>//环境变量只配置了flutter sdk而没有配置dart sdkflutter pub global run webdev serve//环境变量已经配置了dart sdkwebdev serve</code></pre><p>出现以下信息就是成功了</p><pre><code>RandyWeideMacBook-Pro:hello_world wei$ flutter pub global run webdev serve[INFO] Building new asset graph completed, took 1.5s[INFO] Checking for unexpected pre-existing outputs. completed, took 1ms[INFO] Serving `web` on http://localhost:8080[INFO] Running build completed, took 18.3s[INFO] Caching finalized dependency graph completed, took 201ms[INFO] Succeeded after 18.5s with 556 outputs (3217 actions)[INFO] ------------------------------------------------------------------------</code></pre><p>然后就可以在浏览器使用信息中的地址 <a href="http://localhost:8080" target="_blank" rel="noopener">http://localhost:8080</a> 访问到了。</p></li><li><p>创建新项目</p><p>使用Visual Studio Code，具体配置Flutter Dart插件就不多说。使用命令面板Flutter: New Web Project，就可以创建一个新项目了，等配置完成后，按F5或者Debug -&gt; Start Debugging，就可以启动服务并自动打开浏览器。</p></li></ol><ol start="3"><li>项目运行效果</li></ol><table><thead><tr><th align="left"><img src="http://puidw7hq5.bkt.clouddn.com/flutter_web_default_image.png" alt="使用默认样式的效果"></th><th align="left"><img src="http://puidw7hq5.bkt.clouddn.com/flutter_web_style_image.png" alt="自主设计样式的效果"></th></tr></thead></table><h3 id="3-搭建过程中所遇到问题并解决"><a href="#3-搭建过程中所遇到问题并解决" class="headerlink" title="3.  搭建过程中所遇到问题并解决"></a>3.  搭建过程中所遇到问题并解决</h3><h4 id="1-找不到”pubspec-yaml”的文件"><a href="#1-找不到”pubspec-yaml”的文件" class="headerlink" title="1. 找不到”pubspec.yaml”的文件"></a>1. 找不到”pubspec.yaml”的文件</h4><p>出现条件是执行此命令时</p><pre><code>flutter pub upgrade</code></pre><p>错误信息如下</p><pre><code>! flutter_web 0.0.0 from path ../../packages/flutter_web                ! flutter_web_ui 0.0.0 from path ../../packages/flutter_web_ui          Could not find a file named &quot;pubspec.yaml&quot; in &quot;/Users/air/develop_tool/flutter_1.7.8/.pub-cache/hosted/pub.dartlang.org/build_runner-1.6.1&quot;.</code></pre><p>解决方案</p><pre><code>您看到这里可能会疑惑“找不到文件？难道是环境搭建过程中出现问题了导致文件丢失，或则是缺少环境搭建中的某个流程”。但是，经过各方的努力最终确定是“没有管理员权限导致的”，因此解决办法就是：“在命令前面加sudo”sudo flutter pub upgrade</code></pre><h4 id="2-webdev无法运行Flutter-Web项目"><a href="#2-webdev无法运行Flutter-Web项目" class="headerlink" title="2. webdev无法运行Flutter Web项目"></a>2. webdev无法运行Flutter Web项目</h4><p>出现条件是执行此命令时</p><pre><code>flutter pub global run webdev serve</code></pre><p>错误信息如下</p><pre><code>webdev could not run for this project.The pubspec.yaml file has changed since the pubspec.lock file was generated, please run &quot;pub get&quot; again.pub failed (78)</code></pre><p>解决方案</p><pre><code>您看到这里可能会疑惑“文件改变了？pubspec.lock文件？如果你根据提示再次运行pub get你会更加的疑惑”。但是，经过各方的努力最终确定是“没有管理员权限导致的”，因此解决办法就是：“在命令前面加sudo”sudo flutter pub global run webdev serve</code></pre><ol start="3"><li>问题解决方案概括</li></ol><pre><code>在此篇步骤中，若出现意外的错误，90%的错误都是“网络、权限”引起的，请检查后重试即可解决90%的问题！</code></pre><hr><p>未完待续。。。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 跨平台 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Java_Kotlin_Swift_Dart_JavaScript对决</title>
       <link href="/2019/01/12/vs/Java_Kotlin_Swift_Dart_JavaScript/"/>
       <url>/2019/01/12/vs/Java_Kotlin_Swift_Dart_JavaScript/</url>
@@ -47,11 +74,11 @@
       
         <tags>
             
+            <tag> Java </tag>
+            
             <tag> Dart </tag>
             
             <tag> Kotlin </tag>
-            
-            <tag> Java </tag>
             
             <tag> Swift </tag>
             
