@@ -1,0 +1,945 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Flutter RangeSlider</title>
+      <link href="/2019/06/10/flutter/Flutter%20RangeSlider/"/>
+      <url>/2019/06/10/flutter/Flutter%20RangeSlider/</url>
+      
+        <content type="html"><![CDATA[<p>Flutter RangeSlider</p><hr><p>Flutter RangeSlider</p><p>支持：区域选择，浮动提示，最小滑动单位设置</p><p>本篇：最小值0.0，最大值100.0，滑动单位10.0，</p><hr><h4 id="效果图："><a href="#效果图：" class="headerlink" title="效果图："></a>效果图：</h4><table><thead><tr><th align="left"><img src="http://puidw7hq5.bkt.clouddn.com/flutter_rangeSlide_style_before_image.gif" alt="RangeSlider-默认"></th><th align="left"><img src="http://puidw7hq5.bkt.clouddn.com/flutter_rangeSlide_style_after_image.gif" alt="RangeSlider-设计后"></th></tr></thead></table><h4 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h4><h5 id="核心代码；"><a href="#核心代码；" class="headerlink" title="核心代码；"></a>核心代码；</h5><pre><code>Widget getRangeSlider() {  return SliderTheme(    //样式的设计    data: SliderThemeData(      inactiveTickMarkColor: Colors.red,      inactiveTrackColor: Colors.yellow,    ),    child: RangeSlider(      //滑动时上方的提示标签      labels: RangeLabels(&quot;$rangeSlideMin&quot;, &quot;$rangeSlideMax&quot;),      //当前Widget滑块的值      values: RangeValues(rangeSlideMin, rangeSlideMax),      //最小值      min: 0,      //最大值      max: 100,      //最小滑动单位值      divisions: 10,      //未滑动的颜色      inactiveColor: Colors.grey,      //活动的颜色      activeColor: Colors.blue,      //滑动事件      onChanged: (RangeValues values) {        //滑动时更新widget的状态值        _rangeSlideChange(values.start, values.end);      },    ),  );}</code></pre><h5 id="全部代码："><a href="#全部代码：" class="headerlink" title="全部代码："></a>全部代码：</h5><pre><code>import &apos;package:flutter/material.dart&apos;;void main() =&gt; runApp(MyApp());class MyApp extends StatelessWidget {  // This widget is the root of your application.  @override  Widget build(BuildContext context) {    return MaterialApp(      title: &apos;Flutter Demo&apos;,      theme: ThemeData(        primarySwatch: Colors.blue,      ),      home: MyHomePage(title: &apos;Flutter Demo Home Page&apos;),    );  }}class MyHomePage extends StatefulWidget {  MyHomePage({Key key, this.title}) : super(key: key);  final String title;  @override  _MyHomePageState createState() =&gt; _MyHomePageState();}class _MyHomePageState extends State&lt;MyHomePage&gt; {  int _counter = 0;  double rangeSlideMin = 0;  double rangeSlideMax = 10;  void _incrementCounter() {    setState(() {      _counter++;    });  }  void _rangeSlideChange(min, max) {    setState(() {      rangeSlideMin = min;      rangeSlideMax = max;    });  }  Widget getRangeSlider() {    return SliderTheme(      //样式的设计      data: SliderThemeData(        inactiveTickMarkColor: Colors.red,        inactiveTrackColor: Colors.yellow,      ),      child: RangeSlider(        //滑动时上方的提示标签        labels: RangeLabels(&quot;$rangeSlideMin&quot;, &quot;$rangeSlideMax&quot;),        //当前Widget滑块的值        values: RangeValues(rangeSlideMin, rangeSlideMax),        //最小值        min: 0,        //最大值        max: 100,        //最小滑动单位值        divisions: 10,        //未滑动的颜色        inactiveColor: Colors.grey,        //活动的颜色        activeColor: Colors.blue,        //滑动事件        onChanged: (RangeValues values) {          //滑动时更新widget的状态值          _rangeSlideChange(values.start, values.end);        },      ),    );  }  @override  Widget build(BuildContext context) {    return Scaffold(      appBar: AppBar(        title: Text(widget.title),      ),      body: Center(        child: Column(          mainAxisAlignment: MainAxisAlignment.center,          children: &lt;Widget&gt;[            Text(              &apos;You have pushed the button this many times:&apos;,            ),            Text(              &apos;$_counter&apos;,              style: Theme.of(context).textTheme.display1,            ),            getRangeSlider(),          ],        ),      ),      floatingActionButton: FloatingActionButton(        onPressed: _incrementCounter,        tooltip: &apos;Increment&apos;,        child: Icon(Icons.add),      ), // This trailing comma makes auto-formatting nicer for build methods.    );  }}</code></pre><hr><p>未完待续。。。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 跨平台 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Java_Kotlin_Swift_Dart_JavaScript对决</title>
+      <link href="/2019/01/12/vs/Java_Kotlin_Swift_Dart_JavaScript/"/>
+      <url>/2019/01/12/vs/Java_Kotlin_Swift_Dart_JavaScript/</url>
+      
+        <content type="html"><![CDATA[<p>Java_Kotlin_Swift_Dart_JavaScript对决</p><p>语言间的相同与不同</p><p><img src="http://puimpookh.bkt.clouddn.com/Java%5CKotlin%5CSwift%5CDart%5CJavaScript,Contrast_page_one.jpg" alt="Java Kotin Swift Dart JavaScript"></p><hr><p>由于内容过多，文件过大，以上只是部分的内容</p><p><a href="http://puimpookh.bkt.clouddn.com/Java%5CKotlin%5CSwift%5CDart%5CJavaScript,Contrast.pdf" target="_blank" rel="noopener">想查看完整内容，点击我</a></p><hr><p>未完待续。。。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> VS </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Dart </tag>
+            
+            <tag> Java </tag>
+            
+            <tag> Kotlin </tag>
+            
+            <tag> Swift </tag>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Flutter lifecycle</title>
+      <link href="/2018/09/13/flutter/Flutter%20lifecycle/"/>
+      <url>/2018/09/13/flutter/Flutter%20lifecycle/</url>
+      
+        <content type="html"><![CDATA[<p>Flutter 生命周期实际测试出来的与Flutter官网描述的有些不同，具体往下看</p><hr><h3 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h3><blockquote><p> 1、Flutter 生命周期<br> 2、Todo：自己实测与Flutter官网描述出现的不一致情况！</p></blockquote><h3 id="1、Flutter-生命周期"><a href="#1、Flutter-生命周期" class="headerlink" title="1、Flutter 生命周期"></a>1、Flutter 生命周期</h3><blockquote><p>官网介绍如下</p></blockquote><p>AppLifecycleState：Flutter widget 生命周期状态</p><p>–官网介绍如下图：<br>|<img src="https://upload-images.jianshu.io/upload_images/8264781-49fed0ba677c59c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080" alt="Flutter 官网介绍生命周期.png">|<br>|:-|</p><blockquote><p>实测</p></blockquote><p>1.1:AppLifecycleState.resumed  </p><p>可见，并且响应用户输入</p><p>1.2:AppLifecycleState.inactive<br>或许可见，但一定不响应用户输入；此状态表明，应用程序处于非活动状态；在Android和IOS上测试都会出现：inactive出现在resumed和paused之前。</p><p>1.3:AppLifecycleState.paused<br>不可见，进入后台；此状态表明，将随时进入suspending</p><p>1.4:AppLifecycleState.suspending<br>在Android和IOS上，暂时未测出此状态的出现</p><h3 id="2、Todo"><a href="#2、Todo" class="headerlink" title="2、Todo"></a>2、Todo</h3><blockquote><p>2、Todo：自己实测与Flutter官网描述出现的不一致情况！</p></blockquote><p>官网测试代码</p><pre><code>import &apos;package:flutter/widgets.dart&apos;;class LifecycleWatcher extends StatefulWidget {  @override  _LifecycleWatcherState createState() =&gt; _LifecycleWatcherState();}class _LifecycleWatcherState extends State&lt;LifecycleWatcher&gt; with WidgetsBindingObserver {  AppLifecycleState _lastLifecycleState;  @override  void initState() {    super.initState();    WidgetsBinding.instance.addObserver(this);  }  @override  void dispose() {    WidgetsBinding.instance.removeObserver(this);    super.dispose();  }  @override  void didChangeAppLifecycleState(AppLifecycleState state) {    setState(() {      _lastLifecycleState = state;    });  }  @override  Widget build(BuildContext context) {    if (_lastLifecycleState == null)      return Text(&apos;This widget has not observed any lifecycle changes.&apos;, textDirection: TextDirection.ltr);    return Text(&apos;The most recent lifecycle state this widget observed was: $_lastLifecycleState.&apos;,        textDirection: TextDirection.ltr);  }}void main() {  runApp(Center(child: LifecycleWatcher()));}</code></pre><blockquote><p>描述1:<br>此测试代码不够完善，因为：“此代码只能测试resumed一个状态，其他的状态是测试不出来的”</p></blockquote><blockquote><p>描述2:<br>Flutter的渲染机制：调用setState((){})函数时，会启动Flutter重绘制机制，进而调用build(BuildContext context)函数。</p></blockquote><blockquote><p>问题：<br>当实际测试时并非如描述2那般一模一样。如上图代码所示，在didChangeAppLifecycleState函数中调用setState，在build中显示AppLifecycleState(也就是widget的生命周期状态)当Widget生命周期状态切换为inactive或paused状态时，实际测试出的结果是，并没有调用build函数进行重绘</p></blockquote><hr><p>未完待续。。。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 跨平台 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Flutter Resource Using</title>
+      <link href="/2018/09/12/flutter/Flutter%20Resource%20Using/"/>
+      <url>/2018/09/12/flutter/Flutter%20Resource%20Using/</url>
+      
+        <content type="html"><![CDATA[<p>Flutter的项目结构和资源的存放、使用（图像的适配、字符串的本地化和国际化、项目依赖）</p><hr><blockquote><p>目录：<br>1、存储不同分辨率的图片资源<br>2、存储String字符串资源<br>3、添加依赖<br>4、如何国际化和本地化？<a href="https://pub.dev/packages/intl" target="_blank" rel="noopener">Flutter推荐使用intl实现</a></p></blockquote><blockquote><p>1、存储不同分辨率的图片资源</p></blockquote><p>分辨率对应的资源格式<br><img src="https://upload-images.jianshu.io/upload_images/8264781-cdd73ed0d3488837.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/480" alt="image.png"></p><p>存储不同分辨率下的图片资源进行适配<br><img src="https://upload-images.jianshu.io/upload_images/8264781-40104864f089eba7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/480" alt="image.png"></p><p>创建图像文件夹<br><img src="https://upload-images.jianshu.io/upload_images/8264781-c318ea9b745fd24e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/480" alt="image.png"></p><p>在pubspec.yaml中引入图像资源</p><p>方式一：此种方式表示，引入images文件夹中所有的资源</p><pre><code>assets:  - images/</code></pre><p>方式二：此种方式表示，引入images文件夹下的具体的某一资源</p><pre><code>assets:  - images/one.jpg</code></pre><p>使用图像资源</p><pre><code>Image.asset(&quot;images/one.jpg&quot;,width: 100,height: 100,),</code></pre><blockquote><p>2、存储String字符串资源</p></blockquote><p>Flutter目前没有专门的字符串资源系统。目前最佳做法是将字符串作为静态变量保存在类中，并从哪里访问他们。</p><pre><code>class Strings { static String welcomeMessage = “Welcome to Flutter” ; }  </code></pre><p>使用</p><pre><code>Text(Strings.welcomeMessage)</code></pre><blockquote><p>3、添加依赖</p></blockquote><p>虽然Android或IOS项目下有各自的原生依赖系统。但是，那些只是针对各不同的平台的依赖。</p><p>如果要实现Flutter项目的依赖，在pubspec.yaml文件中具体的依赖项。</p><blockquote><p>4、如何国际化和本地化？<a href="https://pub.dev/packages/intl" target="_blank" rel="noopener">Flutter推荐使用intl实现</a></p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 跨平台 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Flutter Http with List</title>
+      <link href="/2018/09/11/flutter/Flutter%20Http%20with%20List/"/>
+      <url>/2018/09/11/flutter/Flutter%20Http%20with%20List/</url>
+      
+        <content type="html"><![CDATA[<p>Flutter Http and Async Await and List</p><hr>本篇汇集：网络交互、数据解析、列表展示、对话框显示、列表加载等待的显示>目录：>1、Flutter http using2、JSON3、ListView4、ListView- loading status5、ListView- Item and item event6、本篇汇总的效果<p>1、Flutter http using</p><p>依赖：在pubspec.yaml文件中添加Flutter网路模块的依赖</p><pre><code>dependencies:  ...  http: ^0.11.3+16</code></pre><p>网络操作</p><pre><code>import &apos;package:flutter/material.dart&apos;;import &apos;package:http/http.dart&apos; as http;  loadData() async {    String dataURL = &quot;https://jsonplaceholder.typicode.com/posts&quot;;    http.Response response = await http.get(dataURL);  }}</code></pre><blockquote><p>2、JSON</p></blockquote><p>导包</p><pre><code>import &apos;dart:convert&apos;;</code></pre><p>数据解析</p><pre><code>List widgets = [];setState(() {  widgets = json.decode(response.body);});</code></pre><blockquote><p>3、ListView</p></blockquote><pre><code>  body: ListView.builder(      itemCount: getItemCount(),      itemBuilder: (BuildContext context, int position) {        return getItemWidget(position);      }));int getItemCount() {  if (widgets.isEmpty) {    return 5;  }  return widgets.length;}Widget getItemWidget(int position) {  if (widgets.isEmpty) {    return getEmptyLoadingWidget();  }  return getRow(position);}</code></pre><blockquote><p>4、ListView- loading status</p></blockquote><pre><code>Widget getEmptyLoadingWidget() {  return Padding(    padding: EdgeInsets.all(10.0),    child: Card(      child: Column(        children: &lt;Widget&gt;[          ListTile(            leading: CircleAvatar(              child: Text(&apos;**&apos;),            ),            title: Text(              &quot;******&quot;,              maxLines: 1,              style: TextStyle(                color: Colors.blue,              ),              semanticsLabel: &apos;semanticsLabel&apos;,            ),            subtitle: Text(&quot;******&quot;),            trailing: Text(&apos;******&apos;),          ),          Text(&apos;努力加载中...&apos;),        ],      ),    ),  );}</code></pre><blockquote><p>5、ListView- Item and item event</p></blockquote><p>item event</p><pre><code>onLongPress: () {  if (widgets.isNotEmpty) {    showAboutDialog(      applicationName: &quot;Name&quot;,      context: context,      children: &lt;Widget&gt;[        Text(&apos;Title:${widgets[i][&quot;title&quot;]}&apos;),        Divider(),        Text(&apos;Body:${widgets[i][&quot;body&quot;]}&apos;),      ],    );  }},</code></pre><p>item</p><pre><code>Widget getRow(int i) {  return Padding(    padding: EdgeInsets.all(10.0),    child: Card(      child: ListTile(        leading: CircleAvatar(          child: Text(&apos;${widgets[i][&quot;id&quot;]}&apos;),        ),        title: Text(          &quot;Row ${widgets[i][&quot;title&quot;]}&quot;,          maxLines: 1,          style: TextStyle(            color: Colors.blue,          ),          semanticsLabel: &apos;semanticsLabel&apos;,        ),        subtitle: Text(&quot;Row ${widgets[i][&quot;body&quot;]}&quot;),        trailing: Text(&apos;userId:${widgets[i][&quot;userId&quot;]}&apos;),        onTap: () {},        onLongPress: () {          if (widgets.isNotEmpty) {            showAboutDialog(              applicationName: &quot;Name&quot;,              context: context,              children: &lt;Widget&gt;[                Text(&apos;Title:${widgets[i][&quot;title&quot;]}&apos;),                Divider(),                Text(&apos;Body:${widgets[i][&quot;body&quot;]}&apos;),              ],            );          }        },      ),    ),  );}</code></pre><blockquote><p>6、本篇汇总的效果</p></blockquote><p><img src="https://upload-images.jianshu.io/upload_images/8264781-8494b8baecae15f8.gif?imageMogr2/auto-orient/strip" alt="Flutter-Http.gif"></p><pre><code>import &apos;dart:convert&apos;;import &apos;package:flutter/material.dart&apos;;import &apos;package:http/http.dart&apos; as http;class ListPage extends StatefulWidget {  BuildContext mPreContext;  ListPage(BuildContext preContext) {    mPreContext = preContext;  }  @override  _ListState createState() {    // TODO: implement createState    return _ListState();  }}class _ListState extends State&lt;ListPage&gt; {  List widgets = [];  @override  void initState() {    super.initState();    loadData();  }  int getItemCount() {    if (widgets.isEmpty) {      return 5;    }    return widgets.length;  }  Widget getItemWidget(int position) {    if (widgets.isEmpty) {      return getEmptyLoadingWidget();    }    return getRow(position);  }  Widget getEmptyLoadingWidget() {    return Padding(      padding: EdgeInsets.all(10.0),      child: Card(        child: Column(          children: &lt;Widget&gt;[            ListTile(              leading: CircleAvatar(                child: Text(&apos;**&apos;),              ),              title: Text(                &quot;******&quot;,                maxLines: 1,                style: TextStyle(                  color: Colors.blue,                ),                semanticsLabel: &apos;semanticsLabel&apos;,              ),              subtitle: Text(&quot;******&quot;),              trailing: Text(&apos;******&apos;),            ),            Text(&apos;努力加载中...&apos;),          ],        ),      ),    );  }  @override  Widget build(BuildContext context) {    return Scaffold(        appBar: AppBar(          title: Text(&quot;Sample HTTP&quot;),        ),        body: ListView.builder(            itemCount: getItemCount(),            itemBuilder: (BuildContext context, int position) {              return getItemWidget(position);            }));  }  Widget getRow(int i) {    return Padding(      padding: EdgeInsets.all(10.0),      child: Card(        child: ListTile(          leading: CircleAvatar(            child: Text(&apos;${widgets[i][&quot;id&quot;]}&apos;),          ),          title: Text(            &quot;Row ${widgets[i][&quot;title&quot;]}&quot;,            maxLines: 1,            style: TextStyle(              color: Colors.blue,            ),            semanticsLabel: &apos;semanticsLabel&apos;,          ),          subtitle: Text(&quot;Row ${widgets[i][&quot;body&quot;]}&quot;),          trailing: Text(&apos;userId:${widgets[i][&quot;userId&quot;]}&apos;),          onTap: () {},          onLongPress: () {            if (widgets.isNotEmpty) {              showAboutDialog(                applicationName: &quot;Name&quot;,                context: context,                children: &lt;Widget&gt;[                  Text(&apos;Title:${widgets[i][&quot;title&quot;]}&apos;),                  Divider(),                  Text(&apos;Body:${widgets[i][&quot;body&quot;]}&apos;),                ],              );            }          },        ),      ),    );  }  loadData() async {    String dataURL = &quot;https://jsonplaceholder.typicode.com/posts&quot;;    http.Response response = await http.get(dataURL);    setState(() {      widgets = json.decode(response.body);    });  }}</code></pre><hr><p>未完待续。。。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 跨平台 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Flutter Stepper</title>
+      <link href="/2018/09/10/flutter/Flutter%20Stepper/"/>
+      <url>/2018/09/10/flutter/Flutter%20Stepper/</url>
+      
+        <content type="html"><![CDATA[<p>Flutter Stepper</p><hr><p>Stepper示例：针对Stepper样式实现自定义设计，Stepper的逻辑处理</p><hr><p>先上效果图：</p><table><thead><tr><th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-515457d711689e54.gif?imageMogr2/auto-orient/strip" alt="Stepper-默认"></th><th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-05a86a6525d27c52.gif?imageMogr2/auto-orient/strip" alt="Stepper-设计后"></th></tr></thead></table><pre><code>import &apos;package:flutter/material.dart&apos;;////// 1、Stepper的样式的自定义/// 2、Stepper事件的逻辑处理///class SecondPage extends StatelessWidget {  BuildContext mPreviousPageContext;  SecondPage(BuildContext context) {    this.mPreviousPageContext = context;  }  @override  Widget build(BuildContext context) {    return MaterialApp(      title: &apos;SecondPage&apos;,      theme: ThemeData(        primarySwatch: Colors.blue,      ),      home: MainWidget(mPreviousPageContext),    );  }}class MainWidget extends StatefulWidget {  BuildContext previousContext;  MainWidget(BuildContext previousContext) {    this.previousContext = previousContext;  }  @override  MainState createState() {    return MainState();  }}class MainState extends State&lt;MainWidget&gt; {  double mSlideValue = 4;  int mCurrentStep = 0;  static var mStepTitles = [&apos;apple&apos;, &apos;banana&apos;, &apos;orange&apos;, &apos;watermelon&apos;];  static var mStepContents = [    &apos;this is the content of step!&apos;,    &apos;this is the content of step!&apos;,    &apos;this is the content of step!&apos;,    &apos;this is the content of step!&apos;  ];  int mMaxStepValue = mStepTitles.length - 1;  int mMinStepValue = 0;  ///下一步操作  _continue() {    if (mCurrentStep &gt;= mMaxStepValue) {      //超过最大值，则不处理      setState(() {        mStepContents[mCurrentStep] = &quot;this is last step!&quot;;      });      return;    }    setState(() {      mCurrentStep++;    });  }  ///上一步操作  _cancel() {    if (mCurrentStep &lt;= mMinStepValue) {      //超过最小值，则不处理      setState(() {        mStepContents[mCurrentStep] = &quot;this is first step!&quot;;      });      return;    }    setState(() {      mCurrentStep--;    });  }  ///获取Step  List&lt;Step&gt; _getSteps() {    List&lt;Step&gt; steps = [];    for (var index = 0; index &lt; mStepTitles.length; index++) {      steps.add(        Step(          title: Text(&apos;${mStepTitles[index]}&apos;),          content: Column(            children: &lt;Widget&gt;[              _buildCardWithListTile(mStepContents[index]),            ],          ),          isActive: _getStepActive(index),        ),      );    }    return steps;  }  ///校验是否是正在活动  bool _getStepActive(int stepIndex) {    if (stepIndex == mCurrentStep) {      return true;    } else {      return false;    }  }  ///创建卡片布局  _buildCardWithListTile(String content) {    return Card(      child: Column(        children: &lt;Widget&gt;[          //Layout          ListTile(            //标题            title: Text(&apos;Title&apos;),            //次标题            subtitle: Text(&apos;$content&apos;),            //头            leading: CircleAvatar(              child: Text(&apos;Air&apos;),            ),            //尾            trailing: Text(&apos;trailing&apos;),            isThreeLine: true,            dense: false,            selected: true,            onTap: () {},            onLongPress: () {},          ),        ],      ),      //外边距      margin: EdgeInsets.all(0),      //阴影      elevation: 3,    );  }  @override  Widget build(BuildContext context) {    return Scaffold(      appBar: AppBar(        // Here we take the value from the MyHomePage object that was created by        // the App.build method, and use it to set our appbar title.        title: Text(&apos;Hello&apos;),        leading: IconButton(            icon: Icon(              Icons.arrow_back,              color: Colors.white,            ),            onPressed: () {              _exitPage();            }),        automaticallyImplyLeading: false,      ),      body: Center(        child: new Column(          children: &lt;Widget&gt;[            Slider(                value: mSlideValue,                min: 1,                max: 10,                label: &apos;label&apos;,                activeColor: Colors.blue,                inactiveColor: Colors.yellow,                onChanged: (double value) {                  print(value);                  setState(() {                    mSlideValue = value;                  });                }),            createStepWidget(),          ],        ),      ),    );  }  ///创建Stepper  createStepWidget() {    return Stepper(      controlsBuilder: (BuildContext context,          {VoidCallback onStepContinue, VoidCallback onStepCancel}) {        return Row(          children: &lt;Widget&gt;[            FlatButton(              onPressed: _continue,              child: Text(&apos;下一步&apos;),              color: Colors.blue,              textColor: Colors.white,              shape: RoundedRectangleBorder(                borderRadius: BorderRadius.circular(10),              ),            ),            FlatButton(              onPressed: _cancel,              child: Text(&apos;上一步&apos;),              textColor: Colors.black54,            ),          ],        );      },      type: StepperType.vertical,      currentStep: mCurrentStep,      onStepContinue: _continue,      onStepCancel: _cancel,      steps: _getSteps(),    );  }  ///关闭当前页面  _exitPage() {    Navigator.pop(widget.previousContext);  }}</code></pre><hr><p>未完待续。。。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 跨平台 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Flutter Intents/Navigator</title>
+      <link href="/2018/09/09/flutter/Flutter%20Intents%20Navigator/"/>
+      <url>/2018/09/09/flutter/Flutter%20Intents%20Navigator/</url>
+      
+        <content type="html"><![CDATA[<p>Flutter Intents/Navigator</p><p>在Android中，Intents有两个主要用例：在Activity之间导航，以及与组件通信。<br>在Flutter中，没有Intent概念，在屏幕之间导航，使用Navigator和Routes。</p><hr>>在Flutter中，导航屏幕有两种方式:1、先配置路由。2、后配置路由<blockquote><p>先配置路由<br>1.1、配置路由</p></blockquote><h2 id="1-2、使用路由导航屏幕"><a href="#1-2、使用路由导航屏幕" class="headerlink" title="1.2、使用路由导航屏幕"></a>1.2、使用路由导航屏幕</h2><p>后配置路由</p><h2 id="2、在使用路由时配置路由"><a href="#2、在使用路由时配置路由" class="headerlink" title="2、在使用路由时配置路由"></a>2、在使用路由时配置路由</h2><p>3、退出页面<br>4、导航时携带数据<br>5、全篇汇总效果展示</p><pre><code>Navigator.pop(context);</code></pre><blockquote><p>先配置路由<br>1.1、配置路由</p></blockquote><pre><code>routes: {  &apos;secondPage&apos;: (BuildContext context) =&gt; SecondPage(),  &apos;sample page&apos;: (BuildContext context) =&gt; SecondPage(),},</code></pre><p>1.2、使用路由导航屏幕</p><pre><code>Navigator.pushNamed(context, &apos;secondPage&apos;);</code></pre><blockquote><p>后配置路由<br> 2.1、在使用路由时配置路由</p></blockquote><pre><code>//使用路由时创建路由Navigator.push(context, new MaterialPageRoute(builder: (context) =&gt; SecondPage()));</code></pre><blockquote><p>3、退出页面</p></blockquote><pre><code>Navigator.pop(context);</code></pre><hr>>全部示例<pre><code>import &apos;package:flutter/material.dart&apos;;void main() =&gt; runApp(MyApp());class MyApp extends StatelessWidget {  // This widget is the root of your application.  @override  Widget build(BuildContext context) {    return MaterialApp(      title: &apos;Flutter Demo&apos;,      theme: ThemeData(        primarySwatch: Colors.blue,      ),      home: MyHomePage(title: &apos;Flutter Demo Home Page&apos;),      routes: {        &apos;secondPage&apos;: (BuildContext context) =&gt; SecondPage(),        &apos;sample page&apos;: (BuildContext context) =&gt; SecondPage(),      },    );  }}class MyHomePage extends StatefulWidget {  MyHomePage({Key key, this.title}) : super(key: key);  final String title;  @override  _MyHomePageState createState() =&gt; _MyHomePageState();}class _MyHomePageState extends State&lt;MyHomePage&gt; {  int _counter = 0;  void _incrementCounter() {    setState(() {      _counter++;    });  }  @override  Widget build(BuildContext context) {    return Scaffold(      appBar: AppBar(        title: Text(widget.title),      ),      body: Center(        child: Column(          mainAxisAlignment: MainAxisAlignment.center,          children: &lt;Widget&gt;[            Text(              &apos;You have pushed the button this many times:&apos;,            ),            Text(              &apos;$_counter&apos;,              style: Theme.of(context).textTheme.display1,            ),            RaisedButton(                color: Colors.blueAccent,                onPressed: () {                  Navigator.pushNamed(context, &apos;secondPage&apos;);                },                textColor: Colors.white,                child: Text(&apos;go to new page!&apos;),                shape: RoundedRectangleBorder(                    borderRadius:BorderRadius.circular(10))            )          ],        ),      ),      floatingActionButton: FloatingActionButton(        onPressed: _incrementCounter,        tooltip: &apos;Increment&apos;,        child: Icon(Icons.add),      ), // This trailing comma makes auto-formatting nicer for build methods.    );  }}class SecondPage extends StatelessWidget {  @override  Widget build(BuildContext context) {    return Scaffold(      appBar: AppBar(        title: Text(&apos;SecondPage&apos;),      ),      body: Center(        child: Column(          mainAxisAlignment: MainAxisAlignment.center,          children: &lt;Widget&gt;[            RaisedButton(                onPressed: () {                  Navigator.pop(context);                },                child: Text(&apos;return&apos;))          ],        ),      ),    );  }}</code></pre><table><thead><tr><th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-75e961d5c672137a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360" alt="第一个页面"></th><th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-64944d4584dbec6f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360" alt="第二个页面"></th></tr></thead></table><hr><blockquote><p>4、导航时携带数据</p></blockquote><p>案例介绍：页面一跳转到页面2，在页面2填写数据，点击按钮返回到页面1，在页面1接收数据后弹出对话框显示数据，对话框点击确定或取消按钮后关闭对话框。</p><p>获取输入框数据</p><pre><code>TextField(  decoration: InputDecoration(      hasFloatingPlaceholder: true,      labelText: &apos;label&apos;,      border: OutlineInputBorder()),  onSubmitted: (content) {    //do something.  },  onChanged: (content) {    inputContent = content;  },),</code></pre><p>将数据返回上个页面</p><pre><code>Navigator.pop(context, [  {    &apos;content&apos;: inputContent,    &apos;tip&apos;: &apos;hello&apos;  }]);</code></pre><p>接收数据显示对话框</p><pre><code>Navigator.push(        context,        new MaterialPageRoute(            builder: (context) =&gt; SecondPage()))    .then&lt;Map&gt;((value) {  /*  接收数据  弹出对话框  */  showDialog(    context: context,    child: AlertDialog(      title: Text(&apos;从上个页面返回的数据&apos;),      content: Text(&apos;${value.toString()}&apos;),      contentPadding: EdgeInsets.all(10),      actions: &lt;Widget&gt;[        RaisedButton(            color: Colors.blue,            textColor: Colors.white,            onPressed: () {              Navigator.pop(context);            },            child: Text(&apos;确定&apos;),            shape: RoundedRectangleBorder(                borderRadius: BorderRadius.circular(10))),        RaisedButton(            color: Colors.grey,            textColor: Colors.white,            onPressed: () {              Navigator.of(context).pop();            },            child: Text(&apos;取消&apos;),            shape: RoundedRectangleBorder(                borderRadius: BorderRadius.circular(10))),      ],    ),  );</code></pre><p>关闭对话框</p><pre><code>//关闭对话框Navigator.of(context).pop();</code></pre><table><thead><tr><th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-250025d753336035.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360" alt="页面1"></th><th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-a0a3f421db039046.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360" alt="页面2"></th></tr></thead></table><table><thead><tr><th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-c6221b1fd69715b0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360" alt="填写数据并回传"></th><th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-de3cc025e1c98525.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360" alt="对话框显示数据"></th></tr></thead></table><blockquote><p>5、全篇汇总效果展示</p></blockquote><p><img src="https://upload-images.jianshu.io/upload_images/8264781-b64cf8e3d27de503.gif?imageMogr2/auto-orient/strip" alt="全篇汇总效果.gif"></p><hr><p>未完待续。。。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 跨平台 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Flutter Widget</title>
+      <link href="/2018/09/08/flutter/Flutter%20Widget/"/>
+      <url>/2018/09/08/flutter/Flutter%20Widget/</url>
+      
+        <content type="html"><![CDATA[<p>Flutter Widget</p><hr><p>Flutter的小部件是屏幕上显示的所有内容的基础，类似于Android和IOS的View概念</p><blockquote><p>1、显示小部件<br>2、更新小部件的状态信息<br>3、摆放小部件<br>4、添加、删除小部件<br>5、小部件设置动画<br>6、使用Canvas绘画<br>7、自定义Widget<br>8、全篇汇总效果图</p></blockquote><blockquote><p>1、显示视图/小部件</p></blockquote><pre><code>import &apos;package:flutter/material.dart&apos;;void main() {  runApp(MaterialApp(    home: Scaffold(        body: Center(      child: Text(        &apos;I like Flutter!&apos;,        style: TextStyle(            fontWeight: FontWeight.bold,            fontSize: 16,            color: Colors.blueAccent),      ),    )),  ));}</code></pre><p>效果：</p><table><thead><tr><th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-ec326879e2c3a3df.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360" alt="view/widget"></th></tr></thead></table><blockquote><p>2、更新视图/小部件的状态/显示信息</p></blockquote><pre><code>import &apos;package:flutter/material.dart&apos;;void main() {  runApp(MyApp());}class MyApp extends StatelessWidget {  // This widget is the root of your application.  @override  Widget build(BuildContext context) {    return MaterialApp(      title: &apos;Flutter Demo&apos;,      theme: ThemeData(        primarySwatch: Colors.blue,      ),      home: MyHomePage(title: &apos;Flutter Demo Home Page&apos;),    );  }}class MyHomePage extends StatefulWidget {  MyHomePage({Key key, this.title}) : super(key: key);  final String title;//  @override//  _MyHomePageState createState() =&gt; _MyHomePageState();  @override  State&lt;StatefulWidget&gt; createState() {    return _MyHomePageState();  }}class _MyHomePageState extends State&lt;MyHomePage&gt; {  int _counter = 0;  static String textToShowOne = &quot;I like flutter!&quot;;  static String textToShowTwo = &quot;Flutter is Awesome!&quot;;  String textToShow = textToShowOne;  void _incrementCounter() {    /*    更新状态    调用setState方法，将会触发build()调用     */    setState(() {      //      _counter++;    });  }  void switchShowText() {    setState(() {      //operate something.      _counter ++;      if (_counter % 2 == 0) {        textToShow = textToShowTwo;      } else {        textToShow = textToShowOne;      }    });  }  @override  Widget build(BuildContext context) {    return Scaffold(      appBar: AppBar(        // Here we take the value from the MyHomePage object that was created by        // the App.build method, and use it to set our appbar title.        title: Text(widget.title),      ),      body: Center(        // Center is a layout widget. It takes a single child and positions it        // in the middle of the parent.        child: Column(          mainAxisAlignment: MainAxisAlignment.center,          children: &lt;Widget&gt;[            Text(              &apos;Click counter:$_counter&apos;,              style: TextStyle(fontSize: 16),            ),            Text(              &apos;$textToShow&apos;,              style: Theme.of(context).textTheme.display1,            ),          ],        ),      ),      floatingActionButton: FloatingActionButton(        onPressed: () {          switchShowText();        },        tooltip: &apos;Increment&apos;,        child: Icon(Icons.plus_one),      ), // This trailing comma makes auto-formatting nicer for build methods.    );  }}</code></pre><table><thead><tr><th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-90d571f11056a92d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360" alt="状态1"></th><th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-6212b4daf0d13de5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360" alt="状态2"></th></tr></thead></table><blockquote><p>3、摆放小部件</p></blockquote><p>Android和IOS既可以使用代码创建视图、摆放视图，又可以使用XML和Storyboard；<br>而Flutter类似于React native只可以使用代码创建视图、摆放视图。</p><pre><code>@overrideWidget build(BuildContext context) {  return Scaffold(    appBar: AppBar(      title: Text(&quot;Sample App&quot;),    ),    body: Center(      child: MaterialButton(        onPressed: () {},        child: Text(&apos;Hello&apos;),        padding: EdgeInsets.only(left: 10.0, right: 10.0),      ),    ),  );}</code></pre><blockquote><p>4、添加、删除小部件</p></blockquote><p>在Android中，可以调用父项的addChild()和removeChild()在父项上动态的添加和删除子视图。在Flutter中，因为小部件是不可变的，所以没有直接的addChild()等价物。相反，可以将函数传递给窗口小部件的父级，并使用布尔标志控制该子级的创建。</p><p>核心示例：</p><pre><code>dynamic getWidget() {  if (_counter % 2 == 0) {    return Text(&apos;This is a text widget!&apos;);  } else {    return RaisedButton(      onPressed: () {},      child: Text(&apos;This is a button widget!&apos;),      color: Colors.blueAccent,      textColor: Colors.white,      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))),    );  }}</code></pre><p>全部示例：</p><pre><code>import &apos;package:flutter/material.dart&apos;;void main() {  runApp(MyApp());}class MyApp extends StatelessWidget {  // This widget is the root of your application.  @override  Widget build(BuildContext context) {    return MaterialApp(      title: &apos;Flutter Demo&apos;,      theme: ThemeData(        primarySwatch: Colors.blue,      ),      home: MyHomePage(title: &apos;Flutter Demo Home Page&apos;),    );  }}class MyHomePage extends StatefulWidget {  MyHomePage({Key key, this.title}) : super(key: key);  final String title;//  @override//  _MyHomePageState createState() =&gt; _MyHomePageState();  @override  State&lt;StatefulWidget&gt; createState() {    return _MyHomePageState();  }}class _MyHomePageState extends State&lt;MyHomePage&gt; {  int _counter = 0;  static String textToShowOne = &quot;I like flutter!&quot;;  static String textToShowTwo = &quot;Flutter is Awesome!&quot;;  String textToShow = textToShowOne;  void _incrementCounter() {    /*    更新状态    调用setState方法，将会触发build()调用     */    setState(() {      //      _counter++;    });  }  void switchShowText() {    setState(() {      //operate something.      _counter++;      if (_counter % 2 == 0) {        textToShow = textToShowTwo;      } else {        textToShow = textToShowOne;      }    });  }  dynamic getWidget() {    if (_counter % 2 == 0) {      return Text(&apos;This is a text widget!&apos;);    } else {      return RaisedButton(        onPressed: () {},        child: Text(&apos;This is a button widget!&apos;),        color: Colors.blueAccent,        textColor: Colors.white,        shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))),      );    }  }  @override  Widget build(BuildContext context) {    return Scaffold(      appBar: AppBar(        // Here we take the value from the MyHomePage object that was created by        // the App.build method, and use it to set our appbar title.        title: Text(widget.title),      ),      body: Center(        // Center is a layout widget. It takes a single child and positions it        // in the middle of the parent.        child: Column(          mainAxisAlignment: MainAxisAlignment.center,          children: &lt;Widget&gt;[            Text(              &apos;Click counter:$_counter&apos;,              style: TextStyle(fontSize: 16),            ),            Text(              &apos;$textToShow&apos;,              style: Theme.of(context).textTheme.display1,            ),            getWidget(),          ],        ),      ),      floatingActionButton: FloatingActionButton(        onPressed: () {          switchShowText();        },        tooltip: &apos;Increment&apos;,        child: Icon(Icons.plus_one),      ), // This trailing comma makes auto-formatting nicer for build methods.    );  }}</code></pre><table><thead><tr><th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-6bab9ac363fd8d5e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360" alt="小部件1"></th><th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-7b99e7d585bd2dcf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360" alt="小部件2"></th></tr></thead></table><blockquote><p>5、小部件设置动画</p></blockquote><p>核心示例：</p><pre><code>AnimationController controller;CurvedAnimation curve;@overridevoid initState() {  super.initState();  controller = AnimationController(      duration: const Duration(milliseconds: 2000), vsync: this);  curve = CurvedAnimation(parent: controller, curve: Curves.easeIn);}      ......此处省略若干      FadeTransition(          opacity: curve,          child: FlutterLogo(            size: 100.0,          )),      FloatingActionButton(        onPressed: () {          /*          start animation.           */          if(controller.isAnimating){            return;          }          if(controller.isCompleted){            controller.reverse();            return;          }          controller.forward();        },        tooltip: &apos;play animation&apos;,        child: Icon(Icons.brush),      ),</code></pre><p>全部示例：</p><pre><code>import &apos;package:flutter/material.dart&apos;;void main() {  runApp(MyApp());}class MyApp extends StatelessWidget {  // This widget is the root of your application.  @override  Widget build(BuildContext context) {    return MaterialApp(      title: &apos;Flutter Demo&apos;,      theme: ThemeData(        primarySwatch: Colors.blue,      ),      home: MyHomePage(title: &apos;Flutter Demo Home Page&apos;),    );  }}class MyHomePage extends StatefulWidget {  MyHomePage({Key key, this.title}) : super(key: key);  final String title;//  @override//  _MyHomePageState createState() =&gt; _MyHomePageState();  @override  State&lt;StatefulWidget&gt; createState() {    return _MyHomePageState();  }}class _MyHomePageState extends State&lt;MyHomePage&gt; with TickerProviderStateMixin {  int _counter = 0;  static String textToShowOne = &quot;I like flutter!&quot;;  static String textToShowTwo = &quot;Flutter is Awesome!&quot;;  String textToShow = textToShowOne;  AnimationController controller;  CurvedAnimation curve;  @override  void initState() {    super.initState();    controller = AnimationController(        duration: const Duration(milliseconds: 2000), vsync: this);    curve = CurvedAnimation(parent: controller, curve: Curves.easeIn);  }  void _incrementCounter() {    /*    更新状态    调用setState方法，将会触发build()调用     */    setState(() {      //      _counter++;    });  }  void switchShowText() {    setState(() {      //operate something.      _counter++;      if (_counter % 2 == 0) {        textToShow = textToShowTwo;      } else {        textToShow = textToShowOne;      }    });  }  dynamic getWidget() {    if (_counter % 2 == 0) {      return Text(&apos;This is a text widget!&apos;);    } else {      return RaisedButton(        onPressed: () {},        child: Text(&apos;This is a button widget!&apos;),        color: Colors.blueAccent,        textColor: Colors.white,        shape: RoundedRectangleBorder(            borderRadius: BorderRadius.all(Radius.circular(10))),      );    }  }  @override  Widget build(BuildContext context) {    return Scaffold(      appBar: AppBar(        // Here we take the value from the MyHomePage object that was created by        // the App.build method, and use it to set our appbar title.        title: Text(widget.title),      ),      body: Center(        // Center is a layout widget. It takes a single child and positions it        // in the middle of the parent.        child: Column(          mainAxisAlignment: MainAxisAlignment.center,          children: &lt;Widget&gt;[            Text(              &apos;Click counter:$_counter&apos;,              style: TextStyle(fontSize: 16),            ),            Text(              &apos;$textToShow&apos;,              style: Theme.of(context).textTheme.display1,            ),            getWidget(),            FadeTransition(                opacity: curve,                child: FlutterLogo(                  size: 100.0,                )),            FloatingActionButton(              onPressed: () {                /*                start animation.                 */                if(controller.isAnimating){                  return;                }                if(controller.isCompleted){                  controller.reverse();                  return;                }                controller.forward();              },              tooltip: &apos;play animation&apos;,              child: Icon(Icons.brush),            ),          ],        ),      ),      floatingActionButton: FloatingActionButton(        onPressed: () {          switchShowText();        },        tooltip: &apos;Increment&apos;,        child: Icon(Icons.plus_one),      ), // This trailing comma makes auto-formatting nicer for build methods.    );  }}</code></pre><table><thead><tr><th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-364fe9db2ac99727.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360" alt="初始状态"></th><th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-e04d0a829f9de0c9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360" alt="动画完成状态"></th><th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-74fa6ad9daffddbd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360" alt="动画反转状态"></th></tr></thead></table><blockquote><p>6、使用Canvas绘画<br>在Android中，可以使用Canvas和Drawables在屏幕上绘制图像和形状。<br>Flutter也有类似的CanvasAPI，因为他基于相同的低级渲染引擎Skia。Flutter中的CustomPaint和CustomPainter是绘制帮助类。</p></blockquote><pre><code>import &apos;package:flutter/material.dart&apos;;void main() =&gt; runApp(MaterialApp(home: DemoApp()));class DemoApp extends StatelessWidget {  Widget build(BuildContext context) =&gt; Scaffold(body: Signature());}class Signature extends StatefulWidget {  SignatureState createState() =&gt; SignatureState();}class SignatureState extends State&lt;Signature&gt; {  List&lt;Offset&gt; _points = &lt;Offset&gt;[];  Widget build(BuildContext context) {    return GestureDetector(      onPanUpdate: (DragUpdateDetails details) {        setState(() {          RenderBox referenceBox = context.findRenderObject();          Offset localPosition =          referenceBox.globalToLocal(details.globalPosition);          _points = List.from(_points)..add(localPosition);        });      },      onPanEnd: (DragEndDetails details) =&gt; _points.add(null),      child: CustomPaint(painter: SignaturePainter(_points), size: Size.infinite),    );  }}class SignaturePainter extends CustomPainter {  SignaturePainter(this.points);  final List&lt;Offset&gt; points;  void paint(Canvas canvas, Size size) {    var paint = Paint()      ..color = Colors.black      ..strokeCap = StrokeCap.round      ..strokeWidth = 5.0;    for (int i = 0; i &lt; points.length - 1; i++) {      if (points[i] != null &amp;&amp; points[i + 1] != null)        canvas.drawLine(points[i], points[i + 1], paint);    }  }  bool shouldRepaint(SignaturePainter other) =&gt; other.points != points;}</code></pre><blockquote><p>7、自定义Widget</p></blockquote><p>在Flutter中，通过组合小部件来构建自定义小部件。<br>类似于在Android中通过组合来实现ViewGroup。</p><p>自定义小部件</p><pre><code>class CustomButton extends StatelessWidget {  final String label;  CustomButton(this.label);  @override  Widget build(BuildContext context) {    return RaisedButton(onPressed: () {}, child: Text(label));  }}</code></pre><p>使用自定义的小部件</p><pre><code>@overrideWidget build(BuildContext context) {  return Center(    child: CustomButton(&quot;Hello&quot;),  );}</code></pre><table><thead><tr><th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-aaccde79b8dfbd4e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/360" alt="自定义小部件"></th></tr></thead></table><blockquote><p>8、全篇汇总效果图</p></blockquote><p><img src="https://upload-images.jianshu.io/upload_images/8264781-ab09693c5cf0edca.gif?imageMogr2/auto-orient/strip" alt="汇总效果图.gif"></p><hr><p>未完待续。。。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 跨平台 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Flutter Getting start-Mac</title>
+      <link href="/2018/09/07/flutter/Flutter%20Getting%20start-Mac/"/>
+      <url>/2018/09/07/flutter/Flutter%20Getting%20start-Mac/</url>
+      
+        <content type="html"><![CDATA[<p>Flutter Getting start-Mac</p><blockquote><p>目录：<br>1、Install（安装）<br>2、Set up an editor（设置编辑器）<br>3、Test drive（试驾）<br>4、Write your first app（编写你的第一个应用）</p></blockquote><blockquote><p>1、Install（安装）</p></blockquote><p>1、系统环境要求</p><ul><li>操作系统：macOS（64）</li><li>磁盘空间：700MB</li></ul><hr>2、Get the Flutter SDK- Download Flutter SDK请到官网下载最新版本<ul><li><p>Run flutter doctor</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//在Terminal（终端/命令窗口）中输入，用以“检查验证是否已正确设置所有内容，并输出相关的信息”</span><br><span class="line">flutter doctor</span><br></pre></td></tr></table></figure></li><li><p>Update your path<br>步骤一：确定放置Flutter SDK的目录<br>步骤二：打开.bash_profile，进行配置环境变量<br>步骤三：添加以下行并更改[PATH_TO_FLUTTER_GIT_DIRECTORY]为克隆Flutter的git repo的路径：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH=&quot;$PATH:[PATH_TO_FLUTTER_GIT_DIRECTORY]/flutter/bin&quot;</span><br></pre></td></tr></table></figure></li></ul><p>步骤四：运行source $HOME/.base_profile刷新当前窗口</p><p>步骤五：”flutter/bin”将出现在通过下面命令后出现的目录中</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo $PATH</span><br></pre></td></tr></table></figure><p>如下图所示：<br><img src="https://upload-images.jianshu.io/upload_images/8264781-9c2da7d3107ea804.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="效果图"></p><hr><p>3、Platform setup</p><ul><li>MacOS支持为IOS和Android开发Flutter应用程序。</li><li>Windows默认只支持Android开发Flutter应用程序。或则装个“黑苹果”系统进行支持IOS开发</li></ul><hr><p>4、IOS setup（IOS配置）</p><ul><li><p>Install Xcode（安装IOS原生开发工具）<br>安装:version&gt;=Xcode9.0</p></li><li><p>Set up the iOS simulator（设置IOS模拟器）<br>Xcode中自带IOS simulator </p></li><li><p>Create and run a simple flutter app（创建、并运行Flutter 应用）<br>创建flutter项目</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter create my_app</span><br></pre></td></tr></table></figure></li></ul><p>进入项目中</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd my_app</span><br></pre></td></tr></table></figure><p>运行flutter项目到模拟器中</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flutter run</span><br></pre></td></tr></table></figure><ul><li>Deploy to ios devices（部署到IOS设备）</li></ul><p>要将flutter应用程序部署到物理IOS设备，您需要一起其他工具和Apple账号。</p><p>开发证书，AppleID，Apple Developer</p><hr><p>5、Android setup（安卓配置）</p><ul><li><p>Install Android Studio（安装Android原生开发工具）<br>Download and setup Android studio</p></li><li><p>Set up your Android device（设置Android设备）<br>使用USB将手机插入计算机，并按照提示进行操作</p></li><li><p>Set up the Android emulator（设置Android模拟器）</p></li></ul><p>Android Studio自带Android enumerator（AVD）</p><hr><blockquote><p>2、Set up an editor（设置编辑器）</p></blockquote><p>开发工具：<br>Android Studio</p><p>Visual Studio Code</p><p>or<br>other IntelliJ  tools</p><blockquote><p>3、Test drive（试驾）</p></blockquote><table><thead><tr><th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-0c45678f99249731.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Android studio 工具栏.jpg"></th><th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-584580b0a6e998dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="运行效果图"></th></tr></thead></table><blockquote><p>4、Write your first app（编写你的第一个应用）</p></blockquote><p>编辑lib/main.dart（Dart代码的所在地）</p><table><thead><tr><th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-e869fd8d5a3fba77.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></th></tr></thead></table><p>编辑代码后运行如下</p><table><thead><tr><th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-853ae69c55a2f3f2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Android "></th><th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-0d4f45e90b5d4324.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="IOS"></th></tr></thead></table><p>未完待续。。。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 跨平台 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Dart-Functions</title>
+      <link href="/2018/08/12/dart/Dart-Functions/"/>
+      <url>/2018/08/12/dart/Dart-Functions/</url>
+      
+        <content type="html"><![CDATA[<p>Dart-Functions（函数）</p><pre><code>/*Dart 是一种真正的面向对象语言，因此即使是函数也是对象并且具有类型Function这意味着函数可以分配给变量或作为参数传递给其他函数，您也可以调用Dart类的实例*/</code></pre><blockquote><h3 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h3><p>1、define function（定义函数）<br>2、ignore return type（省略返回类型的定义）<br>3、dynamic return type（动态返回类型的定义）<br>4、optional parameter（函数的可选参数）<br>5、Required parameters（必选参数）<br>6、anonymousFunction（匿名函数）<br>7、nestFunction（嵌套函数）<br>8、Function type（函数也是一种具有Function类型的对象）</p></blockquote><h3 id="1、define-function（定义函数）"><a href="#1、define-function（定义函数）" class="headerlink" title="1、define function（定义函数）"></a>1、define function（定义函数）</h3><pre><code>/*Define function. */bool isBool(int a, int b) {  return a == b;}</code></pre><p>对于只包含一个表达式的函数，可以使用简写语法：</p><pre><code>bool isNobel(int a, int b) =&gt; a == b;</code></pre><h3 id="2、ignore-return-type（省略返回类型的定义）"><a href="#2、ignore-return-type（省略返回类型的定义）" class="headerlink" title="2、ignore return type（省略返回类型的定义）"></a>2、ignore return type（省略返回类型的定义）</h3><pre><code>/*ignore the define of return type:bool */isBoolTwo(int a, int b) {  return a == b;}</code></pre><h3 id="3、dynamic-return-type（动态返回类型的定义）"><a href="#3、dynamic-return-type（动态返回类型的定义）" class="headerlink" title="3、dynamic return type（动态返回类型的定义）"></a>3、dynamic return type（动态返回类型的定义）</h3><pre><code>/*this function&apos;s return type is dynamic,is intis boolis String */isBoolThree(int a, int b) {  if (a &lt; b) {    return a;  } else if (a == b) {    return true;  } else if (a &gt; b) {    return &quot;min:${b}&quot;;  }}</code></pre><h3 id="4、optional-parameter（可选参数的函数）"><a href="#4、optional-parameter（可选参数的函数）" class="headerlink" title="4、optional parameter（可选参数的函数）"></a>4、optional parameter（可选参数的函数）</h3><pre><code>/*Optional parameters可选函数、命名函数 */isBoolFour({int a, int b}) {  if (a &lt; b) {    return a;  } else if (a == b) {    return true;  } else if (a &gt; b) {    return &quot;min:${b}&quot;;  }}  //调用可选/命名参数时，传递的参数的  print(&quot;optional parameters:${isBoolFour(b: 1, a: 2)}&quot;);</code></pre><p>一组函数参数<br>[]</p><pre><code>dynamic functionArray(String name, [String arguments]) {  return arguments?.length;}</code></pre><h3 id="5、Required-parameters（必选参数）"><a href="#5、Required-parameters（必选参数）" class="headerlink" title="5、Required parameters（必选参数）"></a>5、Required parameters（必选参数）</h3><p>@required</p><pre><code>/*Required parameters */isBoolFive({int a = 0, @required int b}) {  if (a == null) {    return b;  } else {    return a + b;  }}  //调用带有必须参数的，命名函数  print(&quot;required parameters:${isBoolFive(b: 5)}&quot;);</code></pre><h3 id="6、anonymousFunction（匿名函数）"><a href="#6、anonymousFunction（匿名函数）" class="headerlink" title="6、anonymousFunction（匿名函数）"></a>6、anonymousFunction（匿名函数）</h3><pre><code>/*Define anonymous function */anonymousFunction() {  print(&quot;&quot;);  print(&quot;Anonymous function.&quot;);  var list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];  list.forEach((item) {    print(&quot;item:${item}&quot;);  });}</code></pre><h3 id="7、nestFunction（嵌套函数）"><a href="#7、nestFunction（嵌套函数）" class="headerlink" title="7、nestFunction（嵌套函数）"></a>7、nestFunction（嵌套函数）</h3><pre><code>bool topLevel = true;void nestTopLevelFunction() {  var insideMain = true;  void myFunction() {    var insideFunction = true;    void nestedFunction() {      var insideNestedFunction = true;      print(topLevel);      print(insideMain);      print(insideFunction);      print(insideNestedFunction);    }    nestedFunction();  }  myFunction();}</code></pre><h3 id="8、Function-type（函数也是一种具有Function类型的对象）"><a href="#8、Function-type（函数也是一种具有Function类型的对象）" class="headerlink" title="8、Function type（函数也是一种具有Function类型的对象）"></a>8、Function type（函数也是一种具有Function类型的对象）</h3><pre><code>void functionType(num a) {  num a;  int b;  double c;  String d;  bool e;  Function f;}</code></pre><hr><p>未完待续。。。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 跨平台 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Dart </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Dart built in types</title>
+      <link href="/2018/08/11/dart/Dart%20built%20in%20types/"/>
+      <url>/2018/08/11/dart/Dart%20built%20in%20types/</url>
+      
+        <content type="html"><![CDATA[<p>Dart built in types(Dart内置/基本类型)</p><table><thead><tr><th align="left"><img src="https://upload-images.jianshu.io/upload_images/8264781-4409a4c8b0fa0ca6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></th></tr></thead></table><p>未完待续。。。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 跨平台 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Dart </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Dart_Language_Sample</title>
+      <link href="/2018/08/10/dart/Dart_Language_Sample/"/>
+      <url>/2018/08/10/dart/Dart_Language_Sample/</url>
+      
+        <content type="html"><![CDATA[<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ol><li>Hello world！</li><li>Variables</li><li>Control Flow Statement</li><li>Functions</li><li>Comments</li><li>Imports</li><li>Classes</li><li>Inheritance</li><li>Mixins</li><li>Interface and Abstract class</li><li>Async</li><li>Exception</li></ol><hr><h3 id="1-Hello-world！"><a href="#1-Hello-world！" class="headerlink" title="1.    Hello world！"></a>1.    Hello world！</h3><p>每个应用都有一个main()函数，Dart的主函数如下：</p><pre><code>void main() {    print(&apos;Hello, World!&apos;);}</code></pre><h3 id="2-Variables"><a href="#2-Variables" class="headerlink" title="2.    Variables"></a>2.    Variables</h3><p>Dart语言是类型安全的强类型语言，因此，在定义属性时需要定义类型。<br>如果属性有初始化值时，Dart会默认推测出此属性的类型，因此不需要显式地声明类型；<br>如果属性没有初始化值，则必须要为属性显式声明类型。</p><pre><code>var name = &apos;Voyager I&apos;;var year = 1977;var antennaDiameter = 3.7;var flybyObjects = [&apos;Jupiter&apos;, &apos;Saturn&apos;, &apos;Uranus&apos;, &apos;Neptune&apos;];var image = {    &apos;tags&apos;: [&apos;saturn&apos;],    &apos;url&apos;: &apos;//path/to/saturn.jpg&apos;};</code></pre><h3 id="3-Control-Flow-Statement"><a href="#3-Control-Flow-Statement" class="headerlink" title="3.    Control Flow Statement"></a>3.    Control Flow Statement</h3><p>Dart的控制流类似Java、JavaScript、Kotlin等语言，这里不再累述！</p><pre><code>if (year &gt;= 2001) {    print(&apos;21st century&apos;);} else if (year &gt;= 1901) {    print(&apos;20th century&apos;);}for (var object in flybyObjects) {    print(object);}for (int month = 1; month &lt;= 12; month++) {    print(month);}while (year &lt; 2016) {    year += 1;}</code></pre><h3 id="4-Functions"><a href="#4-Functions" class="headerlink" title="4.    Functions"></a>4.    Functions</h3><p>Dart的函数支持</p><pre><code>int fibonacci(int n) {if (n == 0 || n == 1) return n;    return fibonacci(n - 1) + fibonacci(n - 2);}var result = fibonacci(20);</code></pre><p>Dart使用 =&gt; 表示拥有单行表达式的函数的简写的指示器</p><pre><code>flybyObjects.where((name) =&gt; name.contains(&apos;turn&apos;)).forEach(print);</code></pre><h3 id="5-Comments"><a href="#5-Comments" class="headerlink" title="5.    Comments"></a>5.    Comments</h3><p>Dart的注释使用比较新颖！</p><pre><code>// This is a normal, one-line comment./// This is a documentation comment, used to document libraries,/// classes, and their members. Tools like IDEs and dartdoc treat/// doc comments specially./* Comments like these are also supported. */</code></pre><h3 id="6-Imports"><a href="#6-Imports" class="headerlink" title="6.    Imports"></a>6.    Imports</h3><p>Dart的导包类似JavaScript</p><pre><code>// Importing core librariesimport &apos;dart:math&apos;;// Importing libraries from external packagesimport &apos;package:test/test.dart&apos;;// Importing filesimport &apos;path/to/my_other_file.dart&apos;;</code></pre><h3 id="7-Classes"><a href="#7-Classes" class="headerlink" title="7.    Classes"></a>7.    Classes</h3><ol><li><p>Dart定义类、构造器、属性</p><p>定义一个拥有两个构造器，一个函数，三个属性的类（注意下面的定义两个构造器的新颖方式）</p></li></ol><pre><code>    class Spacecraft {        String name;        DateTime launchDate;        // Constructor, with syntactic sugar for assignment to members.        Spacecraft(this.name, this.launchDate) {            // Initialization code goes here.        }        // Named constructor that forwards to the default one.        Spacecraft.unlaunched(String name) : this(name, null);        int get launchYear =&gt;            launchDate?.year; // read-only non-final property        // Method.        void describe() {            print(&apos;Spacecraft: $name&apos;);            if (launchDate != null) {            int years =                DateTime.now().difference(launchDate).inDays ~/                    365;            print(&apos;Launched: $launchYear ($years years ago)&apos;);            } else {            print(&apos;Unlaunched&apos;);            }        }    }-----使用这个类    var voyager = Spacecraft(&apos;Voyager I&apos;, DateTime(1977, 9, 5));    voyager.describe();    var voyager3 = Spacecraft.unlaunched(&apos;Voyager III&apos;);    voyager3.describe();</code></pre><h3 id="8-Inheritance"><a href="#8-Inheritance" class="headerlink" title="8.    Inheritance"></a>8.    Inheritance</h3><ol><li><p>Dart的继承</p><p> Dart的继承不同与Java语言（Dart的每个类都默认是接口；Dart不仅可以实现”单继承“还可以实现“多继承”）</p></li></ol><pre><code>class Orbiter extends Spacecraft {    num altitude;    Orbiter(String name, DateTime launchDate, this.altitude)        : super(name, launchDate);}</code></pre><h3 id="9-Mixins"><a href="#9-Mixins" class="headerlink" title="9.    Mixins"></a>9.    Mixins</h3><p>Dart的多继承通过“extends with”和“implements”实现，请往下看！</p><p>定义一个类</p><pre><code>class Piloted {    int astronauts = 1;    void describeCrew() {        print(&apos;Number of astronauts: $astronauts&apos;);    }}</code></pre><p>多继承</p><pre><code>class PilotedCraft extends Spacecraft with Piloted {    // ···}</code></pre><h3 id="10-Interface-and-Abstract-class"><a href="#10-Interface-and-Abstract-class" class="headerlink" title="10.    Interface and Abstract class"></a>10.    Interface and Abstract class</h3><p>Dart没有单独定义接口的关键词，Dart的每个类默认都是接口，都可以使用implements被实现</p><p>Dart的抽象类类似Java</p><p>定义一个类/一个接口</p><pre><code>class MockSpaceship implements Spacecraft {    // ···}</code></pre><p>定义抽象类</p><pre><code>abstract class Describable {    void describe();    void describeWithEmphasis() {        print(&apos;=========&apos;);        describe();        print(&apos;=========&apos;);    }}</code></pre><h3 id="11-Async"><a href="#11-Async" class="headerlink" title="11.    Async"></a>11.    Async</h3><p>Dart的异步类似JavaScript、Kotlin等语言！</p><pre><code>const oneSecond = Duration(seconds: 1);// ···Future&lt;void&gt; printWithDelay(String message) async {    await Future.delayed(oneSecond);    print(message);}</code></pre><h3 id="12-Exception"><a href="#12-Exception" class="headerlink" title="12. Exception"></a>12. Exception</h3><p>Dart的异常类似Java、Kotlin等语言，如下图</p><p>主动抛出异常</p><pre><code>if (astronauts == 0) {    throw StateError(&apos;No astronauts.&apos;);}</code></pre><p>捕获异常、处理异常 类似Java，不同的是多了on (on 和 catch的区别是on没有参数，catch有参数)</p><pre><code>try {    for (var object in flybyObjects) {        var description = await File(&apos;$object.txt&apos;).readAsString();        print(description);    }} on IOException catch (e) {    print(&apos;Could not describe object: $e&apos;);} finally {    flybyObjects.clear();}</code></pre><hr><p>未完待续。。。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 跨平台 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Dart </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Higher-Order Functions and Lambdas</title>
+      <link href="/2017/06/19/kotlin/Higher-Order%20Functions%20and%20Lambdas/"/>
+      <url>/2017/06/19/kotlin/Higher-Order%20Functions%20and%20Lambdas/</url>
+      
+        <content type="html"><![CDATA[<p>Higher-Order Functions and Lambdas(高阶函数和Lambdas)</p><h3 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h3><ol><li>Higher-Order Functions（高阶函数）</li><li>Function types（函数类型）</li><li>Lambda Expressions and Anonymous Functions（lambda表达式和匿名函数）</li></ol><h3 id="1、Higher-Order-Functions（高阶函数）"><a href="#1、Higher-Order-Functions（高阶函数）" class="headerlink" title="1、Higher-Order Functions（高阶函数）"></a>1、Higher-Order Functions（高阶函数）</h3><p>高阶函数是：“将函数作为参数或返回函数”的函数</p><p>将函数作为参数的函数</p><pre><code>fun fooFunction(bar: Int = 1, baz: Int = 1, lamb: () -&gt; Int): Int {    println(&quot;foo: lambda result=${lamb()}&quot;)    return lamb()}</code></pre><p>返回函数的函数</p><pre><code>fun fooFunction(a: Int): () -&gt; Int {    a + 1    return fun(): Int = a}</code></pre><h3 id="2、Function-types（函数类型）"><a href="#2、Function-types（函数类型）" class="headerlink" title="2、Function types（函数类型）"></a>2、Function types（函数类型）</h3><p>如同Int，String，Boolean类型一样，当函数作为参数时，也需要定义类型</p><p>kotlin使用一系列函数类型，例如(Int) -&gt; String处理函数的声明：</p><pre><code>//此时，(String) -&gt; Unit 定义的onClick是一个函数，等同于：fun onClick(x:String):Unit{}val onClick: (String) -&gt; Unit = {}onClick(&quot;string&quot;)</code></pre><p>编译器可推断变量的函数类型，如下：</p><pre><code>val simplyFunctiontype = { x: Int, y: Int -&gt;    x + y}</code></pre><p>等同于：</p><pre><code>val simplyFunctiontype: (Int, Int) -&gt; Int = { x, y -&gt;    x + y}</code></pre><h3 id="3-Lambda-Expressions-and-Anonymous-Functions（lambda表达式和匿名函数）"><a href="#3-Lambda-Expressions-and-Anonymous-Functions（lambda表达式和匿名函数）" class="headerlink" title="3. Lambda Expressions and Anonymous Functions（lambda表达式和匿名函数）"></a>3. Lambda Expressions and Anonymous Functions（lambda表达式和匿名函数）</h3><h4 id="1-Lambda表达式和匿名函数是“函数文字”，即未声明但立即作为表达式传递的函数，"><a href="#1-Lambda表达式和匿名函数是“函数文字”，即未声明但立即作为表达式传递的函数，" class="headerlink" title="1. Lambda表达式和匿名函数是“函数文字”，即未声明但立即作为表达式传递的函数，"></a>1. Lambda表达式和匿名函数是“函数文字”，即未声明但立即作为表达式传递的函数，</h4><pre><code>fun compare(a: String, b: String): Boolean = a.length &lt; b.length;</code></pre><h4 id="2-Lambda-expression-syntax-Lambda表达式语法"><a href="#2-Lambda-expression-syntax-Lambda表达式语法" class="headerlink" title="2. Lambda expression syntax(Lambda表达式语法)"></a>2. Lambda expression syntax(Lambda表达式语法)</h4><p>全部语法</p><pre><code>/*Lambda表达式的全部语法*/val sum = { x: Int, y: Int -&gt; x + y }</code></pre><p>lambda表达式总是被花括号括起来，完整语法形式的参数声明进入花括号内部并具有可选的类型注释，主体在-&gt;符号后面，如果lambda的推断返回类型不是Unit，则lambda主体内的最后一个（或可能是单个）表达式将被视为返回值</p><hr><p>如果我们将所有可选的注释都留下，那么剩下的就是下面这样：</p><pre><code>//Full version：Lambda expression syntaxval lambdaSumWithExplicitly: (Int, Int) -&gt; Int = { oneParam, twoParam -&gt;    //lambda将最后一行表达式作为返回的值    oneParam * twoParam}</code></pre><h4 id="3-Passing-a-lambda-to-the-last-parameter（将lambda表达式作为函数的最后一个参数）"><a href="#3-Passing-a-lambda-to-the-last-parameter（将lambda表达式作为函数的最后一个参数）" class="headerlink" title="3. Passing a lambda to the last parameter（将lambda表达式作为函数的最后一个参数）"></a>3. Passing a lambda to the last parameter（将lambda表达式作为函数的最后一个参数）</h4><p>将Lambda表达式作为函数参数</p><pre><code>fun fooFunction(bar: Int = 1, baz: Int = 1, lamb: () -&gt; Int): Int {    println(&quot;foo: lambda result=${lamb()}&quot;)    return lamb()}</code></pre><p>调用带有lambda表达式参数的函数</p><pre><code>  //括号之外传递val lambdaParamOutResult = fooFunction {    &quot;&quot;    1}//括号之内传递val lambdaParamInResult = fooFunction(lamb = {    &quot;&quot;    1})//括号之内传递，并且全参数赋值val lambdaParamFullResult = fooFunction(1, 2, lamb = {    &quot;&quot;    1})</code></pre><h4 id="4-it-implicit-name-of-a-single-parameter（it：一个参数的隐式名称）"><a href="#4-it-implicit-name-of-a-single-parameter（it：一个参数的隐式名称）" class="headerlink" title="4. it:implicit name of a single parameter（it：一个参数的隐式名称）"></a>4. it:implicit name of a single parameter（it：一个参数的隐式名称）</h4><pre><code>//it:implicit name of a single parameterval lambdaImplicitIt: (Int) -&gt; Int = {    it * it}println(&quot;lambdaImplicitIt:${lambdaImplicitIt(5)}&quot;)//result=5*5</code></pre><h4 id="5-Returning-a-value-from-a-lambda-expression（lambda表达式返回值）"><a href="#5-Returning-a-value-from-a-lambda-expression（lambda表达式返回值）" class="headerlink" title="5. Returning a value from a lambda expression（lambda表达式返回值）"></a>5. Returning a value from a lambda expression（lambda表达式返回值）</h4><pre><code>隐式返回最后一个表达式的值    //it:implicit name of a single parameter    val lambdaImplicitIt: (Int) -&gt; Int = {        val result = it * it        result//implicit return result    }</code></pre><h4 id="6-Underscope-for-unused-variables（使用’-’作为未使用参数）"><a href="#6-Underscope-for-unused-variables（使用’-’作为未使用参数）" class="headerlink" title="6. Underscope for unused variables（使用’_’作为未使用参数）"></a>6. Underscope for unused variables（使用’_’作为未使用参数）</h4><pre><code>如果lambda参数未使用，则可以放置下划线代替其名称    //使用:&quot;_&quot;代替未使用的参数的名称    val lambdaProduct: (Int, Int) -&gt; Int = { _, y -&gt;        y * y    }</code></pre><h4 id="7-Anonymous-functions（匿名函数）"><a href="#7-Anonymous-functions（匿名函数）" class="headerlink" title="7. Anonymous functions（匿名函数）"></a>7. Anonymous functions（匿名函数）</h4><p>匿名函数与常规函数的区别：匿名函数省略了常规函数的函数名</p><pre><code>val anonymousFunction = fun(x: Int): Int {    return x * x}println(&quot;Anonymous function:${anonymousFunction(5)}&quot;)val anonymousFunction = fun(x: Int) = x * xprintln(&quot;Anonymous function:${anonymousFunction(5)}&quot;)</code></pre><h4 id="8-Expansion-Anonymous-Function（‘拓展-匿名’的函数）"><a href="#8-Expansion-Anonymous-Function（‘拓展-匿名’的函数）" class="headerlink" title="8. Expansion Anonymous Function（‘拓展+匿名’的函数）"></a>8. Expansion Anonymous Function（‘拓展+匿名’的函数）</h4><pre><code>fun expansionAnonymous() {    println();    /*    常规匿名函数的定义     */    val commonFunction = fun(num: Int): Int {        return num * num    }    /*    拓展匿名函数的定义     */    val expansionAnonymousFunction = fun Int.(param: Int): Int {        return param * param    }    val a = 1;    println(&quot;expansionAnonymousFunction:${a.expansionAnonymousFunction(5)}&quot;)}</code></pre><hr><p>未完待续。。。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Android </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Kotlin </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Kotlin Functions</title>
+      <link href="/2017/06/18/kotlin/Kotlin%20Functions/"/>
+      <url>/2017/06/18/kotlin/Kotlin%20Functions/</url>
+      
+        <content type="html"><![CDATA[<p>Kotlin Functions(科特林函数/方法)</p><h3 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h3><p>1、Function Declarations（函数的定义）<br>2、Function Usage（函数的用法）<br>3、Parameters（参数）<br>4、Default Arguments（默认参数）<br>5、Named Arguments（命名参数）<br>6、Unit-returning functions（函数返回类型为:Unit）<br>7、Single-Expression functions（单个表达式的函数）<br>8、Variable number of arguments（Varargs）(可变数量参数)<br>9、Infix notation（中缀表示法）<br>10、Function Scope（函数范围）<br>11、Generic Functions（通用函数/泛型函数）<br>12、Tail recursive functions（尾递归函数）</p><h3 id="1-Function-Declarations（函数-方法的定义）"><a href="#1-Function-Declarations（函数-方法的定义）" class="headerlink" title="1.    Function Declarations（函数/方法的定义）"></a>1.    Function Declarations（函数/方法的定义）</h3><p>使用fun关键字进行定义函数</p><pre><code>fun double(x: Int): Int {    return 2 * x}</code></pre><h3 id="2-Function-Usage（函数的使用-调用）"><a href="#2-Function-Usage（函数的使用-调用）" class="headerlink" title="2.    Function Usage（函数的使用/调用）"></a>2.    Function Usage（函数的使用/调用）</h3><p>调用函数使用传统方法</p><pre><code>val result = double(2)</code></pre><p>使用点符号调用</p><pre><code>Sample().foo()</code></pre><h3 id="3-Parameters（参数）"><a href="#3-Parameters（参数）" class="headerlink" title="3.    Parameters（参数）"></a>3.    Parameters（参数）</h3><p>函数参数的定义格式：name:Type，以“，”分隔参数</p><pre><code>fun double(x: Int, y: Int): Int {    return 2 * (x + y)}</code></pre><h3 id="4-Default-Arguments（参数的默认值）"><a href="#4-Default-Arguments（参数的默认值）" class="headerlink" title="4.    Default Arguments（参数的默认值）"></a>4.    Default Arguments（参数的默认值）</h3><p>函数的参数可以有一个默认的值，</p><pre><code>fun double(x: Int = 0, y: Int = 0): Int {    return 2 * (x + y)}</code></pre><p>覆盖方法始终使用与基本方法相同的默认参数值。使用默认参数值覆盖方法时，忽略参数默认值</p><pre><code>open class A {    open fun foo(i: Int = 10) {    }}class B : A() {    //// no default value allowed    override fun foo(i: Int) {        super.foo(i)    }}</code></pre><p>调用函数，使用函数的默认参数值</p><pre><code>fun defaultParam(a: Int = 0, b: Int): Int {    return a + b;}//使用defaultParam(b = 2)，等同于defaultParam(a = 0,b = 2)val defaultParamResult = defaultParam(b = 2)</code></pre><p>如果默认参数之后的最后一个参数是lambda，他可以作为命名参数传递，也可以在括号之外传递</p><pre><code>fun fooFunction(bar: Int = 1, baz: Int = 1, lamb: () -&gt; Int): Int {    println(&quot;foo: lambda result=${lamb()}&quot;)    return lamb()}</code></pre><hr><pre><code>  //括号之外传递val lambdaParamOutResult = fooFunction {    &quot;&quot;    1}//括号之内传递val lambdaParamInResult = fooFunction(lamb = {    &quot;&quot;    1})//括号之内传递，并且全参数赋值val lambdaParamFullResult = fooFunction(1, 2, lamb = {    &quot;&quot;    1})</code></pre><h3 id="5-命名参数-gt-使代码更具可读性"><a href="#5-命名参数-gt-使代码更具可读性" class="headerlink" title="5.    命名参数-&gt;使代码更具可读性"></a>5.    命名参数-&gt;使代码更具可读性</h3><p>调用函数时可以命名函数参数。当函数具有大量参数或默认参数时，这非常方便。</p><p>如下函数：</p><pre><code>fun reformat(str: String,             normalizeCase: Boolean = true,             upperCaseFirstLetter: Boolean = true,             divideByCamelHumps: Boolean = false,             wordSeparator: Char = &apos; &apos;) {}</code></pre><p>使用默认参数调用：</p><pre><code>val str = &quot;&quot;;reformat(str)</code></pre><p>使用非默认参数调用：</p><pre><code>val str = &quot;&quot;;reformat(str, true, true, false, &apos;_&apos;)</code></pre><p>使用命名参数调用-&gt;使代码更具可读性：</p><pre><code>val str = &quot;&quot;;reformat(str, normalizeCase = true, upperCaseFirstLetter = true, divideByCamelHumps = false, wordSeparator = &apos;_&apos;)</code></pre><p>使用命名参数调用-&gt;不需要所有的参数</p><pre><code>val str = &quot;&quot;;reformat(str, wordSeparator = &apos;_&apos;)</code></pre><p>当使用位置参数和命名参数调用函数时，所有位置参数应放在第一个命名参数之前。例如，f(1,y=1)允许，f(x=1,2)不允许</p><pre><code>fun reformatTwo(    str: String = &quot;&quot;,    normalizeCase: Boolean,    upperCaseFirstLetter: Boolean = true,    divideByCamelHumps: Boolean = false,    wordSeparator: Char = &apos; &apos;) {}</code></pre><p>不允许此调用方式</p><pre><code>//is not allowed.reformatTwo(str = &quot;&quot;, false)//is allowedreformatTwo(str = &quot;&quot;, normalizeCase = false)</code></pre><p>允许此调用方式</p><pre><code>//is allowedreformatTwo(str = &quot;&quot;, normalizeCase = false)</code></pre><h3 id="6-Unit-returning-functions"><a href="#6-Unit-returning-functions" class="headerlink" title="6.    Unit-returning functions"></a>6.    Unit-returning functions</h3><p>如果一个函数没有返回值，那么他的返回值类型是Unit</p><pre><code>fun nullReturnType(): Unit {}</code></pre><p>Unit可省略</p><pre><code>fun nullReturnType() {}</code></pre><h3 id="7-Single-Expression-functions"><a href="#7-Single-Expression-functions" class="headerlink" title="7.    Single-Expression functions"></a>7.    Single-Expression functions</h3><p>当函数返回单个表达式时，可以省略花括号，并在‘=’符号后指定‘函数体’</p><pre><code>fun singleExpression(a: Int, b: Int): Int = a + b;</code></pre><p>显示声明的返回类型是可选的/可省略的</p><pre><code>fun singleExpression(a: Int, b: Int) = a + b;</code></pre><h3 id="8-Variable-number-of-arguments-varargs"><a href="#8-Variable-number-of-arguments-varargs" class="headerlink" title="8.    Variable number of arguments(varargs)"></a>8.    Variable number of arguments(varargs)</h3><p>可变数量的参数</p><pre><code>fun varargParameter(vararg parameters: String): Int {    return parameters.size;}varargParameter(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;);</code></pre><h3 id="9-Infix-notation（中缀表示法）"><a href="#9-Infix-notation（中缀表示法）" class="headerlink" title="9.    Infix notation（中缀表示法）"></a>9.    Infix notation（中缀表示法）</h3><p>中缀表示法：省略点和括号</p><ol><li>必须是成员函数或扩展函数</li><li>必须有一个参数</li><li>参数不能接收可变数量的参数，不能有默认值</li></ol><pre><code>infix fun Int.complete(num: Int) {}//正常的调用函数1.complete(1)//使用&quot;中缀表达法&quot;调用函数1 complete 1</code></pre><h3 id="10-Function-Scope"><a href="#10-Function-Scope" class="headerlink" title="10.        Function Scope"></a>10.        Function Scope</h3><ol><li>Local Functions（函数内的函数）</li><li>Member Functions（成员函数）</li></ol><p>Local Functions（定义在函数内的函数）</p><pre><code>fun function(name: String) {    fun localFunction(name: String): String {        return &quot;local-&gt;$name&quot;    }    val result = localFunction(name)}</code></pre><p>Member Functions（定义在类/对象中的函数）</p><pre><code>class Sample(){    fun foo(){}}</code></pre><h3 id="11-Generic-Functions（通用函数-泛型函数）"><a href="#11-Generic-Functions（通用函数-泛型函数）" class="headerlink" title="11.        Generic Functions（通用函数/泛型函数）"></a>11.        Generic Functions（通用函数/泛型函数）</h3><pre><code>fun &lt;T&gt; singletonList(item: T): List&lt;T&gt; {    return listOf&lt;T&gt;(item)}</code></pre><h3 id="12-Tail-recursive-functions（尾递归函数）"><a href="#12-Tail-recursive-functions（尾递归函数）" class="headerlink" title="12.    Tail recursive functions（尾递归函数）"></a>12.    Tail recursive functions（尾递归函数）</h3><p>Kotlin支持一种称为“尾递归”的函数式变成。这允许一些通常使用循环编写的算法改为使用尾递归函数编写，但没有溢出的风险。当一个函数用tailrec修饰符标记并满足所需的形式时，编译器会优化递归，而是留下一个快速有效的基于循环的版本：</p><p>tailrec修饰的尾递归的函数</p><pre><code>/*tailrec修饰符关键字：将函数标记为‘尾递归’尾递归函数 */const val EPS = 10tailrec fun findFixPoint(x: Double = 1.0): Double =    if (Math.abs((x - Math.cos(x))) &lt; EPS) x else findFixPoint(Math.cos(x))</code></pre><p>等同于：</p><pre><code>const val EPS = 10fun findFixPoint(): Double {    var x = 1.0    while (true) {        val y = Math.cos(x)        if (Math.abs(x - y) &lt; EPS) {            return x        }        x = Math.cos(x)    }}</code></pre><hr><p>未完待续。。。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Android </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Kotlin </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Kotlin keywords and operators</title>
+      <link href="/2017/06/16/kotlin/Kotlin%20keywords%20and%20operators/"/>
+      <url>/2017/06/16/kotlin/Kotlin%20keywords%20and%20operators/</url>
+      
+        <content type="html"><![CDATA[<p>Kotlin keywords and operators(科特林关键字以及运算符)</p><h3 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h3><p>1、Hard keywords（关键字）<br>2、Soft keywords（关键字）<br>3、Modifier keywords（修饰符/关键字）<br>4、Special Identifiers（特别标识符）<br>5、Operators and special symbols（运算符和特别符号）</p><p><img src="https://upload-images.jianshu.io/upload_images/8264781-66b102e0ac8ad6b9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/480" alt="image.png"></p><p><img src="https://upload-images.jianshu.io/upload_images/8264781-bb7a4aa42b211536.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/480" alt="image.png"></p><p><img src="https://upload-images.jianshu.io/upload_images/8264781-c849567f4cba1054.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/480" alt="image.png"></p><p><img src="https://upload-images.jianshu.io/upload_images/8264781-198989b99935c3d1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/480" alt="image.png"></p><p><img src="https://upload-images.jianshu.io/upload_images/8264781-24273b662e6d0c12.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/480" alt="image.png"></p><hr><p>未完待续…</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Android </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Kotlin </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Using scope functions</title>
+      <link href="/2017/06/15/kotlin/Using%20scope%20functions/"/>
+      <url>/2017/06/15/kotlin/Using%20scope%20functions/</url>
+      
+        <content type="html"><![CDATA[<p>Using scope functions apply/with/run/also/let(使用范围函数)+ takeIf/takeUnless</p><p><img src="https://upload-images.jianshu.io/upload_images/8264781-5babf78c845818c0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="范围函数"></p><p><img src="https://upload-images.jianshu.io/upload_images/8264781-5bd31ec97c85bf5b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="检查函数"></p><p><img src="https://upload-images.jianshu.io/upload_images/8264781-24569e0d53e3206d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="范围函数与检查函数一起使用功能强大"></p><p>未完待续….</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Android </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Kotlin </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Kotlin idioms</title>
+      <link href="/2017/06/13/kotlin/Kotlin%20idioms/"/>
+      <url>/2017/06/13/kotlin/Kotlin%20idioms/</url>
+      
+        <content type="html"><![CDATA[<p>Kotlin idioms(科特林惯用语法)</p><h3 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h3><ol><li>创建DTO（POJO/POCO）（Create DTO/POJO/POCO）</li><li>函数参数的默认值（Default values for function parameters）</li><li>过滤列表（Filtering a list）</li><li>字符串插值(String interpolation)</li><li>实例检查(Instance Checks)</li><li>遍历地图(map)/对(key,value)列表</li><li>使用范围（using range）</li><li>只读列表（Read-only list）</li><li>只读地图（Read-only map）</li><li>访问地图（Accessing a map）</li><li>懒惰的属性（lazy property）</li><li>扩展功能（Extension function）</li><li>创建单例对象（Create singleton）</li><li>如果不是null速记</li><li>如果不是null而是速记</li><li>如果为null则执行语句</li><li>获取可能为空的集合的第一项</li><li>如果不为null则执行</li><li>如果不为null，则映射可空值</li><li>在声明时返回</li><li>try/catch表达式</li><li>if表达式</li><li>返回的方法的Builder样式用法Unit</li><li>单表达式函数</li><li>在对象实例上调用多个方法</li><li>Java7尝试使用资源</li><li>方便的通用函数形式，需要通用类型信息</li><li>使用可以为空的布尔值</li><li>交换两个变量</li></ol><h4 id="1、Create-DTO-POJO-POCO-创建DTO（POJO-POCO）"><a href="#1、Create-DTO-POJO-POCO-创建DTO（POJO-POCO）" class="headerlink" title="1、Create DTO/POJO/POCO {创建DTO（POJO/POCO）}"></a>1、Create DTO/POJO/POCO {创建DTO（POJO/POCO）}</h4><p>描述：类似于JavaBean</p><pre><code>/*使用DTO*/fun useCustomBean() {    //Create data type object with name:James,age:5.     val bean = CustomBean(&quot;James&quot;, 5);}/*主要用于保存数据的类（类似于Java语言的：JavaBean）自定义数据类型*/data class CustomBean(val name: String, val age: Int) {}</code></pre><h4 id="2、Default-values-for-function-parameters-函数参数的默认值"><a href="#2、Default-values-for-function-parameters-函数参数的默认值" class="headerlink" title="2、Default values for function parameters (函数参数的默认值)"></a>2、Default values for function parameters (函数参数的默认值)</h4><pre><code>/*Default values for function parameters*/fun foo(name: String = &quot;defaultName&quot;, age: Int = 1) {    print(&quot;name:$name,age:$age&quot;)}</code></pre><h4 id="3、Filtering-a-list（过滤列表）"><a href="#3、Filtering-a-list（过滤列表）" class="headerlink" title="3、Filtering a list（过滤列表）"></a>3、Filtering a list（过滤列表）</h4><pre><code>/*过滤集合*/fun filterList() {    val list = listOf&lt;String&gt;(&quot;James&quot;, &quot;John&quot;, &quot;Jack&quot;);    //过滤James    val listWithoutJames = list.filter { x -&gt; x == &quot;James&quot; }}</code></pre><p>or ，event shorter：</p><pre><code>/*过滤集合(缩减版/简介版)*/fun filterList() {    val list = listOf&lt;String&gt;(&quot;James&quot;, &quot;John&quot;, &quot;Jack&quot;);    //过滤James    val listWithoutJames = list.filter { it == &quot;James&quot; }}</code></pre><h4 id="4、String-interpolation（字符串插值）"><a href="#4、String-interpolation（字符串插值）" class="headerlink" title="4、String interpolation（字符串插值）"></a>4、String interpolation（字符串插值）</h4><pre><code>fun stringInterpolation(name: String = &quot;James&quot;, age: Int = 10) {    print(&quot;Name:$name,Age:$age&quot;);}</code></pre><h4 id="5、Instance-Checks（实例-对象检查）"><a href="#5、Instance-Checks（实例-对象检查）" class="headerlink" title="5、Instance Checks（实例/对象检查）"></a>5、Instance Checks（实例/对象检查）</h4><pre><code>fun instanceCheck(x: Any) {    val instanceTypeDescription = when (x) {        is String -&gt; &quot;String&quot;;        is Int -&gt; &quot;Int&quot;;        is Boolean -&gt; &quot;Boolean&quot;;        else -&gt; &quot;Unknown object&quot;;    }}</code></pre><h4 id="6、Traversing-a-map-list-of-pairs（遍历Map-List-of-pairs）"><a href="#6、Traversing-a-map-list-of-pairs（遍历Map-List-of-pairs）" class="headerlink" title="6、Traversing a map/list of pairs（遍历Map/List of pairs）"></a>6、Traversing a map/list of pairs（遍历Map/List of pairs）</h4><pre><code>fun traversingMapOrPair() {    println()    println()    val map = mapOf(        Pair(&quot;OneKey&quot;, &quot;OneValue&quot;),        Pair(&quot;TwoKey&quot;, &quot;TwoValue&quot;)    )    /*    print result:    key:OneKey,value:OneValue    key:TwoKey,value:TwoValue    */    for ((key, value) in map) {        println(&quot;key:$key,value:$value&quot;);    }}</code></pre><h4 id="7、Using-range（使用区间-范围）"><a href="#7、Using-range（使用区间-范围）" class="headerlink" title="7、Using range（使用区间/范围）"></a>7、Using range（使用区间/范围）</h4><pre><code>fun usingRange() {    for (i in 1..100) {    }  // closed range: includes 100    for (i in 1 until 100) {    } // half-open range: does not include 100    for (x in 2..10 step 2) {    }    for (x in 10 downTo 1) {    }    val y = 0;    if (y in 1..10) {    }}</code></pre><h4 id="8、Read-only-list（只读列表-集合）"><a href="#8、Read-only-list（只读列表-集合）" class="headerlink" title="8、Read-only list（只读列表/集合）"></a>8、Read-only list（只读列表/集合）</h4><pre><code>fun readOnlyOfList(){    val list = listOf&lt;String&gt;(&quot;c&quot;,&quot;b&quot;,&quot;c&quot;)}</code></pre><h4 id="9、Read-only-map（只读Map-key-vlaue"><a href="#9、Read-only-map（只读Map-key-vlaue" class="headerlink" title="9、Read-only map（只读Map/(key,vlaue))"></a>9、Read-only map（只读Map/(key,vlaue))</h4><pre><code>fun readOnlyOfMap() {    val map = mapOf&lt;String, String&gt;(        &quot;a&quot; to &quot;A&quot;,        &quot;b&quot; to &quot;B&quot;,        &quot;c&quot; to &quot;C&quot;    )}</code></pre><h4 id="10、Accessing-a-map-访问Map"><a href="#10、Accessing-a-map-访问Map" class="headerlink" title="10、Accessing a map(访问Map)"></a>10、Accessing a map(访问Map)</h4><pre><code>fun accessingMap(){    val map = mapOf&lt;String, String&gt;(        &quot;a&quot; to &quot;A&quot;,        &quot;b&quot; to &quot;B&quot;,        &quot;c&quot; to &quot;C&quot;    )    println(&quot;&quot;&quot;map a =${map[&quot;a&quot;]}&quot;&quot;&quot;)}</code></pre><h4 id="11、Lazy-property-懒加载属性"><a href="#11、Lazy-property-懒加载属性" class="headerlink" title="11、Lazy property(懒加载属性)"></a>11、Lazy property(懒加载属性)</h4><pre><code>fun lazyProperty() {    val lazyVar: String by lazy {        &quot;Lazy&quot;    }    println(lazyVar)}</code></pre><h4 id="12、Extension-function-（拓展功能）"><a href="#12、Extension-function-（拓展功能）" class="headerlink" title="12、Extension function （拓展功能）"></a>12、Extension function （拓展功能）</h4><pre><code>fun String.extensionSample(input: String): String {    println()    println(&quot;Input data:$input&quot;);    var outer: String = input;    outer = outer + &quot; extension&quot;;    println(&quot;Out data:$outer&quot;);    return outer;}</code></pre><p>call</p><pre><code>&quot;&quot;.extensionSample(&quot;Hello world&quot;);</code></pre><p>print result</p><pre><code>Input data:Hello worldOut data:Hello world extension</code></pre><h4 id="13、Creating-a-singleton-创建单例对象"><a href="#13、Creating-a-singleton-创建单例对象" class="headerlink" title="13、Creating a singleton (创建单例对象)"></a>13、Creating a singleton (创建单例对象)</h4><pre><code>object Singleton{    var name = &quot;using object to define singleton object&quot;}</code></pre><h4 id="14、If-not-null-shorthand（速记：如果不为null）"><a href="#14、If-not-null-shorthand（速记：如果不为null）" class="headerlink" title="14、If not null shorthand（速记：如果不为null）"></a>14、If not null shorthand（速记：如果不为null）</h4><pre><code>fun ifNotNull(){    val files = File(&quot;file&quot;);    //if not null shorthand    //files is not null,then call function:isFile    var isFile = files?.isFile;}</code></pre><h4 id="15、If-not-null-and-else-shorthand（速记：如果不为null，反之-）"><a href="#15、If-not-null-and-else-shorthand（速记：如果不为null，反之-）" class="headerlink" title="15、If not null and else shorthand（速记：如果不为null，反之..）"></a>15、If not null and else shorthand（速记：如果不为null，反之..）</h4><pre><code>fun ifNotNullAndElse() {    val files = File(&quot;file&quot;).listFiles();    //if not null shorthand    //files is not null,then call function:isFile    println(files?.size ?: &quot;files is null object&quot;);}</code></pre><h4 id="16、Executing-a-statement-if-null（如果为null，执行表达式）"><a href="#16、Executing-a-statement-if-null（如果为null，执行表达式）" class="headerlink" title="16、Executing a statement if null（如果为null，执行表达式）"></a>16、Executing a statement if null（如果为null，执行表达式）</h4><pre><code>fun ifNullExecutingStatement() {    val values = arrayOf(&quot;A&quot;, null);    val email = values[0] ?: throw IllegalStateException(&quot;Email is missing!&quot;)}</code></pre><h4 id="17、Get-first-item-of-a-possibly-empty-collection-获取可能为null的集合的第一项"><a href="#17、Get-first-item-of-a-possibly-empty-collection-获取可能为null的集合的第一项" class="headerlink" title="17、Get first item of a possibly empty collection.(获取可能为null的集合的第一项)"></a>17、Get first item of a possibly empty collection.(获取可能为null的集合的第一项)</h4><pre><code>fun getFirstItemOfPossiblyOfCollection() {    var values = listOf(&quot;James&quot;, null);    val value = values.firstOrNull() ?: &quot;&quot;;}</code></pre><h4 id="18、Execute-if-not-null（如果不为null，则执行）"><a href="#18、Execute-if-not-null（如果不为null，则执行）" class="headerlink" title="18、Execute if not null（如果不为null，则执行）"></a>18、Execute if not null（如果不为null，则执行）</h4><pre><code>fun ifNotNullExecute() {    println()    println();    var values = listOf(&quot;James&quot;, null);    values?.let {        /*        if values != null        for loop values.        */        for (item in it) {            print(&quot;${item},&quot;)        }    }}</code></pre><h4 id="19、Map-nullable-value-if-not-null（如果可为null的map，不为null）"><a href="#19、Map-nullable-value-if-not-null（如果可为null的map，不为null）" class="headerlink" title="19、Map nullable value if not null（如果可为null的map，不为null）"></a>19、Map nullable value if not null（如果可为null的map，不为null）</h4><pre><code>fun ifNotNullMapNullable() {    println();    println();    var values = mapOf&lt;String?, String?&gt;(        &quot;A&quot; to &quot;1&quot;,        &quot;B&quot; to &quot;2&quot;,        &quot;C&quot; to null    )    val value = values?.let {        //values is not null.        for ((key, value) in it) {            print(&quot;key:$key -&gt; value:$value&quot;)        }    } ?: &quot;defaultValue&quot;;    println(&quot;$value&quot;)}</code></pre><h4 id="20、Return-on-when-statement（when表达式中返回值）"><a href="#20、Return-on-when-statement（when表达式中返回值）" class="headerlink" title="20、Return on when statement（when表达式中返回值）"></a>20、Return on when statement（when表达式中返回值）</h4><pre><code>fun transformColor(color: String): Int {    return when (color) {        &quot;Red&quot; -&gt; 0        &quot;Green&quot; -&gt; 1        &quot;Blue&quot; -&gt; 2        else -&gt; throw IllegalArgumentException(&quot;Invalid argument!&quot;);    }}</code></pre><h4 id="21、try-catch-expression（try-catch表达式）"><a href="#21、try-catch-expression（try-catch表达式）" class="headerlink" title="21、try/catch expression（try/catch表达式）"></a>21、try/catch expression（try/catch表达式）</h4><pre><code>fun tryCatchExpression() {    val result = try {        /*        Do something        */        println(&quot;Do something&quot;);        &quot;Do&quot;    } catch (e: Exception) {        println(e);        &quot;Error&quot;    }    println(result);//Result = Do or Error.}</code></pre><h4 id="22、if-expression（If表达式）"><a href="#22、if-expression（If表达式）" class="headerlink" title="22、if expression（If表达式）"></a>22、if expression（If表达式）</h4><pre><code>fun ifExpression(parameter:Int){    val result = if(parameter == 1){        &quot;1&quot;    }else if(parameter == 2){        &quot;2&quot;    }else{        &quot;Unknown&quot;    }    println(result)}</code></pre><h4 id="23、Builder-style-usage-of-methods-that-return-Unit"><a href="#23、Builder-style-usage-of-methods-that-return-Unit" class="headerlink" title="23、Builder-style usage of methods that return Unit"></a>23、Builder-style usage of methods that return Unit</h4><pre><code>fun arrayOfMinusOnes(size: Int): IntArray {    return IntArray(size).apply { fill(-1) }}</code></pre><h4 id="24、Single-expression-function（单个表达式的函数）"><a href="#24、Single-expression-function（单个表达式的函数）" class="headerlink" title="24、Single-expression function（单个表达式的函数）"></a>24、Single-expression function（单个表达式的函数）</h4><pre><code>fun theAnswer = 42;</code></pre><p>This is equivalent to (等价于)</p><pre><code>fun theAnswer():Int{    return 42}</code></pre><h4 id="25、This-can-be-effectively-combined-with-other-idioms-leading-to-short-code-（这可以与其他语法一起使用，以缩短代码）"><a href="#25、This-can-be-effectively-combined-with-other-idioms-leading-to-short-code-（这可以与其他语法一起使用，以缩短代码）" class="headerlink" title="25、This can be effectively combined with other idioms,leading to short code.（这可以与其他语法一起使用，以缩短代码）"></a>25、This can be effectively combined with other idioms,leading to short code.（这可以与其他语法一起使用，以缩短代码）</h4><pre><code>fun transform(color: String): Int = when (color) {    &quot;Red&quot; -&gt; 0    &quot;Green&quot; -&gt; 1    &quot;Blue&quot; -&gt; 2    else -&gt; -1}</code></pre><h4 id="26、Calling-multiple-methods-on-an-object-instance-with-（在对象实例上调用多个函数）"><a href="#26、Calling-multiple-methods-on-an-object-instance-with-（在对象实例上调用多个函数）" class="headerlink" title="26、Calling multiple methods on an object instance(with) （在对象实例上调用多个函数）"></a>26、Calling multiple methods on an object instance(with) （在对象实例上调用多个函数）</h4><pre><code>fun multipleMethods() {    val animal = Animal();    /*    使用&quot;with&quot;可以调用多个函数    */    with(animal) {        //调用animal对象的fly        fly()        //接着，调用animal对象的run        run()        //再接着，调用animal对象的eat        eat()    }}</code></pre><h4 id="27、Java7‘s-try-with-resource（Java7的使用资源）"><a href="#27、Java7‘s-try-with-resource（Java7的使用资源）" class="headerlink" title="27、Java7‘s try with resource（Java7的使用资源）"></a>27、Java7‘s try with resource（Java7的使用资源）</h4><pre><code>@RequiresApi(Build.VERSION_CODES.O)fun useResources() {    val stream = Files.newInputStream(Paths.get(&quot;/some/file.txt&quot;))    stream.buffered().reader().use { reader -&gt;        println(reader.readText())    }}</code></pre><h4 id="28、Convenient-form-for-a-generic-function-that-requires-the-generic-type-information（方便的通用函数形式，需要通用类型信息）"><a href="#28、Convenient-form-for-a-generic-function-that-requires-the-generic-type-information（方便的通用函数形式，需要通用类型信息）" class="headerlink" title="28、Convenient form for a generic function that requires the generic type information（方便的通用函数形式，需要通用类型信息）"></a>28、Convenient form for a generic function that requires the generic type information（方便的通用函数形式，需要通用类型信息）</h4><pre><code>//     ...//     public &lt;T&gt; T fromJson(JsonElement json, Class&lt;T&gt; classOfT) throws JsonSyntaxException {//     ...inline fun &lt;reified T : Any&gt; Gson.fromJson(json: JsonElement): T = this.fromJson(json, T::class.java)</code></pre><h4 id="29、Consuming-a-nullable-Boolean（消耗-使用-可为null的布尔值）"><a href="#29、Consuming-a-nullable-Boolean（消耗-使用-可为null的布尔值）" class="headerlink" title="29、Consuming  a nullable Boolean（消耗/使用 可为null的布尔值）"></a>29、Consuming  a nullable Boolean（消耗/使用 可为null的布尔值）</h4><pre><code>fun useNullableBoolean(b: Boolean?) {    if (b == true) {        //b is true    } else {        //b is false or null    }}</code></pre><h4 id="30、Swapping-two-variables（交换两个变量）"><a href="#30、Swapping-two-variables（交换两个变量）" class="headerlink" title="30、Swapping two variables（交换两个变量）"></a>30、Swapping two variables（交换两个变量）</h4><pre><code>fun swap() {    var a = 1;    var b = 1;    a = b.also {        b = a    }}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Android </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Kotlin </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Kotlin basic syntax</title>
+      <link href="/2017/06/11/kotlin/Kotlin%20basic%20syntax/"/>
+      <url>/2017/06/11/kotlin/Kotlin%20basic%20syntax/</url>
+      
+        <content type="html"><![CDATA[<p>Kotlin basic syntax(科特林基本语法)</p><h3 id="目录一览："><a href="#目录一览：" class="headerlink" title="目录一览："></a>目录一览：</h3><ol><li>Defining packages</li><li>Defining functions</li><li>Defining variables</li><li>Comment</li><li>Using string templates</li><li>Using conditional expressions</li><li>Using nullable values and checking for null</li><li>Using type checks and automatic casts</li><li>Using a for loop<ol start="10"><li>Using a while loop</li><li>Using when expression</li><li>Using ranges</li><li>Using collections<br>14 . 创建类以及实例</li></ol></li></ol><h4 id="1、Defining-packages-定义包"><a href="#1、Defining-packages-定义包" class="headerlink" title="1、Defining packages(定义包)"></a>1、Defining packages(定义包)</h4><pre><code>package my.demoimport java.util.*//应该在文件的头部指定包//....</code></pre><h4 id="2、Defining-functions-定义函数-方法"><a href="#2、Defining-functions-定义函数-方法" class="headerlink" title="2、Defining functions(定义函数/方法)"></a>2、Defining functions(定义函数/方法)</h4><pre><code>//拥有两个Int类型的参数，以及一个Int的返回类型fun sum(a: Int, b: Int): Int {    return a + b;}</code></pre><hr><pre><code>//具有表达式主体和推断返回类型的函数：fun sum(a: Int, b: Int) = a + b;sum(5,6);//Result = 5+6;</code></pre><hr><pre><code>//函数返回没有意义的值（概念同：没有返回值，或返回值为空）fun sumReturnNoMeaningful(a: Int, b: Int): Unit {    println(&quot;sum of a and b is ${a + b}&quot;);}</code></pre><hr><pre><code>//可省略的Unit：函数返回没有意义的值（概念同：没有返回值，或返回值为空）fun sumReturnOmitted(a: Int, b: Int) {    println(&quot;sum of a and b is ${a + b}&quot;);}</code></pre><h4 id="3、Defining-variables-定义属性"><a href="#3、Defining-variables-定义属性" class="headerlink" title="3、Defining variables(定义属性)"></a>3、Defining variables(定义属性)</h4><ol><li><p>不可变属性（常量，用val修饰）</p></li><li><p>可变属性（变量，用var修饰）</p><p> /*<br> /*<br> 常量使用val修饰<br> */<br> val a: Int = 1  // 定义一个显式的Int类型的常量a<br> val b = 2   // 根据2推断出：b是一个Int的常量<br> val c: Int  // 当属性未初始化数据时，此时必须显式地声明属性的类型<br> println(c);//无法通过编译（在调用属性前需要赋值）<br> c = 3       // 延期赋值<br> println(c);//正常通过编译</p></li></ol><hr><pre><code>/*变量使用var修饰*/var x = 5 // 当为属性赋默认值时，编译器可推算出属性的类型x += 1println(x);</code></pre><h4 id="4、Comment（注释）"><a href="#4、Comment（注释）" class="headerlink" title="4、Comment（注释）"></a>4、Comment（注释）</h4><ol><li><p>同Java、JavaScript，Kotlin支持相同的注释</p></li><li><p>与Java不同，Kotlin中的块注释可以嵌套。</p></li></ol><pre><code>// This is an end-of-line comment/* This is a block commenton multiple lines. *//*This is nest block comment-&gt;start./*This is first block comment.*//*This is second block comment.*/This is nest block comment-&gt;end.*/</code></pre><h4 id="5、Using-string-templates（使用字符串）"><a href="#5、Using-string-templates（使用字符串）" class="headerlink" title="5、Using string templates（使用字符串）"></a>5、Using string templates（使用字符串）</h4><pre><code>var a = 1// (任意名称)simple name in template:val s1 = &quot;a is $a&quot;a = 2// (任意表达式)arbitrary expression in template:val s2 = &quot;${s1.replace(&quot;is&quot;, &quot;was&quot;)}, but now is $a&quot;</code></pre><h4 id="6、Using-conditional-expressions（使用条件表达式）"><a href="#6、Using-conditional-expressions（使用条件表达式）" class="headerlink" title="6、Using conditional expressions（使用条件表达式）"></a>6、Using conditional expressions（使用条件表达式）</h4><pre><code>fun maxOf(a: Int, b: Int): Int {    if (a &gt; b) {        return a    } else {        return b    }}</code></pre><hr><pre><code>fun maxOf(a: Int, b: Int) = if (a &gt; b) a else b</code></pre><h4 id="7、Using-nullable-values-and-checking-for-null（使用可为空的值，并检查是否为空）"><a href="#7、Using-nullable-values-and-checking-for-null（使用可为空的值，并检查是否为空）" class="headerlink" title="7、Using nullable values and checking for null（使用可为空的值，并检查是否为空）"></a>7、Using nullable values and checking for null（使用可为空的值，并检查是否为空）</h4><p>描述：当null值可能时，必须将引用明确标记为可为空,”?”代表nullable</p><pre><code>//如果str不支持Int类型，则返回nullfun parseInt(str: String): Int? {    // ...}//fun printProduct(arg1: String, arg2: String) {    val x = parseInt(arg1)    val y = parseInt(arg2)    // 使用x,y会产生错误，因为他们支持为null,因此执行null校验    if (x != null &amp;&amp; y != null) {        // x and y are automatically cast to non-nullable after null check        println(x * y)    }    else {        println(&quot;either &apos;$arg1&apos; or &apos;$arg2&apos; is not a number&quot;)    }    }</code></pre><p>or</p><pre><code>// ...if (x == null) {    println(&quot;Wrong number format in arg1: &apos;$arg1&apos;&quot;)    return}if (y == null) {    println(&quot;Wrong number format in arg2: &apos;$arg2&apos;&quot;)    return}// 在空检查后，x和y会自动转换为不可为空println(x * y)</code></pre><h4 id="8、Using-type-checks-and-automatic-casts（使用类型检查和自动转换）"><a href="#8、Using-type-checks-and-automatic-casts（使用类型检查和自动转换）" class="headerlink" title="8、Using type checks and automatic casts（使用类型检查和自动转换）"></a>8、Using type checks and automatic casts（使用类型检查和自动转换）</h4><pre><code>fun getStringLength(obj: Any): Int? {    if (obj is String) {        // `obj` is automatically cast to `String` in this branch        //obj 自动转换成 String类型        return obj.length    }    //在转换体外部时，&apos;obj&apos;依然是Any类型    obj//Any type.    return null}</code></pre><p>or</p><pre><code>fun getStringLength(obj: Any): Int? {    if (obj !is String) return null    // `obj` is automatically cast to `String` in this branch    return obj.length}</code></pre><p>or even</p><pre><code>fun getStringLength(obj: Any): Int? {    // `obj` is automatically cast to `String` on the right-hand side of `&amp;&amp;`    if (obj is String &amp;&amp; obj.length &gt; 0) {        return obj.length    }    return null}</code></pre><h4 id="9、Using-a-for-loop（使用for循环）"><a href="#9、Using-a-for-loop（使用for循环）" class="headerlink" title="9、Using a for loop（使用for循环）"></a>9、Using a for loop（使用for循环）</h4><p>描述：1、遍历内容(item)<br>描述：2、遍历索引(index)</p><pre><code>/*遍历元素 */val items = listOf(&quot;apple&quot;, &quot;banana&quot;, &quot;kiwifruit&quot;)for (item in items) {    println(item)}</code></pre><p>or</p><pre><code>/*遍历索引 */val items = listOf(&quot;apple&quot;, &quot;banana&quot;, &quot;kiwifruit&quot;)for (index in items.indices) {    println(&quot;item at $index is ${items[index]}&quot;)}</code></pre><h4 id="10、Using-a-while-loop（使用while循环）"><a href="#10、Using-a-while-loop（使用while循环）" class="headerlink" title="10、Using a while loop（使用while循环）"></a>10、Using a while loop（使用while循环）</h4><pre><code>/*While 循环 */val items = listOf(&quot;apple&quot;, &quot;banana&quot;, &quot;kiwifruit&quot;)var index = 0while (index &lt; items.size) {    println(&quot;item at $index is ${items[index]}&quot;)    index++}</code></pre><h4 id="11、Using-when-expression（使用when表达式）"><a href="#11、Using-when-expression（使用when表达式）" class="headerlink" title="11、Using when expression（使用when表达式）"></a>11、Using when expression（使用when表达式）</h4><pre><code>/*传入参数类型：Any，返回值参数类型：String */fun describe(obj: Any): String =    when (obj) {        1 -&gt; &quot;One&quot;        &quot;Hello&quot; -&gt; &quot;Greeting&quot;        is Long -&gt; &quot;Long&quot;        !is String -&gt; &quot;Not a string&quot;        else -&gt; &quot;Unknown&quot;    }//调用函数val result: String = describe(1);</code></pre><h4 id="12、Using-ranges（区间）"><a href="#12、Using-ranges（区间）" class="headerlink" title="12、Using ranges（区间）"></a>12、Using ranges（区间）</h4><p>描述：1、检查是否在区间内<br>描述：2、检查是否超出区间<br>描述：3、在区间内进行遍历</p><p>检查数是否在区间中</p><pre><code>/*检查数是否在区间中 */val x = 10val y = 9if (x in 1..y+1) {    println(&quot;fits in range&quot;)}</code></pre><p>检查是否超出区间</p><pre><code>/*检查是否超出区间 */val list = listOf(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)if (-1 !in 0..list.lastIndex) {    println(&quot;-1 is out of range&quot;)}if (list.size !in list.indices) {    println(&quot;list size is out of valid list indices range, too&quot;)}</code></pre><p>在区间内进行迭代、遍历</p><pre><code>/*在区间范围内迭代、遍历 */for (x in 1..5) {    print(x)}for (x in 1..10 step 2) {    print(x)}println()for (x in 9 downTo 0 step 3) {    print(x)}</code></pre><h4 id="13、Using-collections（使用集合）"><a href="#13、Using-collections（使用集合）" class="headerlink" title="13、Using collections（使用集合）"></a>13、Using collections（使用集合）</h4><p>描述：1、迭代集合<br>描述：2、检查集合是否包含某对象<br>描述：3、使用lambda表达式过滤集合</p><p>迭代集合（Iterating over a collection:）</p><pre><code>for (item in items) {    println(item)}</code></pre><p>检查集合是否包含某对象（Checking if a collection contains an object using in operator:）</p><pre><code>when {    &quot;orange&quot; in items -&gt; println(&quot;juicy&quot;)    &quot;apple&quot; in items -&gt; println(&quot;apple is fine too&quot;)}</code></pre><p>使用lambda表达式过滤集合（Using lambda expressions to filter and map collections:）</p><pre><code>val fruits = listOf(&quot;banana&quot;, &quot;avocado&quot;, &quot;apple&quot;, &quot;kiwifruit&quot;)fruits.filter { it.startsWith(&quot;a&quot;) }.sortedBy { it }.map { it.toUpperCase() }.forEach { println(it) }</code></pre><h4 id="14、创建类以及实例"><a href="#14、创建类以及实例" class="headerlink" title="14、创建类以及实例"></a>14、创建类以及实例</h4><pre><code>val rectangle = Rectangle(5.0, 2.0) //no &apos;new&apos; keyword requiredval triangle = Triangle(3.0, 4.0, 5.0)</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Android </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Kotlin </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Android项目实战示例</title>
+      <link href="/2017/03/06/project/Android%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%E7%A4%BA%E4%BE%8B/"/>
+      <url>/2017/03/06/project/Android%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%E7%A4%BA%E4%BE%8B/</url>
+      
+        <content type="html"><![CDATA[<hr><p>Android项目实战示例</p><p>Login Component</p><hr><h3 id="登陆模块"><a href="#登陆模块" class="headerlink" title="登陆模块"></a>登陆模块</h3><h4 id="1-涉及的技术"><a href="#1-涉及的技术" class="headerlink" title="1.    涉及的技术"></a>1.    涉及的技术</h4><pre><code>RxJavaRetrofitOKHttpGlideMVPother:</code></pre><h4 id="2-描述"><a href="#2-描述" class="headerlink" title="2.    描述"></a>2.    描述</h4><pre><code>1.    使用:    RxJava    Retrofit    OKHttp    MVP    DesignPatterns    SharedPreference    LoadingStatusLayout    CheckNet2.    业务流程    1. 通过手机号+验证码的形式登陆（注册需要另外的客户端或途径）    2. 登陆成功后，本地序列化数据保存Token，以及登陆状态    3. 登陆成功后的每次网络请求都需携带“Token”作为请求头（此操作全局统一处理）    4. 网络的连接状态、网络的交互全局统一处理    5. 网络响应中显示页面加载状态    6. 页面加载失败后，可重试相关的操作    7. 步骤3中的每次网络交互都携带“Token”，若“Token”过期，则会在网络交互的响应结果中获取到Token过期，然后全局处理Token过期的下一步操作，本项目处理操作是“将App重置为未登录状态，并进入登陆功能”</code></pre><h4 id="3-支持"><a href="#3-支持" class="headerlink" title="3.    支持"></a>3.    支持</h4><pre><code>1. 网络支持：SSL、网络连接检查、响应失败、响应成功、加载中、当Token过期重置为未登录状态并跳转到登陆页面2. 本地存储：数据序列化存储、自动登陆</code></pre><h4 id="4-项目效果"><a href="#4-项目效果" class="headerlink" title="4.    项目效果"></a>4.    项目效果</h4><p><img src="http://pupu8os0u.bkt.clouddn.com/android_project_sample.gif" alt="项目效果图"></p><h4 id="5-项目地址"><a href="#5-项目地址" class="headerlink" title="5.    项目地址"></a>5.    项目地址</h4><p><a href="https://github.com/pdliuw/LoginComponent" target="_blank" rel="noopener">点击我查看项目</a></p><h4 id="6-TODO"><a href="#6-TODO" class="headerlink" title="6.    TODO"></a>6.    TODO</h4><pre><code>1. 所涉及技术的细分、讲解2. 项目功能的完善3. 更多数据的填充</code></pre><hr>]]></content>
+      
+      
+      <categories>
+          
+          <category> 项目示例 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> RxJava </tag>
+            
+            <tag> Retrofit </tag>
+            
+            <tag> OKHttp </tag>
+            
+            <tag> Glide </tag>
+            
+            <tag> MVP </tag>
+            
+            <tag> DesignPatterns </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>贝塞尔曲线---(沙漏)</title>
+      <link href="/2016/10/24/android/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF---(%E6%B2%99%E6%BC%8F)/"/>
+      <url>/2016/10/24/android/%E8%B4%9D%E5%A1%9E%E5%B0%94%E6%9B%B2%E7%BA%BF---(%E6%B2%99%E6%BC%8F)/</url>
+      
+        <content type="html"><![CDATA[<h4 id="贝塞尔曲线"><a href="#贝塞尔曲线" class="headerlink" title="贝塞尔曲线"></a>贝塞尔曲线</h4><blockquote><p>贝塞尔曲线的几个步骤<br>1、起始点<br>2、控制点<br>3、控制点<br>4、结束点</p></blockquote><p>为了大家更好地理解这几个概念，附上下图</p><p><img src="https://upload-images.jianshu.io/upload_images/8264781-a3e80e03c23d7e90.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="贝塞尔曲线示意图"></p><h6 id="嗯，我们开始实现沙漏曲线"><a href="#嗯，我们开始实现沙漏曲线" class="headerlink" title="嗯，我们开始实现沙漏曲线"></a>嗯，我们开始实现沙漏曲线</h6><blockquote><p>1、我们看一下，实现的最终的效果图</p></blockquote><p><img src="https://upload-images.jianshu.io/upload_images/8264781-e4e9f9eff04bb8f2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="最终实现效果图"></p><blockquote><p>2、我们分析一下：起始点、控制点、结束点的位置</p></blockquote><p><img src="https://upload-images.jianshu.io/upload_images/8264781-0bd93455c95c8ff5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="贝塞尔曲线--关键点位"></p><blockquote><p>3、代码实现</p></blockquote><p>我们把 沙漏 的整体部分，分为四部分：<br>1、上、左部分<br>2、上、右部分<br>3、下、左部分<br>4、下、右部分<br>各部分的实现原理都相同，实现了其中一个，其余部分也轻而易举的实现出来。<br>▲上、左部分的实现：<br>核心代码：</p><pre><code>//Top leftPath glassArcPathTopLeft = new Path();glassArcPathTopLeft.moveTo(hourglassArcStartedPointLeftBound, hourglassArcStartedPointTopBound);glassArcPathTopLeft.cubicTo(hourglassArcOneControlPoint.x, hourglassArcOneControlPoint.y, hourglassArcTwoControlPoint.x, hourglassArcTwoControlPoint.y, hourglassCenterX, hourglassCenterY);canvas.drawPath(glassArcPathTopLeft , mHourglassArcPaint);</code></pre><p>1、Path.moveTo(startPointX, startPointY);<br>【startPointX, 起始点的X坐标，startPointY，起始点的Y坐标】<br>2、Path.cubicTo(controlOnePointX, controlOnePointY, controlTwoPointX, controlTwoPointY, endPointX, endPointY);<br>【控制点1的X坐标，控制点1的Y坐标，控制点2的X坐标，控制点2的Y坐标，结束点的X坐标，结束点的Y坐标】<br>3、Canvas.drawPath(Path, Paint);<br>【绘制】</p><p><img src="https://upload-images.jianshu.io/upload_images/8264781-68ce71ebb160ab1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="左、上部分的实现效果"></p><h6 id="3-2、全部代码"><a href="#3-2、全部代码" class="headerlink" title="3.2、全部代码"></a>3.2、全部代码</h6><p>在开发中我们还要考虑到，padding，wrap_content等诸多情况<br>下面是全部的绘制核心代码</p><pre><code>private void drawGlass(Canvas canvas) {    /*    Canvas rectangle.     */    int drawableLeftBound = getLeft() + getPaddingLeft();    int drawableTopBound = getTop() + getPaddingTop();    int drawableRightBound = getRight() - getPaddingRight();    int drawableBottomBound = getBottom() - getPaddingBottom();    /*    Save drawable rectangle layer.     */    RectF rectF = new RectF();    rectF.left = drawableLeftBound;    rectF.top = drawableTopBound;    rectF.right = drawableRightBound;    rectF.bottom = drawableBottomBound;    canvas.saveLayerAlpha(rectF, 200);    float drawableDiameterY = (rectF.bottom - rectF.top);    float drawableRadiusY = drawableDiameterY / 2f;    float drawableDiameterX = (rectF.right - rectF.left);    float drawableRadiusX = drawableDiameterX / 2f;    /*    中心位置     */    float hourglassCenterX = rectF.left + drawableRadiusX;    float hourglassCenterY = rectF.top + drawableRadiusY;    /*    Bounds     */    float hourglassLeftBound = rectF.left + mHourglassPaintWidth;    float hourglassTopBound = rectF.top + mHourglassPaintWidth;    float hourglassRightBound = rectF.right + mHourglassPaintWidth;    float hourglassBottomBound = rectF.bottom + mHourglassPaintWidth;    //Arc started bounds.    float hourglassArcStartedPointLeftBound = rectF.left + drawableDiameterY / 8f;    float hourglassArcStartedPointTopBound = rectF.top;    float hourglassArcStartedPointRightBound = rectF.right - drawableDiameterY / 8f;    float hourglassArcStartedPointBottomBound = rectF.bottom;    /*    Eight control point     */    PointF hourglassArcOneControlPoint = new PointF();    hourglassArcOneControlPoint.x = hourglassLeftBound;    hourglassArcOneControlPoint.y = drawableTopBound + drawableRadiusY / 4F;    PointF hourglassArcTwoControlPoint = new PointF();    hourglassArcTwoControlPoint.x = hourglassLeftBound;    hourglassArcTwoControlPoint.y = drawableTopBound + drawableRadiusY / 2F;    PointF hourglassArcThreeControlPoint = new PointF();    hourglassArcThreeControlPoint.x = hourglassRightBound;    hourglassArcThreeControlPoint.y = drawableTopBound + drawableRadiusY / 4F;    PointF hourglassArcFourControlPoint = new PointF();    hourglassArcFourControlPoint.x = hourglassRightBound;    hourglassArcFourControlPoint.y = drawableTopBound + drawableRadiusY / 2F;    PointF hourglassArcFiveControlPoint = new PointF();    hourglassArcFiveControlPoint.x = hourglassLeftBound;    hourglassArcFiveControlPoint.y = drawableBottomBound - drawableRadiusY / 4F;    PointF hourglassArcSixControlPoint = new PointF();    hourglassArcSixControlPoint.x = hourglassLeftBound;    hourglassArcSixControlPoint.y = drawableBottomBound - drawableRadiusY / 2F;    PointF hourglassArcSevenControlPoint = new PointF();    hourglassArcSevenControlPoint.x = hourglassRightBound;    hourglassArcSevenControlPoint.y = drawableBottomBound - drawableRadiusY / 4F;    PointF hourglassArcEightControlPoint = new PointF();    hourglassArcEightControlPoint.x = hourglassRightBound;    hourglassArcEightControlPoint.y = drawableBottomBound - drawableRadiusY / 2F;    Paint paint = new Paint();    paint.setStrokeWidth(15);    paint.setColor(Color.GREEN);    canvas.drawPoint(hourglassArcOneControlPoint.x, hourglassArcOneControlPoint.y, paint);    canvas.drawPoint(hourglassArcTwoControlPoint.x, hourglassArcTwoControlPoint.y, paint);    canvas.drawPoint(hourglassArcThreeControlPoint.x, hourglassArcThreeControlPoint.y, paint);    canvas.drawPoint(hourglassArcFourControlPoint.x, hourglassArcFourControlPoint.y, paint);    canvas.drawPoint(hourglassArcFiveControlPoint.x, hourglassArcFiveControlPoint.y, paint);    canvas.drawPoint(hourglassArcSixControlPoint.x, hourglassArcSixControlPoint.y, paint);    canvas.drawPoint(hourglassArcSevenControlPoint.x, hourglassArcSevenControlPoint.y, paint);    canvas.drawPoint(hourglassArcEightControlPoint.x, hourglassArcEightControlPoint.y, paint);    /*    Glass top.     */    //Top left    Path glassArcPathTopLeft = new Path();    glassArcPathTopLeft.moveTo(hourglassArcStartedPointLeftBound, hourglassArcStartedPointTopBound);    glassArcPathTopLeft.cubicTo(hourglassArcOneControlPoint.x, hourglassArcOneControlPoint.y, hourglassArcTwoControlPoint.x, hourglassArcTwoControlPoint.y, hourglassCenterX, hourglassCenterY);    Path glassArcPathTopCenter = new Path();    glassArcPathTopCenter.moveTo(getRight() / 8f, getTop());    glassArcPathTopCenter.lineTo(hourglassRightBound - getRight() / 8f, getTop());    glassArcPathTopCenter.lineTo(hourglassCenterX, hourglassCenterY);    //Top right.    Path glassArcPathTopRight = new Path();    glassArcPathTopRight.moveTo(hourglassArcStartedPointRightBound, hourglassArcStartedPointTopBound);    glassArcPathTopRight.cubicTo(hourglassArcThreeControlPoint.x, hourglassArcThreeControlPoint.y, hourglassArcFourControlPoint.x, hourglassArcFourControlPoint.y, hourglassCenterX, hourglassCenterY);    /*    Glass bottom.     */    //Bottom left.    Path glassArcPathBottomLeft = new Path();    glassArcPathBottomLeft.moveTo(hourglassArcStartedPointLeftBound, hourglassArcStartedPointBottomBound);    glassArcPathBottomLeft.cubicTo(hourglassArcFiveControlPoint.x, hourglassArcFiveControlPoint.y, hourglassArcSixControlPoint.x, hourglassArcSixControlPoint.y, hourglassCenterX, hourglassCenterY);    //Bottom right.    Path glassArcPathBottomRight = new Path();    glassArcPathBottomRight.moveTo(hourglassArcStartedPointRightBound, hourglassArcStartedPointBottomBound);    glassArcPathBottomRight.cubicTo(hourglassArcSevenControlPoint.x, hourglassArcSevenControlPoint.y, hourglassArcEightControlPoint.x, hourglassArcEightControlPoint.y, hourglassCenterX, hourglassCenterY);    /*    The whole glass.     */    Path glassPath = new Path();    glassPath.addPath(glassArcPathTopLeft);    glassPath.addPath(glassArcPathTopRight);    glassPath.addPath(glassArcPathBottomLeft);    glassPath.addPath(glassArcPathBottomRight);    canvas.drawPath(glassPath, mHourglassArcPaint);    //Close top bottom bounds.    Path glassPathTopClosed = new Path();    glassPathTopClosed.moveTo(hourglassArcStartedPointLeftBound, hourglassArcStartedPointTopBound);    glassPathTopClosed.lineTo(hourglassArcStartedPointRightBound, hourglassArcStartedPointTopBound);    Path glassPathBottomClosed = new Path();    glassPathBottomClosed.moveTo(hourglassArcStartedPointLeftBound, hourglassArcStartedPointBottomBound);    glassPathBottomClosed.lineTo(hourglassArcStartedPointRightBound, hourglassArcStartedPointBottomBound);    Path glassDecorPath = new Path();    glassDecorPath.addPath(glassPathTopClosed);    glassDecorPath.addPath(glassPathBottomClosed);    canvas.drawPath(glassDecorPath, mHourglassDecorPaint);}</code></pre><p>俗话说：欲速则不达，关于贝塞尔曲线的简单小案例就讲到这里了，如果你还意犹未尽，那么不要悲伤，请查看作者的其他文章，更多干货等着你…..<br>切记，不要吃得太饱哦，多消化消化。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Android </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> 贝塞尔曲线 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Android自定义View之圆形头像</title>
+      <link href="/2016/10/21/android/Android%E8%87%AA%E5%AE%9A%E4%B9%89View%E4%B9%8B%E5%9C%86%E5%BD%A2%E5%A4%B4%E5%83%8F/"/>
+      <url>/2016/10/21/android/Android%E8%87%AA%E5%AE%9A%E4%B9%89View%E4%B9%8B%E5%9C%86%E5%BD%A2%E5%A4%B4%E5%83%8F/</url>
+      
+        <content type="html"><![CDATA[<hr><p>本篇：自定义圆形View并显示圆形的头像</p><hr><h3 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h3><h4 id="1-预备：阅读本篇文章，需具备View的绘制基本知识。"><a href="#1-预备：阅读本篇文章，需具备View的绘制基本知识。" class="headerlink" title="1.  预备：阅读本篇文章，需具备View的绘制基本知识。"></a>1.  预备：阅读本篇文章，需具备View的绘制基本知识。</h4><h4 id="2-讲解：PorterDuff-Mode-https-developer-android-com-reference-android-graphics-PorterDuff-Mode"><a href="#2-讲解：PorterDuff-Mode-https-developer-android-com-reference-android-graphics-PorterDuff-Mode" class="headerlink" title="2.  讲解：PorterDuff.Mode https://developer.android.com/reference/android/graphics/PorterDuff.Mode"></a>2.  讲解：PorterDuff.Mode <a href="https://developer.android.com/reference/android/graphics/PorterDuff.Mode" target="_blank" rel="noopener">https://developer.android.com/reference/android/graphics/PorterDuff.Mode</a></h4><h4 id="3-实战：使用PorterDuff-Mode实现圆形头像。"><a href="#3-实战：使用PorterDuff-Mode实现圆形头像。" class="headerlink" title="3.  实战：使用PorterDuff.Mode实现圆形头像。"></a>3.  实战：使用PorterDuff.Mode实现圆形头像。</h4><p>核心代码：</p><pre><code>paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_ATOP));</code></pre><h3 id="PorterDuff-Mode"><a href="#PorterDuff-Mode" class="headerlink" title="PorterDuff.Mode"></a>PorterDuff.Mode</h3><h4 id="1-SRC"><a href="#1-SRC" class="headerlink" title="1.  SRC"></a>1.  SRC</h4><h5 id="PorterDuff-Mode-SRC"><a href="#PorterDuff-Mode-SRC" class="headerlink" title="PorterDuff.Mode.SRC"></a>PorterDuff.Mode.SRC</h5><p><img src="https://upload-images.jianshu.io/upload_images/8264781-9ae9e8950b2d41b1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="composite_SRC.png"></p><h5 id="PorterDuff-Mode-SRC-OVER"><a href="#PorterDuff-Mode-SRC-OVER" class="headerlink" title="PorterDuff.Mode.SRC_OVER"></a>PorterDuff.Mode.SRC_OVER</h5><p><img src="https://upload-images.jianshu.io/upload_images/8264781-d0ea7489088d5047.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="composite_SRC_OVER.png"></p><h5 id="PorterDuff-Mode-SRC-IN"><a href="#PorterDuff-Mode-SRC-IN" class="headerlink" title="PorterDuff.Mode.SRC_IN"></a>PorterDuff.Mode.SRC_IN</h5><p><img src="https://upload-images.jianshu.io/upload_images/8264781-e2eca49324b5f534.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="composite_SRC_IN.png"></p><h5 id="PorterDuff-Mode-SRC-OUT"><a href="#PorterDuff-Mode-SRC-OUT" class="headerlink" title="PorterDuff.Mode.SRC_OUT"></a>PorterDuff.Mode.SRC_OUT</h5><p><img src="https://upload-images.jianshu.io/upload_images/8264781-151e1d6565932522.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="composite_SRC_OUT.png"></p><h5 id="PorterDuff-Mode-SRC-ATOP"><a href="#PorterDuff-Mode-SRC-ATOP" class="headerlink" title="PorterDuff.Mode.SRC_ATOP"></a>PorterDuff.Mode.SRC_ATOP</h5><p><img src="https://upload-images.jianshu.io/upload_images/8264781-7c3f1ad8704d3941.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="composite_SRC_ATOP.png"></p><h4 id="2-Destination"><a href="#2-Destination" class="headerlink" title="2.  Destination"></a>2.  Destination</h4><h5 id="PorterDuff-Mode-DST"><a href="#PorterDuff-Mode-DST" class="headerlink" title="PorterDuff.Mode.DST"></a>PorterDuff.Mode.DST</h5><p><img src="https://upload-images.jianshu.io/upload_images/8264781-eaaa41fb6562f54f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="composite_DST.png"></p><h5 id="PorterDuff-Mode-DST-OVER"><a href="#PorterDuff-Mode-DST-OVER" class="headerlink" title="PorterDuff.Mode.DST_OVER"></a>PorterDuff.Mode.DST_OVER</h5><p><img src="https://upload-images.jianshu.io/upload_images/8264781-11ef4e19912e9708.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="composite_DST_OVER.png"></p><h5 id="PorterDuff-Mode-DST-IN"><a href="#PorterDuff-Mode-DST-IN" class="headerlink" title="PorterDuff.Mode.DST_IN"></a>PorterDuff.Mode.DST_IN</h5><p><img src="https://upload-images.jianshu.io/upload_images/8264781-39218d68f264c2ab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="composite_DST_IN.png"></p><h5 id="PorterDuff-Mode-DST-OUT"><a href="#PorterDuff-Mode-DST-OUT" class="headerlink" title="PorterDuff.Mode.DST_OUT"></a>PorterDuff.Mode.DST_OUT</h5><p><img src="https://upload-images.jianshu.io/upload_images/8264781-f22bbf19d51ff247.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="composite_DST_OUT.png"></p><h5 id="PorterDuff-Mode-DST-ATOP"><a href="#PorterDuff-Mode-DST-ATOP" class="headerlink" title="PorterDuff.Mode.DST_ATOP"></a>PorterDuff.Mode.DST_ATOP</h5><p><img src="https://upload-images.jianshu.io/upload_images/8264781-1417b20245dc235e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="composite_DST_ATOP.png"></p><h4 id="3-Clear"><a href="#3-Clear" class="headerlink" title="3.  Clear"></a>3.  Clear</h4><p>######PorterDuff.Mode.CLEAR<br><img src="https://upload-images.jianshu.io/upload_images/8264781-7239e7e2d85dacfd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="composite_CLEAR.png"></p><h4 id="4-Exclusive-or"><a href="#4-Exclusive-or" class="headerlink" title="4.  Exclusive or"></a>4.  Exclusive or</h4><h4 id="PorterDuff-Mode-XOR"><a href="#PorterDuff-Mode-XOR" class="headerlink" title="PorterDuff.Mode.XOR"></a>PorterDuff.Mode.XOR</h4><p><img src="https://upload-images.jianshu.io/upload_images/8264781-616372208bd62af7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="composite_XOR.png"></p><h3 id="PorterDuff-Mode-实现圆形头像-（支持Padding、wrap-content属性）"><a href="#PorterDuff-Mode-实现圆形头像-（支持Padding、wrap-content属性）" class="headerlink" title="PorterDuff.Mode,实现圆形头像 （支持Padding、wrap_content属性）"></a>PorterDuff.Mode,实现圆形头像 （支持Padding、wrap_content属性）</h3><h4 id="1-核心代码"><a href="#1-核心代码" class="headerlink" title="1.    核心代码"></a>1.    核心代码</h4><pre><code>public class AirXfermodeCircleView extends ImageView {    private static final String TAG = &quot;AirXfermodeCircleView&quot;;    private static final int MIN_SIZE_DEFAULT = 100;    private Paint mDrawablePaint;    public AirXfermodeCircleView(Context context) {        this(context, null);    }    public AirXfermodeCircleView(Context context, @Nullable AttributeSet attrs) {        this(context, attrs, 0);    }    public AirXfermodeCircleView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {        this(context, attrs, defStyleAttr, 0);    }    public AirXfermodeCircleView(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {        super(context, attrs, defStyleAttr, defStyleRes);        initializePaints();    }    private void initializePaints() {        mDrawablePaint = new Paint();        mDrawablePaint.setAntiAlias(true);    }    @Override    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {        super.onMeasure(widthMeasureSpec, heightMeasureSpec);        int widthMode = MeasureSpec.getMode(widthMeasureSpec);        int widthSize = MeasureSpec.getSize(widthMeasureSpec);        int heightMode = MeasureSpec.getMode(heightMeasureSpec);        int heightSize = MeasureSpec.getSize(heightMeasureSpec);        switch (widthMode) {            case MeasureSpec.AT_MOST:                widthSize = dpToPx(MIN_SIZE_DEFAULT);                break;        }        switch (heightMode) {            case MeasureSpec.AT_MOST:                heightSize = dpToPx(MIN_SIZE_DEFAULT);                break;        }        int minSize = Math.min(widthSize, heightSize);        //Update measured dimension.        setMeasuredDimension(minSize, minSize);    }    @Override    protected void onDraw(Canvas canvas) {        //Canvas circle image.        drawCircleImage(canvas);    }    /**    * Draw circle image with paint PorterDuff.    *    * @param canvas    *         canvas.    */    private void drawCircleImage(Canvas canvas) {        //Save layer with parameter.        canvas.saveLayerAlpha(getLeft(), getTop(), getRight(), getBottom(), 200);        //Get drawable source.        Drawable drawable = getDrawable();        BitmapDrawable bitmapDrawable = (BitmapDrawable) drawable;        Bitmap bitmap = bitmapDrawable.getBitmap();        //Computer circle image radius.        float radiusX = (getWidth() - getPaddingLeft() - getPaddingRight()) / 2f;        float radiusY = (getHeight() - getPaddingTop() - getPaddingBottom()) / 2f;        float radius = Math.min(radiusX, radiusY);        //Computer        Rect rectF = new Rect();        rectF.left = getLeft() + getPaddingLeft();        rectF.top = getTop() + getPaddingTop();        rectF.right = getRight() - getPaddingRight();        rectF.bottom = getBottom() - getPaddingBottom();        int targetBitmapWidth = rectF.right - rectF.left;        int targetBitmapHeight = rectF.bottom - rectF.top;        int diameter = (int) (radius * 2 + 0.5);        float circleX = getPaddingLeft() + radius;        float circleY = getPaddingTop() + radius;        Bitmap scaledBitmap = Bitmap.createScaledBitmap(bitmap, targetBitmapWidth, targetBitmapHeight, false);        /*        Draw destination bitmap.        */        Bitmap bitmapDestination = Bitmap.createBitmap(targetBitmapWidth, targetBitmapHeight, Bitmap.Config.ARGB_8888);        Canvas canvasDestination = new Canvas(bitmapDestination);        //Draw circle.        canvasDestination.drawCircle(circleX, circleY, radius, mDrawablePaint);        //Draw destination bitmap.        canvas.drawBitmap(bitmapDestination, 0, 0, mDrawablePaint);        /*        Set  paint&apos;s porterDuffMode        */        mDrawablePaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));        /*        Draw source bitmap.        */        canvas.drawBitmap(scaledBitmap, rectF, rectF, mDrawablePaint);        //Reset mode value.        mDrawablePaint.setXfermode(null);        //Restore.        canvas.restore();    }    private int dpToPx(int dp) {        return (int) (dp * getResources().getDisplayMetrics().density + 0.5);    }}</code></pre><p><img src="https://upload-images.jianshu.io/upload_images/8264781-89113eac13573c78.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="圆形头像效果图"></p><p><strong>* 如果，您认为到这里就万事大吉了，那么很遗憾：请看下图 *</strong></p><p><img src="https://upload-images.jianshu.io/upload_images/8264781-7a31ace42d6945ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="收尾点"></p><p>所以，在绘制完成后，切记要加上：</p><pre><code>Paint.setXfermode(null);</code></pre><hr><p>未完待续。。。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Android </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> Customize View </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Window background and translucent</title>
+      <link href="/2016/10/19/android/Android%20windowIsTranslucent%E4%B8%8EwindowBackground/"/>
+      <url>/2016/10/19/android/Android%20windowIsTranslucent%E4%B8%8EwindowBackground/</url>
+      
+        <content type="html"><![CDATA[<p>Window background and translucent</p><h3 id="涉及知识点："><a href="#涉及知识点：" class="headerlink" title="涉及知识点："></a>涉及知识点：</h3><p>Activity、Window、Dialog、View 相关知识点</p><h3 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h3><p>发现很多同学在线上都会问到这个问题；遂，作此篇！</p><h4 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h4><ol><li>windowBackground为透明时, windowIsTranslucent为false, Activity背景为何还是黑色，为什么不是透明？</li><li>windowBackground为红色时, windowIsTranslucent为true, Activity背景还是红色，为什么不是透明？</li></ol><h4 id="解决："><a href="#解决：" class="headerlink" title="解决："></a>解决：</h4><p>windowBackground 、windowIsTranslucent顾名思义是Window属性，但是具体的实现是在哪里呢？是在RootView中———也就是DecorView类中</p><ol><li><p>我们进入DecorView类中：</p></li><li><p>找到setWindowBackground方法</p><pre><code>public void setWindowBackground(Drawable drawable) {    if (getBackground() != drawable) {        setBackgroundDrawable(drawable);        if (drawable != null) {            mResizingBackgroundDrawable = enforceNonTranslucentBackground(drawable,                    mWindow.isTranslucent() || mWindow.isShowingWallpaper());        } else {            mResizingBackgroundDrawable = getResizingBackgroundDrawable(                    getContext(), 0, mWindow.mBackgroundFallbackResource,                    mWindow.isTranslucent() || mWindow.isShowingWallpaper());        }        if (mResizingBackgroundDrawable != null) {            mResizingBackgroundDrawable.getPadding(mBackgroundPadding);        } else {            mBackgroundPadding.setEmpty();        }        drawableChanged();    }}</code></pre><p>我们可以看到enforceNonTranslucentBackground中使用到 Window.isTranslucent()，于是我们向下进一步寻找</p></li></ol><ol start="3"><li><p>找到 enforceNonTranslucentBackground </p><pre><code>/*** Enforces a drawable to be non-translucent to act as a background if needed, i.e. if the* window is not translucent.*/private static Drawable enforceNonTranslucentBackground(Drawable drawable,        boolean windowTranslucent) {    if (!windowTranslucent &amp;&amp; drawable instanceof ColorDrawable) {        ColorDrawable colorDrawable = (ColorDrawable) drawable;        int color = colorDrawable.getColor();        if (Color.alpha(color) != 255) {            ColorDrawable copy = (ColorDrawable) colorDrawable.getConstantState().newDrawable()                    .mutate();            copy.setColor(                    Color.argb(255, Color.red(color), Color.green(color), Color.blue(color)));            return copy;        }    }    return drawable;}</code></pre><p>enforceNonTranslucentBackground中的大致逻辑：当windowTranslucent == false,enforceNonTranslucentBackground会强制将背景更改为不透明背景（PS: 即使windowBackground 是 透明的 ）</p></li></ol><hr><p>未完待续。。。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Android </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> Window </tag>
+            
+            <tag> View </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Android 事件分发机制</title>
+      <link href="/2016/10/10/android/Android%20%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91%E6%9C%BA%E5%88%B6/"/>
+      <url>/2016/10/10/android/Android%20%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91%E6%9C%BA%E5%88%B6/</url>
+      
+        <content type="html"><![CDATA[<p>本章采用：代码 + 思维导图的形式描述事件机制</p><h3 id="1、Activity"><a href="#1、Activity" class="headerlink" title="1、Activity"></a>1、Activity</h3><p><img src="https://upload-images.jianshu.io/upload_images/8264781-430d2c077c23b2cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Activity.png"></p><pre><code>/** * Called to process touch screen events.  You can override this to * intercept all touch screen events before they are dispatched to the * window.  Be sure to call this implementation for touch screen events * that should be handled normally. * * @param ev The touch screen event. * * @return boolean Return true if this event was consumed. */public boolean dispatchTouchEvent(MotionEvent ev) {    if (ev.getAction() == MotionEvent.ACTION_DOWN) {        onUserInteraction();    }    if (getWindow().superDispatchTouchEvent(ev)) {        return true;    }    return onTouchEvent(ev);}/** * Called when a touch screen event was not handled by any of the views * under it.  This is most useful to process touch events that happen * outside of your window bounds, where there is no view to receive it. * * @param event The touch screen event being processed. * * @return Return true if you have consumed the event, false if you haven&apos;t. * The default implementation always returns false. */public boolean onTouchEvent(MotionEvent event) {    if (mWindow.shouldCloseOnTouch(this, event)) {        finish();        return true;    }    return false;}</code></pre><h3 id="2、ViewGroup"><a href="#2、ViewGroup" class="headerlink" title="2、ViewGroup"></a>2、ViewGroup</h3><p><img src="https://upload-images.jianshu.io/upload_images/8264781-81d9ce2b7472b699.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="View Group.png"></p><h5 id="解析：disallowIntercept"><a href="#解析：disallowIntercept" class="headerlink" title="解析：disallowIntercept"></a>解析：disallowIntercept</h5><h6 id="1、disallowIntercept控制着onInterceptTouchEvent-ev-是否被调用"><a href="#1、disallowIntercept控制着onInterceptTouchEvent-ev-是否被调用" class="headerlink" title="1、disallowIntercept控制着onInterceptTouchEvent(ev);是否被调用"></a>1、disallowIntercept控制着onInterceptTouchEvent(ev);是否被调用</h6><pre><code>/**以上省略若干代码从以下代码可以得出：1、disallowIntercept控制着onInterceptTouchEvent(ev);是否被调用*/// Check for interception.final boolean intercepted;if (actionMasked == MotionEvent.ACTION_DOWN        || mFirstTouchTarget != null) {    final boolean disallowIntercept = (mGroupFlags &amp; FLAG_DISALLOW_INTERCEPT) != 0;    if (!disallowIntercept) {        intercepted = onInterceptTouchEvent(ev);        ev.setAction(action); // restore action in case it was changed    } else {        intercepted = false;    }} else {    // There are no touch targets and this action is not an initial down    // so this view group continues to intercept touches.    intercepted = true;}</code></pre><h5 id="解析：intercepted"><a href="#解析：intercepted" class="headerlink" title="解析：intercepted"></a>解析：intercepted</h5><h6 id="1、if-intercepted-false-ViewGroup将会查找childrenCount，如果childrenCount-！-0，则获取子View进行分发事件（满足：-事件发生的位置在View的位置内-的-childView）"><a href="#1、if-intercepted-false-ViewGroup将会查找childrenCount，如果childrenCount-！-0，则获取子View进行分发事件（满足：-事件发生的位置在View的位置内-的-childView）" class="headerlink" title="1、if (intercepted == false); ViewGroup将会查找childrenCount，如果childrenCount ！= 0，则获取子View进行分发事件（满足： 事件发生的位置在View的位置内  的  childView）"></a>1、if (intercepted == false); ViewGroup将会查找childrenCount，如果childrenCount ！= 0，则获取子View进行分发事件（满足： 事件发生的位置在View的位置内  的  childView）</h6><pre><code>/**以上省略若干代码从以下代码可以得出：1、intercepted控制着下面的代码是否被执行2、if (intercepted == false);执行步骤三3、ViewGroup将会查找childrenCount，如果childrenCount ！= 0，则获取子View进行分发事件（满足： 事件发生的位置在View的位置内  的  childView）*/ if (!canceled &amp;&amp; !intercepted) {{    // If the event is targeting accessiiblity focus we give it to the    // view that has accessibility focus and if it does not handle it    // we clear the flag and dispatch the event to all children as usual.    // We are looking up the accessibility focused host to avoid keeping    // state since these events are very rare.    View childWithAccessibilityFocus = ev.isTargetAccessibilityFocus()            ? findChildWithAccessibilityFocus() : null;    if (actionMasked == MotionEvent.ACTION_DOWN            || (split &amp;&amp; actionMasked == MotionEvent.ACTION_POINTER_DOWN)            || actionMasked == MotionEvent.ACTION_HOVER_MOVE) {        final int actionIndex = ev.getActionIndex(); // always 0 for down        final int idBitsToAssign = split ? 1 &lt;&lt; ev.getPointerId(actionIndex)                : TouchTarget.ALL_POINTER_IDS;        // Clean up earlier touch targets for this pointer id in case they        // have become out of sync.        removePointersFromTouchTargets(idBitsToAssign);        final int childrenCount = mChildrenCount;        if (newTouchTarget == null &amp;&amp; childrenCount != 0) {            final float x = ev.getX(actionIndex);            final float y = ev.getY(actionIndex);            // Find a child that can receive the event.            // Scan children from front to back.            final ArrayList&lt;View&gt; preorderedList = buildTouchDispatchChildList();            final boolean customOrder = preorderedList == null                    &amp;&amp; isChildrenDrawingOrderEnabled();            final View[] children = mChildren;            for (int i = childrenCount - 1; i &gt;= 0; i--) {                final int childIndex = getAndVerifyPreorderedIndex(                        childrenCount, i, customOrder);                final View child = getAndVerifyPreorderedView(                        preorderedList, children, childIndex);                // If there is a view that has accessibility focus we want it                // to get the event first and if not handled we will perform a                // normal dispatch. We may do a double iteration but this is                // safer given the timeframe.                if (childWithAccessibilityFocus != null) {                    if (childWithAccessibilityFocus != child) {                        continue;                    }                    childWithAccessibilityFocus = null;                    i = childrenCount - 1;                }                if (!canViewReceivePointerEvents(child)                        || !isTransformedTouchPointInView(x, y, child, null)) {                    ev.setTargetAccessibilityFocus(false);                    continue;                }                newTouchTarget = getTouchTarget(child);                if (newTouchTarget != null) {                    // Child is already receiving touch within its bounds.                    // Give it the new pointer in addition to the ones it is handling.                    newTouchTarget.pointerIdBits |= idBitsToAssign;                    break;                }                resetCancelNextUpFlag(child);                if (dispatchTransformedTouchEvent(ev, false, child, idBitsToAssign)) {                    // Child wants to receive touch within its bounds.                    mLastTouchDownTime = ev.getDownTime();                    if (preorderedList != null) {                        // childIndex points into presorted list, find original index                        for (int j = 0; j &lt; childrenCount; j++) {                            if (children[childIndex] == mChildren[j]) {                                mLastTouchDownIndex = j;                                break;                            }                        }                    } else {                        mLastTouchDownIndex = childIndex;                    }                    mLastTouchDownX = ev.getX();                    mLastTouchDownY = ev.getY();                    newTouchTarget = addTouchTarget(child, idBitsToAssign);                    alreadyDispatchedToNewTouchTarget = true;                    break;                }                // The accessibility focus didn&apos;t handle the event, so clear                // the flag and do a normal dispatch to all children.                ev.setTargetAccessibilityFocus(false);            }            if (preorderedList != null) preorderedList.clear();        }        if (newTouchTarget == null &amp;&amp; mFirstTouchTarget != null) {            // Did not find a child to receive the event.            // Assign the pointer to the least recently added target.            newTouchTarget = mFirstTouchTarget;            while (newTouchTarget.next != null) {                newTouchTarget = newTouchTarget.next;            }            newTouchTarget.pointerIdBits |= idBitsToAssign;        }    }}</code></pre><h5 id="解析：intercepted-1"><a href="#解析：intercepted-1" class="headerlink" title="解析：intercepted"></a>解析：intercepted</h5><h6 id="1、intercepted控制着下面的dispatchTransformedTouchEvent-ev-cancelChild-target-child-target-pointerIdBits-方法的参数：cancelChild的值，进而决定：dispatchTransformedTouchEvent内部的操作，请接着看下一个解析"><a href="#1、intercepted控制着下面的dispatchTransformedTouchEvent-ev-cancelChild-target-child-target-pointerIdBits-方法的参数：cancelChild的值，进而决定：dispatchTransformedTouchEvent内部的操作，请接着看下一个解析" class="headerlink" title="1、intercepted控制着下面的dispatchTransformedTouchEvent(ev, cancelChild,target.child, target.pointerIdBits)方法的参数：cancelChild的值，进而决定：dispatchTransformedTouchEvent内部的操作，请接着看下一个解析"></a>1、intercepted控制着下面的dispatchTransformedTouchEvent(ev, cancelChild,target.child, target.pointerIdBits)方法的参数：cancelChild的值，进而决定：dispatchTransformedTouchEvent内部的操作，请接着看下一个解析</h6><pre><code>/**以上省略若干代码从以下代码可以得出：1、intercepted控制着下面的dispatchTransformedTouchEvent(ev, cancelChild,target.child, target.pointerIdBits)是否被执行*/ // Dispatch to touch targets.if (mFirstTouchTarget == null) {    // No touch targets so treat this as an ordinary view.    handled = dispatchTransformedTouchEvent(ev, canceled, null,            TouchTarget.ALL_POINTER_IDS);} else {    // Dispatch to touch targets, excluding the new touch target if we already    // dispatched to it.  Cancel touch targets if necessary.    TouchTarget predecessor = null;    TouchTarget target = mFirstTouchTarget;    while (target != null) {        final TouchTarget next = target.next;        if (alreadyDispatchedToNewTouchTarget &amp;&amp; target == newTouchTarget) {            handled = true;        } else {            final boolean cancelChild = resetCancelNextUpFlag(target.child)                    || intercepted;            if (dispatchTransformedTouchEvent(ev, cancelChild,                    target.child, target.pointerIdBits)) {                handled = true;            }            if (cancelChild) {                if (predecessor == null) {                    mFirstTouchTarget = next;                } else {                    predecessor.next = next;                }                target.recycle();                target = next;                continue;            }        }        predecessor = target;        target = next;    }}</code></pre><h5 id="解析：dispatchTransformedTouchEvent"><a href="#解析：dispatchTransformedTouchEvent" class="headerlink" title="解析：dispatchTransformedTouchEvent"></a>解析：dispatchTransformedTouchEvent</h5><h6 id="1、if（Child-null）-调用-super-dispatchTouchEvent-event-PS-执行View的事件系列"><a href="#1、if（Child-null）-调用-super-dispatchTouchEvent-event-PS-执行View的事件系列" class="headerlink" title="1、if（Child == null）;调用  super.dispatchTouchEvent(event); (PS:执行View的事件系列)"></a>1、if（Child == null）;调用  super.dispatchTouchEvent(event); (PS:执行View的事件系列)</h6><h6 id="2、if（Child-null）-调用-child-dispatchTouchEvent-event-PS-继续下一个的View-Group事件系列"><a href="#2、if（Child-null）-调用-child-dispatchTouchEvent-event-PS-继续下一个的View-Group事件系列" class="headerlink" title="2、if（Child != null）;调用  child.dispatchTouchEvent(event);  (PS:继续下一个的View Group事件系列)"></a>2、if（Child != null）;调用  child.dispatchTouchEvent(event);  (PS:继续下一个的View Group事件系列)</h6><pre><code>private boolean dispatchTransformedTouchEvent(MotionEvent event, boolean cancel,        View child, int desiredPointerIdBits) {    final boolean handled;    // Canceling motions is a special case.  We don&apos;t need to perform any transformations    // or filtering.  The important part is the action, not the contents.    final int oldAction = event.getAction();    if (cancel || oldAction == MotionEvent.ACTION_CANCEL) {        event.setAction(MotionEvent.ACTION_CANCEL);        if (child == null) {            handled = super.dispatchTouchEvent(event);        } else {            handled = child.dispatchTouchEvent(event);        }        event.setAction(oldAction);        return handled;    }    /*   这里省略若干行代码    */}</code></pre><h3 id="3、View"><a href="#3、View" class="headerlink" title="3、View"></a>3、View</h3><p><img src="https://upload-images.jianshu.io/upload_images/8264781-a98b4ec864a970d5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="View.png"></p><h5 id="解析：View-dispatchTouchEvent-MotionEvent-ev"><a href="#解析：View-dispatchTouchEvent-MotionEvent-ev" class="headerlink" title="解析：View dispatchTouchEvent(MotionEvent ev);"></a>解析：View dispatchTouchEvent(MotionEvent ev);</h5><h6 id="1、OnTouchListener-决定着是否执行-步骤二"><a href="#1、OnTouchListener-决定着是否执行-步骤二" class="headerlink" title="1、OnTouchListener 决定着是否执行 步骤二"></a>1、OnTouchListener 决定着是否执行 步骤二</h6><h6 id="2、onTouchEvent-请看下个解析"><a href="#2、onTouchEvent-请看下个解析" class="headerlink" title="2、onTouchEvent  请看下个解析"></a>2、onTouchEvent  请看下个解析</h6><pre><code>/** * Pass the touch screen motion event down to the target view, or this * view if it is the target. * * @param event The motion event to be dispatched. * @return True if the event was handled by the view, false otherwise. */public boolean dispatchTouchEvent(MotionEvent event) {    // If the event should be handled by accessibility focus first.    if (event.isTargetAccessibilityFocus()) {        // We don&apos;t have focus or no virtual descendant has it, do not handle the event.        if (!isAccessibilityFocusedViewOrHost()) {            return false;        }        // We have focus and got the event, then use normal event dispatch.        event.setTargetAccessibilityFocus(false);    }    boolean result = false;    if (mInputEventConsistencyVerifier != null) {        mInputEventConsistencyVerifier.onTouchEvent(event, 0);    }    final int actionMasked = event.getActionMasked();    if (actionMasked == MotionEvent.ACTION_DOWN) {        // Defensive cleanup for new gesture        stopNestedScroll();    }    if (onFilterTouchEventForSecurity(event)) {        if ((mViewFlags &amp; ENABLED_MASK) == ENABLED &amp;&amp; handleScrollBarDragging(event)) {            result = true;        }        //noinspection SimplifiableIfStatement        ListenerInfo li = mListenerInfo;        if (li != null &amp;&amp; li.mOnTouchListener != null                &amp;&amp; (mViewFlags &amp; ENABLED_MASK) == ENABLED                &amp;&amp; li.mOnTouchListener.onTouch(this, event)) {            result = true;        }        if (!result &amp;&amp; onTouchEvent(event)) {            result = true;        }    }    if (!result &amp;&amp; mInputEventConsistencyVerifier != null) {        mInputEventConsistencyVerifier.onUnhandledEvent(event, 0);    }    // Clean up after nested scrolls if this is the end of a gesture;    // also cancel it if we tried an ACTION_DOWN but we didn&apos;t want the rest    // of the gesture.    if (actionMasked == MotionEvent.ACTION_UP ||            actionMasked == MotionEvent.ACTION_CANCEL ||            (actionMasked == MotionEvent.ACTION_DOWN &amp;&amp; !result)) {        stopNestedScroll();    }    return result;}</code></pre><h5 id="解析：View-onTouchEvent-MotionEvent-ev"><a href="#解析：View-onTouchEvent-MotionEvent-ev" class="headerlink" title="解析：View onTouchEvent(MotionEvent ev);"></a>解析：View onTouchEvent(MotionEvent ev);</h5><h6 id="1、performClickInternal-点击事件"><a href="#1、performClickInternal-点击事件" class="headerlink" title="1、performClickInternal  点击事件"></a>1、performClickInternal  点击事件</h6><pre><code>// Use a Runnable and post this rather than calling// performClick directly. This lets other visual state// of the view update before click actions start.if (mPerformClick == null) {    mPerformClick = new PerformClick();}if (!post(mPerformClick)) {    performClickInternal();}</code></pre><h6 id="2、performLongClick-、-performLongClickInternal-长按事件"><a href="#2、performLongClick-、-performLongClickInternal-长按事件" class="headerlink" title="2、performLongClick 、 performLongClickInternal 长按事件"></a>2、performLongClick 、 performLongClickInternal 长按事件</h6><pre><code>final ListenerInfo li = mListenerInfo;if (li != null &amp;&amp; li.mOnLongClickListener != null) {    handled = li.mOnLongClickListener.onLongClick(View.this);}</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Android </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> Touch Event </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Android Permission Grant</title>
+      <link href="/2016/09/28/android/Android_Permission_Grant/"/>
+      <url>/2016/09/28/android/Android_Permission_Grant/</url>
+      
+        <content type="html"><![CDATA[<h3 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h3><p><a href="https://developer.android.com/guide/topics/permissions/overview" title="参考文献" target="_blank" rel="noopener">https://developer.android.com/guide/topics/permissions/overview</a></p><p><a href="https://github.com/pdliuw/AndroidApp/blob/master/permission/README.md" title="Permission Library" target="_blank" rel="noopener">Permission Library</a></p><blockquote><p><a href="https://github.com/pdliuw/AndroidApp/blob/master/permission/README_EN.md" title="English Document" target="_blank" rel="noopener">English Document</a></p></blockquote><hr><h3 id="权限介绍"><a href="#权限介绍" class="headerlink" title="权限介绍"></a>权限介绍</h3><pre><code>1、应用权限应用必须通过&lt;uses-permission&gt;在manifest.xml标记所需的权限。例如：发送SMS消息的权限&lt;manifest xmlns：android = “http://schemas.android.com/apk/res/android” package = “com.example.snazzyapp” &gt;    &lt;!-- SMS permission --&gt;    &lt;uses-permission android：name = “android.permission.SEND_SMS” /&gt;    &lt;application ... &gt;         ... &lt;/ application&gt; &lt;/ manifest&gt;2、权限分为：正常权限、和危险权限    正常权限：不会对用户的隐私或设备操作造成太大风险的权限。    危险权限：影响用户隐私或设备正常运行的权限。3、请求提示危险权限    🔺只有危险权限才需要用户同意。    Android要求用户授权危险权限的方式取决于用户设备上运行的Android版本以及应用所针对的系统版本    🔺运行时请求（Android 6.0以及最高版本）    1、如果设备运行的是Android6.0（Api level 23）or higher version    2、并且应用程序targetSdkVersion is 23 or higher    则在安装时不会通知用户任何应用程序权限。    您的应用必须要求客户在运行时授予危险权限。    🔺安装时请求（Android5.1.1及更低版本）    1、如果设备运行Android5.1.1（Api level 22）or lower version.    2、或则targetSdkVersion在任何版本的Android上运行时，应用程序为22或更低，系统会自动要求客户在安装时为您的应用授予所欲偶危险权限。    🔺可选硬件功能的权限    访问某些硬件功能（如蓝牙或相机）需要应用程序权限。但是，并非所有Android设备都具有这些硬件功能。    因此，如果您的应用请求CAMERA权限，那么您还必须&lt;uses-feature&gt;在Manifest中标记，以声明是否确实需要此功能    例如：    &lt;uses-feature android:name=&quot;android.hardware.camera&quot; android:required=&quot;false&quot;/&gt;    如果您声明android:required=&quot;false&quot;该功能，则Google Play允许您的应用安装在没有此功能的设备上。    然后您必须通过调用检查当前设备是否在运行时具有该功能PackageManager.hasSystemFeature(),    并在该功能不可用时正常禁用该功能。    如果您未提供&lt;uses-feature&gt;代码，那么当Google Play看到您的应用请求响应的权限时，她会认为您的应用    需要此功能。因此，它会从没有该功能的设备中过滤您的应用，就像您android:required=&quot;true&quot;    在&lt;uses-feature&gt;标记中声明一样。4、权限分为几个保护水平：正常、签名和危险权限。    1、正常权限（普通权限）    如果应用程序在其清单中声明它需要正常权限，则系统会在安装时自动授予应用程序该权限。    系统不会提示用户授予正常权限，用户也无法撤销这些权限。    2、签名权限    3、危险权限    危险权限涵盖应用程序需要涉及用户私人信息的数据或资源的区域，或则可能会影响用户存储的数据或其他应用程序的操作    例如：读取用户联系人的权限是一种危险的权限。如果应用声明它需要危险权限，则用户必须明确授予该应用权限。    在用户批准该权限之前，您的应用无法提供依赖该权限的功能。    要使用危险权限，您的应用必须提示用户在运行时授予权限。    4、特殊权限    有一些权限不像正常和危险权限。SYSTEM_ALERT_WINDOW并且WRITE_SETTINGS特别敏感，因此大多数应用程序    不应该使用它们。如果应用程序需要其中一个权限，则必须在清单中声明权限，并发送请求用户授权的意图。    系统通过向用户显示详细的管理屏幕来响应意图。</code></pre><hr><h3 id="使用文档"><a href="#使用文档" class="headerlink" title="使用文档"></a>使用文档</h3><ol><li>集成</li><li>代码</li></ol><hr><h4 id="集成"><a href="#集成" class="headerlink" title="集成"></a>集成</h4><pre><code>1、Add it in your root build.gradle at the end of repositories:    allprojects {        repositories {            ...            maven { url &apos;https://jitpack.io&apos; }        }    }2. Add the dependency    dependencies {            implementation &apos;com.github.pdliuw.AndroidApp:permission:v1.0.2&apos;    }</code></pre><hr><h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><pre><code>/*单个权限 */PermissionGrant.buildSingle(this)//The activity object.        .addPermission(cameraPermission)//Permission        .setSingleCallback(new SingleCallback() {            @Override            public void grant() {                /*                授权                Do something...                打开相机                 */                openCamera();            }            @Override            public void deny() {                /*                拒签                Do something...                提示用户                 */            }        })        .closedRationale()//关闭提示用户的解释框        .start();//Start/*多个权限*/PermissionGrant.buildMultiple(this)         .addPermission(galleryPermission, cameraPermission, writePermission)         .setMultipleCallback(new MultipleCallback() {                  @Override                  public void callback(MultipleHelper multiple) {                         if (multiple.allHaveGranted()) { //所有权限已授权                               /*                               Granted                               Do something                               openCamera                               */                         } else {    //相关权限拒签                               /*                               Denied                               Do something                               Toast tips user.                               */                         }                  }         })         .openedRationale()//打开提示用户的解释框         .start();</code></pre><h3 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h3><pre><code>- [x] Finish my changes.- [ ] Supported switch thread.</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> Android </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> Permission </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Git</title>
+      <link href="/2016/09/08/git/Flutter%20Widget%20copy/"/>
+      <url>/2016/09/08/git/Flutter%20Widget%20copy/</url>
+      
+        <content type="html"><![CDATA[<p>汇聚：Git相关常用用法，以及不常出现的问题！</p><hr><h2 id="1-Git常用用法汇总"><a href="#1-Git常用用法汇总" class="headerlink" title="1.  Git常用用法汇总"></a>1.  Git常用用法汇总</h2><h3 id="1-初始化本地仓库"><a href="#1-初始化本地仓库" class="headerlink" title="1.  初始化本地仓库"></a>1.  初始化本地仓库</h3><pre><code>git init</code></pre><h3 id="2-添加文件"><a href="#2-添加文件" class="headerlink" title="2.  添加文件"></a>2.  添加文件</h3><p>添加单个文件:</p><pre><code>git add [fileName]</code></pre><p>或则</p><p>添加整个本地项目中的所有文件:</p><pre><code>git add .</code></pre><h3 id="3-提交文件"><a href="#3-提交文件" class="headerlink" title="3.  提交文件"></a>3.  提交文件</h3><pre><code>git commit -m &quot;your commit descrition!&quot;</code></pre><ul><li>Git的提交文件是提交到本地的仓库中，这点与SVN有些不同。</li><li>如果需要将文件提交到远程仓库中，则需要将文件“推”到远程仓库中，请往下看！</li></ul><h3 id="3-与远程仓库关联"><a href="#3-与远程仓库关联" class="headerlink" title="3.  与远程仓库关联"></a>3.  与远程仓库关联</h3><p>格式</p><pre><code>git remote add [origin] [remote git repository url] </code></pre><p>示例</p><pre><code>git remote add origin https://github.com/pdliuw/YourProjectName.git</code></pre><h3 id="4-从远程仓库“拉”数据到本地仓库中"><a href="#4-从远程仓库“拉”数据到本地仓库中" class="headerlink" title="4.  从远程仓库“拉”数据到本地仓库中"></a>4.  从远程仓库“拉”数据到本地仓库中</h3><pre><code>git pull origin master</code></pre><h3 id="5-从本地仓库“推”数据到远程仓库中"><a href="#5-从本地仓库“推”数据到远程仓库中" class="headerlink" title="5.  从本地仓库“推”数据到远程仓库中"></a>5.  从本地仓库“推”数据到远程仓库中</h3><pre><code>git push -u origin master</code></pre><hr><h2 id="2-问题、解决办法汇总"><a href="#2-问题、解决办法汇总" class="headerlink" title="2.  问题、解决办法汇总"></a>2.  问题、解决办法汇总</h2><h3 id="1-无法提交“本地项目”到“远程仓库”中"><a href="#1-无法提交“本地项目”到“远程仓库”中" class="headerlink" title="1. 无法提交“本地项目”到“远程仓库”中"></a>1. 无法提交“本地项目”到“远程仓库”中</h3><p>诞生环境</p><pre><code>在Github上创建仓库后，使用Visual studio code工具将本地项目提交到Github上，在执行 git push -u origin master时产生的问题</code></pre><p>错误信息 </p><pre><code>error: failed to push some refs to &apos;git@github.com:.....&quot; Updates were rejected because the remote contains work that you do not have locally.</code></pre><p>解决办法</p><pre><code>1. 此问题是由于本地和Github上的文件产生冲突导致的，因此将本地项目与Github项目合并冲突后再次执行即可解决此问题2. 具体步骤    1. 先将Github项目拉下来      git pull origin master    2. 再将本地项目提交到Github      git push -u origin master</code></pre><hr><h2 id="3-TODO"><a href="#3-TODO" class="headerlink" title="3.  TODO"></a>3.  TODO</h2><p>  进一步扩充、丰富、完善相关内容！</p><hr><p>未完待续。。。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 版本管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Git </tag>
+            
+            <tag> Github </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Air博客集</title>
+      <link href="/2016/07/09/%E7%9B%AE%E5%BD%95/"/>
+      <url>/2016/07/09/%E7%9B%AE%E5%BD%95/</url>
+      
+        <content type="html"><![CDATA[<p>欢迎进入Air的个人博客！</p><h2 id="简书"><a href="#简书" class="headerlink" title="简书"></a>简书</h2><p>### </p><p>简书博客: <a href="https://www.jianshu.com/u/6e69026af6b4" target="_blank" rel="noopener">点击进入</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>不朽</title>
+      <link href="/2014/08/23/DailyNote/%E4%B8%8D%E6%9C%BD/"/>
+      <url>/2014/08/23/DailyNote/%E4%B8%8D%E6%9C%BD/</url>
+      
+        <content type="html"><![CDATA[<h3 id="不朽"><a href="#不朽" class="headerlink" title="不朽"></a>不朽</h3><hr><p>亚里士多德说过：“如果我们每个人都能够重新活一遍的话，我们每个人都将不朽”</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 日常随记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>抵制诱惑</title>
+      <link href="/2014/07/03/DailyNote/%E6%8A%B5%E5%88%B6%E8%AF%B1%E6%83%91/"/>
+      <url>/2014/07/03/DailyNote/%E6%8A%B5%E5%88%B6%E8%AF%B1%E6%83%91/</url>
+      
+        <content type="html"><![CDATA[<h3 id="抵制诱惑"><a href="#抵制诱惑" class="headerlink" title="抵制诱惑"></a>抵制诱惑</h3><hr><p>通往成功的道路上有许多充满诱惑的停车站，只有抵制住诱惑才能抵达成功的终点。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 日常随记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>梦</title>
+      <link href="/2014/06/23/DailyNote/%E6%A2%A6/"/>
+      <url>/2014/06/23/DailyNote/%E6%A2%A6/</url>
+      
+        <content type="html"><![CDATA[<h3 id="梦"><a href="#梦" class="headerlink" title="梦"></a>梦</h3><hr><p>人生犹如一场梦，<br>做梦就要做尽兴。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 日常随记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>诚信</title>
+      <link href="/2014/06/23/DailyNote/%E8%AF%9A%E4%BF%A1/"/>
+      <url>/2014/06/23/DailyNote/%E8%AF%9A%E4%BF%A1/</url>
+      
+        <content type="html"><![CDATA[<h3 id="诚信"><a href="#诚信" class="headerlink" title="诚信"></a>诚信</h3><hr><p>诚信：<br>在企业界里传的最快的消息莫过于欺诈和违反道德的商品交易丑闻了，丑闻一旦传开，就会带来致命的后果，也就是销售量的下降，每个企业家都不希望带来这样的结果。</p><p>感悟：<br>诚信不仅仅在企业界中举足轻重，在人生的每个时刻都应该是最重要的品质之一。贯穿着为人处事的准则</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 日常随记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>时间管理</title>
+      <link href="/2014/06/18/DailyNote/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/"/>
+      <url>/2014/06/18/DailyNote/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86/</url>
+      
+        <content type="html"><![CDATA[<h3 id="时间管理"><a href="#时间管理" class="headerlink" title="时间管理"></a>时间管理</h3><hr><p>我们不是通过节省时间来打造我们想过的生活；<br>我们应该先建立我们想要的生活，<br>时间就会自然而然节省出来。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 日常随记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>潜能</title>
+      <link href="/2014/06/06/DailyNote/%E6%BD%9C%E8%83%BD/"/>
+      <url>/2014/06/06/DailyNote/%E6%BD%9C%E8%83%BD/</url>
+      
+        <content type="html"><![CDATA[<h3 id="潜能"><a href="#潜能" class="headerlink" title="潜能"></a>潜能</h3><hr><p>上帝给了每个人一条好消息，那就是无法预知自己能变得多么伟大，能拥有多少爱心，能获得多大的成功，拥有多少的潜能。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 日常随记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>做小人物并不可悲</title>
+      <link href="/2014/05/06/DailyNote/%E5%81%9A%E5%B0%8F%E4%BA%BA%E7%89%A9%E5%B9%B6%E4%B8%8D%E5%8F%AF%E6%82%B2/"/>
+      <url>/2014/05/06/DailyNote/%E5%81%9A%E5%B0%8F%E4%BA%BA%E7%89%A9%E5%B9%B6%E4%B8%8D%E5%8F%AF%E6%82%B2/</url>
+      
+        <content type="html"><![CDATA[<h3 id="做小人物并不可悲"><a href="#做小人物并不可悲" class="headerlink" title="做小人物并不可悲"></a>做小人物并不可悲</h3><hr><p>人与人的差距更多体现在思想方法上，虽然起初大家站在同一起点，但日积月累就会越拉越大。所以要时常审视与他人的差距并及时总结，方能迎头赶上。你要善于观察、学习、思考和总结，你不能逃避，也不应该一味地苦干奋斗、埋头拉车，这会导致一个人原地踏步，总是重复过去犯下的错误。</p><p>成功的规则未必这样笃定，你要有很高的悟性，学会自己去发现和总结。面对差距和挑战，要及时调整心态，增强自信心，要学会独立思考、多谋善断、随机应变。这是我的心路历程，我今日的成就就是我从底层打拼，不懈奋斗的结果。</p><p>做小人物并不可悲，可悲的是没有从小人物做起的勇气。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 日常随记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>读书与健身</title>
+      <link href="/2014/04/06/DailyNote/%E8%AF%BB%E4%B9%A6%E4%B8%8E%E5%81%A5%E8%BA%AB/"/>
+      <url>/2014/04/06/DailyNote/%E8%AF%BB%E4%B9%A6%E4%B8%8E%E5%81%A5%E8%BA%AB/</url>
+      
+        <content type="html"><![CDATA[<h3 id="读书与健身"><a href="#读书与健身" class="headerlink" title="读书与健身"></a>读书与健身</h3><hr><p>如果读书是拓展生命的宽度，<br>那么健身就是拓展生命的长度。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 日常随记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>时间管理</title>
+      <link href="/2014/03/06/manage/time/TimeManager/"/>
+      <url>/2014/03/06/manage/time/TimeManager/</url>
+      
+        <content type="html"><![CDATA[<h3 id="时间管理"><a href="#时间管理" class="headerlink" title="时间管理"></a>时间管理</h3><p>时间的管理是为了追求时间的利用最大化！</p><hr><p><img src="http://puirvq0bm.bkt.clouddn.com/%E6%97%B6%E9%97%B4%E5%AE%89%E6%8E%92%E8%A1%A8.png" alt="时间管理"></p><hr>]]></content>
+      
+      
+      <categories>
+          
+          <category> 管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 时间 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>未选择的路</title>
+      <link href="/2014/03/06/literature/poetry/%E6%9C%AA%E9%80%89%E6%8B%A9%E7%9A%84%E8%B7%AF/"/>
+      <url>/2014/03/06/literature/poetry/%E6%9C%AA%E9%80%89%E6%8B%A9%E7%9A%84%E8%B7%AF/</url>
+      
+        <content type="html"><![CDATA[<h3 id="未选择的路"><a href="#未选择的路" class="headerlink" title="未选择的路"></a>未选择的路</h3><hr><p>《未选择的路》</p><p>黄色的树林里分出两条路，<br>可惜我不能同时去涉足，<br>我在那路口久久伫立，<br>我向着一条路极目望去，<br>直到它消失在丛林深处。</p><p>但我选了另一条路，<br>它荒草萋萋，十分幽寂，<br>显得更诱人，更美丽。</p><p>虽然在这两条小路上，<br>都很少留下旅人的足迹。</p><p>虽然那天清晨落叶满地，<br>两条路都未经脚印污染。</p><p>啊，留下一条路等改日再见！<br>但我知道路径延绵无尽头，<br>恐怕我难以再回返。</p><p>也许多少年后在某个地方，<br>我将轻声叹息将往事回顾：</p><p>一片树林里分出两条路<br>而我选择了人迹更少的一条，<br>从此决定了我一生的道路。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 诗词 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
