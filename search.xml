@@ -509,7 +509,7 @@
       <link href="/2017/05/21/android/Android%E6%89%93%E9%80%A0%E6%B0%B8%E4%B8%8D%E5%B4%A9%E6%BA%83App/"/>
       <url>/2017/05/21/android/Android%E6%89%93%E9%80%A0%E6%B0%B8%E4%B8%8D%E5%B4%A9%E6%BA%83App/</url>
       
-        <content type="html"><![CDATA[<hr><p>Android打造永不崩溃App</p><hr><h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><p>1.</p><p>###</p><hr><p>未完待续。。。</p>]]></content>
+        <content type="html"><![CDATA[<hr><p>Android打造永不崩溃App</p><hr><h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><ol><li>实现效果</li><li>核心代码</li><li>项目示例</li><li>TODO</li></ol><h4 id="1-实现效果"><a href="#1-实现效果" class="headerlink" title="1. 实现效果"></a>1. 实现效果</h4><p>避免90%的崩溃！</p><h4 id="2-核心代码"><a href="#2-核心代码" class="headerlink" title="2. 核心代码"></a>2. 核心代码</h4><pre><code>new Handler(Looper.getMainLooper()).post(new Runnable() {            @Override            public void run() {            //主线程异常拦截                while (true) {                    try {                        Looper.loop();//主线程的异常会从这里抛出                    } catch (Throwable e) {                    }                }            }        });        sUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();        //所有线程异常拦截，由于主线程的异常都被我们catch住了，所以下面的代码拦截到的都是子线程的异常        Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {            @Override            public void uncaughtException(Thread t, Throwable e) {            }});</code></pre><h4 id="3-项目示例"><a href="#3-项目示例" class="headerlink" title="3. 项目示例"></a>3. 项目示例</h4><p>想要实现此效果，集成此功能，请往下看！</p><p><a href="https://github.com/pdliugithub/CrashSample" target="_blank" rel="noopener">点击我，立即集成此功能</a></p><h4 id="4-TODO"><a href="#4-TODO" class="headerlink" title="4. TODO"></a>4. TODO</h4><p>待：进一步增强、优化！</p><hr><p>未完待续。。。</p>]]></content>
       
       
       <categories>
@@ -794,11 +794,11 @@
     
     
     <entry>
-      <title>梦</title>
-      <link href="/2014/06/23/DailyNote/%E6%A2%A6/"/>
-      <url>/2014/06/23/DailyNote/%E6%A2%A6/</url>
+      <title>诚信</title>
+      <link href="/2014/06/23/DailyNote/%E8%AF%9A%E4%BF%A1/"/>
+      <url>/2014/06/23/DailyNote/%E8%AF%9A%E4%BF%A1/</url>
       
-        <content type="html"><![CDATA[<h3 id="梦"><a href="#梦" class="headerlink" title="梦"></a>梦</h3><hr><p>人生犹如一场梦，<br>做梦就要做尽兴。</p>]]></content>
+        <content type="html"><![CDATA[<h3 id="诚信"><a href="#诚信" class="headerlink" title="诚信"></a>诚信</h3><hr><p>诚信：<br>在企业界里传的最快的消息莫过于欺诈和违反道德的商品交易丑闻了，丑闻一旦传开，就会带来致命的后果，也就是销售量的下降，每个企业家都不希望带来这样的结果。</p><p>感悟：<br>诚信不仅仅在企业界中举足轻重，在人生的每个时刻都应该是最重要的品质之一。贯穿着为人处事的准则</p>]]></content>
       
       
       <categories>
@@ -819,11 +819,11 @@
     
     
     <entry>
-      <title>诚信</title>
-      <link href="/2014/06/23/DailyNote/%E8%AF%9A%E4%BF%A1/"/>
-      <url>/2014/06/23/DailyNote/%E8%AF%9A%E4%BF%A1/</url>
+      <title>梦</title>
+      <link href="/2014/06/23/DailyNote/%E6%A2%A6/"/>
+      <url>/2014/06/23/DailyNote/%E6%A2%A6/</url>
       
-        <content type="html"><![CDATA[<h3 id="诚信"><a href="#诚信" class="headerlink" title="诚信"></a>诚信</h3><hr><p>诚信：<br>在企业界里传的最快的消息莫过于欺诈和违反道德的商品交易丑闻了，丑闻一旦传开，就会带来致命的后果，也就是销售量的下降，每个企业家都不希望带来这样的结果。</p><p>感悟：<br>诚信不仅仅在企业界中举足轻重，在人生的每个时刻都应该是最重要的品质之一。贯穿着为人处事的准则</p>]]></content>
+        <content type="html"><![CDATA[<h3 id="梦"><a href="#梦" class="headerlink" title="梦"></a>梦</h3><hr><p>人生犹如一场梦，<br>做梦就要做尽兴。</p>]]></content>
       
       
       <categories>
