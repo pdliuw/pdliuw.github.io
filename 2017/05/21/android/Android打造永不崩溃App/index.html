@@ -4,22 +4,15 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Android项目实战示例, Air">
+    <meta name="keywords" content="Android打造永不崩溃App, Air">
     <meta name="description" content="
-Android项目实战示例
-Login Component
+Android打造永不崩溃App
 
-登陆模块1.    涉及的技术RxJava
-Retrofit
-OKHttp
-Glide
+目录1.
+###
 
-MVP
-
-other:2.    描述1.    使用:
-
-    RxJava
-  ">
+未完待续。。。
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -27,7 +20,7 @@ other:2.    描述1.    使用:
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Android项目实战示例 | Air</title>
+    <title>Android打造永不崩溃App | Air</title>
     <link rel="icon" type="image/jpeg" href="/medias/avatar.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -280,7 +273,7 @@ other:2.    描述1.    使用:
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Android项目实战示例
+                        Android打造永不崩溃App
                     </div>
                 </div>
             </div>
@@ -395,30 +388,6 @@ other:2.    描述1.    使用:
                                 <span class="chip bg-color">Java</span>
                             </a>
                         
-                            <a href="/tags/RxJava/" target="_blank">
-                                <span class="chip bg-color">RxJava</span>
-                            </a>
-                        
-                            <a href="/tags/Retrofit/" target="_blank">
-                                <span class="chip bg-color">Retrofit</span>
-                            </a>
-                        
-                            <a href="/tags/OKHttp/" target="_blank">
-                                <span class="chip bg-color">OKHttp</span>
-                            </a>
-                        
-                            <a href="/tags/Glide/" target="_blank">
-                                <span class="chip bg-color">Glide</span>
-                            </a>
-                        
-                            <a href="/tags/MVP/" target="_blank">
-                                <span class="chip bg-color">MVP</span>
-                            </a>
-                        
-                            <a href="/tags/DesignPatterns/" target="_blank">
-                                <span class="chip bg-color">DesignPatterns</span>
-                            </a>
-                        
                     </div>
                     
                 </div>
@@ -427,8 +396,8 @@ other:2.    描述1.    使用:
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/项目示例/" class="post-category" target="_blank">
-                                项目示例
+                            <a href="/categories/Android/" class="post-category" target="_blank">
+                                Android
                             </a>
                         
                     </div>
@@ -439,14 +408,14 @@ other:2.    描述1.    使用:
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2017-03-06
+                    2017-05-21
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        360
+                        14
                     </div>
                     
 
@@ -470,43 +439,12 @@ other:2.    描述1.    使用:
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <hr>
-<p>Android项目实战示例</p>
-<p>Login Component</p>
+<p>Android打造永不崩溃App</p>
 <hr>
-<h3 id="登陆模块"><a href="#登陆模块" class="headerlink" title="登陆模块"></a>登陆模块</h3><h4 id="1-涉及的技术"><a href="#1-涉及的技术" class="headerlink" title="1.    涉及的技术"></a>1.    涉及的技术</h4><pre><code>RxJava
-Retrofit
-OKHttp
-Glide
-
-MVP
-
-other:</code></pre><h4 id="2-描述"><a href="#2-描述" class="headerlink" title="2.    描述"></a>2.    描述</h4><pre><code>1.    使用:
-
-    RxJava
-    Retrofit
-    OKHttp
-
-    MVP
-    DesignPatterns
-
-    SharedPreference
-    LoadingStatusLayout
-    CheckNet
-
-2.    业务流程
-
-    1. 通过手机号+验证码的形式登陆（注册需要另外的客户端或途径）
-    2. 登陆成功后，本地序列化数据保存Token，以及登陆状态
-    3. 登陆成功后的每次网络请求都需携带“Token”作为请求头（此操作全局统一处理）
-    4. 网络的连接状态、网络的交互全局统一处理
-    5. 网络响应中显示页面加载状态
-    6. 页面加载失败后，可重试相关的操作
-    7. 步骤3中的每次网络交互都携带“Token”，若“Token”过期，则会在网络交互的响应结果中获取到Token过期，然后全局处理Token过期的下一步操作，本项目处理操作是“将App重置为未登录状态，并进入登陆功能”</code></pre><h4 id="3-支持"><a href="#3-支持" class="headerlink" title="3.    支持"></a>3.    支持</h4><pre><code>1. 网络支持：SSL、网络连接检查、响应失败、响应成功、加载中、当Token过期重置为未登录状态并跳转到登陆页面
-2. 本地存储：数据序列化存储、自动登陆</code></pre><h4 id="4-项目效果"><a href="#4-项目效果" class="headerlink" title="4.    项目效果"></a>4.    项目效果</h4><p><img src="http://pupu8os0u.bkt.clouddn.com/android_project_sample.gif" alt="项目效果图"></p>
-<h4 id="5-项目地址"><a href="#5-项目地址" class="headerlink" title="5.    项目地址"></a>5.    项目地址</h4><p><a href="https://github.com/pdliuw/LoginComponent" target="_blank" rel="noopener">点击我查看项目</a></p>
-<h4 id="6-TODO"><a href="#6-TODO" class="headerlink" title="6.    TODO"></a>6.    TODO</h4><pre><code>1. 所涉及技术的细分、讲解
-2. 项目功能的完善
-3. 更多数据的填充</code></pre><hr>
+<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><p>1.</p>
+<p>###</p>
+<hr>
+<p>未完待续。。。</p>
 
             </div>
             <hr/>
@@ -665,9 +603,9 @@ other:</code></pre><h4 id="2-描述"><a href="#2-描述" class="headerlink" titl
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Android项目实战示例》
+                    《Android打造永不崩溃App》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2017/03/06/project/Android项目实战示例/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2017/05/21/android/Android打造永不崩溃App/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Air
             </a> 采用
@@ -711,23 +649,23 @@ other:</code></pre><h4 id="2-描述"><a href="#2-描述" class="headerlink" titl
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2017/05/21/android/Android打造永不崩溃App/">
+                <a href="/2017/06/11/kotlin/Kotlin basic syntax/">
                     <div class="card-image">
                         
-                        <img src="/images/android_one_logo.jpg" class="responsive-img" alt="Android打造永不崩溃App">
+                        <img src="/images/kotlin_logo.jpg" class="responsive-img" alt="Kotlin basic syntax">
                         
-                        <span class="card-title">Android打造永不崩溃App</span>
+                        <span class="card-title">Kotlin basic syntax</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Android 崩溃、闪退有效处理
+                            Kotlin basic syntax
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2017-05-21
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2017-06-11
                         </span>
                         <span class="publish-author">
                             
@@ -744,8 +682,8 @@ other:</code></pre><h4 id="2-描述"><a href="#2-描述" class="headerlink" titl
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/" target="_blank">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/Kotlin/" target="_blank">
+                        <span class="chip bg-color">Kotlin</span>
                     </a>
                     
                 </div>
@@ -759,30 +697,30 @@ other:</code></pre><h4 id="2-描述"><a href="#2-描述" class="headerlink" titl
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2016/10/24/android/贝塞尔曲线---(沙漏)/">
+                <a href="/2017/03/06/project/Android项目实战示例/">
                     <div class="card-image">
                         
-                        <img src="/images/android_one_logo.jpg" class="responsive-img" alt="贝塞尔曲线---(沙漏)">
+                        <img src="/images/android_one_logo.jpg" class="responsive-img" alt="Android项目实战示例">
                         
-                        <span class="card-title">贝塞尔曲线---(沙漏)</span>
+                        <span class="card-title">Android项目实战示例</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            贝塞尔曲线---(沙漏)
+                            Android登陆模块完整示例
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2016-10-24
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2017-03-06
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Android/" class="post-category" target="_blank">
-                                    Android
+                            <a href="/categories/项目示例/" class="post-category" target="_blank">
+                                    项目示例
                                 </a>
                             
                             
@@ -796,8 +734,28 @@ other:</code></pre><h4 id="2-描述"><a href="#2-描述" class="headerlink" titl
                         <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/tags/贝塞尔曲线/" target="_blank">
-                        <span class="chip bg-color">贝塞尔曲线</span>
+                    <a href="/tags/RxJava/" target="_blank">
+                        <span class="chip bg-color">RxJava</span>
+                    </a>
+                    
+                    <a href="/tags/Retrofit/" target="_blank">
+                        <span class="chip bg-color">Retrofit</span>
+                    </a>
+                    
+                    <a href="/tags/OKHttp/" target="_blank">
+                        <span class="chip bg-color">OKHttp</span>
+                    </a>
+                    
+                    <a href="/tags/Glide/" target="_blank">
+                        <span class="chip bg-color">Glide</span>
+                    </a>
+                    
+                    <a href="/tags/MVP/" target="_blank">
+                        <span class="chip bg-color">MVP</span>
+                    </a>
+                    
+                    <a href="/tags/DesignPatterns/" target="_blank">
+                        <span class="chip bg-color">DesignPatterns</span>
                     </a>
                     
                 </div>

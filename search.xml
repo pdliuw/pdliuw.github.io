@@ -505,6 +505,31 @@
     
     
     <entry>
+      <title>Android打造永不崩溃App</title>
+      <link href="/2017/05/21/android/Android%E6%89%93%E9%80%A0%E6%B0%B8%E4%B8%8D%E5%B4%A9%E6%BA%83App/"/>
+      <url>/2017/05/21/android/Android%E6%89%93%E9%80%A0%E6%B0%B8%E4%B8%8D%E5%B4%A9%E6%BA%83App/</url>
+      
+        <content type="html"><![CDATA[<hr><p>Android打造永不崩溃App</p><hr><h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><p>1.</p><p>###</p><hr><p>未完待续。。。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Android </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Android项目实战示例</title>
       <link href="/2017/03/06/project/Android%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%E7%A4%BA%E4%BE%8B/"/>
       <url>/2017/03/06/project/Android%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%E7%A4%BA%E4%BE%8B/</url>
@@ -919,31 +944,6 @@
     
     
     <entry>
-      <title>时间管理</title>
-      <link href="/2014/03/06/manage/time/TimeManager/"/>
-      <url>/2014/03/06/manage/time/TimeManager/</url>
-      
-        <content type="html"><![CDATA[<h3 id="时间管理"><a href="#时间管理" class="headerlink" title="时间管理"></a>时间管理</h3><p>时间的管理是为了追求时间的利用最大化！</p><hr><p><img src="http://puirvq0bm.bkt.clouddn.com/%E6%97%B6%E9%97%B4%E5%AE%89%E6%8E%92%E8%A1%A8.png" alt="时间管理"></p><hr>]]></content>
-      
-      
-      <categories>
-          
-          <category> 管理 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 时间 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>未选择的路</title>
       <link href="/2014/03/06/literature/poetry/%E6%9C%AA%E9%80%89%E6%8B%A9%E7%9A%84%E8%B7%AF/"/>
       <url>/2014/03/06/literature/poetry/%E6%9C%AA%E9%80%89%E6%8B%A9%E7%9A%84%E8%B7%AF/</url>
@@ -961,6 +961,31 @@
         <tags>
             
             <tag> 诗词 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>时间管理</title>
+      <link href="/2014/03/06/manage/time/TimeManager/"/>
+      <url>/2014/03/06/manage/time/TimeManager/</url>
+      
+        <content type="html"><![CDATA[<h3 id="时间管理"><a href="#时间管理" class="headerlink" title="时间管理"></a>时间管理</h3><p>时间的管理是为了追求时间的利用最大化！</p><hr><p><img src="http://puirvq0bm.bkt.clouddn.com/%E6%97%B6%E9%97%B4%E5%AE%89%E6%8E%92%E8%A1%A8.png" alt="时间管理"></p><hr>]]></content>
+      
+      
+      <categories>
+          
+          <category> 管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 时间 </tag>
             
         </tags>
       
