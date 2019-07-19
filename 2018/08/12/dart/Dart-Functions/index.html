@@ -413,7 +413,7 @@ define ">
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        731
+                        716
                     </div>
                     
 
@@ -552,44 +552,41 @@ void nestTopLevelFunction() {
 
 }</code></pre><h3 id="9-Function-Parameter（函数作为另一个函数的参数类型"><a href="#9-Function-Parameter（函数作为另一个函数的参数类型" class="headerlink" title="9.    Function Parameter（函数作为另一个函数的参数类型)"></a>9.    Function Parameter（函数作为另一个函数的参数类型)</h3><p>函数作为另一个函数的参数有两种定义方式</p>
 <ol>
-<li><p>使用Function</p>
-<p>  ///方式一<br>  void two(Function fun) {</p>
-<pre><code>fun(&quot;James&quot;);</code></pre><p>  }</p>
-</li>
+<li>使用Function</li>
 </ol>
-<ol start="2">
-<li><p>使用void lambda(String name, int age)</p>
-<p>  ///方式二<br>  void twoTwo(void lambda(String name, int age)) {</p>
-<pre><code>lambda(&quot;Air_twoTwo&quot;, 10);</code></pre><p>  }</p>
-</li>
+<pre><code>void two(Function fun) {
+    fun(&quot;James&quot;);
+}</code></pre><ol start="2">
+<li>使用void lambda(String name, int age)</li>
 </ol>
-<h3 id="10-Function-Returned（函数作为另一个函数的返回类型）"><a href="#10-Function-Returned（函数作为另一个函数的返回类型）" class="headerlink" title="10.    Function Returned（函数作为另一个函数的返回类型）"></a>10.    Function Returned（函数作为另一个函数的返回类型）</h3><p>函数作为另一个函数的返回类型有两种方式</p>
+<pre><code>void twoTwo(void lambda(String name, int age)) {
+    lambda(&quot;Air_twoTwo&quot;, 10);
+}</code></pre><h3 id="10-Function-Returned（函数作为另一个函数的返回类型）"><a href="#10-Function-Returned（函数作为另一个函数的返回类型）" class="headerlink" title="10.    Function Returned（函数作为另一个函数的返回类型）"></a>10.    Function Returned（函数作为另一个函数的返回类型）</h3><p>函数作为另一个函数的返回类型有两种方式</p>
 <ol>
-<li><p>使用    Function</p>
-<p>  ///方式一<br>  Function four(String name) {</p>
-<pre><code>Function fun = () {
-return &quot;$name&quot;;
-};
-
-return fun;</code></pre><p>  }</p>
-</li>
+<li>使用    Function</li>
 </ol>
-<ol start="2">
-<li><p>使用    typedef + Function</p>
-<p>  ///定义函数类型<br>  typedef Callback = void Function(int count, int total);</p>
-<pre><code>///定义返回函数的函数
-Callback fourFour(String name){
-    var call = (int count ,int total){
-        print(&quot;fourFour: $name , $count , $total&quot;);
+<pre><code>Function four(String name) {
+    Function fun = () {
+    return &quot;$name&quot;;
     };
-    return call;
-}
 
-///....
-    ///调用
-    fourFour(&quot;Air&quot;)(10, 100);</code></pre></li>
+    return fun;
+}</code></pre><ol start="2">
+<li>使用    typedef + Function</li>
 </ol>
-<hr>
+<pre><code>typedef Callback = void Function(int count, int total);
+
+    ///定义返回函数的函数
+    Callback fourFour(String name){
+        var call = (int count ,int total){
+            print(&quot;fourFour: $name , $count , $total&quot;);
+        };
+        return call;
+    }
+
+    ///....
+        ///调用
+        fourFour(&quot;Air&quot;)(10, 100);</code></pre><hr>
 <p>未完待续。。。</p>
 
             </div>
