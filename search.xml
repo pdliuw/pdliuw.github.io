@@ -74,11 +74,11 @@
       
         <tags>
             
-            <tag> Java </tag>
-            
             <tag> Dart </tag>
             
             <tag> Kotlin </tag>
+            
+            <tag> Java </tag>
             
             <tag> Swift </tag>
             
@@ -284,7 +284,7 @@
       <link href="/2018/08/12/dart/Dart-Functions/"/>
       <url>/2018/08/12/dart/Dart-Functions/</url>
       
-        <content type="html"><![CDATA[<p>Dart-Functions（函数）</p><pre><code>/*Dart 是一种真正的面向对象语言，因此即使是函数也是对象并且具有类型Function这意味着函数可以分配给变量或作为参数传递给其他函数，您也可以调用Dart类的实例*/</code></pre><blockquote><h3 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h3><p>1、define function（定义函数）<br>2、ignore return type（省略返回类型的定义）<br>3、dynamic return type（动态返回类型的定义）<br>4、optional parameter（函数的可选参数）<br>5、Required parameters（必选参数）<br>6、anonymousFunction（匿名函数）<br>7、nestFunction（嵌套函数）<br>8、Function type（函数也是一种具有Function类型的对象）</p></blockquote><h3 id="1、define-function（定义函数）"><a href="#1、define-function（定义函数）" class="headerlink" title="1、define function（定义函数）"></a>1、define function（定义函数）</h3><pre><code>/*Define function. */bool isBool(int a, int b) {  return a == b;}</code></pre><p>对于只包含一个表达式的函数，可以使用简写语法：</p><pre><code>bool isNobel(int a, int b) =&gt; a == b;</code></pre><h3 id="2、ignore-return-type（省略返回类型的定义）"><a href="#2、ignore-return-type（省略返回类型的定义）" class="headerlink" title="2、ignore return type（省略返回类型的定义）"></a>2、ignore return type（省略返回类型的定义）</h3><pre><code>/*ignore the define of return type:bool */isBoolTwo(int a, int b) {  return a == b;}</code></pre><h3 id="3、dynamic-return-type（动态返回类型的定义）"><a href="#3、dynamic-return-type（动态返回类型的定义）" class="headerlink" title="3、dynamic return type（动态返回类型的定义）"></a>3、dynamic return type（动态返回类型的定义）</h3><pre><code>/*this function&apos;s return type is dynamic,is intis boolis String */isBoolThree(int a, int b) {  if (a &lt; b) {    return a;  } else if (a == b) {    return true;  } else if (a &gt; b) {    return &quot;min:${b}&quot;;  }}</code></pre><h3 id="4、optional-parameter（可选参数的函数）"><a href="#4、optional-parameter（可选参数的函数）" class="headerlink" title="4、optional parameter（可选参数的函数）"></a>4、optional parameter（可选参数的函数）</h3><pre><code>/*Optional parameters可选函数、命名函数 */isBoolFour({int a, int b}) {  if (a &lt; b) {    return a;  } else if (a == b) {    return true;  } else if (a &gt; b) {    return &quot;min:${b}&quot;;  }}  //调用可选/命名参数时，传递的参数的  print(&quot;optional parameters:${isBoolFour(b: 1, a: 2)}&quot;);</code></pre><p>一组函数参数<br>[]</p><pre><code>dynamic functionArray(String name, [String arguments]) {  return arguments?.length;}</code></pre><h3 id="5、Required-parameters（必选参数）"><a href="#5、Required-parameters（必选参数）" class="headerlink" title="5、Required parameters（必选参数）"></a>5、Required parameters（必选参数）</h3><p>@required</p><pre><code>/*Required parameters */isBoolFive({int a = 0, @required int b}) {  if (a == null) {    return b;  } else {    return a + b;  }}  //调用带有必须参数的，命名函数  print(&quot;required parameters:${isBoolFive(b: 5)}&quot;);</code></pre><h3 id="6、anonymousFunction（匿名函数）"><a href="#6、anonymousFunction（匿名函数）" class="headerlink" title="6、anonymousFunction（匿名函数）"></a>6、anonymousFunction（匿名函数）</h3><pre><code>/*Define anonymous function */anonymousFunction() {  print(&quot;&quot;);  print(&quot;Anonymous function.&quot;);  var list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];  list.forEach((item) {    print(&quot;item:${item}&quot;);  });}</code></pre><h3 id="7、nestFunction（嵌套函数）"><a href="#7、nestFunction（嵌套函数）" class="headerlink" title="7、nestFunction（嵌套函数）"></a>7、nestFunction（嵌套函数）</h3><pre><code>bool topLevel = true;void nestTopLevelFunction() {  var insideMain = true;  void myFunction() {    var insideFunction = true;    void nestedFunction() {      var insideNestedFunction = true;      print(topLevel);      print(insideMain);      print(insideFunction);      print(insideNestedFunction);    }    nestedFunction();  }  myFunction();}</code></pre><h3 id="8、Function-type（函数也是一种具有Function类型的对象）"><a href="#8、Function-type（函数也是一种具有Function类型的对象）" class="headerlink" title="8、Function type（函数也是一种具有Function类型的对象）"></a>8、Function type（函数也是一种具有Function类型的对象）</h3><pre><code>void functionType(num a) {  num a;  int b;  double c;  String d;  bool e;  Function f;}</code></pre><hr><p>未完待续。。。</p>]]></content>
+        <content type="html"><![CDATA[<p>Dart-Functions（函数）</p><pre><code>/*Dart 是一种真正的面向对象语言，因此即使是函数也是对象并且具有类型Function这意味着函数可以分配给变量或作为参数传递给其他函数，您也可以调用Dart类的实例*/</code></pre><h3 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h3><ol><li>define function（定义函数）</li><li>ignore return type（省略返回类型的定义）</li><li>dynamic return type（动态返回类型的定义）</li><li>optional parameter（函数的可选参数）</li><li>Required parameters（必选参数）</li><li>anonymousFunction（匿名函数）</li><li>nestFunction（嵌套函数）</li><li>Function type（函数也是一种具有Function类型的对象）</li><li>Function Parameter（函数作为另一个函数的参数类型）</li><li>Function Returned（函数作为另一个函数的返回类型）</li></ol><h3 id="1-define-function（定义函数）"><a href="#1-define-function（定义函数）" class="headerlink" title="1.    define function（定义函数）"></a>1.    define function（定义函数）</h3><pre><code>/*Define function. */bool isBool(int a, int b) {  return a == b;}</code></pre><p>对于只包含一个表达式的函数，可以使用简写语法：</p><pre><code>bool isNobel(int a, int b) =&gt; a == b;</code></pre><h3 id="2-ignore-return-type（省略返回类型的定义）"><a href="#2-ignore-return-type（省略返回类型的定义）" class="headerlink" title="2.    ignore return type（省略返回类型的定义）"></a>2.    ignore return type（省略返回类型的定义）</h3><pre><code>/*ignore the define of return type:bool */isBoolTwo(int a, int b) {  return a == b;}</code></pre><h3 id="3-dynamic-return-type（动态返回类型的定义）"><a href="#3-dynamic-return-type（动态返回类型的定义）" class="headerlink" title="3.    dynamic return type（动态返回类型的定义）"></a>3.    dynamic return type（动态返回类型的定义）</h3><pre><code>/*this function&apos;s return type is dynamic,is intis boolis String */isBoolThree(int a, int b) {  if (a &lt; b) {    return a;  } else if (a == b) {    return true;  } else if (a &gt; b) {    return &quot;min:${b}&quot;;  }}</code></pre><h3 id="4-optional-parameter（可选参数的函数）"><a href="#4-optional-parameter（可选参数的函数）" class="headerlink" title="4.    optional parameter（可选参数的函数）"></a>4.    optional parameter（可选参数的函数）</h3><pre><code>/*Optional parameters可选函数、命名函数 */isBoolFour({int a, int b}) {  if (a &lt; b) {    return a;  } else if (a == b) {    return true;  } else if (a &gt; b) {    return &quot;min:${b}&quot;;  }}  //调用可选/命名参数时，传递的参数的  print(&quot;optional parameters:${isBoolFour(b: 1, a: 2)}&quot;);</code></pre><p>一组函数参数<br>[]</p><pre><code>dynamic functionArray(String name, [String arguments]) {  return arguments?.length;}</code></pre><h3 id="5-Required-parameters（必选参数）"><a href="#5-Required-parameters（必选参数）" class="headerlink" title="5.    Required parameters（必选参数）"></a>5.    Required parameters（必选参数）</h3><p>@required</p><pre><code>/*Required parameters */isBoolFive({int a = 0, @required int b}) {  if (a == null) {    return b;  } else {    return a + b;  }}  //调用带有必须参数的，命名函数  print(&quot;required parameters:${isBoolFive(b: 5)}&quot;);</code></pre><h3 id="6-anonymousFunction（匿名函数）"><a href="#6-anonymousFunction（匿名函数）" class="headerlink" title="6.    anonymousFunction（匿名函数）"></a>6.    anonymousFunction（匿名函数）</h3><pre><code>/*Define anonymous function */anonymousFunction() {  print(&quot;&quot;);  print(&quot;Anonymous function.&quot;);  var list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];  list.forEach((item) {    print(&quot;item:${item}&quot;);  });}</code></pre><h3 id="7-nestFunction（嵌套函数）"><a href="#7-nestFunction（嵌套函数）" class="headerlink" title="7.    nestFunction（嵌套函数）"></a>7.    nestFunction（嵌套函数）</h3><pre><code>bool topLevel = true;void nestTopLevelFunction() {  var insideMain = true;  void myFunction() {    var insideFunction = true;    void nestedFunction() {      var insideNestedFunction = true;      print(topLevel);      print(insideMain);      print(insideFunction);      print(insideNestedFunction);    }    nestedFunction();  }  myFunction();}</code></pre><h3 id="8-Function-type（函数也是一种具有Function类型的对象）"><a href="#8-Function-type（函数也是一种具有Function类型的对象）" class="headerlink" title="8.    Function type（函数也是一种具有Function类型的对象）"></a>8.    Function type（函数也是一种具有Function类型的对象）</h3><pre><code>void functionType(num a) {  num a;  int b;  double c;  String d;  bool e;  Function f;}</code></pre><h3 id="9-Function-Parameter（函数作为另一个函数的参数类型"><a href="#9-Function-Parameter（函数作为另一个函数的参数类型" class="headerlink" title="9.    Function Parameter（函数作为另一个函数的参数类型)"></a>9.    Function Parameter（函数作为另一个函数的参数类型)</h3><p>函数作为另一个函数的参数有两种定义方式</p><ol><li><p>使用Function</p><p>  ///方式一<br>  void two(Function fun) {</p><pre><code>fun(&quot;James&quot;);</code></pre><p>  }</p></li></ol><ol start="2"><li><p>使用void lambda(String name, int age)</p><p>  ///方式二<br>  void twoTwo(void lambda(String name, int age)) {</p><pre><code>lambda(&quot;Air_twoTwo&quot;, 10);</code></pre><p>  }</p></li></ol><h3 id="10-Function-Returned（函数作为另一个函数的返回类型）"><a href="#10-Function-Returned（函数作为另一个函数的返回类型）" class="headerlink" title="10.    Function Returned（函数作为另一个函数的返回类型）"></a>10.    Function Returned（函数作为另一个函数的返回类型）</h3><p>函数作为另一个函数的返回类型有两种方式</p><ol><li><p>使用    Function</p><p>  ///方式一<br>  Function four(String name) {</p><pre><code>Function fun = () {return &quot;$name&quot;;};return fun;</code></pre><p>  }</p></li></ol><ol start="2"><li><p>使用    typedef + Function</p><p>  ///定义函数类型<br>  typedef Callback = void Function(int count, int total);</p><pre><code>///定义返回函数的函数Callback fourFour(String name){    var call = (int count ,int total){        print(&quot;fourFour: $name , $count , $total&quot;);    };    return call;}///....    ///调用    fourFour(&quot;Air&quot;)(10, 100);</code></pre></li></ol><hr><p>未完待续。。。</p>]]></content>
       
       
       <categories>
@@ -944,31 +944,6 @@
     
     
     <entry>
-      <title>未选择的路</title>
-      <link href="/2014/03/06/literature/poetry/%E6%9C%AA%E9%80%89%E6%8B%A9%E7%9A%84%E8%B7%AF/"/>
-      <url>/2014/03/06/literature/poetry/%E6%9C%AA%E9%80%89%E6%8B%A9%E7%9A%84%E8%B7%AF/</url>
-      
-        <content type="html"><![CDATA[<h3 id="未选择的路"><a href="#未选择的路" class="headerlink" title="未选择的路"></a>未选择的路</h3><hr><p>《未选择的路》</p><p>黄色的树林里分出两条路，<br>可惜我不能同时去涉足，<br>我在那路口久久伫立，<br>我向着一条路极目望去，<br>直到它消失在丛林深处。</p><p>但我选了另一条路，<br>它荒草萋萋，十分幽寂，<br>显得更诱人，更美丽。</p><p>虽然在这两条小路上，<br>都很少留下旅人的足迹。</p><p>虽然那天清晨落叶满地，<br>两条路都未经脚印污染。</p><p>啊，留下一条路等改日再见！<br>但我知道路径延绵无尽头，<br>恐怕我难以再回返。</p><p>也许多少年后在某个地方，<br>我将轻声叹息将往事回顾：</p><p>一片树林里分出两条路<br>而我选择了人迹更少的一条，<br>从此决定了我一生的道路。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 文学 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 诗词 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>时间管理</title>
       <link href="/2014/03/06/manage/time/TimeManager/"/>
       <url>/2014/03/06/manage/time/TimeManager/</url>
@@ -986,6 +961,31 @@
         <tags>
             
             <tag> 时间 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>未选择的路</title>
+      <link href="/2014/03/06/literature/poetry/%E6%9C%AA%E9%80%89%E6%8B%A9%E7%9A%84%E8%B7%AF/"/>
+      <url>/2014/03/06/literature/poetry/%E6%9C%AA%E9%80%89%E6%8B%A9%E7%9A%84%E8%B7%AF/</url>
+      
+        <content type="html"><![CDATA[<h3 id="未选择的路"><a href="#未选择的路" class="headerlink" title="未选择的路"></a>未选择的路</h3><hr><p>《未选择的路》</p><p>黄色的树林里分出两条路，<br>可惜我不能同时去涉足，<br>我在那路口久久伫立，<br>我向着一条路极目望去，<br>直到它消失在丛林深处。</p><p>但我选了另一条路，<br>它荒草萋萋，十分幽寂，<br>显得更诱人，更美丽。</p><p>虽然在这两条小路上，<br>都很少留下旅人的足迹。</p><p>虽然那天清晨落叶满地，<br>两条路都未经脚印污染。</p><p>啊，留下一条路等改日再见！<br>但我知道路径延绵无尽头，<br>恐怕我难以再回返。</p><p>也许多少年后在某个地方，<br>我将轻声叹息将往事回顾：</p><p>一片树林里分出两条路<br>而我选择了人迹更少的一条，<br>从此决定了我一生的道路。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文学 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 诗词 </tag>
             
         </tags>
       

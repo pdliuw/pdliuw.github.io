@@ -9,8 +9,8 @@
 /*
 Dart 是一种真正的面向对象语言，因此即使是函数也是对象并且具有类型Function
 这意味着函数可以分配给变量或作为参数传递给其他函数，您也可以调用Dart类的实例
-*/
-目录：1、defin">
+*/目录：
+define ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -413,14 +413,14 @@ Dart 是一种真正的面向对象语言，因此即使是函数也是对象并
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        525
+                        731
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        3 分
                     </div>
                     
                 
@@ -440,21 +440,30 @@ Dart 是一种真正的面向对象语言，因此即使是函数也是对象并
 <pre><code>/*
 Dart 是一种真正的面向对象语言，因此即使是函数也是对象并且具有类型Function
 这意味着函数可以分配给变量或作为参数传递给其他函数，您也可以调用Dart类的实例
-*/</code></pre><blockquote>
-<h3 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h3><p>1、define function（定义函数）<br>2、ignore return type（省略返回类型的定义）<br>3、dynamic return type（动态返回类型的定义）<br>4、optional parameter（函数的可选参数）<br>5、Required parameters（必选参数）<br>6、anonymousFunction（匿名函数）<br>7、nestFunction（嵌套函数）<br>8、Function type（函数也是一种具有Function类型的对象）</p>
-</blockquote>
-<h3 id="1、define-function（定义函数）"><a href="#1、define-function（定义函数）" class="headerlink" title="1、define function（定义函数）"></a>1、define function（定义函数）</h3><pre><code>/*
+*/</code></pre><h3 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h3><ol>
+<li>define function（定义函数）</li>
+<li>ignore return type（省略返回类型的定义）</li>
+<li>dynamic return type（动态返回类型的定义）</li>
+<li>optional parameter（函数的可选参数）</li>
+<li>Required parameters（必选参数）</li>
+<li>anonymousFunction（匿名函数）</li>
+<li>nestFunction（嵌套函数）</li>
+<li>Function type（函数也是一种具有Function类型的对象）</li>
+<li>Function Parameter（函数作为另一个函数的参数类型）</li>
+<li>Function Returned（函数作为另一个函数的返回类型）</li>
+</ol>
+<h3 id="1-define-function（定义函数）"><a href="#1-define-function（定义函数）" class="headerlink" title="1.    define function（定义函数）"></a>1.    define function（定义函数）</h3><pre><code>/*
 Define function.
  */
 bool isBool(int a, int b) {
   return a == b;
 }</code></pre><p>对于只包含一个表达式的函数，可以使用简写语法：</p>
-<pre><code>bool isNobel(int a, int b) =&gt; a == b;</code></pre><h3 id="2、ignore-return-type（省略返回类型的定义）"><a href="#2、ignore-return-type（省略返回类型的定义）" class="headerlink" title="2、ignore return type（省略返回类型的定义）"></a>2、ignore return type（省略返回类型的定义）</h3><pre><code>/*
+<pre><code>bool isNobel(int a, int b) =&gt; a == b;</code></pre><h3 id="2-ignore-return-type（省略返回类型的定义）"><a href="#2-ignore-return-type（省略返回类型的定义）" class="headerlink" title="2.    ignore return type（省略返回类型的定义）"></a>2.    ignore return type（省略返回类型的定义）</h3><pre><code>/*
 ignore the define of return type:bool
  */
 isBoolTwo(int a, int b) {
   return a == b;
-}</code></pre><h3 id="3、dynamic-return-type（动态返回类型的定义）"><a href="#3、dynamic-return-type（动态返回类型的定义）" class="headerlink" title="3、dynamic return type（动态返回类型的定义）"></a>3、dynamic return type（动态返回类型的定义）</h3><pre><code>/*
+}</code></pre><h3 id="3-dynamic-return-type（动态返回类型的定义）"><a href="#3-dynamic-return-type（动态返回类型的定义）" class="headerlink" title="3.    dynamic return type（动态返回类型的定义）"></a>3.    dynamic return type（动态返回类型的定义）</h3><pre><code>/*
 this function&apos;s return type is dynamic,
 is int
 is bool
@@ -468,7 +477,7 @@ isBoolThree(int a, int b) {
   } else if (a &gt; b) {
     return &quot;min:${b}&quot;;
   }
-}</code></pre><h3 id="4、optional-parameter（可选参数的函数）"><a href="#4、optional-parameter（可选参数的函数）" class="headerlink" title="4、optional parameter（可选参数的函数）"></a>4、optional parameter（可选参数的函数）</h3><pre><code>/*
+}</code></pre><h3 id="4-optional-parameter（可选参数的函数）"><a href="#4-optional-parameter（可选参数的函数）" class="headerlink" title="4.    optional parameter（可选参数的函数）"></a>4.    optional parameter（可选参数的函数）</h3><pre><code>/*
 Optional parameters
 可选函数、命名函数
  */
@@ -487,7 +496,7 @@ isBoolFour({int a, int b}) {
   print(&quot;optional parameters:${isBoolFour(b: 1, a: 2)}&quot;);</code></pre><p>一组函数参数<br>[]</p>
 <pre><code>dynamic functionArray(String name, [String arguments]) {
   return arguments?.length;
-}</code></pre><h3 id="5、Required-parameters（必选参数）"><a href="#5、Required-parameters（必选参数）" class="headerlink" title="5、Required parameters（必选参数）"></a>5、Required parameters（必选参数）</h3><p>@required</p>
+}</code></pre><h3 id="5-Required-parameters（必选参数）"><a href="#5-Required-parameters（必选参数）" class="headerlink" title="5.    Required parameters（必选参数）"></a>5.    Required parameters（必选参数）</h3><p>@required</p>
 <pre><code>/*
 Required parameters
  */
@@ -501,7 +510,7 @@ isBoolFive({int a = 0, @required int b}) {
 
 
   //调用带有必须参数的，命名函数
-  print(&quot;required parameters:${isBoolFive(b: 5)}&quot;);</code></pre><h3 id="6、anonymousFunction（匿名函数）"><a href="#6、anonymousFunction（匿名函数）" class="headerlink" title="6、anonymousFunction（匿名函数）"></a>6、anonymousFunction（匿名函数）</h3><pre><code>/*
+  print(&quot;required parameters:${isBoolFive(b: 5)}&quot;);</code></pre><h3 id="6-anonymousFunction（匿名函数）"><a href="#6-anonymousFunction（匿名函数）" class="headerlink" title="6.    anonymousFunction（匿名函数）"></a>6.    anonymousFunction（匿名函数）</h3><pre><code>/*
 Define anonymous function
  */
 anonymousFunction() {
@@ -512,7 +521,7 @@ anonymousFunction() {
   list.forEach((item) {
     print(&quot;item:${item}&quot;);
   });
-}</code></pre><h3 id="7、nestFunction（嵌套函数）"><a href="#7、nestFunction（嵌套函数）" class="headerlink" title="7、nestFunction（嵌套函数）"></a>7、nestFunction（嵌套函数）</h3><pre><code>bool topLevel = true;
+}</code></pre><h3 id="7-nestFunction（嵌套函数）"><a href="#7-nestFunction（嵌套函数）" class="headerlink" title="7.    nestFunction（嵌套函数）"></a>7.    nestFunction（嵌套函数）</h3><pre><code>bool topLevel = true;
 
 void nestTopLevelFunction() {
   var insideMain = true;
@@ -533,7 +542,7 @@ void nestTopLevelFunction() {
   }
 
   myFunction();
-}</code></pre><h3 id="8、Function-type（函数也是一种具有Function类型的对象）"><a href="#8、Function-type（函数也是一种具有Function类型的对象）" class="headerlink" title="8、Function type（函数也是一种具有Function类型的对象）"></a>8、Function type（函数也是一种具有Function类型的对象）</h3><pre><code>void functionType(num a) {
+}</code></pre><h3 id="8-Function-type（函数也是一种具有Function类型的对象）"><a href="#8-Function-type（函数也是一种具有Function类型的对象）" class="headerlink" title="8.    Function type（函数也是一种具有Function类型的对象）"></a>8.    Function type（函数也是一种具有Function类型的对象）</h3><pre><code>void functionType(num a) {
   num a;
   int b;
   double c;
@@ -541,7 +550,46 @@ void nestTopLevelFunction() {
   bool e;
   Function f;
 
-}</code></pre><hr>
+}</code></pre><h3 id="9-Function-Parameter（函数作为另一个函数的参数类型"><a href="#9-Function-Parameter（函数作为另一个函数的参数类型" class="headerlink" title="9.    Function Parameter（函数作为另一个函数的参数类型)"></a>9.    Function Parameter（函数作为另一个函数的参数类型)</h3><p>函数作为另一个函数的参数有两种定义方式</p>
+<ol>
+<li><p>使用Function</p>
+<p>  ///方式一<br>  void two(Function fun) {</p>
+<pre><code>fun(&quot;James&quot;);</code></pre><p>  }</p>
+</li>
+</ol>
+<ol start="2">
+<li><p>使用void lambda(String name, int age)</p>
+<p>  ///方式二<br>  void twoTwo(void lambda(String name, int age)) {</p>
+<pre><code>lambda(&quot;Air_twoTwo&quot;, 10);</code></pre><p>  }</p>
+</li>
+</ol>
+<h3 id="10-Function-Returned（函数作为另一个函数的返回类型）"><a href="#10-Function-Returned（函数作为另一个函数的返回类型）" class="headerlink" title="10.    Function Returned（函数作为另一个函数的返回类型）"></a>10.    Function Returned（函数作为另一个函数的返回类型）</h3><p>函数作为另一个函数的返回类型有两种方式</p>
+<ol>
+<li><p>使用    Function</p>
+<p>  ///方式一<br>  Function four(String name) {</p>
+<pre><code>Function fun = () {
+return &quot;$name&quot;;
+};
+
+return fun;</code></pre><p>  }</p>
+</li>
+</ol>
+<ol start="2">
+<li><p>使用    typedef + Function</p>
+<p>  ///定义函数类型<br>  typedef Callback = void Function(int count, int total);</p>
+<pre><code>///定义返回函数的函数
+Callback fourFour(String name){
+    var call = (int count ,int total){
+        print(&quot;fourFour: $name , $count , $total&quot;);
+    };
+    return call;
+}
+
+///....
+    ///调用
+    fourFour(&quot;Air&quot;)(10, 100);</code></pre></li>
+</ol>
+<hr>
 <p>未完待续。。。</p>
 
             </div>
@@ -954,7 +1002,7 @@ void nestTopLevelFunction() {
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">19k</span>
+                <span class="white-color">19.2k</span>
             
 
             
