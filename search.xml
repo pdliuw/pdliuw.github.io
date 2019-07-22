@@ -74,11 +74,11 @@
       
         <tags>
             
-            <tag> Java </tag>
-            
             <tag> Dart </tag>
             
             <tag> Kotlin </tag>
+            
+            <tag> Java </tag>
             
             <tag> Swift </tag>
             
@@ -730,8 +730,8 @@
     
     <entry>
       <title>Git</title>
-      <link href="/2016/09/08/git/Flutter%20Widget%20copy/"/>
-      <url>/2016/09/08/git/Flutter%20Widget%20copy/</url>
+      <link href="/2016/09/08/git/Git/"/>
+      <url>/2016/09/08/git/Git/</url>
       
         <content type="html"><![CDATA[<p>汇聚：Git相关常用用法，以及不常出现的问题！</p><hr><h2 id="1-Git常用用法汇总"><a href="#1-Git常用用法汇总" class="headerlink" title="1.  Git常用用法汇总"></a>1.  Git常用用法汇总</h2><h3 id="1-初始化本地仓库"><a href="#1-初始化本地仓库" class="headerlink" title="1.  初始化本地仓库"></a>1.  初始化本地仓库</h3><pre><code>git init</code></pre><h3 id="2-添加文件"><a href="#2-添加文件" class="headerlink" title="2.  添加文件"></a>2.  添加文件</h3><p>添加单个文件:</p><pre><code>git add [fileName]</code></pre><p>或则</p><p>添加整个本地项目中的所有文件:</p><pre><code>git add .</code></pre><h3 id="3-提交文件"><a href="#3-提交文件" class="headerlink" title="3.  提交文件"></a>3.  提交文件</h3><pre><code>git commit -m &quot;your commit descrition!&quot;</code></pre><ul><li>Git的提交文件是提交到本地的仓库中，这点与SVN有些不同。</li><li>如果需要将文件提交到远程仓库中，则需要将文件“推”到远程仓库中，请往下看！</li></ul><h3 id="3-与远程仓库关联"><a href="#3-与远程仓库关联" class="headerlink" title="3.  与远程仓库关联"></a>3.  与远程仓库关联</h3><p>格式</p><pre><code>git remote add [origin] [remote git repository url] </code></pre><p>示例</p><pre><code>git remote add origin https://github.com/pdliuw/YourProjectName.git</code></pre><h3 id="4-从远程仓库“拉”数据到本地仓库中"><a href="#4-从远程仓库“拉”数据到本地仓库中" class="headerlink" title="4.  从远程仓库“拉”数据到本地仓库中"></a>4.  从远程仓库“拉”数据到本地仓库中</h3><pre><code>git pull origin master</code></pre><h3 id="5-从本地仓库“推”数据到远程仓库中"><a href="#5-从本地仓库“推”数据到远程仓库中" class="headerlink" title="5.  从本地仓库“推”数据到远程仓库中"></a>5.  从本地仓库“推”数据到远程仓库中</h3><pre><code>git push -u origin master</code></pre><hr><h2 id="2-问题、解决办法汇总"><a href="#2-问题、解决办法汇总" class="headerlink" title="2.  问题、解决办法汇总"></a>2.  问题、解决办法汇总</h2><h3 id="1-无法提交“本地项目”到“远程仓库”中"><a href="#1-无法提交“本地项目”到“远程仓库”中" class="headerlink" title="1. 无法提交“本地项目”到“远程仓库”中"></a>1. 无法提交“本地项目”到“远程仓库”中</h3><p>诞生环境</p><pre><code>在Github上创建仓库后，使用Visual studio code工具将本地项目提交到Github上，在执行 git push -u origin master时产生的问题</code></pre><p>错误信息 </p><pre><code>error: failed to push some refs to &apos;git@github.com:.....&quot; Updates were rejected because the remote contains work that you do not have locally.</code></pre><p>解决办法</p><pre><code>1. 此问题是由于本地和Github上的文件产生冲突导致的，因此将本地项目与Github项目合并冲突后再次执行即可解决此问题2. 具体步骤    1. 先将Github项目拉下来      git pull origin master    2. 再将本地项目提交到Github      git push -u origin master</code></pre><hr><h2 id="3-TODO"><a href="#3-TODO" class="headerlink" title="3.  TODO"></a>3.  TODO</h2><p>  进一步扩充、丰富、完善相关内容！</p><hr><p>未完待续。。。</p>]]></content>
       
