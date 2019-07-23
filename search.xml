@@ -32,15 +32,15 @@
     
     <entry>
       <title>Flutter项目示例</title>
-      <link href="/2019/05/06/flutter/Flutter%20app%20sample/"/>
-      <url>/2019/05/06/flutter/Flutter%20app%20sample/</url>
+      <link href="/2019/05/06/project/Flutter%20app%20sample/"/>
+      <url>/2019/05/06/project/Flutter%20app%20sample/</url>
       
         <content type="html"><![CDATA[<hr><p><img src="http://puvbjx92j.bkt.clouddn.com/totem_four_logo.jpg" alt="图腾"></p><p>Flutter项目示例</p><p><a href="https://github.com/pdliuw/flutter_app_sample" target="_blank" rel="noopener">点我，查看完整项目</a></p><h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><p><img src="http://pv1gm37l9.bkt.clouddn.com/flutter_app_sample_login.gif" alt="Login"></p><h3 id="1-项目理念"><a href="#1-项目理念" class="headerlink" title="1.  项目理念"></a>1.  项目理念</h3><ol><li>项目中不直接使用三方文件</li></ol><h3 id="2-涉及技术"><a href="#2-涉及技术" class="headerlink" title="2.  涉及技术"></a>2.  涉及技术</h3><p>项目中涉及的技术</p><ol><li>设计框架: MVP</li><li>网络框架:    <a href="https://github.com/flutterchina/dio" target="_blank" rel="noopener">Dio</a></li></ol><h3 id="3-TODO"><a href="#3-TODO" class="headerlink" title="3.  TODO"></a>3.  TODO</h3><ol><li>持续迭代项目</li><li>持续完善文档</li><li>…</li></ol><hr>]]></content>
       
       
       <categories>
           
-          <category> 跨平台 </category>
+          <category> 项目示例 </category>
           
       </categories>
       
@@ -105,11 +105,11 @@
       
         <tags>
             
+            <tag> Java </tag>
+            
             <tag> Dart </tag>
             
             <tag> Kotlin </tag>
-            
-            <tag> Java </tag>
             
             <tag> Swift </tag>
             
@@ -602,8 +602,6 @@
       
         <tags>
             
-            <tag> MVP </tag>
-            
             <tag> Java </tag>
             
             <tag> RxJava </tag>
@@ -613,6 +611,8 @@
             <tag> OKHttp </tag>
             
             <tag> Glide </tag>
+            
+            <tag> MVP </tag>
             
             <tag> DesignPatterns </tag>
             
