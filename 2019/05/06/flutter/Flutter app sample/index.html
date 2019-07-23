@@ -4,9 +4,27 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Kotlin Functions, Air">
-    <meta name="description" content="Kotlin Functions(科特林函数/方法)
-目录：1、Function Declarations（函数的定义）2、Function Usage（函数的用法）3、Parameters（参数）4、Default Arguments（默">
+    <meta name="keywords" content="Flutter项目示例, Air">
+    <meta name="description" content="
+
+Flutter项目示例
+点我，查看完整项目
+效果图
+1.  项目理念
+项目中不直接使用三方文件
+
+2.  涉及技术项目中涉及的技术
+
+设计框架: MVP
+网络框架:    Dio
+
+3.  TODO
+持续迭代项目
+持续完善文档
+…
+
+
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +32,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Kotlin Functions | Air</title>
+    <title>Flutter项目示例 | Air</title>
     <link rel="icon" type="image/jpeg" href="/medias/avatar.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -261,13 +279,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/images/kotlin_logo.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/images/flutter_logo.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Kotlin Functions
+                        Flutter项目示例
                     </div>
                 </div>
             </div>
@@ -378,8 +396,20 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Kotlin/" target="_blank">
-                                <span class="chip bg-color">Kotlin</span>
+                            <a href="/tags/Dart/" target="_blank">
+                                <span class="chip bg-color">Dart</span>
+                            </a>
+                        
+                            <a href="/tags/Flutter/" target="_blank">
+                                <span class="chip bg-color">Flutter</span>
+                            </a>
+                        
+                            <a href="/tags/MVP/" target="_blank">
+                                <span class="chip bg-color">MVP</span>
+                            </a>
+                        
+                            <a href="/tags/Dio/" target="_blank">
+                                <span class="chip bg-color">Dio</span>
                             </a>
                         
                     </div>
@@ -390,8 +420,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Android/" class="post-category" target="_blank">
-                                Android
+                            <a href="/categories/跨平台/" class="post-category" target="_blank">
+                                跨平台
                             </a>
                         
                     </div>
@@ -402,21 +432,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2017-06-18
+                    2019-05-06
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.2k
+                        70
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        5 分
+                        1 分
                     </div>
                     
                 
@@ -432,155 +462,25 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Kotlin Functions(科特林函数/方法)</p>
-<h3 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h3><p>1、Function Declarations（函数的定义）<br>2、Function Usage（函数的用法）<br>3、Parameters（参数）<br>4、Default Arguments（默认参数）<br>5、Named Arguments（命名参数）<br>6、Unit-returning functions（函数返回类型为:Unit）<br>7、Single-Expression functions（单个表达式的函数）<br>8、Variable number of arguments（Varargs）(可变数量参数)<br>9、Infix notation（中缀表示法）<br>10、Function Scope（函数范围）<br>11、Generic Functions（通用函数/泛型函数）<br>12、Tail recursive functions（尾递归函数）</p>
-<h3 id="1-Function-Declarations（函数-方法的定义）"><a href="#1-Function-Declarations（函数-方法的定义）" class="headerlink" title="1.    Function Declarations（函数/方法的定义）"></a>1.    Function Declarations（函数/方法的定义）</h3><p>使用fun关键字进行定义函数</p>
-<pre><code>fun double(x: Int): Int {
-    return 2 * x
-}</code></pre><h3 id="2-Function-Usage（函数的使用-调用）"><a href="#2-Function-Usage（函数的使用-调用）" class="headerlink" title="2.    Function Usage（函数的使用/调用）"></a>2.    Function Usage（函数的使用/调用）</h3><p>调用函数使用传统方法</p>
-<pre><code>val result = double(2)</code></pre><p>使用点符号调用</p>
-<pre><code>Sample().foo()</code></pre><h3 id="3-Parameters（参数）"><a href="#3-Parameters（参数）" class="headerlink" title="3.    Parameters（参数）"></a>3.    Parameters（参数）</h3><p>函数参数的定义格式：name:Type，以“，”分隔参数</p>
-<pre><code>fun double(x: Int, y: Int): Int {
-    return 2 * (x + y)
-}</code></pre><h3 id="4-Default-Arguments（参数的默认值）"><a href="#4-Default-Arguments（参数的默认值）" class="headerlink" title="4.    Default Arguments（参数的默认值）"></a>4.    Default Arguments（参数的默认值）</h3><p>函数的参数可以有一个默认的值，</p>
-<pre><code>fun double(x: Int = 0, y: Int = 0): Int {
-    return 2 * (x + y)
-}</code></pre><p>覆盖方法始终使用与基本方法相同的默认参数值。使用默认参数值覆盖方法时，忽略参数默认值</p>
-<pre><code>open class A {
-    open fun foo(i: Int = 10) {
-
-    }
-}
-
-class B : A() {
-    //// no default value allowed
-    override fun foo(i: Int) {
-        super.foo(i)
-    }
-}</code></pre><p>调用函数，使用函数的默认参数值</p>
-<pre><code>fun defaultParam(a: Int = 0, b: Int): Int {
-
-    return a + b;
-}
-//使用defaultParam(b = 2)，等同于defaultParam(a = 0,b = 2)
-val defaultParamResult = defaultParam(b = 2)</code></pre><p>如果默认参数之后的最后一个参数是lambda，他可以作为命名参数传递，也可以在括号之外传递</p>
-<pre><code>fun fooFunction(bar: Int = 1, baz: Int = 1, lamb: () -&gt; Int): Int {
-    println(&quot;foo: lambda result=${lamb()}&quot;)
-    return lamb()
-}</code></pre><hr>
-<pre><code>  //括号之外传递
-val lambdaParamOutResult = fooFunction {
-    &quot;&quot;
-    1
-}
-//括号之内传递
-val lambdaParamInResult = fooFunction(lamb = {
-    &quot;&quot;
-    1
-})
-//括号之内传递，并且全参数赋值
-val lambdaParamFullResult = fooFunction(1, 2, lamb = {
-    &quot;&quot;
-    1
-})</code></pre><h3 id="5-命名参数-gt-使代码更具可读性"><a href="#5-命名参数-gt-使代码更具可读性" class="headerlink" title="5.    命名参数-&gt;使代码更具可读性"></a>5.    命名参数-&gt;使代码更具可读性</h3><p>调用函数时可以命名函数参数。当函数具有大量参数或默认参数时，这非常方便。</p>
-<p>如下函数：</p>
-<pre><code>fun reformat(str: String,
-             normalizeCase: Boolean = true,
-             upperCaseFirstLetter: Boolean = true,
-             divideByCamelHumps: Boolean = false,
-             wordSeparator: Char = &apos; &apos;) {
-}</code></pre><p>使用默认参数调用：</p>
-<pre><code>val str = &quot;&quot;;
-reformat(str)</code></pre><p>使用非默认参数调用：</p>
-<pre><code>val str = &quot;&quot;;
-reformat(str, true, true, false, &apos;_&apos;)</code></pre><p>使用命名参数调用-&gt;使代码更具可读性：</p>
-<pre><code>val str = &quot;&quot;;
-reformat(str, normalizeCase = true, upperCaseFirstLetter = true, divideByCamelHumps = false, wordSeparator = &apos;_&apos;)</code></pre><p>使用命名参数调用-&gt;不需要所有的参数</p>
-<pre><code>val str = &quot;&quot;;
-reformat(str, wordSeparator = &apos;_&apos;)</code></pre><p>当使用位置参数和命名参数调用函数时，所有位置参数应放在第一个命名参数之前。例如，f(1,y=1)允许，f(x=1,2)不允许</p>
-<pre><code>fun reformatTwo(
-    str: String = &quot;&quot;,
-    normalizeCase: Boolean,
-    upperCaseFirstLetter: Boolean = true,
-    divideByCamelHumps: Boolean = false,
-    wordSeparator: Char = &apos; &apos;
-) {
-
-}</code></pre><p>不允许此调用方式</p>
-<pre><code>//is not allowed.
-reformatTwo(str = &quot;&quot;, false)
-//is allowed
-reformatTwo(str = &quot;&quot;, normalizeCase = false)</code></pre><p>允许此调用方式</p>
-<pre><code>//is allowed
-reformatTwo(str = &quot;&quot;, normalizeCase = false)</code></pre><h3 id="6-Unit-returning-functions"><a href="#6-Unit-returning-functions" class="headerlink" title="6.    Unit-returning functions"></a>6.    Unit-returning functions</h3><p>如果一个函数没有返回值，那么他的返回值类型是Unit</p>
-<pre><code>fun nullReturnType(): Unit {
-
-}</code></pre><p>Unit可省略</p>
-<pre><code>fun nullReturnType() {
-
-}</code></pre><h3 id="7-Single-Expression-functions"><a href="#7-Single-Expression-functions" class="headerlink" title="7.    Single-Expression functions"></a>7.    Single-Expression functions</h3><p>当函数返回单个表达式时，可以省略花括号，并在‘=’符号后指定‘函数体’</p>
-<pre><code>fun singleExpression(a: Int, b: Int): Int = a + b;</code></pre><p>显示声明的返回类型是可选的/可省略的</p>
-<pre><code>fun singleExpression(a: Int, b: Int) = a + b;</code></pre><h3 id="8-Variable-number-of-arguments-varargs"><a href="#8-Variable-number-of-arguments-varargs" class="headerlink" title="8.    Variable number of arguments(varargs)"></a>8.    Variable number of arguments(varargs)</h3><p>可变数量的参数</p>
-<pre><code>fun varargParameter(vararg parameters: String): Int {
-
-    return parameters.size;
-}
-
-
-
-varargParameter(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;);</code></pre><h3 id="9-Infix-notation（中缀表示法）"><a href="#9-Infix-notation（中缀表示法）" class="headerlink" title="9.    Infix notation（中缀表示法）"></a>9.    Infix notation（中缀表示法）</h3><p>中缀表示法：省略点和括号</p>
+                <hr>
+<p><img src="http://puvbjx92j.bkt.clouddn.com/totem_four_logo.jpg" alt="图腾"></p>
+<p>Flutter项目示例</p>
+<p><a href="https://github.com/pdliuw/flutter_app_sample" target="_blank" rel="noopener">点我，查看完整项目</a></p>
+<h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><p><img src="http://pv1gm37l9.bkt.clouddn.com/flutter_app_sample_login.gif" alt="Login"></p>
+<h3 id="1-项目理念"><a href="#1-项目理念" class="headerlink" title="1.  项目理念"></a>1.  项目理念</h3><ol>
+<li>项目中不直接使用三方文件</li>
+</ol>
+<h3 id="2-涉及技术"><a href="#2-涉及技术" class="headerlink" title="2.  涉及技术"></a>2.  涉及技术</h3><p>项目中涉及的技术</p>
 <ol>
-<li>必须是成员函数或扩展函数</li>
-<li>必须有一个参数</li>
-<li>参数不能接收可变数量的参数，不能有默认值</li>
+<li>设计框架: MVP</li>
+<li>网络框架:    <a href="https://github.com/flutterchina/dio" target="_blank" rel="noopener">Dio</a></li>
 </ol>
-<pre><code>infix fun Int.complete(num: Int) {
-
-}
-
-
-//正常的调用函数
-1.complete(1)
-
-//使用&quot;中缀表达法&quot;调用函数
-1 complete 1</code></pre><h3 id="10-Function-Scope"><a href="#10-Function-Scope" class="headerlink" title="10.        Function Scope"></a>10.        Function Scope</h3><ol>
-<li>Local Functions（函数内的函数）</li>
-<li>Member Functions（成员函数）</li>
+<h3 id="3-TODO"><a href="#3-TODO" class="headerlink" title="3.  TODO"></a>3.  TODO</h3><ol>
+<li>持续迭代项目</li>
+<li>持续完善文档</li>
+<li>…</li>
 </ol>
-<p>Local Functions（定义在函数内的函数）</p>
-<pre><code>fun function(name: String) {
-    fun localFunction(name: String): String {
-        return &quot;local-&gt;$name&quot;
-    }
-
-    val result = localFunction(name)
-}</code></pre><p>Member Functions（定义在类/对象中的函数）</p>
-<pre><code>class Sample(){
-    fun foo(){}
-}</code></pre><h3 id="11-Generic-Functions（通用函数-泛型函数）"><a href="#11-Generic-Functions（通用函数-泛型函数）" class="headerlink" title="11.        Generic Functions（通用函数/泛型函数）"></a>11.        Generic Functions（通用函数/泛型函数）</h3><pre><code>fun &lt;T&gt; singletonList(item: T): List&lt;T&gt; {
-    return listOf&lt;T&gt;(item)
-}</code></pre><h3 id="12-Tail-recursive-functions（尾递归函数）"><a href="#12-Tail-recursive-functions（尾递归函数）" class="headerlink" title="12.    Tail recursive functions（尾递归函数）"></a>12.    Tail recursive functions（尾递归函数）</h3><p>Kotlin支持一种称为“尾递归”的函数式变成。这允许一些通常使用循环编写的算法改为使用尾递归函数编写，但没有溢出的风险。当一个函数用tailrec修饰符标记并满足所需的形式时，编译器会优化递归，而是留下一个快速有效的基于循环的版本：</p>
-<p>tailrec修饰的尾递归的函数</p>
-<pre><code>/*
-tailrec修饰符关键字：将函数标记为‘尾递归’
-尾递归函数
- */
-const val EPS = 10
-tailrec fun findFixPoint(x: Double = 1.0): Double =
-    if (Math.abs((x - Math.cos(x))) &lt; EPS) x else findFixPoint(Math.cos(x))</code></pre><p>等同于：</p>
-<pre><code>const val EPS = 10
-fun findFixPoint(): Double {
-    var x = 1.0
-    while (true) {
-        val y = Math.cos(x)
-        if (Math.abs(x - y) &lt; EPS) {
-            return x
-        }
-        x = Math.cos(x)
-
-    }
-}</code></pre><hr>
-<p>未完待续。。。</p>
+<hr>
 
             </div>
             <hr/>
@@ -739,9 +639,9 @@ fun findFixPoint(): Double {
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Kotlin Functions》
+                    《Flutter项目示例》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2017/06/18/kotlin/Kotlin Functions/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/05/06/flutter/Flutter app sample/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Air
             </a> 采用
@@ -785,30 +685,30 @@ fun findFixPoint(): Double {
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2017/06/19/kotlin/Higher-Order Functions and Lambdas/">
+                <a href="/2019/06/10/flutter/Flutter RangeSlider/">
                     <div class="card-image">
                         
-                        <img src="/images/kotlin_logo.jpg" class="responsive-img" alt="Higher-Order Functions and Lambdas">
+                        <img src="/images/flutter_logo.jpg" class="responsive-img" alt="Flutter RangeSlider">
                         
-                        <span class="card-title">Higher-Order Functions and Lambdas</span>
+                        <span class="card-title">Flutter RangeSlider</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Higher-Order Functions and Lambdas
+                            Flutter RangeSlider
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2017-06-19
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-10
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Android/" class="post-category" target="_blank">
-                                    Android
+                            <a href="/categories/跨平台/" class="post-category" target="_blank">
+                                    跨平台
                                 </a>
                             
                             
@@ -818,8 +718,12 @@ fun findFixPoint(): Double {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Kotlin/" target="_blank">
-                        <span class="chip bg-color">Kotlin</span>
+                    <a href="/tags/Dart/" target="_blank">
+                        <span class="chip bg-color">Dart</span>
+                    </a>
+                    
+                    <a href="/tags/Flutter/" target="_blank">
+                        <span class="chip bg-color">Flutter</span>
                     </a>
                     
                 </div>
@@ -833,30 +737,30 @@ fun findFixPoint(): Double {
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2017/06/16/kotlin/Kotlin keywords and operators/">
+                <a href="/2019/04/08/flutter/Flutter Web Start/">
                     <div class="card-image">
                         
-                        <img src="/images/kotlin_logo.jpg" class="responsive-img" alt="Kotlin keywords and operators">
+                        <img src="/images/flutter_logo.jpg" class="responsive-img" alt="Flutter Web Start">
                         
-                        <span class="card-title">Kotlin keywords and operators</span>
+                        <span class="card-title">Flutter Web Start</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Kotlin keywords and operators
+                            Flutter Web Start
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2017-06-16
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-08
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Android/" class="post-category" target="_blank">
-                                    Android
+                            <a href="/categories/跨平台/" class="post-category" target="_blank">
+                                    跨平台
                                 </a>
                             
                             
@@ -866,8 +770,12 @@ fun findFixPoint(): Double {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Kotlin/" target="_blank">
-                        <span class="chip bg-color">Kotlin</span>
+                    <a href="/tags/Dart/" target="_blank">
+                        <span class="chip bg-color">Dart</span>
+                    </a>
+                    
+                    <a href="/tags/Flutter/" target="_blank">
+                        <span class="chip bg-color">Flutter</span>
                     </a>
                     
                 </div>
