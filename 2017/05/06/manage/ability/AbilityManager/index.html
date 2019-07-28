@@ -4,12 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Higher-Order Functions and Lambdas, Air">
-    <meta name="description" content="Higher-Order Functions and Lambdas(高阶函数和Lambdas)
-目录：
-Higher-Order Functions（高阶函数）
-Function types（函数类型）
-Lambda Expression">
+    <meta name="keywords" content="能力陷阱, Air">
+    <meta name="description" content="
+
+1.  什么是能力陷阱
+我们都喜欢做那些我们擅长的事情，运动教练告诉我们业余高尔夫球手花费太多的时间练习他们最擅长的招式，而忽略了其他各个方面也需要更多的练习。同样地，每年我们都会看到，在一个新的技术发步后，曾经在某一领域具有权威的领导">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +16,7 @@ Lambda Expression">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Higher-Order Functions and Lambdas | Air</title>
+    <title>能力陷阱 | Air</title>
     <link rel="icon" type="image/jpeg" href="/medias/avatar.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -264,13 +263,13 @@ Lambda Expression">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/images/kotlin_logo.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://puvbjx92j.bkt.clouddn.com/totem_four_logo.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Higher-Order Functions and Lambdas
+                        能力陷阱
                     </div>
                 </div>
             </div>
@@ -381,8 +380,8 @@ Lambda Expression">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Kotlin/" target="_blank">
-                                <span class="chip bg-color">Kotlin</span>
+                            <a href="/tags/能力/" target="_blank">
+                                <span class="chip bg-color">能力</span>
                             </a>
                         
                     </div>
@@ -393,8 +392,8 @@ Lambda Expression">
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Android/" class="post-category" target="_blank">
-                                Android
+                            <a href="/categories/管理/" class="post-category" target="_blank">
+                                管理
                             </a>
                         
                     </div>
@@ -405,21 +404,21 @@ Lambda Expression">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2017-06-19
+                    2017-05-06
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        871
+                        444
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        3 分
+                        1 分
                     </div>
                     
                 
@@ -435,113 +434,29 @@ Lambda Expression">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Higher-Order Functions and Lambdas(高阶函数和Lambdas)</p>
-<h3 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h3><ol>
-<li>Higher-Order Functions（高阶函数）</li>
-<li>Function types（函数类型）</li>
-<li>Lambda Expressions and Anonymous Functions（lambda表达式和匿名函数）</li>
-</ol>
-<h3 id="1、Higher-Order-Functions（高阶函数）"><a href="#1、Higher-Order-Functions（高阶函数）" class="headerlink" title="1、Higher-Order Functions（高阶函数）"></a>1、Higher-Order Functions（高阶函数）</h3><p>高阶函数是：“将函数作为参数或返回函数”的函数</p>
-<p>将函数作为参数的函数</p>
-<pre><code>fun fooFunction(bar: Int = 1, baz: Int = 1, lamb: () -&gt; Int): Int {
-    println(&quot;foo: lambda result=${lamb()}&quot;)
-    return lamb()
-}</code></pre><p>返回函数的函数</p>
-<pre><code>fun fooFunction(a: Int): () -&gt; Int {
-
-    a + 1
-
-    return fun(): Int = a
-}</code></pre><h3 id="2、Function-types（函数类型）"><a href="#2、Function-types（函数类型）" class="headerlink" title="2、Function types（函数类型）"></a>2、Function types（函数类型）</h3><p>如同Int，String，Boolean类型一样，当函数作为参数时，也需要定义类型</p>
-<p>kotlin使用一系列函数类型，例如(Int) -&gt; String处理函数的声明：</p>
-<pre><code>//此时，(String) -&gt; Unit 定义的onClick是一个函数，等同于：fun onClick(x:String):Unit{}
-val onClick: (String) -&gt; Unit = {
-
-}
-onClick(&quot;string&quot;)</code></pre><p>编译器可推断变量的函数类型，如下：</p>
-<pre><code>val simplyFunctiontype = { x: Int, y: Int -&gt;
-    x + y
-}</code></pre><p>等同于：</p>
-<pre><code>val simplyFunctiontype: (Int, Int) -&gt; Int = { x, y -&gt;
-    x + y
-}</code></pre><h3 id="3-Lambda-Expressions-and-Anonymous-Functions（lambda表达式和匿名函数）"><a href="#3-Lambda-Expressions-and-Anonymous-Functions（lambda表达式和匿名函数）" class="headerlink" title="3. Lambda Expressions and Anonymous Functions（lambda表达式和匿名函数）"></a>3. Lambda Expressions and Anonymous Functions（lambda表达式和匿名函数）</h3><h4 id="1-Lambda表达式和匿名函数是“函数文字”，即未声明但立即作为表达式传递的函数，"><a href="#1-Lambda表达式和匿名函数是“函数文字”，即未声明但立即作为表达式传递的函数，" class="headerlink" title="1. Lambda表达式和匿名函数是“函数文字”，即未声明但立即作为表达式传递的函数，"></a>1. Lambda表达式和匿名函数是“函数文字”，即未声明但立即作为表达式传递的函数，</h4><pre><code>fun compare(a: String, b: String): Boolean = a.length &lt; b.length;</code></pre><h4 id="2-Lambda-expression-syntax-Lambda表达式语法"><a href="#2-Lambda-expression-syntax-Lambda表达式语法" class="headerlink" title="2. Lambda expression syntax(Lambda表达式语法)"></a>2. Lambda expression syntax(Lambda表达式语法)</h4><p>全部语法</p>
-<pre><code>/*
-Lambda表达式的全部语法
-*/
-val sum = { x: Int, y: Int -&gt; x + y }</code></pre><p>lambda表达式总是被花括号括起来，完整语法形式的参数声明进入花括号内部并具有可选的类型注释，主体在-&gt;符号后面，如果lambda的推断返回类型不是Unit，则lambda主体内的最后一个（或可能是单个）表达式将被视为返回值</p>
+                <hr>
+<p><img src="http://puvbjx92j.bkt.clouddn.com/totem_four_logo.jpg" alt></p>
+<h3 id="1-什么是能力陷阱"><a href="#1-什么是能力陷阱" class="headerlink" title="1.  什么是能力陷阱"></a>1.  什么是能力陷阱</h3><ul>
+<li>我们都喜欢做那些我们擅长的事情，运动教练告诉我们业余高尔夫球手花费太多的时间练习他们最擅长的招式，而忽略了其他各个方面也需要更多的练习。同样地，每年我们都会看到，在一个新的技术发步后，曾经在某一领域具有权威的领导者失去了他的领导职位。</li>
+</ul>
+<ul>
+<li>这正是因为日常工作占据了进行策略行思考的时间，从而让你没有时间去做一些更有价值的事情。正如运动员、公司管理者以及专业人士一样，他们把经历过多地投资到错误的事情上—-因为他们以为过去让他们获得成功的东西在将来也会发挥作用，但最终我们会发现自己陷入了一个困境，那就是之前的那些日常工作已经不能再满足新环境的需求了。</li>
+</ul>
 <hr>
-<p>如果我们将所有可选的注释都留下，那么剩下的就是下面这样：</p>
-<pre><code>//Full version：Lambda expression syntax
-val lambdaSumWithExplicitly: (Int, Int) -&gt; Int = { oneParam, twoParam -&gt;
-    //lambda将最后一行表达式作为返回的值
-    oneParam * twoParam
-}</code></pre><h4 id="3-Passing-a-lambda-to-the-last-parameter（将lambda表达式作为函数的最后一个参数）"><a href="#3-Passing-a-lambda-to-the-last-parameter（将lambda表达式作为函数的最后一个参数）" class="headerlink" title="3. Passing a lambda to the last parameter（将lambda表达式作为函数的最后一个参数）"></a>3. Passing a lambda to the last parameter（将lambda表达式作为函数的最后一个参数）</h4><p>将Lambda表达式作为函数参数</p>
-<pre><code>fun fooFunction(bar: Int = 1, baz: Int = 1, lamb: () -&gt; Int): Int {
-    println(&quot;foo: lambda result=${lamb()}&quot;)
-    return lamb()
-}</code></pre><p>调用带有lambda表达式参数的函数</p>
-<pre><code>  //括号之外传递
-val lambdaParamOutResult = fooFunction {
-    &quot;&quot;
-    1
-}
-//括号之内传递
-val lambdaParamInResult = fooFunction(lamb = {
-    &quot;&quot;
-    1
-})
-//括号之内传递，并且全参数赋值
-val lambdaParamFullResult = fooFunction(1, 2, lamb = {
-    &quot;&quot;
-    1
-})</code></pre><h4 id="4-it-implicit-name-of-a-single-parameter（it：一个参数的隐式名称）"><a href="#4-it-implicit-name-of-a-single-parameter（it：一个参数的隐式名称）" class="headerlink" title="4. it:implicit name of a single parameter（it：一个参数的隐式名称）"></a>4. it:implicit name of a single parameter（it：一个参数的隐式名称）</h4><pre><code>//it:implicit name of a single parameter
-val lambdaImplicitIt: (Int) -&gt; Int = {
-    it * it
-}
-
-println(&quot;lambdaImplicitIt:${lambdaImplicitIt(5)}&quot;)//result=5*5</code></pre><h4 id="5-Returning-a-value-from-a-lambda-expression（lambda表达式返回值）"><a href="#5-Returning-a-value-from-a-lambda-expression（lambda表达式返回值）" class="headerlink" title="5. Returning a value from a lambda expression（lambda表达式返回值）"></a>5. Returning a value from a lambda expression（lambda表达式返回值）</h4><pre><code>隐式返回最后一个表达式的值
-
-
-    //it:implicit name of a single parameter
-    val lambdaImplicitIt: (Int) -&gt; Int = {
-        val result = it * it
-        result//implicit return result
-    }</code></pre><h4 id="6-Underscope-for-unused-variables（使用’-’作为未使用参数）"><a href="#6-Underscope-for-unused-variables（使用’-’作为未使用参数）" class="headerlink" title="6. Underscope for unused variables（使用’_’作为未使用参数）"></a>6. Underscope for unused variables（使用’_’作为未使用参数）</h4><pre><code>如果lambda参数未使用，则可以放置下划线代替其名称
-
-    //使用:&quot;_&quot;代替未使用的参数的名称
-    val lambdaProduct: (Int, Int) -&gt; Int = { _, y -&gt;
-        y * y
-    }</code></pre><h4 id="7-Anonymous-functions（匿名函数）"><a href="#7-Anonymous-functions（匿名函数）" class="headerlink" title="7. Anonymous functions（匿名函数）"></a>7. Anonymous functions（匿名函数）</h4><p>匿名函数与常规函数的区别：匿名函数省略了常规函数的函数名</p>
-<pre><code>val anonymousFunction = fun(x: Int): Int {
-    return x * x
-}
-println(&quot;Anonymous function:${anonymousFunction(5)}&quot;)
-
-
-
-
-
-val anonymousFunction = fun(x: Int) = x * x
-println(&quot;Anonymous function:${anonymousFunction(5)}&quot;)</code></pre><h4 id="8-Expansion-Anonymous-Function（‘拓展-匿名’的函数）"><a href="#8-Expansion-Anonymous-Function（‘拓展-匿名’的函数）" class="headerlink" title="8. Expansion Anonymous Function（‘拓展+匿名’的函数）"></a>8. Expansion Anonymous Function（‘拓展+匿名’的函数）</h4><pre><code>fun expansionAnonymous() {
-    println();
-    /*
-    常规匿名函数的定义
-     */
-    val commonFunction = fun(num: Int): Int {
-        return num * num
-    }
-
-    /*
-    拓展匿名函数的定义
-     */
-    val expansionAnonymousFunction = fun Int.(param: Int): Int {
-        return param * param
-    }
-
-    val a = 1;
-    println(&quot;expansionAnonymousFunction:${a.expansionAnonymousFunction(5)}&quot;)
-}</code></pre><hr>
-<p>未完待续。。。</p>
+<p>过去的成功会造成一个能力陷阱。当一下三件事发生时我们就会跌入能力陷阱：</p>
+<ol>
+<li><p>你喜欢你的工作，因为就会做很多这样的工作，从而越来越擅长这份工作。</p>
+</li>
+<li><p>当你把时间分配在你所擅长的事情上，你就会花较少的时间来做其他重要的事情。</p>
+</li>
+<li><p>久而久之，你就会需要付出更多的代价去学习新的东西。</p>
+</li>
+</ol>
+<p>正如：这世上唯一永恒的就是无时无刻不在变化！<br>我们应该<strong>如何避免陷入能力陷阱</strong>？</p>
+<hr>
+<h3 id="2-能力陷阱应对策略"><a href="#2-能力陷阱应对策略" class="headerlink" title="2.  能力陷阱应对策略"></a>2.  能力陷阱应对策略</h3><p>大纲：能力陷阱的解释、分析、以及应对策略！</p>
+<p><img src="http://puirvq0bm.bkt.clouddn.com/%E8%83%BD%E5%8A%9B%E9%99%B7%E9%98%B1Two.png" alt="能力陷阱"></p>
+<hr>
 
             </div>
             <hr/>
@@ -700,9 +615,9 @@ println(&quot;Anonymous function:${anonymousFunction(5)}&quot;)</code></pre><h4 
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Higher-Order Functions and Lambdas》
+                    《能力陷阱》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2017/06/19/kotlin/Higher-Order Functions and Lambdas/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2017/05/06/manage/ability/AbilityManager/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Air
             </a> 采用
@@ -746,72 +661,24 @@ println(&quot;Anonymous function:${anonymousFunction(5)}&quot;)</code></pre><h4 
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2017/10/06/manage/time/TimeManager/">
+                <a href="/2017/05/21/android/Android打造永不崩溃App/">
                     <div class="card-image">
                         
-                        <img src="http://puicag5o8.bkt.clouddn.com/manage_time_logo.jpg" class="responsive-img" alt="时间管理">
+                        <img src="/images/android_one_logo.jpg" class="responsive-img" alt="Android打造永不崩溃App">
                         
-                        <span class="card-title">时间管理</span>
+                        <span class="card-title">Android打造永不崩溃App</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            时间管理
+                            Android 崩溃、闪退有效处理
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2017-10-06
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2017-05-21
                         </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/管理/" class="post-category" target="_blank">
-                                    管理
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/时间/" target="_blank">
-                        <span class="chip bg-color">时间</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2017/06/18/kotlin/Kotlin Functions/">
-                    <div class="card-image">
-                        
-                        <img src="/images/kotlin_logo.jpg" class="responsive-img" alt="Kotlin Functions">
-                        
-                        <span class="card-title">Kotlin Functions</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            Kotlin Functions
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2017-06-18
-                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -827,8 +694,80 @@ println(&quot;Anonymous function:${anonymousFunction(5)}&quot;)</code></pre><h4 
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Kotlin/" target="_blank">
-                        <span class="chip bg-color">Kotlin</span>
+                    <a href="/tags/Java/" target="_blank">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2017/03/06/project/Android项目实战示例/">
+                    <div class="card-image">
+                        
+                        <img src="/images/android_one_logo.jpg" class="responsive-img" alt="Android项目实战示例">
+                        
+                        <span class="card-title">Android项目实战示例</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Android登陆模块完整示例
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2017-03-06
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/项目示例/" class="post-category" target="_blank">
+                                    项目示例
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/" target="_blank">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/DesignPatterns/" target="_blank">
+                        <span class="chip bg-color">DesignPatterns</span>
+                    </a>
+                    
+                    <a href="/tags/MVP/" target="_blank">
+                        <span class="chip bg-color">MVP</span>
+                    </a>
+                    
+                    <a href="/tags/RxJava/" target="_blank">
+                        <span class="chip bg-color">RxJava</span>
+                    </a>
+                    
+                    <a href="/tags/Retrofit/" target="_blank">
+                        <span class="chip bg-color">Retrofit</span>
+                    </a>
+                    
+                    <a href="/tags/OKHttp/" target="_blank">
+                        <span class="chip bg-color">OKHttp</span>
+                    </a>
+                    
+                    <a href="/tags/Glide/" target="_blank">
+                        <span class="chip bg-color">Glide</span>
                     </a>
                     
                 </div>

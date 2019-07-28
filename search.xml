@@ -47,11 +47,11 @@
       
         <tags>
             
-            <tag> DesignPatterns </tag>
-            
             <tag> Dart </tag>
             
             <tag> Flutter </tag>
+            
+            <tag> DesignPatterns </tag>
             
             <tag> MVP </tag>
             
@@ -107,11 +107,11 @@
       
         <tags>
             
-            <tag> Java </tag>
-            
             <tag> Dart </tag>
             
             <tag> Kotlin </tag>
+            
+            <tag> Java </tag>
             
             <tag> Swift </tag>
             
@@ -588,6 +588,31 @@
     
     
     <entry>
+      <title>能力陷阱</title>
+      <link href="/2017/05/06/manage/ability/AbilityManager/"/>
+      <url>/2017/05/06/manage/ability/AbilityManager/</url>
+      
+        <content type="html"><![CDATA[<hr><p><img src="http://puvbjx92j.bkt.clouddn.com/totem_four_logo.jpg" alt></p><h3 id="1-什么是能力陷阱"><a href="#1-什么是能力陷阱" class="headerlink" title="1.  什么是能力陷阱"></a>1.  什么是能力陷阱</h3><ul><li>我们都喜欢做那些我们擅长的事情，运动教练告诉我们业余高尔夫球手花费太多的时间练习他们最擅长的招式，而忽略了其他各个方面也需要更多的练习。同样地，每年我们都会看到，在一个新的技术发步后，曾经在某一领域具有权威的领导者失去了他的领导职位。</li></ul><ul><li>这正是因为日常工作占据了进行策略行思考的时间，从而让你没有时间去做一些更有价值的事情。正如运动员、公司管理者以及专业人士一样，他们把经历过多地投资到错误的事情上—-因为他们以为过去让他们获得成功的东西在将来也会发挥作用，但最终我们会发现自己陷入了一个困境，那就是之前的那些日常工作已经不能再满足新环境的需求了。</li></ul><hr><p>过去的成功会造成一个能力陷阱。当一下三件事发生时我们就会跌入能力陷阱：</p><ol><li><p>你喜欢你的工作，因为就会做很多这样的工作，从而越来越擅长这份工作。</p></li><li><p>当你把时间分配在你所擅长的事情上，你就会花较少的时间来做其他重要的事情。</p></li><li><p>久而久之，你就会需要付出更多的代价去学习新的东西。</p></li></ol><p>正如：这世上唯一永恒的就是无时无刻不在变化！<br>我们应该<strong>如何避免陷入能力陷阱</strong>？</p><hr><h3 id="2-能力陷阱应对策略"><a href="#2-能力陷阱应对策略" class="headerlink" title="2.  能力陷阱应对策略"></a>2.  能力陷阱应对策略</h3><p>大纲：能力陷阱的解释、分析、以及应对策略！</p><p><img src="http://puirvq0bm.bkt.clouddn.com/%E8%83%BD%E5%8A%9B%E9%99%B7%E9%98%B1Two.png" alt="能力陷阱"></p><hr>]]></content>
+      
+      
+      <categories>
+          
+          <category> 管理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 能力 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Android项目实战示例</title>
       <link href="/2017/03/06/project/Android%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%E7%A4%BA%E4%BE%8B/"/>
       <url>/2017/03/06/project/Android%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%E7%A4%BA%E4%BE%8B/</url>
@@ -608,6 +633,8 @@
             
             <tag> DesignPatterns </tag>
             
+            <tag> MVP </tag>
+            
             <tag> RxJava </tag>
             
             <tag> Retrofit </tag>
@@ -615,8 +642,6 @@
             <tag> OKHttp </tag>
             
             <tag> Glide </tag>
-            
-            <tag> MVP </tag>
             
         </tags>
       
