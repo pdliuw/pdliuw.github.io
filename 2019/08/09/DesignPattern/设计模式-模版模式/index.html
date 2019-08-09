@@ -4,12 +4,16 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Kotlin idioms, Air">
-    <meta name="description" content="Kotlin idioms(科特林惯用语法)
-目录：
-创建DTO（POJO/POCO）（Create DTO/POJO/POCO）
-函数参数的默认值（Default values for function parameters）
-过滤列表（">
+    <meta name="keywords" content="模版模式, Air">
+    <meta name="description" content="设计模式-模版模式
+本篇只作简要代码示例，不做“学术讨论”！
+
+点击我，查看设计模式在项目中的应用
+1.  模版模式介绍模版模式:
+2.  设计
+模版模式类
+
+import android.content.BroadcastReceiver">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +21,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Kotlin idioms | Air</title>
+    <title>模版模式 | Air</title>
     <link rel="icon" type="image/jpeg" href="/medias/avatar.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -264,13 +268,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/images/kotlin_logo.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/images/design_pattern_one_logo.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Kotlin idioms
+                        模版模式
                     </div>
                 </div>
             </div>
@@ -381,8 +385,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Kotlin/" target="_blank">
-                                <span class="chip bg-color">Kotlin</span>
+                            <a href="/tags/Java/" target="_blank">
+                                <span class="chip bg-color">Java</span>
+                            </a>
+                        
+                            <a href="/tags/DesignPatterns/" target="_blank">
+                                <span class="chip bg-color">DesignPatterns</span>
                             </a>
                         
                     </div>
@@ -393,8 +401,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Android/" class="post-category" target="_blank">
-                                Android
+                            <a href="/categories/软件设计/" class="post-category" target="_blank">
+                                软件设计
                             </a>
                         
                     </div>
@@ -405,21 +413,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2017-06-13
+                    2019-08-09
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.5k
+                        2.1k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        8 分
+                        11 分
                     </div>
                     
                 
@@ -435,291 +443,721 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Kotlin idioms(科特林惯用语法)</p>
-<h3 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h3><ol>
-<li>创建DTO（POJO/POCO）（Create DTO/POJO/POCO）</li>
-<li>函数参数的默认值（Default values for function parameters）</li>
-<li>过滤列表（Filtering a list）</li>
-<li>字符串插值(String interpolation)</li>
-<li>实例检查(Instance Checks)</li>
-<li>遍历地图(map)/对(key,value)列表</li>
-<li>使用范围（using range）</li>
-<li>只读列表（Read-only list）</li>
-<li>只读地图（Read-only map）</li>
-<li>访问地图（Accessing a map）</li>
-<li>懒惰的属性（lazy property）</li>
-<li>扩展功能（Extension function）</li>
-<li>创建单例对象（Create singleton）</li>
-<li>如果不是null速记</li>
-<li>如果不是null而是速记</li>
-<li>如果为null则执行语句</li>
-<li>获取可能为空的集合的第一项</li>
-<li>如果不为null则执行</li>
-<li>如果不为null，则映射可空值</li>
-<li>在声明时返回</li>
-<li>try/catch表达式</li>
-<li>if表达式</li>
-<li>返回的方法的Builder样式用法Unit</li>
-<li>单表达式函数</li>
-<li>在对象实例上调用多个方法</li>
-<li>Java7尝试使用资源</li>
-<li>方便的通用函数形式，需要通用类型信息</li>
-<li>使用可以为空的布尔值</li>
-<li>交换两个变量</li>
-</ol>
-<h4 id="1、Create-DTO-POJO-POCO-创建DTO（POJO-POCO）"><a href="#1、Create-DTO-POJO-POCO-创建DTO（POJO-POCO）" class="headerlink" title="1、Create DTO/POJO/POCO {创建DTO（POJO/POCO）}"></a>1、Create DTO/POJO/POCO {创建DTO（POJO/POCO）}</h4><p>描述：类似于JavaBean</p>
-<pre><code>/*
-使用DTO
+                <p>设计模式-模版模式</p>
+<p>本篇只作简要代码示例，不做“学术讨论”！</p>
+<hr>
+<p><a href="https://github.com/pdliuw/LoginComponent" target="_blank" rel="noopener">点击我，查看设计模式在项目中的应用</a></p>
+<h3 id="1-模版模式介绍"><a href="#1-模版模式介绍" class="headerlink" title="1.  模版模式介绍"></a>1.  模版模式介绍</h3><p>模版模式:</p>
+<h3 id="2-设计"><a href="#2-设计" class="headerlink" title="2.  设计"></a>2.  设计</h3><ul>
+<li>模版模式类</li>
+</ul>
+<pre><code>import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.res.Resources;
+import android.graphics.Rect;
+import android.os.Build;
+import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.util.Pair;
+import android.support.v7.app.ActionBar;
+import android.support.v7.widget.Toolbar;
+import android.transition.ChangeBounds;
+import android.transition.Explode;
+import android.transition.Fade;
+import android.transition.Slide;
+import android.util.TypedValue;
+import android.view.ContextMenu;
+import android.view.Gravity;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
+import android.widget.TextView;
+
+
+import com.air.logincomponent.R;
+import com.air.logincomponent.common.manager.SendMessageManager;
+import com.air.logincomponent.common.util.LogUtil;
+
+import java.util.List;
+
+/**
+* @author air on 2017/3/6.
+* &lt;p&gt;
+* Activity的基类
+* &lt;/p&gt;
+* &lt;p&gt;
+* Usage:
+* 1、发送广播：{@link #sendBroadcastMsg(Class)}
+* 2、接受广播重写：{@link #receiverBroadcastMsg(Intent)}
+* 3、加载Activity content layout {@link #inflateContentViewById()}
+* 4、侧滑退出Activity {@link #isSupportSlideBack()}
+* 5、设置点击事件：{@link #setCommonClickListener(View)}
+* 6、接受点击事件：{@link #onClickImpl(View)}
+* 7、设置Activity action title：{@link #setActionTitle(String)}
+* 8、是否展示头部布局：{@link #showAppActionBar()}
+* 9、是否支持点击焦点控件外的区域进行隐藏软键盘：{@link #isSupportHideOutside()}  焦点控件的设置 {....}
+* 10、启动Activity：附带默认动画{@link #startActivityByDefaultAnim(Intent)}
+* Transition ---&gt; 启动位置调用：{@link #startActivityTransition(Intent)}
+* 目标位置调用：{@link #showDefaultActivityTransition()}{@link #showFadeActivityTransition()}
+* {@link #showBoundActivityTransition()} {@link #showExplodeActivityTransition()}.
+* &lt;/p&gt;
 */
-fun useCustomBean() {
-    //Create data type object with name:James,age:5. 
-    val bean = CustomBean(&quot;James&quot;, 5);
-}
-/*
-主要用于保存数据的类（类似于Java语言的：JavaBean）
-自定义数据类型
-*/
-data class CustomBean(val name: String, val age: Int) {
 
-}</code></pre><h4 id="2、Default-values-for-function-parameters-函数参数的默认值"><a href="#2、Default-values-for-function-parameters-函数参数的默认值" class="headerlink" title="2、Default values for function parameters (函数参数的默认值)"></a>2、Default values for function parameters (函数参数的默认值)</h4><pre><code>/*
-Default values for function parameters
-*/
-fun foo(name: String = &quot;defaultName&quot;, age: Int = 1) {
-    print(&quot;name:$name,age:$age&quot;)
-}</code></pre><h4 id="3、Filtering-a-list（过滤列表）"><a href="#3、Filtering-a-list（过滤列表）" class="headerlink" title="3、Filtering a list（过滤列表）"></a>3、Filtering a list（过滤列表）</h4><pre><code>/*
-过滤集合
-*/
-fun filterList() {
-    val list = listOf&lt;String&gt;(&quot;James&quot;, &quot;John&quot;, &quot;Jack&quot;);
+public abstract class AppCommonActivity extends BaseActivity {
 
-    //过滤James
-    val listWithoutJames = list.filter { x -&gt; x == &quot;James&quot; }
-}</code></pre><p>or ，event shorter：</p>
-<pre><code>/*
-过滤集合(缩减版/简介版)
-*/
-fun filterList() {
-    val list = listOf&lt;String&gt;(&quot;James&quot;, &quot;John&quot;, &quot;Jack&quot;);
-
-    //过滤James
-    val listWithoutJames = list.filter { it == &quot;James&quot; }
-}</code></pre><h4 id="4、String-interpolation（字符串插值）"><a href="#4、String-interpolation（字符串插值）" class="headerlink" title="4、String interpolation（字符串插值）"></a>4、String interpolation（字符串插值）</h4><pre><code>fun stringInterpolation(name: String = &quot;James&quot;, age: Int = 10) {
-
-    print(&quot;Name:$name,Age:$age&quot;);
-}</code></pre><h4 id="5、Instance-Checks（实例-对象检查）"><a href="#5、Instance-Checks（实例-对象检查）" class="headerlink" title="5、Instance Checks（实例/对象检查）"></a>5、Instance Checks（实例/对象检查）</h4><pre><code>fun instanceCheck(x: Any) {
-
-    val instanceTypeDescription = when (x) {
-
-        is String -&gt; &quot;String&quot;;
-        is Int -&gt; &quot;Int&quot;;
-        is Boolean -&gt; &quot;Boolean&quot;;
-        else -&gt; &quot;Unknown object&quot;;
-    }
-}</code></pre><h4 id="6、Traversing-a-map-list-of-pairs（遍历Map-List-of-pairs）"><a href="#6、Traversing-a-map-list-of-pairs（遍历Map-List-of-pairs）" class="headerlink" title="6、Traversing a map/list of pairs（遍历Map/List of pairs）"></a>6、Traversing a map/list of pairs（遍历Map/List of pairs）</h4><pre><code>fun traversingMapOrPair() {
-    println()
-    println()
-    val map = mapOf(
-        Pair(&quot;OneKey&quot;, &quot;OneValue&quot;),
-        Pair(&quot;TwoKey&quot;, &quot;TwoValue&quot;)
-    )
-
-    /*
-    print result:
-
-    key:OneKey,value:OneValue
-    key:TwoKey,value:TwoValue
+    /**
+    * Animation default duration.
     */
+    private static final int ANIMATION_DURATION_DEFAULT = 500;
+    /**
+    * Tag
+    */
+    protected String TAG_LOG = this.getClass().getSimpleName();
+    /**
+    * 广播接收者接受广播信息
+    */
+    BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            LogUtil.i(TAG_LOG, &quot;receiver&quot; + intent.getAction());
+            //接收广播消息
+            receiverBroadcastMsg(intent);
+        }
+    };
+    /**
+    * 侧滑窗口帮助类
+    */
+//    private SwipeWindowHelper mSwipeWindowHelper;
+    /**
+    * 本地广播进行通信
+    */
+    private SendMessageManager mSendMessageManager;
+    /**
+    * Click listener 的统一管理
+    */
+    private View.OnClickListener mOnClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            onClickImpl(v);
+        }
+    };
+    private View.OnClickListener mOnNavClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            onNavClickImp(v);
+        }
+    };
 
-    for ((key, value) in map) {
-        println(&quot;key:$key,value:$value&quot;);
+    @Override
+    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        LogUtil.i(TAG_LOG, &quot;onPostCreate&quot;);
+        //Crash.
+        //        CrashHandler.getInstance().startHandler(this);
+        //        CrashHandler.getInstance().setCurrentActivity(this);
     }
-}</code></pre><h4 id="7、Using-range（使用区间-范围）"><a href="#7、Using-range（使用区间-范围）" class="headerlink" title="7、Using range（使用区间/范围）"></a>7、Using range（使用区间/范围）</h4><pre><code>fun usingRange() {
-    for (i in 1..100) {
-    }  // closed range: includes 100
-    for (i in 1 until 100) {
-    } // half-open range: does not include 100
-    for (x in 2..10 step 2) {
-    }
-    for (x in 10 downTo 1) {
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        LogUtil.i(TAG_LOG, &quot;onPostResume&quot;);
     }
 
-    val y = 0;
-    if (y in 1..10) {
+    /**
+    * 启动页面附带默认动画
+    *
+    * @param intent
+    *         意图
+    *
+    * @see #startActivityTransition(Intent) .
+    * 已废弃 请查看替代者：{@link //StartActivityFactory}
+    */
+    @Deprecated
+    protected void startActivityByDefaultAnim(Intent intent) {
+        startActivity(intent);
+//        overridePendingTransition(R.anim.app_activity_open_enter_slide_anim, R.anim.app_activity_open_exit_fade_anim);
     }
-}</code></pre><h4 id="8、Read-only-list（只读列表-集合）"><a href="#8、Read-only-list（只读列表-集合）" class="headerlink" title="8、Read-only list（只读列表/集合）"></a>8、Read-only list（只读列表/集合）</h4><pre><code>fun readOnlyOfList(){
-    val list = listOf&lt;String&gt;(&quot;c&quot;,&quot;b&quot;,&quot;c&quot;)
-}</code></pre><h4 id="9、Read-only-map（只读Map-key-vlaue"><a href="#9、Read-only-map（只读Map-key-vlaue" class="headerlink" title="9、Read-only map（只读Map/(key,vlaue))"></a>9、Read-only map（只读Map/(key,vlaue))</h4><pre><code>fun readOnlyOfMap() {
 
-    val map = mapOf&lt;String, String&gt;(
-        &quot;a&quot; to &quot;A&quot;,
-        &quot;b&quot; to &quot;B&quot;,
-        &quot;c&quot; to &quot;C&quot;
-    )
-}</code></pre><h4 id="10、Accessing-a-map-访问Map"><a href="#10、Accessing-a-map-访问Map" class="headerlink" title="10、Accessing a map(访问Map)"></a>10、Accessing a map(访问Map)</h4><pre><code>fun accessingMap(){
-    val map = mapOf&lt;String, String&gt;(
-        &quot;a&quot; to &quot;A&quot;,
-        &quot;b&quot; to &quot;B&quot;,
-        &quot;c&quot; to &quot;C&quot;
-    )
-
-    println(&quot;&quot;&quot;map a =${map[&quot;a&quot;]}&quot;&quot;&quot;)
-}</code></pre><h4 id="11、Lazy-property-懒加载属性"><a href="#11、Lazy-property-懒加载属性" class="headerlink" title="11、Lazy property(懒加载属性)"></a>11、Lazy property(懒加载属性)</h4><pre><code>fun lazyProperty() {
-    val lazyVar: String by lazy {
-        &quot;Lazy&quot;
+    /**
+    * 支持启动页面带动画
+    * {@link #showDefaultActivityTransition()}
+    *
+    * @param intent
+    *         意图
+    */
+    public void startActivityTransition(Intent intent) {
+        startActivity(intent, ActivityOptionsCompat.makeSceneTransitionAnimation(this).toBundle());
     }
-    println(lazyVar)
-}</code></pre><h4 id="12、Extension-function-（拓展功能）"><a href="#12、Extension-function-（拓展功能）" class="headerlink" title="12、Extension function （拓展功能）"></a>12、Extension function （拓展功能）</h4><pre><code>fun String.extensionSample(input: String): String {
-    println()
-    println(&quot;Input data:$input&quot;);
-    var outer: String = input;
 
-    outer = outer + &quot; extension&quot;;
+    public void startActivityTransition(Intent intent, View view, String sharedName) {
+        startActivity(intent, ActivityOptionsCompat.makeSceneTransitionAnimation(this, view, sharedName).toBundle());
+    }
 
-    println(&quot;Out data:$outer&quot;);
-    return outer;
-}</code></pre><p>call</p>
-<pre><code>&quot;&quot;.extensionSample(&quot;Hello world&quot;);</code></pre><p>print result</p>
-<pre><code>Input data:Hello world
-Out data:Hello world extension</code></pre><h4 id="13、Creating-a-singleton-创建单例对象"><a href="#13、Creating-a-singleton-创建单例对象" class="headerlink" title="13、Creating a singleton (创建单例对象)"></a>13、Creating a singleton (创建单例对象)</h4><pre><code>object Singleton{
-    var name = &quot;using object to define singleton object&quot;
-}</code></pre><h4 id="14、If-not-null-shorthand（速记：如果不为null）"><a href="#14、If-not-null-shorthand（速记：如果不为null）" class="headerlink" title="14、If not null shorthand（速记：如果不为null）"></a>14、If not null shorthand（速记：如果不为null）</h4><pre><code>fun ifNotNull(){
-    val files = File(&quot;file&quot;);
+    public void startActivityTransition(@NonNull Intent intent, @NonNull View[] views, @NonNull String[] sharedNames) {
 
-    //if not null shorthand
-    //files is not null,then call function:isFile
-    var isFile = files?.isFile;
-}</code></pre><h4 id="15、If-not-null-and-else-shorthand（速记：如果不为null，反之-）"><a href="#15、If-not-null-and-else-shorthand（速记：如果不为null，反之-）" class="headerlink" title="15、If not null and else shorthand（速记：如果不为null，反之..）"></a>15、If not null and else shorthand（速记：如果不为null，反之..）</h4><pre><code>fun ifNotNullAndElse() {
-    val files = File(&quot;file&quot;).listFiles();
+        if (views.length != sharedNames.length || views.length &lt;= 0 || sharedNames.length &lt;= 0) {
+            return;
+        }
+        Pair&lt;View, String&gt;[] sharedElements = new Pair[views.length];
 
-    //if not null shorthand
-    //files is not null,then call function:isFile
-    println(files?.size ?: &quot;files is null object&quot;);
-}</code></pre><h4 id="16、Executing-a-statement-if-null（如果为null，执行表达式）"><a href="#16、Executing-a-statement-if-null（如果为null，执行表达式）" class="headerlink" title="16、Executing a statement if null（如果为null，执行表达式）"></a>16、Executing a statement if null（如果为null，执行表达式）</h4><pre><code>fun ifNullExecutingStatement() {
-    val values = arrayOf(&quot;A&quot;, null);
+        for (int i = 0; i &lt; views.length; i++) {
+            //Create pair.
+            Pair&lt;View, String&gt; pair = Pair.create(views[i], sharedNames[i]);
 
-    val email = values[0] ?: throw IllegalStateException(&quot;Email is missing!&quot;)
-}</code></pre><h4 id="17、Get-first-item-of-a-possibly-empty-collection-获取可能为null的集合的第一项"><a href="#17、Get-first-item-of-a-possibly-empty-collection-获取可能为null的集合的第一项" class="headerlink" title="17、Get first item of a possibly empty collection.(获取可能为null的集合的第一项)"></a>17、Get first item of a possibly empty collection.(获取可能为null的集合的第一项)</h4><pre><code>fun getFirstItemOfPossiblyOfCollection() {
-    var values = listOf(&quot;James&quot;, null);
+            //Array data.
+            sharedElements[i] = pair;
+        }
 
-    val value = values.firstOrNull() ?: &quot;&quot;;
-}</code></pre><h4 id="18、Execute-if-not-null（如果不为null，则执行）"><a href="#18、Execute-if-not-null（如果不为null，则执行）" class="headerlink" title="18、Execute if not null（如果不为null，则执行）"></a>18、Execute if not null（如果不为null，则执行）</h4><pre><code>fun ifNotNullExecute() {
-    println()
-    println();
-    var values = listOf(&quot;James&quot;, null);
+        startActivity(intent, ActivityOptionsCompat.makeSceneTransitionAnimation(this, sharedElements).toBundle());
+    }
 
-    values?.let {
+    @Override
+    public void onBackPressed() {
+
+        finishRelease();
+    }
+
+    /**
+    * 关闭并释放
+    */
+    protected void finishRelease() {
+        if (isFinishing()) {
+            //如果正在finishing current activity，那么返回
+            return;
+        }
+        supportFinishAfterTransition();
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        //增加，点击焦点外的控件，进行收起软键盘
+        if (isSupportHideOutside()) {
+            if (ev.getAction() == MotionEvent.ACTION_DOWN) {
+                //当前获取焦点的View
+                View v = getCurrentFocus();
+                if (v instanceof EditText) {
+                    if (!isTouchView(hideSoftByEditViewIds(), ev)) {
+                        // hide input method
+                        InputMethodManager inputMethod = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                        inputMethod.hideSoftInputFromWindow(getWindow().findViewById(Window.ID_ANDROID_CONTENT).getWindowToken(), 0);
+                    }
+                }
+            }
+        }
+        //当前页面是否支持手势滑动退出，如果不是，那么调用默认的
+        if (!isSupportSlideBack()) {
+            return super.dispatchTouchEvent(ev);
+        }
+        /*判断手势退出操作是否已存在，执行对应的操作方法*/
+//        if (mSwipeWindowHelper == null) {
+//            mSwipeWindowHelper = new SwipeWindowHelper(getWindow());
+//        }
+        boolean flag = super.dispatchTouchEvent(ev);
+        return flag;
+    }
+
+    /**
+    * Is touch view.
+    *
+    * @param views
+    *         touch views.
+    * @param ev
+    *         event.
+    *
+    * @return is touch view.
+    */
+    private boolean isTouchView(List&lt;View&gt; views, MotionEvent ev) {
+        if (views == null || views.isEmpty()) {
+            return false;
+        }
+
+        int[] location = new int[2];
+
+        for (int i = 0; i &lt; views.size(); i++) {
+            View view = views.get(i);
+            view.getLocationOnScreen(location);
+            int x = location[0];
+            int y = location[1];
+            //In view x.
+            boolean inWidth = ev.getX() &gt; x &amp;&amp; ev.getX() &lt; (x + view.getWidth());
+            //In view y.
+            boolean inHeight = ev.getY() &gt; y &amp;&amp; ev.getY() &lt; (y + view.getHeight());
+            if (inWidth &amp;&amp; inHeight) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+    * subclass override
+    *
+    * @return EditText Views
+    */
+    protected List&lt;View&gt; hideSoftByEditViewIds() {
+        return null;
+    }
+
+
+    /**
+    * 是否支持侧滑退出
+    *
+    * @return 默认支持
+    */
+    protected boolean isSupportSlideBack() {
+        return true;
+    }
+
+    /**
+    * 设置点击事件
+    *
+    * @param view
+    *         v
+    *
+    * @see #onClickImpl(View)
+    */
+    protected void setCommonClickListener(View view) {
+        if (view == null) {
+            return;
+        }
+        if (!view.isClickable()) {
+            if (view.getBackground() == null) {
+                TypedValue typedValue = new TypedValue();
+                Resources.Theme theme = view.getContext().getTheme();
+                int top = view.getPaddingTop();
+                int bottom = view.getPaddingBottom();
+                int left = view.getPaddingLeft();
+                int right = view.getPaddingRight();
+                if (theme.resolveAttribute(android.R.attr.selectableItemBackgroundBorderless, typedValue, true)) {
+                    view.setBackgroundResource(typedValue.resourceId);
+                }
+                view.setPadding(left, top, right, bottom);
+            }
+        }
+        view.setOnClickListener(mOnClickListener);
+
+    }
+
+    protected void setClickListener(View view) {
+        if (view == null) {
+            return;
+        }
+        view.setOnClickListener(mOnClickListener);
+    }
+
+    /**
+    * @param view
+    *         v
+    *
+    * @see #setCommonClickListener(View)
+    * 接收点击事件
+    */
+    protected void onClickImpl(View view) {
+        int id = view.getId();
+
+    }
+
+    /**
+    * Toolbar back click.
+    *
+    * @param view
+    */
+    protected void onNavClickImp(View view) {
+        onBackPressed();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
         /*
-        if values != null
-        for loop values.
+        每次Activity一创建就会执行，一般只执行一次；
         */
-        for (item in it) {
-            print(&quot;${item},&quot;)
+        /*
+        invalidateOptionsMenu()刷新menu里的选项里内容，它会调用onCreateOptionsMenu(Menu menu)方法
+        */
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        /*
+        每次menu被打开时，该方法就会执行一次；
+        */
+        return super.onPrepareOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        /*
+        每次menu菜单项被点击时，该方法就会执行一次；
+        */
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        /*
+        创建控件绑定的上下文菜单menu，根据方法里的View参数识别是哪个控件绑定
+        */
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        /*
+        点击控件绑定的上下菜单menu的内容项
+        */
+        return super.onContextItemSelected(item);
+    }
+
+    /**
+    * 发送广播消息
+    *
+    * @param cls
+    *
+    * @see #receiverBroadcastMsg(Intent) .
+    */
+    protected void sendBroadcastMsg(Class cls) {
+        mSendMessageManager.sendBroadcastMsg(cls);
+    }
+
+    /**
+    * 发送广播消息，并携带类型参数
+    *
+    * @param cls
+    * @param type
+    *         携带的类型参数
+    *
+    * @see #receiverBroadcastMsg(Intent) .
+    */
+    protected void sendBroadcastMsg(Class cls, String type) {
+        mSendMessageManager.sendBroadcastMsg(cls.getName(), type);
+    }
+
+    protected void sendBroadcastMsgAllInApp() {
+        mSendMessageManager.sendBroadcastAllInApp();
+    }
+
+    /**
+    * 此方法接受广播消息
+    *
+    * @param intent
+    *
+    * @see #sendBroadcastMsg(Class) .
+    */
+    protected void receiverBroadcastMsg(Intent intent) {
+        if (intent.getAction() == SendMessageManager.ALL_IN_APP) {
+            receiverBroadcastInAll();
+        }
+
+        receiverBroadcastMsg(intent, intent.getStringExtra(SendMessageManager.TYPE_FLAG));
+    }
+
+    protected void receiverBroadcastMsg(Intent intent, String type) {
+
+    }
+
+    /**
+    * 接收App范围内的全局广播
+    */
+    protected void receiverBroadcastInAll() {
+
+    }
+
+    protected boolean showAppActionBar() {
+        return true;
+    }
+
+    /**
+    * 是否支持 点击焦点外区域进行收起软键盘
+    *
+    * @return true or false;
+    */
+    protected boolean isSupportHideOutside() {
+        return false;
+    }
+
+    /**
+    * Inflate the activity content view.
+    *
+    * @return the activity content resourceId.
+    */
+    protected abstract int inflateContentViewById();
+
+    /**
+    * Inflate the activity content view.
+    *
+    * @return the activity content view object.
+    */
+    protected View inflateContentViewByView() {
+        return null;
+    }
+
+    /**
+    * 初始化默认值
+    */
+    protected abstract void initialize();
+
+    /**
+    * 初始化视图
+    *
+    * @param savedInstanceState
+    */
+    protected abstract void initView(@Nullable Bundle savedInstanceState);
+
+    /**
+    * 初始化数据
+    */
+    protected abstract void initData();
+
+    /**
+    * 刷新当前页面时所需要加载的数据
+    * 当前页面第一次加载时需要的数据
+    * 此方法，需要手动的调用才会执行
+    */
+    protected abstract void refreshData();
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        LogUtil.i(TAG_LOG, &quot;onCreate-----------------------&quot;);
+        //竖屏
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+//        /*
+//        设置样式
+//         */
+//        setTheme(ThemeContext.getUsingTheme());
+        /*
+        setContentView
+        */
+        if (inflateContentViewByView() == null) {
+            setContentView(inflateContentViewById());
+        } else {
+            setContentView(inflateContentViewByView());
+        }
+
+        //EventBus用于组件间的通信
+//        EventBus.getDefault().register(this);
+
+        //StatusBar
+        View statusBar = findViewById(R.id.status_bar);
+        //Toolbar
+        Toolbar toolbar = findViewById(R.id.tool_bar);
+        if (toolbar == null) {
+            LogUtil.w(TAG_LOG, &quot;请在xml中补齐actionBar&quot;);
+        } else {
+            setSupportActionBar(toolbar);
+            ActionBar actionBar = getSupportActionBar();
+            //不显示默认的Title
+            actionBar.setDisplayShowTitleEnabled(true);
+            //不显示默认的Home（an activity icon or logo.）
+            actionBar.setDisplayShowHomeEnabled(false);
+            //是否显示左上角的返回按钮
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            toolbar.setNavigationOnClickListener(mOnNavClickListener);
+
+            //Title
+            TextView titleTv = findViewById(R.id.title_tv);
+            titleTv.setVisibility(View.VISIBLE);
+            setCommonClickListener(titleTv);
+            if (titleTv == null) {
+                LogUtil.w(TAG_LOG, &quot;Title空&quot;);
+            } else {
+                titleTv.setText(getTitle());
+                titleTv.setVisibility(View.GONE);
+                actionBar.setTitle(getTitle());
+            }
+
+
+            if (showAppActionBar()) {
+
+            } else {
+                toolbar.setVisibility(View.GONE);
+                statusBar.setVisibility(View.GONE);
+            }
+        }
+
+        if (statusBar == null) {
+            LogUtil.w(TAG_LOG, &quot;StatusBar为空&quot;);
+        } else {
+            Rect frame = new Rect();
+            getWindow().getDecorView().getWindowVisibleDisplayFrame(frame);
+        }
+
+        showFadeActivityTransition();
+
+        /*
+        注册通信机制
+        */
+        mSendMessageManager = new SendMessageManager(this);
+        mSendMessageManager.registerBroadcastMsg(mBroadcastReceiver, this.getClass());
+
+
+        initialize();
+        initView(savedInstanceState);
+        initData();
+
+        //JPush(如果不调用此方法，将会导致App无法接收推送消息)
+        //2019年3月11日 start
+        //PushAgent.getInstance(this).onAppStart();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        LogUtil.i(TAG_LOG, &quot;onStart&quot;);
+//        CrashHandler.getInstance().startHandler(this);
+//        CrashHandler.getInstance().setCurrentActivity(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        LogUtil.i(TAG_LOG, &quot;onResume&quot;);
+        //UMeng_统计
+        //MobclickAgent.onResume(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        LogUtil.i(TAG_LOG, &quot;onPause&quot;);
+        //UMeng_统计
+        //MobclickAgent.onPause(this);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        LogUtil.i(TAG_LOG, &quot;onStop&quot;);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        LogUtil.i(TAG_LOG, &quot;onDestroy&quot;);
+
+        //解绑EventBus
+//        EventBus.getDefault().unregister(this);
+        //解绑广播
+        if (mSendMessageManager != null) {
+            mSendMessageManager.unRegisterBroadcastMsg();
         }
     }
-}</code></pre><h4 id="19、Map-nullable-value-if-not-null（如果可为null的map，不为null）"><a href="#19、Map-nullable-value-if-not-null（如果可为null的map，不为null）" class="headerlink" title="19、Map nullable value if not null（如果可为null的map，不为null）"></a>19、Map nullable value if not null（如果可为null的map，不为null）</h4><pre><code>fun ifNotNullMapNullable() {
-    println();
-    println();
 
-    var values = mapOf&lt;String?, String?&gt;(
-        &quot;A&quot; to &quot;1&quot;,
-        &quot;B&quot; to &quot;2&quot;,
-        &quot;C&quot; to null
-    )
+    /**
+    * 显示AppBarGroup[Status、Toolbar]
+    */
+    protected void showAppBar() {
+        ViewGroup barGroup = findViewById(R.id.app_bar_group);
+        barGroup.setVisibility(View.VISIBLE);
+    }
 
-    val value = values?.let {
-        //values is not null.
-        for ((key, value) in it) {
-            print(&quot;key:$key -&gt; value:$value&quot;)
+    /**
+    * 隐藏AppBarGroup[Status、Toolbar]
+    */
+    protected void hideAppBar() {
+        ViewGroup barGroup = findViewById(R.id.app_bar_group);
+        barGroup.setVisibility(View.GONE);
+    }
+
+    /**
+    * 显示状态栏
+    */
+    protected void showStatus() {
+        View status = findViewById(R.id.status_bar);
+        status.setVisibility(View.VISIBLE);
+    }
+
+    /**
+    * 隐藏状态栏
+    */
+    protected void hideStatus() {
+        View status = findViewById(R.id.status_bar);
+        status.setVisibility(View.GONE);
+    }
+
+    protected void setActionTitle(String title) {
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle(title);
+    }
+
+    protected Toolbar getToolBar() {
+        Toolbar toolbar = findViewById(R.id.tool_bar);
+        return toolbar;
+    }
+
+    /**
+    * Add current activity with transition animation.
+    */
+    protected void showDefaultActivityTransition() {
+        //Animation.
+        if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setEnterTransition(new Slide(Gravity.RIGHT).setDuration(ANIMATION_DURATION_DEFAULT));
         }
-    } ?: &quot;defaultValue&quot;;
-
-    println(&quot;$value&quot;)
-}</code></pre><h4 id="20、Return-on-when-statement（when表达式中返回值）"><a href="#20、Return-on-when-statement（when表达式中返回值）" class="headerlink" title="20、Return on when statement（when表达式中返回值）"></a>20、Return on when statement（when表达式中返回值）</h4><pre><code>fun transformColor(color: String): Int {
-
-    return when (color) {
-        &quot;Red&quot; -&gt; 0
-        &quot;Green&quot; -&gt; 1
-        &quot;Blue&quot; -&gt; 2
-        else -&gt; throw IllegalArgumentException(&quot;Invalid argument!&quot;);
-    }
-}</code></pre><h4 id="21、try-catch-expression（try-catch表达式）"><a href="#21、try-catch-expression（try-catch表达式）" class="headerlink" title="21、try/catch expression（try/catch表达式）"></a>21、try/catch expression（try/catch表达式）</h4><pre><code>fun tryCatchExpression() {
-    val result = try {
-        /*
-        Do something
-        */
-        println(&quot;Do something&quot;);
-        &quot;Do&quot;
-    } catch (e: Exception) {
-        println(e);
-        &quot;Error&quot;
     }
 
-    println(result);//Result = Do or Error.
-}</code></pre><h4 id="22、if-expression（If表达式）"><a href="#22、if-expression（If表达式）" class="headerlink" title="22、if expression（If表达式）"></a>22、if expression（If表达式）</h4><pre><code>fun ifExpression(parameter:Int){
-
-    val result = if(parameter == 1){
-        &quot;1&quot;
-    }else if(parameter == 2){
-        &quot;2&quot;
-    }else{
-        &quot;Unknown&quot;
+    /**
+    * Add current activity with transition animation.
+    */
+    protected void showBoundActivityTransition() {
+        //Animation.
+        if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setEnterTransition(new ChangeBounds().setDuration(ANIMATION_DURATION_DEFAULT));
+        }
     }
 
-    println(result)
-}</code></pre><h4 id="23、Builder-style-usage-of-methods-that-return-Unit"><a href="#23、Builder-style-usage-of-methods-that-return-Unit" class="headerlink" title="23、Builder-style usage of methods that return Unit"></a>23、Builder-style usage of methods that return Unit</h4><pre><code>fun arrayOfMinusOnes(size: Int): IntArray {
+    /**
+    * Add current activity with transition animation.
+    */
+    protected void showFadeActivityTransition() {
+        //Animation.
+        if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setEnterTransition(new Fade().setDuration(ANIMATION_DURATION_DEFAULT));
+        }
+    }
 
-    return IntArray(size).apply { fill(-1) }
+    /**
+    * Add current activity with transition animation.
+    */
+    protected void showExplodeActivityTransition() {
+        //Animation.
+        if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setEnterTransition(new Explode().setDuration(ANIMATION_DURATION_DEFAULT));
+        }
+    }
 
-}</code></pre><h4 id="24、Single-expression-function（单个表达式的函数）"><a href="#24、Single-expression-function（单个表达式的函数）" class="headerlink" title="24、Single-expression function（单个表达式的函数）"></a>24、Single-expression function（单个表达式的函数）</h4><pre><code>fun theAnswer = 42;</code></pre><p>This is equivalent to (等价于)</p>
-<pre><code>fun theAnswer():Int{
-    return 42
-}</code></pre><h4 id="25、This-can-be-effectively-combined-with-other-idioms-leading-to-short-code-（这可以与其他语法一起使用，以缩短代码）"><a href="#25、This-can-be-effectively-combined-with-other-idioms-leading-to-short-code-（这可以与其他语法一起使用，以缩短代码）" class="headerlink" title="25、This can be effectively combined with other idioms,leading to short code.（这可以与其他语法一起使用，以缩短代码）"></a>25、This can be effectively combined with other idioms,leading to short code.（这可以与其他语法一起使用，以缩短代码）</h4><pre><code>fun transform(color: String): Int = when (color) {
-    &quot;Red&quot; -&gt; 0
-    &quot;Green&quot; -&gt; 1
-    &quot;Blue&quot; -&gt; 2
-    else -&gt; -1
-}</code></pre><h4 id="26、Calling-multiple-methods-on-an-object-instance-with-（在对象实例上调用多个函数）"><a href="#26、Calling-multiple-methods-on-an-object-instance-with-（在对象实例上调用多个函数）" class="headerlink" title="26、Calling multiple methods on an object instance(with) （在对象实例上调用多个函数）"></a>26、Calling multiple methods on an object instance(with) （在对象实例上调用多个函数）</h4><pre><code>fun multipleMethods() {
-
-    val animal = Animal();
+    /**
+    * Add current activity with transition animation.
+    */
+    protected void showSharedElementActivityTransition() {
+        //Animation.
+        if (Build.VERSION.SDK_INT &gt;= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setSharedElementEnterTransition(new Fade().setDuration(ANIMATION_DURATION_DEFAULT));
+        }
+    }
+}</code></pre><ul>
+<li>使用</li>
+</ul>
+<pre><code>public class YourClassName extends AppCommonActivity{
 
     /*
-    使用&quot;with&quot;可以调用多个函数
+    Do something...
     */
-    with(animal) {
-        //调用animal对象的fly
-        fly()
 
-        //接着，调用animal对象的run
-        run()
+}</code></pre><h3 id="3-TODO"><a href="#3-TODO" class="headerlink" title="3.  TODO"></a>3.  TODO</h3><p>  进一步扩充、丰富、完善相关内容！</p>
+<hr>
+<p>未完待续。。。</p>
 
-        //再接着，调用animal对象的eat
-        eat()
-    }
-}</code></pre><h4 id="27、Java7‘s-try-with-resource（Java7的使用资源）"><a href="#27、Java7‘s-try-with-resource（Java7的使用资源）" class="headerlink" title="27、Java7‘s try with resource（Java7的使用资源）"></a>27、Java7‘s try with resource（Java7的使用资源）</h4><pre><code>@RequiresApi(Build.VERSION_CODES.O)
-fun useResources() {
-    val stream = Files.newInputStream(Paths.get(&quot;/some/file.txt&quot;))
-    stream.buffered().reader().use { reader -&gt;
-        println(reader.readText())
-    }
-}</code></pre><h4 id="28、Convenient-form-for-a-generic-function-that-requires-the-generic-type-information（方便的通用函数形式，需要通用类型信息）"><a href="#28、Convenient-form-for-a-generic-function-that-requires-the-generic-type-information（方便的通用函数形式，需要通用类型信息）" class="headerlink" title="28、Convenient form for a generic function that requires the generic type information（方便的通用函数形式，需要通用类型信息）"></a>28、Convenient form for a generic function that requires the generic type information（方便的通用函数形式，需要通用类型信息）</h4><pre><code>//     ...
-//     public &lt;T&gt; T fromJson(JsonElement json, Class&lt;T&gt; classOfT) throws JsonSyntaxException {
-//     ...
-
-inline fun &lt;reified T : Any&gt; Gson.fromJson(json: JsonElement): T = this.fromJson(json, T::class.java)</code></pre><h4 id="29、Consuming-a-nullable-Boolean（消耗-使用-可为null的布尔值）"><a href="#29、Consuming-a-nullable-Boolean（消耗-使用-可为null的布尔值）" class="headerlink" title="29、Consuming  a nullable Boolean（消耗/使用 可为null的布尔值）"></a>29、Consuming  a nullable Boolean（消耗/使用 可为null的布尔值）</h4><pre><code>fun useNullableBoolean(b: Boolean?) {
-
-    if (b == true) {
-        //b is true
-    } else {
-        //b is false or null
-    }
-}</code></pre><h4 id="30、Swapping-two-variables（交换两个变量）"><a href="#30、Swapping-two-variables（交换两个变量）" class="headerlink" title="30、Swapping two variables（交换两个变量）"></a>30、Swapping two variables（交换两个变量）</h4><pre><code>fun swap() {
-    var a = 1;
-    var b = 1;
-
-    a = b.also {
-        b = a
-    }
-}</code></pre>
             </div>
             <hr/>
 
@@ -877,9 +1315,9 @@ inline fun &lt;reified T : Any&gt; Gson.fromJson(json: JsonElement): T = this.fr
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Kotlin idioms》
+                    《模版模式》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2017/06/13/kotlin/Kotlin idioms/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/08/09/DesignPattern/设计模式-模版模式/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Air
             </a> 采用
@@ -919,45 +1357,51 @@ inline fun &lt;reified T : Any&gt; Gson.fromJson(json: JsonElement): T = this.fr
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2017/06/15/kotlin/Using scope functions/">
+                <a href="/2019/08/09/DesignPattern/设计模式-模版模式/">
                     <div class="card-image">
                         
-                        <img src="/images/kotlin_logo.jpg" class="responsive-img" alt="Using scope functions">
+                        <img src="/images/design_pattern_one_logo.jpg" class="responsive-img" alt="模版模式">
                         
-                        <span class="card-title">Using scope functions</span>
+                        <span class="card-title">模版模式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Using scope functions apply/with/run/also/let + takeIf/takeUnless
+                            设计模式-单例模式
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2017-06-15
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-09
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Android/" class="post-category" target="_blank">
-                                    Android
+                            <a href="/categories/软件设计/" class="post-category" target="_blank">
+                                    软件设计
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Kotlin/" target="_blank">
-                        <span class="chip bg-color">Kotlin</span>
+                    <a href="/tags/Java/" target="_blank">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/DesignPatterns/" target="_blank">
+                        <span class="chip bg-color">DesignPatterns</span>
                     </a>
                     
                 </div>
@@ -971,30 +1415,30 @@ inline fun &lt;reified T : Any&gt; Gson.fromJson(json: JsonElement): T = this.fr
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2017/06/11/kotlin/Kotlin basic syntax/">
+                <a href="/2019/08/06/DailyNote/娱乐至死/">
                     <div class="card-image">
                         
-                        <img src="/images/kotlin_logo.jpg" class="responsive-img" alt="Kotlin basic syntax">
+                        <img src="/images/daily_note_logo.jpg" class="responsive-img" alt="娱乐至死">
                         
-                        <span class="card-title">Kotlin basic syntax</span>
+                        <span class="card-title">娱乐至死</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Kotlin basic syntax
+                            时间管理
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2017-06-11
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-06
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Android/" class="post-category" target="_blank">
-                                    Android
+                            <a href="/categories/随记/" class="post-category" target="_blank">
+                                    随记
                                 </a>
                             
                             
@@ -1004,8 +1448,8 @@ inline fun &lt;reified T : Any&gt; Gson.fromJson(json: JsonElement): T = this.fr
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Kotlin/" target="_blank">
-                        <span class="chip bg-color">Kotlin</span>
+                    <a href="/tags/日常随记/" target="_blank">
+                        <span class="chip bg-color">日常随记</span>
                     </a>
                     
                 </div>
