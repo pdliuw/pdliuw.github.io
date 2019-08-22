@@ -419,7 +419,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        479
+                        567
                     </div>
                     
 
@@ -513,6 +513,9 @@ void main() {
 </blockquote>
 <blockquote>
 <p>问题：<br>当实际测试时并非如描述2那般一模一样。如上图代码所示，在didChangeAppLifecycleState函数中调用setState，在build中显示AppLifecycleState(也就是widget的生命周期状态)当Widget生命周期状态切换为inactive或paused状态时，实际测试出的结果是，并没有调用build函数进行重绘</p>
+</blockquote>
+<blockquote>
+<p>进一步更新上述测试进度<br>出现上方的问题的原因在与：Flutter生命周期的转换会影响到build函数的调用时机（上方在build函数中输入的数据无法根据生命周期的变动而变动就是因为在某些生命周期内build是没有备调用渲染！）。</p>
 </blockquote>
 <hr>
 <p>未完待续。。。</p>
