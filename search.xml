@@ -47,9 +47,9 @@
       
         <tags>
             
-            <tag> Flutter </tag>
-            
             <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
             
         </tags>
       
@@ -101,9 +101,9 @@
             
             <tag> DesignPatterns </tag>
             
-            <tag> Flutter </tag>
-            
             <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
             
             <tag> MVP </tag>
             
@@ -132,9 +132,9 @@
       
         <tags>
             
-            <tag> Flutter </tag>
-            
             <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
             
         </tags>
       
@@ -180,7 +180,7 @@
       <link href="/2018/09/13/flutter/Flutter%20lifecycle/"/>
       <url>/2018/09/13/flutter/Flutter%20lifecycle/</url>
       
-        <content type="html"><![CDATA[<p>Flutter 生命周期实际测试出来的与Flutter官网描述的有些不同，具体往下看</p><hr><h3 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h3><blockquote><p> 1、Flutter 生命周期<br> 2、Todo：自己实测与Flutter官网描述出现的不一致情况！</p></blockquote><h3 id="1、Flutter-生命周期"><a href="#1、Flutter-生命周期" class="headerlink" title="1、Flutter 生命周期"></a>1、Flutter 生命周期</h3><blockquote><p>官网介绍如下</p></blockquote><p>AppLifecycleState：Flutter widget 生命周期状态</p><p>–官网介绍如下图：<br>|<img src="https://upload-images.jianshu.io/upload_images/8264781-49fed0ba677c59c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1080" alt="Flutter 官网介绍生命周期.png">|<br>|:-|</p><blockquote><p>实测</p></blockquote><p>1.1:AppLifecycleState.resumed  </p><p>可见，并且响应用户输入</p><p>1.2:AppLifecycleState.inactive<br>或许可见，但一定不响应用户输入；此状态表明，应用程序处于非活动状态；在Android和IOS上测试都会出现：inactive出现在resumed和paused之前。</p><p>1.3:AppLifecycleState.paused<br>不可见，进入后台；此状态表明，将随时进入suspending</p><p>1.4:AppLifecycleState.suspending<br>在Android和IOS上，暂时未测出此状态的出现</p><h3 id="2、Todo"><a href="#2、Todo" class="headerlink" title="2、Todo"></a>2、Todo</h3><blockquote><p>2、Todo：自己实测与Flutter官网描述出现的不一致情况！</p></blockquote><p>官网测试代码</p><pre><code>import &apos;package:flutter/widgets.dart&apos;;class LifecycleWatcher extends StatefulWidget {  @override  _LifecycleWatcherState createState() =&gt; _LifecycleWatcherState();}class _LifecycleWatcherState extends State&lt;LifecycleWatcher&gt; with WidgetsBindingObserver {  AppLifecycleState _lastLifecycleState;  @override  void initState() {    super.initState();    WidgetsBinding.instance.addObserver(this);  }  @override  void dispose() {    WidgetsBinding.instance.removeObserver(this);    super.dispose();  }  @override  void didChangeAppLifecycleState(AppLifecycleState state) {    setState(() {      _lastLifecycleState = state;    });  }  @override  Widget build(BuildContext context) {    if (_lastLifecycleState == null)      return Text(&apos;This widget has not observed any lifecycle changes.&apos;, textDirection: TextDirection.ltr);    return Text(&apos;The most recent lifecycle state this widget observed was: $_lastLifecycleState.&apos;,        textDirection: TextDirection.ltr);  }}void main() {  runApp(Center(child: LifecycleWatcher()));}</code></pre><blockquote><p>描述1:<br>此测试代码不够完善，因为：“此代码只能测试resumed一个状态，其他的状态是测试不出来的”</p></blockquote><blockquote><p>描述2:<br>Flutter的渲染机制：调用setState((){})函数时，会启动Flutter重绘制机制，进而调用build(BuildContext context)函数。</p></blockquote><blockquote><p>问题：<br>当实际测试时并非如描述2那般一模一样。如上图代码所示，在didChangeAppLifecycleState函数中调用setState，在build中显示AppLifecycleState(也就是widget的生命周期状态)当Widget生命周期状态切换为inactive或paused状态时，实际测试出的结果是，并没有调用build函数进行重绘</p></blockquote><hr><p>未完待续。。。</p>]]></content>
+        <content type="html"><![CDATA[<p>Flutter 生命周期实际测试出来的与Flutter官网描述的有些不同，具体往下看</p><hr><h3 id="目录："><a href="#目录：" class="headerlink" title="目录："></a>目录：</h3><blockquote><p> 1、Flutter 生命周期<br> 2、Todo：自己实测与Flutter官网描述出现的不一致情况！</p></blockquote><h3 id="1、Flutter-生命周期"><a href="#1、Flutter-生命周期" class="headerlink" title="1、Flutter 生命周期"></a>1、Flutter 生命周期</h3><blockquote><p>官网介绍如下</p></blockquote><p>AppLifecycleState：Flutter widget 生命周期状态</p><p>–官网介绍如下图：<br>|<img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter/flutter_lifecycle_official.png?raw=true" alt="Flutter 官网介绍生命周期.png">|<br>|:-|</p><blockquote><p>实测</p></blockquote><p>1.1:AppLifecycleState.resumed  </p><p>可见，并且响应用户输入</p><p>1.2:AppLifecycleState.inactive<br>或许可见，但一定不响应用户输入；此状态表明，应用程序处于非活动状态；在Android和IOS上测试都会出现：inactive出现在resumed和paused之前。</p><p>1.3:AppLifecycleState.paused<br>不可见，进入后台；此状态表明，将随时进入suspending</p><p>1.4:AppLifecycleState.suspending<br>在Android和IOS上，暂时未测出此状态的出现</p><h3 id="2、Todo"><a href="#2、Todo" class="headerlink" title="2、Todo"></a>2、Todo</h3><blockquote><p>2、Todo：自己实测与Flutter官网描述出现的不一致情况！</p></blockquote><p>官网测试代码</p><pre><code>import &apos;package:flutter/widgets.dart&apos;;class LifecycleWatcher extends StatefulWidget {  @override  _LifecycleWatcherState createState() =&gt; _LifecycleWatcherState();}class _LifecycleWatcherState extends State&lt;LifecycleWatcher&gt; with WidgetsBindingObserver {  AppLifecycleState _lastLifecycleState;  @override  void initState() {    super.initState();    WidgetsBinding.instance.addObserver(this);  }  @override  void dispose() {    WidgetsBinding.instance.removeObserver(this);    super.dispose();  }  @override  void didChangeAppLifecycleState(AppLifecycleState state) {    setState(() {      _lastLifecycleState = state;    });  }  @override  Widget build(BuildContext context) {    if (_lastLifecycleState == null)      return Text(&apos;This widget has not observed any lifecycle changes.&apos;, textDirection: TextDirection.ltr);    return Text(&apos;The most recent lifecycle state this widget observed was: $_lastLifecycleState.&apos;,        textDirection: TextDirection.ltr);  }}void main() {  runApp(Center(child: LifecycleWatcher()));}</code></pre><blockquote><p>描述1:<br>此测试代码不够完善，因为：“此代码只能测试resumed一个状态，其他的状态是测试不出来的”</p></blockquote><blockquote><p>描述2:<br>Flutter的渲染机制：调用setState((){})函数时，会启动Flutter重绘制机制，进而调用build(BuildContext context)函数。</p></blockquote><blockquote><p>问题：<br>当实际测试时并非如描述2那般一模一样。如上图代码所示，在didChangeAppLifecycleState函数中调用setState，在build中显示AppLifecycleState(也就是widget的生命周期状态)当Widget生命周期状态切换为inactive或paused状态时，实际测试出的结果是，并没有调用build函数进行重绘</p></blockquote><hr><p>未完待续。。。</p>]]></content>
       
       
       <categories>
@@ -192,9 +192,9 @@
       
         <tags>
             
-            <tag> Flutter </tag>
-            
             <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
             
         </tags>
       
@@ -219,9 +219,9 @@
       
         <tags>
             
-            <tag> Flutter </tag>
-            
             <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
             
         </tags>
       
@@ -246,9 +246,9 @@
       
         <tags>
             
-            <tag> Flutter </tag>
-            
             <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
             
         </tags>
       
@@ -273,9 +273,9 @@
       
         <tags>
             
-            <tag> Flutter </tag>
-            
             <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
             
         </tags>
       
@@ -300,9 +300,9 @@
       
         <tags>
             
-            <tag> Flutter </tag>
-            
             <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
             
         </tags>
       
@@ -327,9 +327,9 @@
       
         <tags>
             
-            <tag> Flutter </tag>
-            
             <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
             
         </tags>
       
@@ -354,9 +354,9 @@
       
         <tags>
             
-            <tag> Flutter </tag>
-            
             <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
             
         </tags>
       
