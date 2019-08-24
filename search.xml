@@ -440,31 +440,6 @@
     
     
     <entry>
-      <title>时间管理</title>
-      <link href="/2017/10/06/manage/time/TimeManager/"/>
-      <url>/2017/10/06/manage/time/TimeManager/</url>
-      
-        <content type="html"><![CDATA[<p><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/totem_four_logo.jpg?raw=true" alt></p><h3 id="时间管理"><a href="#时间管理" class="headerlink" title="时间管理"></a>时间管理</h3><p>时间的管理是为了追求时间的使用效率的最大化！</p><hr><p><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/personal_ability_promote/%E6%97%B6%E9%97%B4%E5%AE%89%E6%8E%92%E8%A1%A8.png?raw=true" alt="时间管理"></p><hr>]]></content>
-      
-      
-      <categories>
-          
-          <category> 管理 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 时间 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Higher-Order Functions and Lambdas</title>
       <link href="/2017/06/19/kotlin/Higher-Order%20Functions%20and%20Lambdas/"/>
       <url>/2017/06/19/kotlin/Higher-Order%20Functions%20and%20Lambdas/</url>
@@ -660,6 +635,8 @@
             
             <tag> DesignPatterns </tag>
             
+            <tag> MVP </tag>
+            
             <tag> RxJava </tag>
             
             <tag> Retrofit </tag>
@@ -667,8 +644,6 @@
             <tag> OKHttp </tag>
             
             <tag> Glide </tag>
-            
-            <tag> MVP </tag>
             
         </tags>
       
