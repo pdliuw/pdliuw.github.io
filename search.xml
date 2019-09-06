@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>阿里开源Flutter开发帮助之-Flutter Go！</title>
+      <link href="/2019/09/06/flutter/Flutter%20Go/"/>
+      <url>/2019/09/06/flutter/Flutter%20Go/</url>
+      
+        <content type="html"><![CDATA[<hr><p><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/totem_four_logo.jpg?raw=true" alt="图腾"></p><hr><p><strong>Flutter Go</strong></p><p>一个开发者帮助 APP,包含 Flutter 常用 140+ 组件的demo 演示与中文文档</p><hr><p>帮助Flutter开发者熟悉、精通Flutter，并开发Flutter！</p><h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ol><li>Flutter Go介绍</li><li>Flutter Go外链</li></ol><h4 id="1-Flutter-Go介绍"><a href="#1-Flutter-Go介绍" class="headerlink" title="1.  Flutter Go介绍"></a>1.  Flutter Go介绍</h4><ol><li><p>Flutter Go: 属阿里出品</p></li><li><p>Flutter Go: 是一个帮助Flutter开发者开发的演示Flutter的演示DemoApp</p></li><li><p>Flutter Go的优势:</p></li></ol><ul><li>详解常用 widget 多达 140+ 个</li><li>配套 Demo 详解 widget 常规用法</li><li>集中整合 widget 案例，一个 APP 搞定所有常用 widget 的用法</li><li>持续迭代 ‘追新’ 官方版本</li></ul><p><img src alt="关于Flutter"><br><img src alt="关于Flutter"></p><ol start="4"><li>Flutter Go App 预览</li></ol><table><thead><tr><th align="left"><img src="https://camo.githubusercontent.com/ffae0b94a434cb962babdb7f48db28060fb9f5ea/68747470733a2f2f696d672e616c6963646e2e636f6d2f7466732f5442314d6f694e457854704b31526a535a464758586348714658612d3336322d3735312e676966" alt></th><th align="left"><img src="https://camo.githubusercontent.com/9fda71677b2f0ec7602d8a9442804b07b32ab2af/68747470733a2f2f696d672e616c6963646e2e636f6d2f7466732f5442316f65696342686a614b31526a535a4641585862644c4658612d3334352d3731372e676966" alt></th><th align="left"><img src="https://camo.githubusercontent.com/b65b06d4c09cef5b04a5db48ec4c7f45a772f5fe/68747470733a2f2f696d672e616c6963646e2e636f6d2f7466732f544231574a4e75426d7a714b31526a535a506358586254657058612d3334352d3731372e676966" alt></th><th align="left"><img src="https://camo.githubusercontent.com/94e8fd00c423836c73e6ee45f5e98b040cd98ffa/68747470733a2f2f696d672e616c6963646e2e636f6d2f7466732f54423133586833426b766f4b31526a535a464e585863784d5658612d3334352d3731372e676966" alt></th></tr></thead></table><h4 id="2-Flutter-Go外链"><a href="#2-Flutter-Go外链" class="headerlink" title="2.  Flutter Go外链"></a>2.  Flutter Go外链</h4><p>Flutter Go的内容以Flutter Go官网最新更新为准！</p><ul><li><a href="https://flutter-go.pub/website/" target="_blank" rel="noopener">Flutter Go 官网</a></li><li><a href="https://github.com/alibaba/flutter-go" target="_blank" rel="noopener">Flutter Go 仓库</a></li></ul><hr>]]></content>
+      
+      
+      <categories>
+          
+          <category> 跨平台 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>模版模式</title>
       <link href="/2019/08/09/DesignPattern/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A8%A1%E7%89%88%E6%A8%A1%E5%BC%8F/"/>
       <url>/2019/08/09/DesignPattern/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%A8%A1%E7%89%88%E6%A8%A1%E5%BC%8F/</url>
