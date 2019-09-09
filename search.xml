@@ -4,7 +4,7 @@
   
     
     <entry>
-      <title>阿里开源Flutter开发帮助之-Flutter Go！</title>
+      <title>阿里--Flutter Go</title>
       <link href="/2019/09/06/flutter/Flutter%20Go/"/>
       <url>/2019/09/06/flutter/Flutter%20Go/</url>
       
@@ -188,9 +188,9 @@
             
             <tag> Java </tag>
             
-            <tag> Kotlin </tag>
-            
             <tag> Dart </tag>
+            
+            <tag> Kotlin </tag>
             
             <tag> Swift </tag>
             
@@ -662,6 +662,8 @@
             
             <tag> DesignPatterns </tag>
             
+            <tag> MVP </tag>
+            
             <tag> RxJava </tag>
             
             <tag> Retrofit </tag>
@@ -669,8 +671,6 @@
             <tag> OKHttp </tag>
             
             <tag> Glide </tag>
-            
-            <tag> MVP </tag>
             
         </tags>
       
