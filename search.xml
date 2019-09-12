@@ -689,6 +689,8 @@
             
             <tag> DesignPatterns </tag>
             
+            <tag> MVP </tag>
+            
             <tag> RxJava </tag>
             
             <tag> Retrofit </tag>
@@ -696,8 +698,6 @@
             <tag> OKHttp </tag>
             
             <tag> Glide </tag>
-            
-            <tag> MVP </tag>
             
         </tags>
       
