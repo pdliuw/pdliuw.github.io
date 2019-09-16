@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Flutter 1.9 Web develop！</title>
+      <link href="/2019/09/16/flutter/Flutter1.9%20Web/"/>
+      <url>/2019/09/16/flutter/Flutter1.9%20Web/</url>
+      
+        <content type="html"><![CDATA[<hr><p><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/totem_four_logo.jpg?raw=true" alt="图腾"></p><hr><p><strong>Flutter 1.9 -Web develop</strong></p><p>随着Flutter1.9 的发布！Flutter web 支持现已成功合并到 Flutter 的主 repo，自此以后，开发者只需使用同一套基准代码，便可为移动平台、桌面端和网页端开发应用。此外，团队也分享了来自全球互联网公司腾讯的成功案例，让现场观众体验了一把 Flutter 的蓬勃活力，亲眼见证越来越多的应用正在通过 Flutter 缔造精彩。</p><h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ol><li>在 web 平台运行 Flutter</li><li>Flutter 开发 Web 应用</li><li>Flutter 1.9 外链!</li></ol><h4 id="1-在-web-平台运行-Flutter"><a href="#1-在-web-平台运行-Flutter" class="headerlink" title="1.  在 web 平台运行 Flutter"></a>1.  在 web 平台运行 Flutter</h4><p>最后，我们很高兴地宣布，flutter_web 这个 repo 已经完成了自己的使命，现在所有的 web 支持已经合并到 flutter 的主 repo！这意味着，如果您通过 master 或 dev 渠道安装最新版本的 Flutter 构建，您只需要运行 flutter run -d chrome 就可以使用最新的试验版本 Flutter 来开发 web 应用。</p><p>flutter_web<br><a href="https://github.com/flutter/flutter_web" target="_blank" rel="noopener">https://github.com/flutter/flutter_web</a><br>flutter 的主 repo<br><a href="https://github.com/flutter/flutter" target="_blank" rel="noopener">https://github.com/flutter/flutter</a></p><p>在您创建项目时，Flutter 会通过一个最小的 web/index.html 文件来生成一个 web 运行引擎 (web runner)，其中 web/index.html 文件主要用于自举 (bootstrap) 基于 web 编译的 Flutter 代码，有了这文件后，您可使用 Flutter CLI 工具或 IDE 中的 Flutter 插件来编辑或运行针对 web 平台开发的 Flutter 应用。</p><p><img src="https://3.bp.blogspot.com/-wyaZzuonB-A/XXZ5r-N3GzI/AAAAAAAAH0k/aenDvVIxraE51FDVE7eqGG43NrMuoj4XACLcBGAs/s1600/vscode.png" alt></p><p>上图为启用了 Flutter web 支持的 VS Code 界面截屏。请注意 web/index.html 文件和顶部的下拉列表允许您选择 Chrome 作为目标设备。尽管 Flutter 的 web 支持还不成熟，但是我们在 Flutter 1.9 中朝着正确的方向迈进了一大步。</p><h4 id="2-Flutter-开发-Web-应用"><a href="#2-Flutter-开发-Web-应用" class="headerlink" title="2.  Flutter 开发 Web 应用"></a>2.  Flutter 开发 Web 应用</h4><p>流程步骤：</p><ol><li><p>确定当前的Flutter“版本”和“渠道”</p><p>*flutter version: &gt;=1.9.1  (如版本需升级，使用flutter upgrade 进行升级)</p><p>*flutter channel: master or dev （使用 flutter channel &lt;渠道/分支的名称&gt; 进行切换渠道/分支）</p></li><li><p>执行命令：flutter run -d chrome</p><p>之后将会出现提示信息：Downloading Web SDK… </p></li><li><p>执行命令：flutter create .</p><p>注意：flutter create 后跟随“ .”</p></li><li><p>执行命令：flutter run -d chrome</p><p>在打开Chrome浏览器的情况下，即可看到调试信息!</p></li></ol><table><thead><tr><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter/flutter_web_start_design_before.gif?raw=true" alt="使用默认样式的效果"></th><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter/flutter_web_start_design_after.gif?raw=true" alt="自主设计样式的效果"></th></tr></thead></table><h4 id="3-Flutter-1-9-外链"><a href="#3-Flutter-1-9-外链" class="headerlink" title="3.  Flutter 1.9 外链!"></a>3.  Flutter 1.9 外链!</h4><p>关于Flutter 1.9内容，请以官方最新更新为准！</p><ol><li><p><strong><a href="https://developers.googleblog.com/2019/09/flutter-news-from-gdd-china-flutter1.9.html?m=1" target="_blank" rel="noopener">Flutter 1.9 Google社区资料链接</a></strong></p></li><li><p><strong><a href="https://mp.weixin.qq.com/s/uajbjbVYmcBHtq3Jv8tgzg" target="_blank" rel="noopener">Flutter 1.9 微信公众号资料链接</a></strong></p></li></ol><hr>]]></content>
+      
+      
+      <categories>
+          
+          <category> 跨平台 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Flutter 1.9 正式发布！</title>
       <link href="/2019/09/11/flutter/Flutter%20Web%20Release/"/>
       <url>/2019/09/11/flutter/Flutter%20Web%20Release/</url>
@@ -153,8 +180,6 @@
       
         <tags>
             
-            <tag> DesignPatterns </tag>
-            
             <tag> Dart </tag>
             
             <tag> Flutter </tag>
@@ -162,6 +187,8 @@
             <tag> MVP </tag>
             
             <tag> Dio </tag>
+            
+            <tag> DesignPatterns </tag>
             
         </tags>
       
@@ -687,9 +714,9 @@
             
             <tag> Java </tag>
             
-            <tag> DesignPatterns </tag>
-            
             <tag> MVP </tag>
+            
+            <tag> DesignPatterns </tag>
             
             <tag> RxJava </tag>
             
