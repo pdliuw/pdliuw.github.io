@@ -4,23 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Flutter RangeSlider, Air">
+    <meta name="keywords" content="Flutter适配多平台, Air">
     <meta name="description" content="
 
-Flutter RangeSlider
-支持：区域选择，浮动提示，最小滑动单位设置
-本篇：最小值0.0，最大值100.0，滑动单位10.0，
 
-效果图：
-
-
-
-
-
-
-
-代码：核心代码；Widget getRangeSlider() {
-">
+Flutter适配 Ios、Android、Web平台| 全平台创新开发体验
+随着Flutter1.9 的发布！Flutter web 支持现已成功合并到 Flutter 的主 repo，自此以后，开发者只需使用同一套基准代码，便可为">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -28,7 +17,7 @@ Flutter RangeSlider
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Flutter RangeSlider | Air</title>
+    <title>Flutter适配多平台 | Air</title>
     <link rel="icon" type="image/jpeg" href="/medias/avatar.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -294,7 +283,7 @@ Flutter RangeSlider
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Flutter RangeSlider
+                        Flutter适配多平台
                     </div>
                 </div>
             </div>
@@ -433,21 +422,21 @@ Flutter RangeSlider
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-06-10
+                    2019-09-17
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        434
+                        252
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        2 分
+                        1 分
                     </div>
                     
                 
@@ -465,154 +454,26 @@ Flutter RangeSlider
             <div id="articleContent">
                 <hr>
 <p><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/totem_four_logo.jpg?raw=true" alt="图腾"></p>
-<p>Flutter RangeSlider</p>
-<p>支持：区域选择，浮动提示，最小滑动单位设置</p>
-<p>本篇：最小值0.0，最大值100.0，滑动单位10.0，</p>
 <hr>
-<h4 id="效果图："><a href="#效果图：" class="headerlink" title="效果图："></a>效果图：</h4><table>
-<thead>
-<tr>
-<th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter/flutter_rangeSlide_design_before.gif?raw=true" alt="RangeSlider-默认"></th>
-<th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter/flutter_rangeSlide_design_after.gif?raw=true" alt="RangeSlider-设计后"></th>
-</tr>
-</thead>
-</table>
-<h4 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h4><h5 id="核心代码；"><a href="#核心代码；" class="headerlink" title="核心代码；"></a>核心代码；</h5><pre><code>Widget getRangeSlider() {
-  return SliderTheme(
-    //样式的设计
-    data: SliderThemeData(
-      inactiveTickMarkColor: Colors.red,
-      inactiveTrackColor: Colors.yellow,
-    ),
-    child: RangeSlider(
-      //滑动时上方的提示标签
-      labels: RangeLabels(&quot;$rangeSlideMin&quot;, &quot;$rangeSlideMax&quot;),
-      //当前Widget滑块的值
-      values: RangeValues(rangeSlideMin, rangeSlideMax),
-      //最小值
-      min: 0,
-      //最大值
-      max: 100,
-      //最小滑动单位值
-      divisions: 10,
-      //未滑动的颜色
-      inactiveColor: Colors.grey,
-      //活动的颜色
-      activeColor: Colors.blue,
-      //滑动事件
-      onChanged: (RangeValues values) {
-        //滑动时更新widget的状态值
-        _rangeSlideChange(values.start, values.end);
-      },
-    ),
-  );
-}</code></pre><h5 id="全部代码："><a href="#全部代码：" class="headerlink" title="全部代码："></a>全部代码：</h5><pre><code>import &apos;package:flutter/material.dart&apos;;
-
-void main() =&gt; runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: &apos;Flutter Demo&apos;,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: &apos;Flutter Demo Home Page&apos;),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() =&gt; _MyHomePageState();
-}
-
-class _MyHomePageState extends State&lt;MyHomePage&gt; {
-  int _counter = 0;
-
-  double rangeSlideMin = 0;
-  double rangeSlideMax = 10;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  void _rangeSlideChange(min, max) {
-    setState(() {
-      rangeSlideMin = min;
-      rangeSlideMax = max;
-    });
-  }
-
-  Widget getRangeSlider() {
-    return SliderTheme(
-      //样式的设计
-      data: SliderThemeData(
-        inactiveTickMarkColor: Colors.red,
-        inactiveTrackColor: Colors.yellow,
-      ),
-      child: RangeSlider(
-        //滑动时上方的提示标签
-        labels: RangeLabels(&quot;$rangeSlideMin&quot;, &quot;$rangeSlideMax&quot;),
-        //当前Widget滑块的值
-        values: RangeValues(rangeSlideMin, rangeSlideMax),
-        //最小值
-        min: 0,
-        //最大值
-        max: 100,
-        //最小滑动单位值
-        divisions: 10,
-        //未滑动的颜色
-        inactiveColor: Colors.grey,
-        //活动的颜色
-        activeColor: Colors.blue,
-        //滑动事件
-        onChanged: (RangeValues values) {
-          //滑动时更新widget的状态值
-          _rangeSlideChange(values.start, values.end);
-        },
-      ),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: &lt;Widget&gt;[
-            Text(
-              &apos;You have pushed the button this many times:&apos;,
-            ),
-            Text(
-              &apos;$_counter&apos;,
-              style: Theme.of(context).textTheme.display1,
-            ),
-            getRangeSlider(),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: &apos;Increment&apos;,
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
-  }
-}</code></pre><hr>
-<p>未完待续。。。</p>
+<p><strong>Flutter适配 Ios、Android、Web平台| 全平台创新开发体验</strong></p>
+<p>随着Flutter1.9 的发布！Flutter web 支持现已成功合并到 Flutter 的主 repo，自此以后，开发者只需使用同一套基准代码，便可为移动平台、桌面端和网页端开发应用。此外，团队也分享了来自全球互联网公司腾讯的成功案例，让现场观众体验了一把 Flutter 的蓬勃活力，亲眼见证越来越多的应用正在通过 Flutter 缔造精彩。</p>
+<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ol>
+<li>Flutter 适配多平台效果</li>
+<li>Flutter 适配多平台开发</li>
+</ol>
+<h4 id="1-Flutter-适配多平台效果"><a href="#1-Flutter-适配多平台效果" class="headerlink" title="1.  Flutter 适配多平台效果"></a>1.  Flutter 适配多平台效果</h4><h4 id="2-Flutter-适配多平台开发"><a href="#2-Flutter-适配多平台开发" class="headerlink" title="2.  Flutter 适配多平台开发"></a>2.  Flutter 适配多平台开发</h4><ol>
+<li>创建项目，并初步运行后得到下图中的效果</li>
+</ol>
+<p>此处……省略若干“创建项目和运行项目”的步骤</p>
+<p><img src alt="项目初步效果"></p>
+<h4 id="3-Flutter-1-9-外链"><a href="#3-Flutter-1-9-外链" class="headerlink" title="3.  Flutter 1.9 外链!"></a>3.  Flutter 1.9 外链!</h4><p>关于Flutter 1.9内容，请以官方最新更新为准！</p>
+<ol>
+<li><p><strong><a href="https://developers.googleblog.com/2019/09/flutter-news-from-gdd-china-flutter1.9.html?m=1" target="_blank" rel="noopener">Flutter 1.9 Google社区资料链接</a></strong></p>
+</li>
+<li><p><strong><a href="https://mp.weixin.qq.com/s/uajbjbVYmcBHtq3Jv8tgzg" target="_blank" rel="noopener">Flutter 1.9 微信公众号资料链接</a></strong></p>
+</li>
+</ol>
+<hr>
 
             </div>
             <hr/>
@@ -771,9 +632,9 @@ class _MyHomePageState extends State&lt;MyHomePage&gt; {
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Flutter RangeSlider》
+                    《Flutter适配多平台》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/06/10/flutter/Flutter RangeSlider/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/09/17/flutter/Flutter适配多平台/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Air
             </a> 采用
@@ -813,49 +674,51 @@ class _MyHomePageState extends State&lt;MyHomePage&gt; {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2019/08/09/DesignPattern/设计模式-模版模式/">
+                <a href="/2019/09/17/flutter/Flutter适配多平台/">
                     <div class="card-image">
                         
-                        <img src="/images/design_pattern_one_logo.jpg" class="responsive-img" alt="模版模式">
+                        <img src="/images/flutter_logo.jpg" class="responsive-img" alt="Flutter适配多平台">
                         
-                        <span class="card-title">模版模式</span>
+                        <span class="card-title">Flutter适配多平台</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            设计模式-单例模式
+                            Flutter适配 Ios、Android、Web平台| 全平台创新开发体验
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-09
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/软件设计/" class="post-category" target="_blank">
-                                    软件设计
+                            <a href="/categories/跨平台/" class="post-category" target="_blank">
+                                    跨平台
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/" target="_blank">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/Dart/" target="_blank">
+                        <span class="chip bg-color">Dart</span>
                     </a>
                     
-                    <a href="/tags/DesignPatterns/" target="_blank">
-                        <span class="chip bg-color">DesignPatterns</span>
+                    <a href="/tags/Flutter/" target="_blank">
+                        <span class="chip bg-color">Flutter</span>
                     </a>
                     
                 </div>
@@ -869,30 +732,30 @@ class _MyHomePageState extends State&lt;MyHomePage&gt; {
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/05/06/manage/ability/AbilityManager/">
+                <a href="/2019/09/16/flutter/Flutter1.9 Web/">
                     <div class="card-image">
                         
-                        <img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/totem_two_logo.jpg?raw=true" class="responsive-img" alt="能力陷阱">
+                        <img src="/images/flutter_logo.jpg" class="responsive-img" alt="Flutter 1.9 Web develop！">
                         
-                        <span class="card-title">能力陷阱</span>
+                        <span class="card-title">Flutter 1.9 Web develop！</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            过去的成功会造成一个能力陷阱:你喜欢你的工作，因此就会做很多这样的工作，从而越来越擅长这份工作;当你把时间分配在你所擅长的事情上，你就会花较少的时间来做其他重要的事情;久而久之，你就会需要付出更多的代价去学习新的东西。
+                            Flutter 1.9 Web develop！| 全平台创新开发体验
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-05-06
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-09-16
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/管理/" class="post-category" target="_blank">
-                                    管理
+                            <a href="/categories/跨平台/" class="post-category" target="_blank">
+                                    跨平台
                                 </a>
                             
                             
@@ -902,8 +765,12 @@ class _MyHomePageState extends State&lt;MyHomePage&gt; {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/能力/" target="_blank">
-                        <span class="chip bg-color">能力</span>
+                    <a href="/tags/Dart/" target="_blank">
+                        <span class="chip bg-color">Dart</span>
+                    </a>
+                    
+                    <a href="/tags/Flutter/" target="_blank">
+                        <span class="chip bg-color">Flutter</span>
                     </a>
                     
                 </div>
