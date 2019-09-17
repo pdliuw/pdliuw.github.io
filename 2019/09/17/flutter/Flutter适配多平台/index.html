@@ -429,7 +429,7 @@ Flutter适配 Ios、Android、Web平台| 全平台创新开发体验
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        252
+                        372
                     </div>
                     
 
@@ -461,12 +461,30 @@ Flutter适配 Ios、Android、Web平台| 全平台创新开发体验
 <li>Flutter 适配多平台效果</li>
 <li>Flutter 适配多平台开发</li>
 </ol>
-<h4 id="1-Flutter-适配多平台效果"><a href="#1-Flutter-适配多平台效果" class="headerlink" title="1.  Flutter 适配多平台效果"></a>1.  Flutter 适配多平台效果</h4><h4 id="2-Flutter-适配多平台开发"><a href="#2-Flutter-适配多平台开发" class="headerlink" title="2.  Flutter 适配多平台开发"></a>2.  Flutter 适配多平台开发</h4><ol>
-<li>创建项目，并初步运行后得到下图中的效果</li>
-</ol>
+<h4 id="1-Flutter-适配多平台效果"><a href="#1-Flutter-适配多平台效果" class="headerlink" title="1.  Flutter 适配多平台效果"></a>1.  Flutter 适配多平台效果</h4><h4 id="2-Flutter-适配多平台开发"><a href="#2-Flutter-适配多平台开发" class="headerlink" title="2.  Flutter 适配多平台开发"></a>2.  Flutter 适配多平台开发</h4><p><strong>使用Flutter对多平台进行初步的开发设计！</strong></p>
+<ol>
+<li><p>创建项目，并初步运行后得到下图中的效果</p>
 <p>此处……省略若干“创建项目和运行项目”的步骤</p>
-<p><img src alt="项目初步效果"></p>
-<h4 id="3-Flutter-1-9-外链"><a href="#3-Flutter-1-9-外链" class="headerlink" title="3.  Flutter 1.9 外链!"></a>3.  Flutter 1.9 外链!</h4><p>关于Flutter 1.9内容，请以官方最新更新为准！</p>
+<p><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter/flutter_mobile_and_web/flutter_mobile_and_web.gif?raw=true" alt="项目初步效果"></p>
+</li>
+<li><p>为各个平台增加“平台区分”</p>
+</li>
+</ol>
+<ul>
+<li><p>平台的区分</p>
+<p>  注意：<br>  Android和IOS加入以下代码运行良好！Web平台加入以下代码将会停留在运行状态也就是运行不起来</p>
+<p>  错误信息：<br>  Skipping compiling flutter_mobile_and_web_app|lib/main_web_entrypoint.dart with ddc because some of its<br>  transitive libraries have sdk dependencies that not supported on this platform:</p>
+</li>
+</ul>
+<pre><code>    import &apos;dart:io&apos;;
+
+    String getPlatformFlag(){
+        return Platform.operatingSystem;
+    }
+
+
+
+![项目增加平台区分后效果]()    </code></pre><h4 id="3-Flutter-1-9-外链"><a href="#3-Flutter-1-9-外链" class="headerlink" title="3.  Flutter 1.9 外链!"></a>3.  Flutter 1.9 外链!</h4><p>关于Flutter 1.9内容，请以官方最新更新为准！</p>
 <ol>
 <li><p><strong><a href="https://developers.googleblog.com/2019/09/flutter-news-from-gdd-china-flutter1.9.html?m=1" target="_blank" rel="noopener">Flutter 1.9 Google社区资料链接</a></strong></p>
 </li>
@@ -891,7 +909,7 @@ Flutter适配 Ios、Android、Web平台| 全平台创新开发体验
 
             
                 &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-                <span class="white-color">25k</span>
+                <span class="white-color">25.1k</span>
             
 
             
