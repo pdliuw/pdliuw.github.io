@@ -8,7 +8,7 @@
       <link href="/2019/09/17/flutter/Flutter%E9%80%82%E9%85%8D%E5%A4%9A%E5%B9%B3%E5%8F%B0/"/>
       <url>/2019/09/17/flutter/Flutter%E9%80%82%E9%85%8D%E5%A4%9A%E5%B9%B3%E5%8F%B0/</url>
       
-        <content type="html"><![CDATA[<hr><p><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/totem_four_logo.jpg?raw=true" alt="图腾"></p><hr><p><strong>Flutter适配 Ios、Android、Web平台| 全平台创新开发体验</strong></p><p>随着Flutter1.9 的发布！Flutter web 支持现已成功合并到 Flutter 的主 repo，自此以后，开发者只需使用同一套基准代码，便可为移动平台、桌面端和网页端开发应用。此外，团队也分享了来自全球互联网公司腾讯的成功案例，让现场观众体验了一把 Flutter 的蓬勃活力，亲眼见证越来越多的应用正在通过 Flutter 缔造精彩。</p><h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ol><li>Flutter 适配多平台开发</li></ol><h4 id="1-Flutter-适配多平台开发"><a href="#1-Flutter-适配多平台开发" class="headerlink" title="1.  Flutter 适配多平台开发"></a>1.  Flutter 适配多平台开发</h4><p><strong>使用Flutter对多平台进行初步的开发设计！</strong></p><ol><li><p>创建项目，并初步运行后得到下图中的效果</p><p>此处……省略若干“创建项目和运行项目”的步骤</p><p><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter/flutter_mobile_and_web/flutter_mobile_and_web.gif?raw=true" alt="项目初步效果"></p></li><li><p>为各个平台增加“平台区分”</p></li></ol><ul><li><p>平台的区分</p><p>  注意：<br>  Android和IOS加入以下代码运行良好！Web平台加入以下代码将会停留在运行状态也就是运行不起来</p><p>  错误信息：<br>  Skipping compiling flutter_mobile_and_web_app|lib/main_web_entrypoint.dart with ddc because some of its<br>  transitive libraries have sdk dependencies that not supported on this platform:</p></li></ul><pre><code>import &apos;dart:io&apos;;String getPlatformFlag(){    return Platform.operatingSystem;}</code></pre><p><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter/flutter_mobile_and_web/flutter_mobile_and_web_with_platform.gif?raw=true" alt="项目增加平台区分后效果">    </p><h4 id="3-Flutter-外链"><a href="#3-Flutter-外链" class="headerlink" title="3.  Flutter 外链!"></a>3.  Flutter 外链!</h4><p>关于Flutter内容，请以官方最新更新为准！</p><ol><li><strong><a href="https://flutter.dev/" target="_blank" rel="noopener">Flutter 官网</a></strong></li><li><strong><a href="https://github.com/pdliuw/flutter_mobile_and_web_app" target="_blank" rel="noopener">本篇 代码仓库</a></strong></li></ol><hr>]]></content>
+        <content type="html"><![CDATA[<hr><p><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/totem_four_logo.jpg?raw=true" alt="图腾"></p><hr><p><strong>Flutter适配 Ios、Android、Web平台| 全平台创新开发体验</strong></p><p>随着Flutter1.9 的发布！Flutter web 支持现已成功合并到 Flutter 的主 repo，自此以后，开发者只需使用同一套基准代码，便可为移动平台、桌面端和网页端开发应用。此外，团队也分享了来自全球互联网公司腾讯的成功案例，让现场观众体验了一把 Flutter 的蓬勃活力，亲眼见证越来越多的应用正在通过 Flutter 缔造精彩。</p><h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ol><li>Flutter 适配多平台开发</li></ol><h4 id="1-Flutter-适配多平台开发"><a href="#1-Flutter-适配多平台开发" class="headerlink" title="1.  Flutter 适配多平台开发"></a>1.  Flutter 适配多平台开发</h4><p><strong>使用Flutter对多平台进行初步的开发设计！</strong></p><ol><li><p>创建项目，并初步运行后得到下图中的效果</p><p>此处……省略若干“创建项目和运行项目”的步骤</p><p><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter/flutter_mobile_and_web/flutter_mobile_and_web.gif?raw=true" alt="项目初步效果"></p></li><li><p>为各个平台增加“平台区分”</p></li></ol><ul><li><p>平台的区分</p><p>  注意：<br>  Android和IOS加入以下代码运行良好！Web平台加入以下代码将会停留在运行状态也就是运行不起来</p><p>  错误信息：<br>  Skipping compiling flutter_mobile_and_web_app|lib/main_web_entrypoint.dart with ddc because some of its<br>  transitive libraries have sdk dependencies that not supported on this platform:</p></li></ul><pre><code>        import &apos;dart:io&apos;;        String getPlatformFlag(){            return Platform.operatingSystem;        }![项目增加平台区分后效果](https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter/flutter_mobile_and_web/flutter_mobile_and_web_with_platform.gif?raw=true)    </code></pre><h4 id="3-Flutter-外链"><a href="#3-Flutter-外链" class="headerlink" title="3.  Flutter 外链!"></a>3.  Flutter 外链!</h4><p>关于Flutter内容，请以官方最新更新为准！</p><ol><li><strong><a href="https://flutter.dev/" target="_blank" rel="noopener">Flutter 官网</a></strong></li><li><strong><a href="https://github.com/pdliuw/flutter_mobile_and_web_app" target="_blank" rel="noopener">本篇 代码仓库</a></strong></li></ol><hr>]]></content>
       
       
       <categories>
@@ -20,9 +20,9 @@
       
         <tags>
             
-            <tag> Flutter </tag>
-            
             <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
             
         </tags>
       
@@ -47,9 +47,9 @@
       
         <tags>
             
-            <tag> Flutter </tag>
-            
             <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
             
         </tags>
       
@@ -74,9 +74,9 @@
       
         <tags>
             
-            <tag> Flutter </tag>
-            
             <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
             
         </tags>
       
@@ -101,9 +101,9 @@
       
         <tags>
             
-            <tag> Flutter </tag>
-            
             <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
             
         </tags>
       
@@ -155,9 +155,9 @@
       
         <tags>
             
-            <tag> Flutter </tag>
-            
             <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
             
         </tags>
       
@@ -209,9 +209,9 @@
             
             <tag> DesignPatterns </tag>
             
-            <tag> Flutter </tag>
-            
             <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
             
             <tag> MVP </tag>
             
@@ -240,9 +240,9 @@
       
         <tags>
             
-            <tag> Flutter </tag>
-            
             <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
             
         </tags>
       
@@ -300,9 +300,9 @@
       
         <tags>
             
-            <tag> Flutter </tag>
-            
             <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
             
         </tags>
       
@@ -327,9 +327,9 @@
       
         <tags>
             
-            <tag> Flutter </tag>
-            
             <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
             
         </tags>
       
@@ -354,9 +354,9 @@
       
         <tags>
             
-            <tag> Flutter </tag>
-            
             <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
             
         </tags>
       
@@ -381,9 +381,9 @@
       
         <tags>
             
-            <tag> Flutter </tag>
-            
             <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
             
         </tags>
       
@@ -408,9 +408,9 @@
       
         <tags>
             
-            <tag> Flutter </tag>
-            
             <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
             
         </tags>
       
@@ -435,9 +435,9 @@
       
         <tags>
             
-            <tag> Flutter </tag>
-            
             <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
             
         </tags>
       
@@ -462,9 +462,9 @@
       
         <tags>
             
-            <tag> Flutter </tag>
-            
             <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
             
         </tags>
       
@@ -743,6 +743,8 @@
             
             <tag> DesignPatterns </tag>
             
+            <tag> MVP </tag>
+            
             <tag> RxJava </tag>
             
             <tag> Retrofit </tag>
@@ -750,8 +752,6 @@
             <tag> OKHttp </tag>
             
             <tag> Glide </tag>
-            
-            <tag> MVP </tag>
             
         </tags>
       
