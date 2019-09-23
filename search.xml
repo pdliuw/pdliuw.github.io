@@ -207,6 +207,8 @@
       
         <tags>
             
+            <tag> DesignPatterns </tag>
+            
             <tag> Dart </tag>
             
             <tag> Flutter </tag>
@@ -214,8 +216,6 @@
             <tag> MVP </tag>
             
             <tag> Dio </tag>
-            
-            <tag> DesignPatterns </tag>
             
         </tags>
       
@@ -267,9 +267,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Java </tag>
+            
+            <tag> Dart </tag>
             
             <tag> Kotlin </tag>
             
@@ -741,8 +741,6 @@
             
             <tag> Java </tag>
             
-            <tag> MVP </tag>
-            
             <tag> DesignPatterns </tag>
             
             <tag> RxJava </tag>
@@ -752,6 +750,8 @@
             <tag> OKHttp </tag>
             
             <tag> Glide </tag>
+            
+            <tag> MVP </tag>
             
         </tags>
       
