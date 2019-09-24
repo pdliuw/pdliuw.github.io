@@ -20,9 +20,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -47,9 +47,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -74,9 +74,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -101,9 +101,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -155,9 +155,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -195,7 +195,7 @@
       <link href="/2019/05/06/project/Flutter%20app%20sample/"/>
       <url>/2019/05/06/project/Flutter%20app%20sample/</url>
       
-        <content type="html"><![CDATA[<hr><p><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/totem_four_logo.jpg?raw=true" alt="图腾"></p><p>Flutter项目示例</p><table><thead><tr><th align="left"><a href="https://github.com/pdliuw/flutter_app_sample/blob/master/README_CH.md" target="_blank" rel="noopener">中文文档</a></th><th align="left"><a href="https://github.com/pdliuw/flutter_app_sample/blob/master/README.md" target="_blank" rel="noopener">English document</a></th></tr></thead></table><p><a href="https://github.com/pdliuw/flutter_app_sample" target="_blank" rel="noopener">点我，查看完整项目</a></p><h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><table><thead><tr><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_ios_platform.gif?raw=true" alt="Login"></th><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_android_platform.gif?raw=true" alt="Login"></th></tr></thead></table><table><thead><tr><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_main_list_page.gif?raw=true" alt="List"></th><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_main_list_page_android.gif?raw=true" alt="List"></th></tr></thead></table><table><thead><tr><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_toolbar_viewpage_fragment.gif?raw=true" alt="TabBar+TabBarView"></th><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_toolbar_viewpage_fragment_android.gif?raw=true" alt="TabBar+TabBarView"></th></tr></thead></table><table><thead><tr><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_toolbar_collapsing_viewpage_fragment.gif?raw=true" alt="NestedScrollView + ..."></th><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_toolbar_collapsing_viewpage_fragment_android.gif?raw=true" alt="NestedScrollView + ..."></th></tr></thead></table><table><thead><tr><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_anim_switch_page_ios.gif?raw=true" alt="Animation-SwitchPage"></th><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_anim_switch_page_android.gif?raw=true" alt="Animation-SwitchPage"></th></tr></thead></table><table><thead><tr><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_anim_animated_container_ios.gif?raw=true" alt="Animated-Container"></th><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_anim_animated_container_android.gif?raw=true" alt="Animated-Container"></th></tr></thead></table><table><thead><tr><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_anim_opacity_and_animated_opacity_ios.gif?raw=true" alt="Opacity-AnimatedOpacity"></th><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_anim_opacity_and_animated_opacity_android.gif?raw=true" alt="Opacity-AnimatedOpacity"></th></tr></thead></table><table><thead><tr><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_anim_hero_ios.gif?raw=true" alt="Animation-Hero"></th><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_anim_hero_android.gif?raw=true" alt="Animation-Hero"></th></tr></thead></table><table><thead><tr><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_anim_transform_ios.gif?raw=true" alt="Animation-Transform"></th><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_anim_transform_android.gif?raw=true" alt="Animation-Transform"></th></tr></thead></table><table><thead><tr><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_anim_color_tween_ios.gif?raw=true" alt="Animation-ColorTween"></th><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_anim_color_tween_android.gif?raw=true" alt="Animation-ColorTween"></th></tr></thead></table><table><thead><tr><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_bottomsheet_drawer_ios.gif?raw=true" alt="Animation-ColorTween"></th><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_bottomsheet_drawer_android.gif?raw=true" alt="Animation-ColorTween"></th></tr></thead></table><h3 id="1-项目理念"><a href="#1-项目理念" class="headerlink" title="1.  项目理念"></a>1.  项目理念</h3><ol><li>构建高复用、低耦合，高应对变化的项目！</li></ol><h3 id="2-涉及技术"><a href="#2-涉及技术" class="headerlink" title="2.  涉及技术"></a>2.  涉及技术</h3><p>项目中涉及的技术</p><ol><li>MVP+设计模式</li><li>Widget</li><li>网络</li><li>路由</li><li>动画</li><li>……</li></ol><h3 id="3-TODO"><a href="#3-TODO" class="headerlink" title="3.  TODO"></a>3.  TODO</h3><ol><li>持续迭代项目</li><li>持续完善文档</li><li>…</li></ol><hr>]]></content>
+        <content type="html"><![CDATA[<hr><p><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/totem_four_logo.jpg?raw=true" alt="图腾"></p><p>Flutter项目示例</p><table><thead><tr><th align="left"><a href="https://github.com/pdliuw/flutter_app_sample/blob/master/README_CH.md" target="_blank" rel="noopener">中文文档</a></th><th align="left"><a href="https://github.com/pdliuw/flutter_app_sample/blob/master/README.md" target="_blank" rel="noopener">English document</a></th></tr></thead></table><p><a href="https://github.com/pdliuw/flutter_app_sample" target="_blank" rel="noopener">点我，查看完整项目</a></p><h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><table><thead><tr><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_ios_platform.gif?raw=true" alt="Login"></th><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_android_platform.gif?raw=true" alt="Login"></th></tr></thead></table><table><thead><tr><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_main_list_page.gif?raw=true" alt="List"></th><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_main_list_page_android.gif?raw=true" alt="List"></th></tr></thead></table><table><thead><tr><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_toolbar_viewpage_fragment.gif?raw=true" alt="TabBar+TabBarView"></th><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_toolbar_viewpage_fragment_android.gif?raw=true" alt="TabBar+TabBarView"></th></tr></thead></table><table><thead><tr><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_toolbar_collapsing_viewpage_fragment.gif?raw=true" alt="NestedScrollView + ..."></th><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_toolbar_collapsing_viewpage_fragment_android.gif?raw=true" alt="NestedScrollView + ..."></th></tr></thead></table><table><thead><tr><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_anim_switch_page_ios.gif?raw=true" alt="Animation-SwitchPage"></th><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_anim_switch_page_android.gif?raw=true" alt="Animation-SwitchPage"></th></tr></thead></table><table><thead><tr><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_anim_animated_container_ios.gif?raw=true" alt="Animated-Container"></th><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_anim_animated_container_android.gif?raw=true" alt="Animated-Container"></th></tr></thead></table><table><thead><tr><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_anim_opacity_and_animated_opacity_ios.gif?raw=true" alt="Opacity-AnimatedOpacity"></th><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_anim_opacity_and_animated_opacity_android.gif?raw=true" alt="Opacity-AnimatedOpacity"></th></tr></thead></table><table><thead><tr><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_anim_hero_ios.gif?raw=true" alt="Animation-Hero"></th><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_anim_hero_android.gif?raw=true" alt="Animation-Hero"></th></tr></thead></table><table><thead><tr><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_anim_transform_ios.gif?raw=true" alt="Animation-Transform"></th><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_anim_transform_android.gif?raw=true" alt="Animation-Transform"></th></tr></thead></table><table><thead><tr><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_anim_color_tween_ios.gif?raw=true" alt="Animation-ColorTween"></th><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_anim_color_tween_android.gif?raw=true" alt="Animation-ColorTween"></th></tr></thead></table><table><thead><tr><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_bottomsheet_drawer_ios.gif?raw=true" alt="Drawer..."></th><th align="left"><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter_app_sample/flutter_app_sample_bottomsheet_drawer_android.gif?raw=true" alt="Drawer..."></th></tr></thead></table><h3 id="1-项目理念"><a href="#1-项目理念" class="headerlink" title="1.  项目理念"></a>1.  项目理念</h3><ol><li>构建高复用、低耦合，高应对变化的项目！</li></ol><h3 id="2-涉及技术"><a href="#2-涉及技术" class="headerlink" title="2.  涉及技术"></a>2.  涉及技术</h3><p>项目中涉及的技术</p><ol><li>MVP+设计模式</li><li>Widget</li><li>网络</li><li>路由</li><li>动画</li><li>……</li></ol><h3 id="3-TODO"><a href="#3-TODO" class="headerlink" title="3.  TODO"></a>3.  TODO</h3><ol><li>持续迭代项目</li><li>持续完善文档</li><li>…</li></ol><hr>]]></content>
       
       
       <categories>
@@ -209,9 +209,9 @@
             
             <tag> DesignPatterns </tag>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
             <tag> MVP </tag>
             
@@ -240,9 +240,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -300,9 +300,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -327,9 +327,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -354,9 +354,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -381,9 +381,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -408,9 +408,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -435,9 +435,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -462,9 +462,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
