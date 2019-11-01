@@ -8,7 +8,7 @@
       <link href="/2019/11/01/flutter/Flutter%20%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%B1%87%E6%80%BB/"/>
       <url>/2019/11/01/flutter/Flutter%20%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%B1%87%E6%80%BB/</url>
       
-        <content type="html"><![CDATA[<hr><p><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/totem_four_logo.jpg?raw=true" alt="图腾"></p><hr><p><strong>Flutter 问题 以及 解决方案</strong></p><p>包含：遇到的常见问题，以及问题的解决方案，的汇总列表</p><hr><p>帮助Flutter开发者解决疑问问题、帮助开发者精通Flutter，并开发Flutter！</p><h3 id="1-Scaffold-Problems"><a href="#1-Scaffold-Problems" class="headerlink" title="1.Scaffold Problems"></a>1.Scaffold Problems</h3><h4 id="1-Scaffold-of-called-with-a-context-that-does-not-contain-a-Scaffold"><a href="#1-Scaffold-of-called-with-a-context-that-does-not-contain-a-Scaffold" class="headerlink" title="1.  Scaffold.of() called with a context that does not contain a Scaffold"></a>1.  Scaffold.of() called with a context that does not contain a Scaffold</h4><p>问题描述: 通过使用Scaffold.of(context)来显示“Drawer”、“SnackBar”等widget时，出现上述问题<br>解决方案: </p><p>*出现问题的代码</p><pre><code>class BasicWidget extends StatelessWidget {    @override    Widget build(BuildContext context) {        return new Scaffold(            appBar: new AppBar(            title: new Text(&quot;Basic Widget&quot;),            ),            body: new Column(            children: &lt;Widget&gt;[                new RaisedButton(                onPressed: () {                    final snackBar = new SnackBar(                    content: new Text(&quot;这是一个Snackbar&quot;),                    action: new SnackBarAction(                        label: &quot;Undo&quot;,                        onPressed: (){                    }),                    );                    Scaffold.of(context).showSnackBar(snackBar);                },                child: new Text(&quot;显示Snackbar&quot;),                )            ],            ));    }}</code></pre><p>*解决问题的代码</p><p>class BasicWidget extends StatelessWidget {<br>    @override<br>    Widget build(BuildContext context) {</p><pre><code>    return new Scaffold(        appBar: new AppBar(        title: new Text(&quot;Basic Widget&quot;),        ),        body: new Builder(builder: (BuildContext context){        return new Column(                    children: &lt;Widget&gt;[                new RaisedButton(                onPressed: () {                    final snackBar = new SnackBar(                    content: new Text(&quot;这是一个Snackbar&quot;),                    action: new SnackBarAction(                        label: &quot;Undo&quot;,                        onPressed: (){                    }),                    );                    Scaffold.of(context).showSnackBar(snackBar);                },                child: new Text(&quot;显示Snackbar&quot;),                )            ],        );    }),);</code></pre><p>  }<br>}</p><hr>]]></content>
+        <content type="html"><![CDATA[<hr><p><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/totem_four_logo.jpg?raw=true" alt="图腾"></p><hr><p><strong>Flutter 问题 以及 解决方案</strong></p><p>包含：遇到的常见问题，以及问题的解决方案，的汇总列表</p><hr><p>帮助Flutter开发者解决疑问问题、帮助开发者精通Flutter，并开发Flutter！</p><h3 id="1-Scaffold-Problems"><a href="#1-Scaffold-Problems" class="headerlink" title="1.Scaffold Problems"></a>1.Scaffold Problems</h3><h4 id="1-Scaffold-of-called-with-a-context-that-does-not-contain-a-Scaffold"><a href="#1-Scaffold-of-called-with-a-context-that-does-not-contain-a-Scaffold" class="headerlink" title="1.  Scaffold.of() called with a context that does not contain a Scaffold"></a>1.  Scaffold.of() called with a context that does not contain a Scaffold</h4><p>问题描述: 通过使用Scaffold.of(context)来显示“Drawer”、“SnackBar”等widget时，出现上述问题<br>解决方案: </p><p>*出现问题的代码</p><pre><code>class BasicWidget extends StatelessWidget {    @override    Widget build(BuildContext context) {        return new Scaffold(            appBar: new AppBar(            title: new Text(&quot;Basic Widget&quot;),            ),            body: new Column(            children: &lt;Widget&gt;[                new RaisedButton(                onPressed: () {                    final snackBar = new SnackBar(                    content: new Text(&quot;这是一个Snackbar&quot;),                    action: new SnackBarAction(                        label: &quot;Undo&quot;,                        onPressed: (){                    }),                    );                    Scaffold.of(context).showSnackBar(snackBar);                },                child: new Text(&quot;显示Snackbar&quot;),                )            ],            ));    }}</code></pre><p>*解决问题的代码</p><pre><code>class BasicWidget extends StatelessWidget {    @override    Widget build(BuildContext context) {        return new Scaffold(            appBar: new AppBar(            title: new Text(&quot;Basic Widget&quot;),            ),            body: new Builder(builder: (BuildContext context){            return new Column(                        children: &lt;Widget&gt;[                    new RaisedButton(                    onPressed: () {                        final snackBar = new SnackBar(                        content: new Text(&quot;这是一个Snackbar&quot;),                        action: new SnackBarAction(                            label: &quot;Undo&quot;,                            onPressed: (){                        }),                        );                        Scaffold.of(context).showSnackBar(snackBar);                    },                    child: new Text(&quot;显示Snackbar&quot;),                    )                ],            );        }),    );}}</code></pre><hr>]]></content>
       
       
       <categories>
@@ -20,9 +20,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -47,9 +47,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -74,9 +74,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -101,9 +101,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -128,9 +128,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -182,9 +182,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -234,13 +234,13 @@
       
         <tags>
             
-            <tag> Dart </tag>
+            <tag> DesignPatterns </tag>
             
             <tag> Flutter </tag>
             
-            <tag> MVP </tag>
+            <tag> Dart </tag>
             
-            <tag> DesignPatterns </tag>
+            <tag> MVP </tag>
             
             <tag> Dio </tag>
             
@@ -267,9 +267,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -327,9 +327,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -354,9 +354,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -381,9 +381,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -408,9 +408,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -435,9 +435,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -462,9 +462,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -489,9 +489,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -768,6 +768,8 @@
             
             <tag> Java </tag>
             
+            <tag> DesignPatterns </tag>
+            
             <tag> RxJava </tag>
             
             <tag> Retrofit </tag>
@@ -777,8 +779,6 @@
             <tag> Glide </tag>
             
             <tag> MVP </tag>
-            
-            <tag> DesignPatterns </tag>
             
         </tags>
       

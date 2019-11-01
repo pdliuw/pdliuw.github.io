@@ -397,12 +397,12 @@ Flutter 问题 以及 解决方案
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Dart/" target="_blank">
-                                <span class="chip bg-color">Dart</span>
-                            </a>
-                        
                             <a href="/tags/Flutter/" target="_blank">
                                 <span class="chip bg-color">Flutter</span>
+                            </a>
+                        
+                            <a href="/tags/Dart/" target="_blank">
+                                <span class="chip bg-color">Dart</span>
                             </a>
                         
                     </div>
@@ -492,33 +492,37 @@ Flutter 问题 以及 解决方案
             ));
     }
 }</code></pre><p>*解决问题的代码</p>
-<p>class BasicWidget extends StatelessWidget {<br>    @override<br>    Widget build(BuildContext context) {</p>
-<pre><code>    return new Scaffold(
-        appBar: new AppBar(
-        title: new Text(&quot;Basic Widget&quot;),
-        ),
-        body: new Builder(builder: (BuildContext context){
-        return new Column(
-                    children: &lt;Widget&gt;[
-                new RaisedButton(
-                onPressed: () {
-                    final snackBar = new SnackBar(
-                    content: new Text(&quot;这是一个Snackbar&quot;),
-                    action: new SnackBarAction(
-                        label: &quot;Undo&quot;,
-                        onPressed: (){
+<pre><code>class BasicWidget extends StatelessWidget {
+    @override
+    Widget build(BuildContext context) {
 
-                    }),
-                    );
-                    Scaffold.of(context).showSnackBar(snackBar);
-                },
-                child: new Text(&quot;显示Snackbar&quot;),
-                )
-            ],
-        );
-    }),
-);</code></pre><p>  }<br>}</p>
-<hr>
+        return new Scaffold(
+            appBar: new AppBar(
+            title: new Text(&quot;Basic Widget&quot;),
+            ),
+            body: new Builder(builder: (BuildContext context){
+            return new Column(
+                        children: &lt;Widget&gt;[
+                    new RaisedButton(
+                    onPressed: () {
+                        final snackBar = new SnackBar(
+                        content: new Text(&quot;这是一个Snackbar&quot;),
+                        action: new SnackBarAction(
+                            label: &quot;Undo&quot;,
+                            onPressed: (){
+
+                        }),
+                        );
+                        Scaffold.of(context).showSnackBar(snackBar);
+                    },
+                    child: new Text(&quot;显示Snackbar&quot;),
+                    )
+                ],
+            );
+        }),
+    );
+}
+}</code></pre><hr>
 
             </div>
             <hr/>
@@ -758,12 +762,12 @@ Flutter 问题 以及 解决方案
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Dart/" target="_blank">
-                        <span class="chip bg-color">Dart</span>
-                    </a>
-                    
                     <a href="/tags/Flutter/" target="_blank">
                         <span class="chip bg-color">Flutter</span>
+                    </a>
+                    
+                    <a href="/tags/Dart/" target="_blank">
+                        <span class="chip bg-color">Dart</span>
                     </a>
                     
                 </div>
@@ -810,12 +814,12 @@ Flutter 问题 以及 解决方案
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Dart/" target="_blank">
-                        <span class="chip bg-color">Dart</span>
-                    </a>
-                    
                     <a href="/tags/Flutter/" target="_blank">
                         <span class="chip bg-color">Flutter</span>
+                    </a>
+                    
+                    <a href="/tags/Dart/" target="_blank">
+                        <span class="chip bg-color">Dart</span>
                     </a>
                     
                 </div>
