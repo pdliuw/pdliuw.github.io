@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Flutter路由框架-airoute|爱路由</title>
+      <link href="/2020/01/05/flutter/airoute/"/>
+      <url>/2020/01/05/flutter/airoute/</url>
+      
+        <content type="html"><![CDATA[<hr><h1 id="Airoute"><a href="#Airoute" class="headerlink" title="Airoute"></a>Airoute</h1><p><img src="https://raw.githubusercontent.com/pdliuw/pdliuw.github.io/master/images/totem_four_logo.jpg" alt="totem"></p><hr><table><thead><tr><th align="left"><a href="https://github.com/pdliuw/airoute/blob/master/README-EN.md" target="_blank" rel="noopener">English Document</a></th><th align="left"><a href="https://github.com/pdliuw/airoute" target="_blank" rel="noopener">中文文档</a></th></tr></thead></table><h2 id="我们的宗旨是：帮助开发者更加便利开发、切身体会编程之美！"><a href="#我们的宗旨是：帮助开发者更加便利开发、切身体会编程之美！" class="headerlink" title="我们的宗旨是：帮助开发者更加便利开发、切身体会编程之美！"></a>我们的宗旨是：帮助开发者更加便利开发、切身体会编程之美！</h2><h3 id="airoute"><a href="#airoute" class="headerlink" title="airoute:"></a>airoute:</h3><p><a href="https://pub.dev/packages/airoute" target="_blank" rel="noopener"><img src="https://img.shields.io/pub/v/airoute.svg" alt="pub package"></a></p><p>*1、支持无需context的路由管理, </p><p>*2、支持‘非侵入式参数传递’的路由管理，</p><p>*3、让你爱上路由管理的airoute</p><p><a href="https://github.com/pdliuw/airoute" target="_blank" rel="noopener">Airoute</a> 在<a href="https://github.com/flutter-app-sample/flutter_app_sample" target="_blank" rel="noopener">项目</a>中的实战应用<a href="https://github.com/flutter-app-sample/flutter_app_sample" target="_blank" rel="noopener">flutter sample</a></p><h2 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h2><table><thead><tr><th align="left">iOS</th><th align="left">Android</th></tr></thead><tbody><tr><td align="left"><img src="https://github.com/pdliuw/airoute/blob/master/example/raw/airoute_render_ios.gif" alt="airoute_ios"></td><td align="left"><img src="https://github.com/pdliuw/airoute/blob/master/example/raw/airoute_render_android.gif" alt="airoute_android"></td></tr><tr><td align="left">:-</td><td align="left">:-</td></tr></tbody></table><table><thead><tr><th align="left">macOS</th><th align="left">web</th></tr></thead><tbody><tr><td align="left"><img src="https://github.com/pdliuw/airoute/blob/master/example/raw/airoute_render_macos.gif" alt="airoute_macos"></td><td align="left"><img src="https://github.com/pdliuw/airoute/blob/master/example/raw/airoute_render_web.gif" alt="airoute_web"></td></tr><tr><td align="left">:-</td><td align="left">:-</td></tr></tbody></table><h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h2><p>使用当前包作为依赖库</p><h3 id="1-依赖此库"><a href="#1-依赖此库" class="headerlink" title="1. 依赖此库"></a>1. 依赖此库</h3><p>在文件 ‘pubspec.yaml’ 中添加</p><p><a href="https://pub.dev/packages/airoute" target="_blank" rel="noopener"><img src="https://img.shields.io/pub/v/airoute.svg" alt="pub package"></a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">dependencies:</span><br><span class="line"></span><br><span class="line">  airoute: ^version</span><br></pre></td></tr></table></figure><p>或以这种方式添加</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># Route package.</span><br><span class="line">airoute:</span><br><span class="line">  git:</span><br><span class="line">    url: https://github.com/pdliuw/airoute.git</span><br></pre></td></tr></table></figure><h3 id="2-安装此库"><a href="#2-安装此库" class="headerlink" title="2. 安装此库"></a>2. 安装此库</h3><p>你可以通过下面的命令行来安装此库</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$ flutter pub get</span><br></pre></td></tr></table></figure><p>你也可以通过项目开发工具通过可视化操作来执行上述步骤</p><h3 id="3-导入此库"><a href="#3-导入此库" class="headerlink" title="3. 导入此库"></a>3. 导入此库</h3><p>现在，在你的Dart编辑代码中，你可以使用：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import &apos;package:airoute/airoute.dart&apos;;</span><br></pre></td></tr></table></figure><h2 id="2-使用"><a href="#2-使用" class="headerlink" title="2.使用"></a>2.使用</h2><h3 id="1-在你的项目入口’main-dart’中配置："><a href="#1-在你的项目入口’main-dart’中配置：" class="headerlink" title="1.在你的项目入口’main.dart’中配置："></a>1.在你的项目入口’main.dart’中配置：</h3><p>Airoute 全局配置</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">void main() &#123;</span><br><span class="line">  runApp(</span><br><span class="line">    ///</span><br><span class="line">    /// 配置Airoute</span><br><span class="line">    Airoute.createMaterialApp(</span><br><span class="line">      home: LaunchPage(),</span><br><span class="line">      routes: &lt;String, AirouteBuilder&gt;&#123;</span><br><span class="line">        &quot;/LaunchPage&quot;: () =&gt; LaunchPage(),</span><br><span class="line">        &quot;/SecondPage&quot;: () =&gt; SecondPage(),</span><br><span class="line">      &#125;,</span><br><span class="line">    ),</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="2-调用-应用"><a href="#2-调用-应用" class="headerlink" title="2.调用/应用"></a>2.调用/应用</h3><p>*1、跳转新页面</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Airoute.pushNamed(routeName: &quot;/routeName&quot;);</span><br></pre></td></tr></table></figure><p>*2、关闭页面</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Airoute.pop();</span><br></pre></td></tr></table></figure><p>*3、跳转新页面，并添加动画</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Airoute.pushNamedWithAnimation(</span><br><span class="line">    routeName: &quot;/routeName&quot;,</span><br><span class="line">    routePageAnimation: AirouteTransition.Slide);</span><br></pre></td></tr></table></figure><p>*4、传递参数、接收参数</p><p>传递参数</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Airoute.pushNamed(</span><br><span class="line">  routeName: &quot;/Page&quot;,</span><br><span class="line">  argument: &quot;遇见你，我很开心😄😄😄&quot;,</span><br><span class="line">);</span><br></pre></td></tr></table></figure><p>传递number参数</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Airoute.pushNamed(</span><br><span class="line">  routeName: &quot;/SecondPage&quot;,</span><br><span class="line">  argument: 0,</span><br><span class="line">);</span><br></pre></td></tr></table></figure><p>传递Map参数</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">              Airoute.pushNamed(</span><br><span class="line">                routeName: &quot;/Page&quot;,</span><br><span class="line">                argument: &#123;</span><br><span class="line">                  &quot;account&quot;:&quot;this is accont&quot;,</span><br><span class="line">                  &quot;password&quot;:&quot;this is password &quot;,</span><br><span class="line">                &#125;,</span><br><span class="line">```        </span><br><span class="line"></span><br><span class="line">传递Array参数</span><br></pre></td></tr></table></figure><pre><code>Airoute.pushNamed(  routeName: &quot;/Page&quot;,  argument: [    &quot;Air&quot;,    &quot;James&quot;,    &quot;Lucy&quot;,    &quot;Tom&quot;,  ],);</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">            </span><br><span class="line"></span><br><span class="line">接收参数</span><br></pre></td></tr></table></figure><p>class Page extends StatefulWidget with AirArgumentReceiver {</p><p>  @override<br>  State<statefulwidget> createState() {<br>    return _PageState();<br>  }</statefulwidget></p><p>  @override<br>  void receive(AirArgument argument) {<br>    print(“收到${argument.argument}参数了,我很开心😄😄😄”);<br>  }<br>}</p><pre><code>*4、更多用法[点击，查看更多](https://github.com/pdliuw/airoute/blob/master/README_DETAIL.md)## LICENSE   Copyright 2019 pdliuw   Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);   you may not use this file except in compliance with the License.   You may obtain a copy of the License at       http://www.apache.org/licenses/LICENSE-2.0   Unless required by applicable law or agreed to in writing, software   distributed under the License is distributed on an &quot;AS IS&quot; BASIS,   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.   See the License for the specific language governing permissions and   limitations under the License.</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 跨平台 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
+            
+            <tag> Route </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Flutter 问题及解决方案汇总.</title>
       <link href="/2019/11/01/flutter/Flutter%20%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%B1%87%E6%80%BB/"/>
       <url>/2019/11/01/flutter/Flutter%20%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%B1%87%E6%80%BB/</url>
@@ -20,9 +49,9 @@
       
         <tags>
             
-            <tag> Flutter </tag>
-            
             <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
             
         </tags>
       
@@ -47,9 +76,9 @@
       
         <tags>
             
-            <tag> Flutter </tag>
-            
             <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
             
         </tags>
       
@@ -74,9 +103,9 @@
       
         <tags>
             
-            <tag> Flutter </tag>
-            
             <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
             
         </tags>
       
@@ -101,9 +130,9 @@
       
         <tags>
             
-            <tag> Flutter </tag>
-            
             <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
             
         </tags>
       
@@ -128,9 +157,9 @@
       
         <tags>
             
-            <tag> Flutter </tag>
-            
             <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
             
         </tags>
       
@@ -182,9 +211,9 @@
       
         <tags>
             
-            <tag> Flutter </tag>
-            
             <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
             
         </tags>
       
@@ -234,11 +263,11 @@
       
         <tags>
             
-            <tag> DesignPatterns </tag>
+            <tag> Dart </tag>
             
             <tag> Flutter </tag>
             
-            <tag> Dart </tag>
+            <tag> DesignPatterns </tag>
             
             <tag> MVP </tag>
             
@@ -267,9 +296,9 @@
       
         <tags>
             
-            <tag> Flutter </tag>
-            
             <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
             
         </tags>
       
@@ -327,9 +356,9 @@
       
         <tags>
             
-            <tag> Flutter </tag>
-            
             <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
             
         </tags>
       
@@ -354,9 +383,9 @@
       
         <tags>
             
-            <tag> Flutter </tag>
-            
             <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
             
         </tags>
       
@@ -381,9 +410,9 @@
       
         <tags>
             
-            <tag> Flutter </tag>
-            
             <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
             
         </tags>
       
@@ -408,9 +437,9 @@
       
         <tags>
             
-            <tag> Flutter </tag>
-            
             <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
             
         </tags>
       
@@ -435,9 +464,9 @@
       
         <tags>
             
-            <tag> Flutter </tag>
-            
             <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
             
         </tags>
       
@@ -462,9 +491,9 @@
       
         <tags>
             
-            <tag> Flutter </tag>
-            
             <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
             
         </tags>
       
@@ -489,9 +518,9 @@
       
         <tags>
             
-            <tag> Flutter </tag>
-            
             <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
             
         </tags>
       
@@ -770,6 +799,8 @@
             
             <tag> DesignPatterns </tag>
             
+            <tag> MVP </tag>
+            
             <tag> RxJava </tag>
             
             <tag> Retrofit </tag>
@@ -777,8 +808,6 @@
             <tag> OKHttp </tag>
             
             <tag> Glide </tag>
-            
-            <tag> MVP </tag>
             
         </tags>
       
