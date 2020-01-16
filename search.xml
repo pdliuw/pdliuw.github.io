@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Flutter条码插件-ai_barcode|爱条码</title>
+      <link href="/2020/01/11/flutter/ai%20barcode/"/>
+      <url>/2020/01/11/flutter/ai%20barcode/</url>
+      
+        <content type="html"><![CDATA[<hr><h1 id="ai-barcode"><a href="#ai-barcode" class="headerlink" title="ai_barcode"></a>ai_barcode</h1><p><img src="https://raw.githubusercontent.com/pdliuw/pdliuw.github.io/master/images/totem_four_logo.jpg" alt="totem"></p><p>ai_barcode:支持Android和IOS识别’一维条码’和’二维条码’的识别</p><p><a href="https://pub.dev/packages/ai_barcode" target="_blank" rel="noopener"><img src="https://img.shields.io/pub/v/ai_barcode.svg" alt="pub package"></a></p><p>亮点: <code>ai_barcode:支持在flutter页面中嵌入Scanner以此来应对多变的业务需求</code></p><table><thead><tr><th align="left"><img src="https://github.com/pdliuw/ai_barcode/blob/master/example/gif/flutter_scanner_android.gif" alt="效果"></th><th align="left"><img src="https://github.com/pdliuw/ai_barcode/blob/master/example/gif/flutter_scanner_ios.gif" alt="效果"></th></tr></thead></table><p><a href="https://github.com/pdliuw/ai_barcode" target="_blank" rel="noopener">ai_barcode</a> 在<a href="https://github.com/flutter-app-sample/flutter_app_sample" target="_blank" rel="noopener">项目</a>中的实战应用<a href="https://github.com/flutter-app-sample/flutter_app_sample" target="_blank" rel="noopener">flutter sample</a></p><table><thead><tr><th align="left"><a href="https://github.com/pdliuw/Flutter_Resource/blob/master/resource/flutter/apk/flutter_scanner.apk?raw=true" target="_blank" rel="noopener">下载安卓apk安装包</a></th><th align="left"><a href>IOS安装包，请下载example后运行项目获取</a></th><th align="left"><a href="https://pdliuw.github.io/">博客地址</a></th></tr></thead></table><h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h2><p>使用当前包作为依赖库</p><h3 id="1-依赖此库"><a href="#1-依赖此库" class="headerlink" title="1. 依赖此库"></a>1. 依赖此库</h3><p>在文件 ‘pubspec.yaml’ 中添加</p><p><a href="https://pub.dev/packages/ai_barcode" target="_blank" rel="noopener"><img src="https://img.shields.io/pub/v/ai_barcode.svg" alt="pub package"></a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">dependencies:</span><br><span class="line"></span><br><span class="line">  ai_barcode: ^version</span><br></pre></td></tr></table></figure><p>或者以下方式依赖</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">dependencies:</span><br><span class="line"></span><br><span class="line">  # Scanner package.</span><br><span class="line">  ai_barcode:</span><br><span class="line">    git:</span><br><span class="line">      url: https://github.com/pdliuw/ai_barcode.git</span><br></pre></td></tr></table></figure><h3 id="2-安装此库"><a href="#2-安装此库" class="headerlink" title="2. 安装此库"></a>2. 安装此库</h3><p>你可以通过下面的命令行来安装此库</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$ flutter pub get</span><br></pre></td></tr></table></figure><p>你也可以通过项目开发工具通过可视化操作来执行上述步骤</p><h3 id="3-导入此库"><a href="#3-导入此库" class="headerlink" title="3. 导入此库"></a>3. 导入此库</h3><p>现在，在你的Dart编辑代码中，你可以使用：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import &apos;package:ai_barcode/ai_barcode.dart&apos;;</span><br></pre></td></tr></table></figure><h2 id="2-使用"><a href="#2-使用" class="headerlink" title="2.使用"></a>2.使用</h2><p>使用’相机’需要动态申请权限，动态权限推荐：<a href="https://github.com/Baseflow/flutter-permission-handler" target="_blank" rel="noopener">permission_handler</a></p><h3 id="1-使用’一维条码、二维条码’的地方中："><a href="#1-使用’一维条码、二维条码’的地方中：" class="headerlink" title="1.使用’一维条码、二维条码’的地方中："></a>1.使用’一维条码、二维条码’的地方中：</h3><p>简要示例</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//cameraWidth:相机的宽度;cameraHeight相机的高度,可根据实际的业务来动态调整</span><br><span class="line">Container(</span><br><span class="line">  color: Colors.black26,</span><br><span class="line">  width: cameraWidth,</span><br><span class="line">  height: cameraHeight,</span><br><span class="line">  child: PlatformAiBarcodeScannerWidget(</span><br><span class="line">    platformScannerController: _scannerController,</span><br><span class="line">  ),</span><br><span class="line">),</span><br></pre></td></tr></table></figure><p>完整示例</p><p><a href="https://github.com/pdliuw/ai_barcode/blob/master/example/lib/task_scanner_page.dart" target="_blank" rel="noopener">完整示例,点击这里</a></p><h3 id="2-调用-应用"><a href="#2-调用-应用" class="headerlink" title="2.调用/应用"></a>2.调用/应用</h3><p>*1、打开相机设备</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">_scannerController.startCamera();</span><br></pre></td></tr></table></figure><p>*2、打开预览/识别’条码’</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">_scannerController.startCameraPreview();</span><br></pre></td></tr></table></figure><p>*3、关闭预览/识别’条码’</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">_scannerController.stopCameraPreview();</span><br></pre></td></tr></table></figure><p>*4、关闭相机设备</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">_scannerController.stopCamera();</span><br></pre></td></tr></table></figure><p>*5、打开手电筒</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">_scannerController.openFlash();</span><br></pre></td></tr></table></figure><p>*5、关闭手电筒</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">_scannerController.closeFlash();</span><br></pre></td></tr></table></figure><p>*5、切换手电筒</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">_scannerController.toggleFlash();</span><br></pre></td></tr></table></figure><p>看到这里还意犹未尽？<a href="https://github.com/pdliuw/ai_barcode/tree/master/example/lib" target="_blank" rel="noopener">点击，查看项目示例</a></p><h2 id="LICENSE"><a href="#LICENSE" class="headerlink" title="LICENSE"></a>LICENSE</h2><p>   Copyright 2019 pdliuw</p><p>   Licensed under the Apache License, Version 2.0 (the “License”);<br>   you may not use this file except in compliance with the License.<br>   You may obtain a copy of the License at</p><pre><code>http://www.apache.org/licenses/LICENSE-2.0</code></pre><p>   Unless required by applicable law or agreed to in writing, software<br>   distributed under the License is distributed on an “AS IS” BASIS,<br>   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.<br>   See the License for the specific language governing permissions and<br>   limitations under the License.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 跨平台 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
+            
+            <tag> barcode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Flutter路由框架-airoute|爱路由</title>
       <link href="/2020/01/05/flutter/airoute/"/>
       <url>/2020/01/05/flutter/airoute/</url>
@@ -20,9 +49,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
             <tag> Route </tag>
             
@@ -49,9 +78,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -76,9 +105,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -103,9 +132,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -130,9 +159,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -157,9 +186,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -211,9 +240,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -265,9 +294,9 @@
             
             <tag> DesignPatterns </tag>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
             <tag> MVP </tag>
             
@@ -296,9 +325,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -356,9 +385,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -383,9 +412,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -410,9 +439,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -437,9 +466,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -464,9 +493,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -491,9 +520,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -518,9 +547,9 @@
       
         <tags>
             
-            <tag> Dart </tag>
-            
             <tag> Flutter </tag>
+            
+            <tag> Dart </tag>
             
         </tags>
       
@@ -953,11 +982,11 @@
     
     
     <entry>
-      <title>观察者模式</title>
-      <link href="/2016/09/09/DesignPattern/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
-      <url>/2016/09/09/DesignPattern/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</url>
+      <title>单例模式</title>
+      <link href="/2016/09/09/DesignPattern/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
+      <url>/2016/09/09/DesignPattern/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</url>
       
-        <content type="html"><![CDATA[<p>设计模式-观察者模式</p><p>本篇只作简要代码示例，不做“学术讨论”！</p><hr><p><a href="https://github.com/pdliuw/LoginComponent" target="_blank" rel="noopener">点击我，查看设计模式在项目中的应用</a></p><h3 id="1-观察者模式介绍"><a href="#1-观察者模式介绍" class="headerlink" title="1.  观察者模式介绍"></a>1.  观察者模式介绍</h3><p>观察者又称：订阅-发布模式！</p><p>从生活中寻找观察者模式的示例，以通俗易懂的话语讲解“观察者模式”：微信公众号！</p><p>微信公众号：当我们关注某公众号时，我们就成为这个公众号的订阅者，这个公众号一旦有消息会执行发布，此时订阅者就会接收到发布信息。（消息推送也是如此，还有其他很多的示例就不一一列举）</p><p>想要实现一个简易的观察者模式？请往下看</p><h3 id="2-观察者模式实现"><a href="#2-观察者模式实现" class="headerlink" title="2.  观察者模式实现"></a>2.  观察者模式实现</h3><h4 id="1-思考观察者模式所具备的属性或特征"><a href="#1-思考观察者模式所具备的属性或特征" class="headerlink" title="1. 思考观察者模式所具备的属性或特征"></a>1. 思考观察者模式所具备的属性或特征</h4><ol><li>需要一个观察者、若干个订阅者！</li><li>观察者发布信息，订阅者接收信息！</li><li>订阅者可以订阅，订阅者可以取消订阅！</li><li>其他若干健壮性的设计，如：避免重复订阅，以及其他！</li></ol><h4 id="2-代码实现"><a href="#2-代码实现" class="headerlink" title="2. 代码实现"></a>2. 代码实现</h4><p>观察者</p><pre><code>import android.support.annotation.Nullable;import java.util.ArrayList;import java.util.List;/*** &lt;p&gt;* @author air.* &lt;/p&gt;* &lt;p&gt;* 拥有属性、标签：* 观察者模式* {@link #registerPushReceiver(IPushReceiver)}* {@link #unRegisterPushReceiver(IPushReceiver)}* {@link #notifyRegisterReceiver(PushPublish)}* &lt;/p&gt;*/public class PushManager {    private static final List&lt;IPushReceiver&gt; mPushReceivers = new ArrayList&lt;&gt;();    private PushManager() {    }    static class Holder {        static final PushManager INSTANCE = new PushManager();    }    public static PushManager getInstance() {        return Holder.INSTANCE;    }    /**    * 绑定消息推送的订阅者    *    * @param registerReceiver 绑定的订阅者    * @return 操作是否成功执行    */    boolean registerPushReceiver(@Nullable IPushReceiver registerReceiver) {        if (registerReceiver == null) {            return false;        }        if (mPushReceivers.contains(registerReceiver)) {            //已经注册，则不许要再重复注册！            return false;        }        //注册        mPushReceivers.add(registerReceiver);        return true;    }    /**    * 解绑消息推送的订阅者    *    * @param unRegisterReceiver 解绑的订阅者    * @return 操作是否成功执行    */    boolean unRegisterPushReceiver(@Nullable IPushReceiver unRegisterReceiver) {        if (unRegisterReceiver == null) {            return false;        }        if (!mPushReceivers.contains(unRegisterReceiver)) {            //未注册，则不需要解绑注册!            return false;        }        //解绑注册        mPushReceivers.remove(unRegisterReceiver);        return true;    }    /**    * 通知订阅者数据需要更新    *    * @param pushPublish 更新的数据    * @return 操作是否成功执行    */    boolean notifyRegisterReceiver(@Nullable PushPublish pushPublish) {        if (pushPublish == null) {            return false;        }        //制定统一的数据        PushMessage pushMessageTemplate = new PushMessage();        pushMessageTemplate.setMsg(pushPublish.getMsgTip());        for (IPushReceiver receiver :                mPushReceivers) {            //另开数据传递给接收者            PushMessage pushMessage = pushMessageTemplate;            receiver.receiver(pushMessage);        }        return true;    }}</code></pre><p>订阅者</p><pre><code>/*** &lt;p&gt;* @author air.* &lt;/p&gt;*/public interface IPushReceiver {    void receiver(PushMessage pushMessage);}</code></pre><p>观察者发布的消息（这里多个数据的中间处理操作）</p><pre><code>import android.support.annotation.Nullable;/*** &lt;p&gt;* @author air.* &lt;/p&gt;*/public class PushPublish {    @Nullable    private String id;    @Nullable    private String msgTip;    public void setId(@Nullable String id) {        this.id = id;    }    public void setMsgTip(@Nullable String msgTip) {        this.msgTip = msgTip;    }    @Nullable    public String getId() {        return id;    }    @Nullable    public String getMsgTip() {        return msgTip;    }}</code></pre><p>订阅者收到的消息</p><pre><code>/*** &lt;p&gt;* @author air.* &lt;/p&gt;*/public class PushMessage {    String msg;    public void setMsg(String msg) {        this.msg = msg;    }    public String getMsg() {        return msg;    }}</code></pre><p>测试</p><pre><code>/*** &lt;p&gt;* @author air.* &lt;/p&gt;*/public class PushTest {    public static void main(String[] args){        PushManager pushManager = PushManager.getInstance();        //注册订阅者        pushManager.registerPushReceiver(new IPushReceiver() {            @Override            public void receiver(PushMessage pushMessage) {                System.out.printf(&quot;&quot;+pushMessage.getMsg());            }        });        //通知订阅者        PushPublish publish = new PushPublish();        publish.setId(&quot;ID&quot;);        publish.setMsgTip(&quot;有新消息，请查收！&quot;);        pushManager.notifyRegisterReceiver(publish);    }}</code></pre><hr><h2 id="3-TODO"><a href="#3-TODO" class="headerlink" title="3.  TODO"></a>3.  TODO</h2><p>  进一步扩充、丰富、完善相关内容！</p><hr><p>未完待续。。。</p>]]></content>
+        <content type="html"><![CDATA[<p>设计模式-单例模式</p><p>本篇只作简要代码示例，不做“学术讨论”！</p><hr><p><a href="https://github.com/pdliuw/LoginComponent" target="_blank" rel="noopener">点击我，查看设计模式在项目中的应用</a></p><h3 id="1-单例模式介绍"><a href="#1-单例模式介绍" class="headerlink" title="1.  单例模式介绍"></a>1.  单例模式介绍</h3><p>单例模式：只有单个实例的模式，也就是一个类只有一个实例对象！</p><h3 id="2-设计"><a href="#2-设计" class="headerlink" title="2.  设计"></a>2.  设计</h3><p>单利模式类</p><pre><code>import android.support.annotation.Nullable;import java.util.ArrayList;import java.util.List;/*** &lt;p&gt;* @author air* &lt;/p&gt;* &lt;p&gt;* {@link #getInstance()}* &lt;/p&gt;*/public class PushManager {    private static final List&lt;IPushReceiver&gt; mPushReceivers = new ArrayList&lt;&gt;();    private PushManager() {    }    static class Holder {        static final PushManager INSTANCE = new PushManager();    }    public static PushManager getInstance() {        return Holder.INSTANCE;    }}</code></pre><p>使用</p><pre><code>public static void main(String[] args){    PushManager pushManager = PushManager.getInstance();}</code></pre><h3 id="3-TODO"><a href="#3-TODO" class="headerlink" title="3.  TODO"></a>3.  TODO</h3><p>  进一步扩充、丰富、完善相关内容！</p><hr><p>未完待续。。。</p>]]></content>
       
       
       <categories>
@@ -980,11 +1009,11 @@
     
     
     <entry>
-      <title>单例模式</title>
-      <link href="/2016/09/09/DesignPattern/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
-      <url>/2016/09/09/DesignPattern/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</url>
+      <title>观察者模式</title>
+      <link href="/2016/09/09/DesignPattern/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
+      <url>/2016/09/09/DesignPattern/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</url>
       
-        <content type="html"><![CDATA[<p>设计模式-单例模式</p><p>本篇只作简要代码示例，不做“学术讨论”！</p><hr><p><a href="https://github.com/pdliuw/LoginComponent" target="_blank" rel="noopener">点击我，查看设计模式在项目中的应用</a></p><h3 id="1-单例模式介绍"><a href="#1-单例模式介绍" class="headerlink" title="1.  单例模式介绍"></a>1.  单例模式介绍</h3><p>单例模式：只有单个实例的模式，也就是一个类只有一个实例对象！</p><h3 id="2-设计"><a href="#2-设计" class="headerlink" title="2.  设计"></a>2.  设计</h3><p>单利模式类</p><pre><code>import android.support.annotation.Nullable;import java.util.ArrayList;import java.util.List;/*** &lt;p&gt;* @author air* &lt;/p&gt;* &lt;p&gt;* {@link #getInstance()}* &lt;/p&gt;*/public class PushManager {    private static final List&lt;IPushReceiver&gt; mPushReceivers = new ArrayList&lt;&gt;();    private PushManager() {    }    static class Holder {        static final PushManager INSTANCE = new PushManager();    }    public static PushManager getInstance() {        return Holder.INSTANCE;    }}</code></pre><p>使用</p><pre><code>public static void main(String[] args){    PushManager pushManager = PushManager.getInstance();}</code></pre><h3 id="3-TODO"><a href="#3-TODO" class="headerlink" title="3.  TODO"></a>3.  TODO</h3><p>  进一步扩充、丰富、完善相关内容！</p><hr><p>未完待续。。。</p>]]></content>
+        <content type="html"><![CDATA[<p>设计模式-观察者模式</p><p>本篇只作简要代码示例，不做“学术讨论”！</p><hr><p><a href="https://github.com/pdliuw/LoginComponent" target="_blank" rel="noopener">点击我，查看设计模式在项目中的应用</a></p><h3 id="1-观察者模式介绍"><a href="#1-观察者模式介绍" class="headerlink" title="1.  观察者模式介绍"></a>1.  观察者模式介绍</h3><p>观察者又称：订阅-发布模式！</p><p>从生活中寻找观察者模式的示例，以通俗易懂的话语讲解“观察者模式”：微信公众号！</p><p>微信公众号：当我们关注某公众号时，我们就成为这个公众号的订阅者，这个公众号一旦有消息会执行发布，此时订阅者就会接收到发布信息。（消息推送也是如此，还有其他很多的示例就不一一列举）</p><p>想要实现一个简易的观察者模式？请往下看</p><h3 id="2-观察者模式实现"><a href="#2-观察者模式实现" class="headerlink" title="2.  观察者模式实现"></a>2.  观察者模式实现</h3><h4 id="1-思考观察者模式所具备的属性或特征"><a href="#1-思考观察者模式所具备的属性或特征" class="headerlink" title="1. 思考观察者模式所具备的属性或特征"></a>1. 思考观察者模式所具备的属性或特征</h4><ol><li>需要一个观察者、若干个订阅者！</li><li>观察者发布信息，订阅者接收信息！</li><li>订阅者可以订阅，订阅者可以取消订阅！</li><li>其他若干健壮性的设计，如：避免重复订阅，以及其他！</li></ol><h4 id="2-代码实现"><a href="#2-代码实现" class="headerlink" title="2. 代码实现"></a>2. 代码实现</h4><p>观察者</p><pre><code>import android.support.annotation.Nullable;import java.util.ArrayList;import java.util.List;/*** &lt;p&gt;* @author air.* &lt;/p&gt;* &lt;p&gt;* 拥有属性、标签：* 观察者模式* {@link #registerPushReceiver(IPushReceiver)}* {@link #unRegisterPushReceiver(IPushReceiver)}* {@link #notifyRegisterReceiver(PushPublish)}* &lt;/p&gt;*/public class PushManager {    private static final List&lt;IPushReceiver&gt; mPushReceivers = new ArrayList&lt;&gt;();    private PushManager() {    }    static class Holder {        static final PushManager INSTANCE = new PushManager();    }    public static PushManager getInstance() {        return Holder.INSTANCE;    }    /**    * 绑定消息推送的订阅者    *    * @param registerReceiver 绑定的订阅者    * @return 操作是否成功执行    */    boolean registerPushReceiver(@Nullable IPushReceiver registerReceiver) {        if (registerReceiver == null) {            return false;        }        if (mPushReceivers.contains(registerReceiver)) {            //已经注册，则不许要再重复注册！            return false;        }        //注册        mPushReceivers.add(registerReceiver);        return true;    }    /**    * 解绑消息推送的订阅者    *    * @param unRegisterReceiver 解绑的订阅者    * @return 操作是否成功执行    */    boolean unRegisterPushReceiver(@Nullable IPushReceiver unRegisterReceiver) {        if (unRegisterReceiver == null) {            return false;        }        if (!mPushReceivers.contains(unRegisterReceiver)) {            //未注册，则不需要解绑注册!            return false;        }        //解绑注册        mPushReceivers.remove(unRegisterReceiver);        return true;    }    /**    * 通知订阅者数据需要更新    *    * @param pushPublish 更新的数据    * @return 操作是否成功执行    */    boolean notifyRegisterReceiver(@Nullable PushPublish pushPublish) {        if (pushPublish == null) {            return false;        }        //制定统一的数据        PushMessage pushMessageTemplate = new PushMessage();        pushMessageTemplate.setMsg(pushPublish.getMsgTip());        for (IPushReceiver receiver :                mPushReceivers) {            //另开数据传递给接收者            PushMessage pushMessage = pushMessageTemplate;            receiver.receiver(pushMessage);        }        return true;    }}</code></pre><p>订阅者</p><pre><code>/*** &lt;p&gt;* @author air.* &lt;/p&gt;*/public interface IPushReceiver {    void receiver(PushMessage pushMessage);}</code></pre><p>观察者发布的消息（这里多个数据的中间处理操作）</p><pre><code>import android.support.annotation.Nullable;/*** &lt;p&gt;* @author air.* &lt;/p&gt;*/public class PushPublish {    @Nullable    private String id;    @Nullable    private String msgTip;    public void setId(@Nullable String id) {        this.id = id;    }    public void setMsgTip(@Nullable String msgTip) {        this.msgTip = msgTip;    }    @Nullable    public String getId() {        return id;    }    @Nullable    public String getMsgTip() {        return msgTip;    }}</code></pre><p>订阅者收到的消息</p><pre><code>/*** &lt;p&gt;* @author air.* &lt;/p&gt;*/public class PushMessage {    String msg;    public void setMsg(String msg) {        this.msg = msg;    }    public String getMsg() {        return msg;    }}</code></pre><p>测试</p><pre><code>/*** &lt;p&gt;* @author air.* &lt;/p&gt;*/public class PushTest {    public static void main(String[] args){        PushManager pushManager = PushManager.getInstance();        //注册订阅者        pushManager.registerPushReceiver(new IPushReceiver() {            @Override            public void receiver(PushMessage pushMessage) {                System.out.printf(&quot;&quot;+pushMessage.getMsg());            }        });        //通知订阅者        PushPublish publish = new PushPublish();        publish.setId(&quot;ID&quot;);        publish.setMsgTip(&quot;有新消息，请查收！&quot;);        pushManager.notifyRegisterReceiver(publish);    }}</code></pre><hr><h2 id="3-TODO"><a href="#3-TODO" class="headerlink" title="3.  TODO"></a>3.  TODO</h2><p>  进一步扩充、丰富、完善相关内容！</p><hr><p>未完待续。。。</p>]]></content>
       
       
       <categories>

@@ -4,16 +4,21 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Flutter Resource Using, Air">
+    <meta name="keywords" content="Flutter条码插件-ai_barcode|爱条码, Air">
     <meta name="description" content="
+ai_barcode
+ai_barcode:支持Android和IOS识别’一维条码’和’二维条码’的识别
 
-Flutter的项目结构和资源的存放、使用（图像的适配、字符串的本地化和国际化、项目依赖）
+亮点: ai_barcode:支持在flutter页面中嵌入Scanner以此来应对多变的业务需求
 
 
-目录：1、存储不同分辨率的图片资源2、存储String字符串资源3、添加依赖4、如何国际化和本地化？Flutter推荐使用intl实现
 
 
-">
+
+
+
+
+ai_bar">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +26,7 @@ Flutter的项目结构和资源的存放、使用（图像的适配、字符串�
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Flutter Resource Using | Air</title>
+    <title>Flutter条码插件-ai_barcode|爱条码 | Air</title>
     <link rel="icon" type="image/jpeg" href="/medias/avatar.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -287,7 +292,7 @@ Flutter的项目结构和资源的存放、使用（图像的适配、字符串�
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Flutter Resource Using
+                        Flutter条码插件-ai_barcode|爱条码
                     </div>
                 </div>
             </div>
@@ -406,6 +411,10 @@ Flutter的项目结构和资源的存放、使用（图像的适配、字符串�
                                 <span class="chip bg-color">Dart</span>
                             </a>
                         
+                            <a href="/tags/barcode/" target="_blank">
+                                <span class="chip bg-color">barcode</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -426,21 +435,21 @@ Flutter的项目结构和资源的存放、使用（图像的适配、字符串�
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2018-09-12
+                    2020-01-11
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        350
+                        478
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        2 分
                     </div>
                     
                 
@@ -457,37 +466,74 @@ Flutter的项目结构和资源的存放、使用（图像的适配、字符串�
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <hr>
-<p><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/totem_four_logo.jpg?raw=true" alt="图腾"></p>
-<p>Flutter的项目结构和资源的存放、使用（图像的适配、字符串的本地化和国际化、项目依赖）</p>
-<hr>
-<blockquote>
-<p>目录：<br>1、存储不同分辨率的图片资源<br>2、存储String字符串资源<br>3、添加依赖<br>4、如何国际化和本地化？<a href="https://pub.dev/packages/intl" target="_blank" rel="noopener">Flutter推荐使用intl实现</a></p>
-</blockquote>
-<blockquote>
-<p>1、存储不同分辨率的图片资源</p>
-</blockquote>
-<p>分辨率对应的资源格式<br><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter/flutter_quality_vs_android.png?raw=true" alt="image.png"></p>
-<p>存储不同分辨率下的图片资源进行适配<br><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter/flutter_resource_image_adapter_create_files.png?raw=true" alt="image.png"></p>
-<p>创建图像文件夹<br><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/flutter/flutter_resource_create_images.png?raw=true" alt="image.png"></p>
-<p>在pubspec.yaml中引入图像资源</p>
-<p>方式一：此种方式表示，引入images文件夹中所有的资源</p>
-<pre><code>assets:
-  - images/</code></pre><p>方式二：此种方式表示，引入images文件夹下的具体的某一资源</p>
-<pre><code>assets:
-  - images/one.jpg</code></pre><p>使用图像资源</p>
-<pre><code>Image.asset(&quot;images/one.jpg&quot;,width: 100,height: 100,),</code></pre><blockquote>
-<p>2、存储String字符串资源</p>
-</blockquote>
-<p>Flutter目前没有专门的字符串资源系统。目前最佳做法是将字符串作为静态变量保存在类中，并从哪里访问他们。</p>
-<pre><code>class Strings { static String welcomeMessage = “Welcome to Flutter” ; }  </code></pre><p>使用</p>
-<pre><code>Text(Strings.welcomeMessage)</code></pre><blockquote>
-<p>3、添加依赖</p>
-</blockquote>
-<p>虽然Android或IOS项目下有各自的原生依赖系统。但是，那些只是针对各不同的平台的依赖。</p>
-<p>如果要实现Flutter项目的依赖，在pubspec.yaml文件中具体的依赖项。</p>
-<blockquote>
-<p>4、如何国际化和本地化？<a href="https://pub.dev/packages/intl" target="_blank" rel="noopener">Flutter推荐使用intl实现</a></p>
-</blockquote>
+<h1 id="ai-barcode"><a href="#ai-barcode" class="headerlink" title="ai_barcode"></a>ai_barcode</h1><p><img src="https://raw.githubusercontent.com/pdliuw/pdliuw.github.io/master/images/totem_four_logo.jpg" alt="totem"></p>
+<p>ai_barcode:支持Android和IOS识别’一维条码’和’二维条码’的识别</p>
+<p><a href="https://pub.dev/packages/ai_barcode" target="_blank" rel="noopener"><img src="https://img.shields.io/pub/v/ai_barcode.svg" alt="pub package"></a></p>
+<p>亮点: <code>ai_barcode:支持在flutter页面中嵌入Scanner以此来应对多变的业务需求</code></p>
+<table>
+<thead>
+<tr>
+<th align="left"><img src="https://github.com/pdliuw/ai_barcode/blob/master/example/gif/flutter_scanner_android.gif" alt="效果"></th>
+<th align="left"><img src="https://github.com/pdliuw/ai_barcode/blob/master/example/gif/flutter_scanner_ios.gif" alt="效果"></th>
+</tr>
+</thead>
+</table>
+<p><a href="https://github.com/pdliuw/ai_barcode" target="_blank" rel="noopener">ai_barcode</a> 在<a href="https://github.com/flutter-app-sample/flutter_app_sample" target="_blank" rel="noopener">项目</a>中的实战应用<a href="https://github.com/flutter-app-sample/flutter_app_sample" target="_blank" rel="noopener">flutter sample</a></p>
+<table>
+<thead>
+<tr>
+<th align="left"><a href="https://github.com/pdliuw/Flutter_Resource/blob/master/resource/flutter/apk/flutter_scanner.apk?raw=true" target="_blank" rel="noopener">下载安卓apk安装包</a></th>
+<th align="left"><a href>IOS安装包，请下载example后运行项目获取</a></th>
+<th align="left"><a href="https://pdliuw.github.io/">博客地址</a></th>
+</tr>
+</thead>
+</table>
+<h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h2><p>使用当前包作为依赖库</p>
+<h3 id="1-依赖此库"><a href="#1-依赖此库" class="headerlink" title="1. 依赖此库"></a>1. 依赖此库</h3><p>在文件 ‘pubspec.yaml’ 中添加</p>
+<p><a href="https://pub.dev/packages/ai_barcode" target="_blank" rel="noopener"><img src="https://img.shields.io/pub/v/ai_barcode.svg" alt="pub package"></a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">dependencies:</span><br><span class="line"></span><br><span class="line">  ai_barcode: ^version</span><br></pre></td></tr></table></figure>
+
+<p>或者以下方式依赖</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">dependencies:</span><br><span class="line"></span><br><span class="line">  # Scanner package.</span><br><span class="line">  ai_barcode:</span><br><span class="line">    git:</span><br><span class="line">      url: https://github.com/pdliuw/ai_barcode.git</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-安装此库"><a href="#2-安装此库" class="headerlink" title="2. 安装此库"></a>2. 安装此库</h3><p>你可以通过下面的命令行来安装此库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$ flutter pub get</span><br></pre></td></tr></table></figure>
+
+<p>你也可以通过项目开发工具通过可视化操作来执行上述步骤</p>
+<h3 id="3-导入此库"><a href="#3-导入此库" class="headerlink" title="3. 导入此库"></a>3. 导入此库</h3><p>现在，在你的Dart编辑代码中，你可以使用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import &apos;package:ai_barcode/ai_barcode.dart&apos;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-使用"><a href="#2-使用" class="headerlink" title="2.使用"></a>2.使用</h2><p>使用’相机’需要动态申请权限，动态权限推荐：<a href="https://github.com/Baseflow/flutter-permission-handler" target="_blank" rel="noopener">permission_handler</a></p>
+<h3 id="1-使用’一维条码、二维条码’的地方中："><a href="#1-使用’一维条码、二维条码’的地方中：" class="headerlink" title="1.使用’一维条码、二维条码’的地方中："></a>1.使用’一维条码、二维条码’的地方中：</h3><p>简要示例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//cameraWidth:相机的宽度;cameraHeight相机的高度,可根据实际的业务来动态调整</span><br><span class="line">Container(</span><br><span class="line">  color: Colors.black26,</span><br><span class="line">  width: cameraWidth,</span><br><span class="line">  height: cameraHeight,</span><br><span class="line">  child: PlatformAiBarcodeScannerWidget(</span><br><span class="line">    platformScannerController: _scannerController,</span><br><span class="line">  ),</span><br><span class="line">),</span><br></pre></td></tr></table></figure>
+
+<p>完整示例</p>
+<p><a href="https://github.com/pdliuw/ai_barcode/blob/master/example/lib/task_scanner_page.dart" target="_blank" rel="noopener">完整示例,点击这里</a></p>
+<h3 id="2-调用-应用"><a href="#2-调用-应用" class="headerlink" title="2.调用/应用"></a>2.调用/应用</h3><p>*1、打开相机设备</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">_scannerController.startCamera();</span><br></pre></td></tr></table></figure>
+
+<p>*2、打开预览/识别’条码’</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">_scannerController.startCameraPreview();</span><br></pre></td></tr></table></figure>
+
+<p>*3、关闭预览/识别’条码’</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">_scannerController.stopCameraPreview();</span><br></pre></td></tr></table></figure>
+
+<p>*4、关闭相机设备</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">_scannerController.stopCamera();</span><br></pre></td></tr></table></figure>
+
+<p>*5、打开手电筒</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">_scannerController.openFlash();</span><br></pre></td></tr></table></figure>
+
+<p>*5、关闭手电筒</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">_scannerController.closeFlash();</span><br></pre></td></tr></table></figure>
+
+<p>*5、切换手电筒</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">_scannerController.toggleFlash();</span><br></pre></td></tr></table></figure>
+
+<p>看到这里还意犹未尽？<a href="https://github.com/pdliuw/ai_barcode/tree/master/example/lib" target="_blank" rel="noopener">点击，查看项目示例</a></p>
+<h2 id="LICENSE"><a href="#LICENSE" class="headerlink" title="LICENSE"></a>LICENSE</h2><p>   Copyright 2019 pdliuw</p>
+<p>   Licensed under the Apache License, Version 2.0 (the “License”);<br>   you may not use this file except in compliance with the License.<br>   You may obtain a copy of the License at</p>
+<pre><code>http://www.apache.org/licenses/LICENSE-2.0</code></pre><p>   Unless required by applicable law or agreed to in writing, software<br>   distributed under the License is distributed on an “AS IS” BASIS,<br>   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.<br>   See the License for the specific language governing permissions and<br>   limitations under the License.</p>
 
             </div>
             <hr/>
@@ -646,9 +692,9 @@ Flutter的项目结构和资源的存放、使用（图像的适配、字符串�
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Flutter Resource Using》
+                    《Flutter条码插件-ai_barcode|爱条码》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2018/09/12/flutter/Flutter Resource Using/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/01/11/flutter/ai barcode/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Air
             </a> 采用
@@ -688,28 +734,29 @@ Flutter的项目结构和资源的存放、使用（图像的适配、字符串�
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2018/09/13/flutter/Flutter lifecycle/">
+                <a href="/2020/01/11/flutter/ai barcode/">
                     <div class="card-image">
                         
-                        <img src="/images/flutter_logo.jpg" class="responsive-img" alt="Flutter lifecycle">
+                        <img src="/images/flutter_logo.jpg" class="responsive-img" alt="Flutter条码插件-ai_barcode|爱条码">
                         
-                        <span class="card-title">Flutter lifecycle</span>
+                        <span class="card-title">Flutter条码插件-ai_barcode|爱条码</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Flutter lifecycle
+                            ai_barcode|爱条码：便捷、高效的条码插件｜支持Android、iOS！
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-09-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-11
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -722,6 +769,7 @@ Flutter的项目结构和资源的存放、使用（图像的适配、字符串�
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -731,6 +779,10 @@ Flutter的项目结构和资源的存放、使用（图像的适配、字符串�
                     
                     <a href="/tags/Dart/" target="_blank">
                         <span class="chip bg-color">Dart</span>
+                    </a>
+                    
+                    <a href="/tags/barcode/" target="_blank">
+                        <span class="chip bg-color">barcode</span>
                     </a>
                     
                 </div>
@@ -744,23 +796,23 @@ Flutter的项目结构和资源的存放、使用（图像的适配、字符串�
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2018/09/11/flutter/Flutter Http with List/">
+                <a href="/2020/01/05/flutter/airoute/">
                     <div class="card-image">
                         
-                        <img src="/images/flutter_logo.jpg" class="responsive-img" alt="Flutter Http with List">
+                        <img src="/images/flutter_logo.jpg" class="responsive-img" alt="Flutter路由框架-airoute|爱路由">
                         
-                        <span class="card-title">Flutter Http with List</span>
+                        <span class="card-title">Flutter路由框架-airoute|爱路由</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Flutter Http with List
+                            airoute|爱路由：便捷、高效的路由框架｜帮助开发者更加便利开发、切身体会编程之美！
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-09-11
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-05
                             </span>
                         <span class="publish-author">
                             
@@ -783,6 +835,10 @@ Flutter的项目结构和资源的存放、使用（图像的适配、字符串�
                     
                     <a href="/tags/Dart/" target="_blank">
                         <span class="chip bg-color">Dart</span>
+                    </a>
+                    
+                    <a href="/tags/Route/" target="_blank">
+                        <span class="chip bg-color">Route</span>
                     </a>
                     
                 </div>
