@@ -4,6 +4,39 @@
   
     
     <entry>
+      <title>网站迁移中....</title>
+      <link href="/2020/05/28/project/%E7%BD%91%E7%AB%99%E6%9B%B4%E6%96%B0/"/>
+      <url>/2020/05/28/project/%E7%BD%91%E7%AB%99%E6%9B%B4%E6%96%B0/</url>
+      
+        <content type="html"><![CDATA[<hr><p><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/totem_four_logo.jpg?raw=true" alt="图腾"></p><p>此网站暂不更新，新网站持续更新中。移步：<a href="https://air-website.github.io/" target="_blank" rel="noopener">https://air-website.github.io/</a></p><hr>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网站迁移 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> DesignPatterns </tag>
+            
+            <tag> Dart </tag>
+            
+            <tag> Flutter </tag>
+            
+            <tag> MVP </tag>
+            
+            <tag> Dio </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Flutter条码插件-ai_barcode|爱条码</title>
       <link href="/2020/01/11/flutter/ai%20barcode/"/>
       <url>/2020/01/11/flutter/ai%20barcode/</url>
@@ -828,6 +861,8 @@
             
             <tag> DesignPatterns </tag>
             
+            <tag> MVP </tag>
+            
             <tag> RxJava </tag>
             
             <tag> Retrofit </tag>
@@ -835,8 +870,6 @@
             <tag> OKHttp </tag>
             
             <tag> Glide </tag>
-            
-            <tag> MVP </tag>
             
         </tags>
       

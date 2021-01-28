@@ -4,18 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Android打造永不崩溃App, Air">
+    <meta name="keywords" content="网站迁移中...., Air">
     <meta name="description" content="
-Android打造永不崩溃App
 
-目录
-实现效果
-核心代码
-项目示例
-TODO
+此网站暂不更新，新网站持续更新中。移步：https://air-website.github.io/
 
-1. 实现效果避免90%的崩溃！
-2. 核心代码new Handler(Looper.getMainLooper()).post(new Runnable">
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +17,7 @@ TODO
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Android打造永不崩溃App | Air</title>
+    <title>网站迁移中.... | Air</title>
     <link rel="icon" type="image/jpeg" href="/medias/avatar.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -283,13 +277,13 @@ TODO
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/images/android_one_logo.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/images/totem_two_logo.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Android打造永不崩溃App
+                        网站迁移中....
                     </div>
                 </div>
             </div>
@@ -400,8 +394,24 @@ TODO
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Java/" target="_blank">
-                                <span class="chip bg-color">Java</span>
+                            <a href="/tags/DesignPatterns/" target="_blank">
+                                <span class="chip bg-color">DesignPatterns</span>
+                            </a>
+                        
+                            <a href="/tags/Dart/" target="_blank">
+                                <span class="chip bg-color">Dart</span>
+                            </a>
+                        
+                            <a href="/tags/Flutter/" target="_blank">
+                                <span class="chip bg-color">Flutter</span>
+                            </a>
+                        
+                            <a href="/tags/MVP/" target="_blank">
+                                <span class="chip bg-color">MVP</span>
+                            </a>
+                        
+                            <a href="/tags/Dio/" target="_blank">
+                                <span class="chip bg-color">Dio</span>
                             </a>
                         
                     </div>
@@ -412,8 +422,8 @@ TODO
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Android/" class="post-category" target="_blank">
-                                Android
+                            <a href="/categories/网站迁移/" class="post-category" target="_blank">
+                                网站迁移
                             </a>
                         
                     </div>
@@ -424,14 +434,14 @@ TODO
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2017-05-21
+                    2020-05-28
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        179
+                        22
                     </div>
                     
 
@@ -455,41 +465,9 @@ TODO
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <hr>
-<p>Android打造永不崩溃App</p>
+<p><img src="https://github.com/pdliuw/pdliuw.github.io/blob/master/images/totem_four_logo.jpg?raw=true" alt="图腾"></p>
+<p>此网站暂不更新，新网站持续更新中。移步：<a href="https://air-website.github.io/" target="_blank" rel="noopener">https://air-website.github.io/</a></p>
 <hr>
-<h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><ol>
-<li>实现效果</li>
-<li>核心代码</li>
-<li>项目示例</li>
-<li>TODO</li>
-</ol>
-<h4 id="1-实现效果"><a href="#1-实现效果" class="headerlink" title="1. 实现效果"></a>1. 实现效果</h4><p>避免90%的崩溃！</p>
-<h4 id="2-核心代码"><a href="#2-核心代码" class="headerlink" title="2. 核心代码"></a>2. 核心代码</h4><pre><code>new Handler(Looper.getMainLooper()).post(new Runnable() {
-            @Override
-            public void run() {
-            //主线程异常拦截
-                while (true) {
-                    try {
-                        Looper.loop();//主线程的异常会从这里抛出
-                    } catch (Throwable e) {
-
-                    }
-                }
-            }
-        });
-
-        sUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
-        //所有线程异常拦截，由于主线程的异常都被我们catch住了，所以下面的代码拦截到的都是子线程的异常
-        Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
-            @Override
-            public void uncaughtException(Thread t, Throwable e) {
-
-            }
-});</code></pre><h4 id="3-项目示例"><a href="#3-项目示例" class="headerlink" title="3. 项目示例"></a>3. 项目示例</h4><p>想要实现此效果，集成此功能，请往下看！</p>
-<p><a href="https://github.com/pdliugithub/CrashSample" target="_blank" rel="noopener">点击我，立即集成此功能</a></p>
-<h4 id="4-TODO"><a href="#4-TODO" class="headerlink" title="4. TODO"></a>4. TODO</h4><p>待：进一步增强、优化！</p>
-<hr>
-<p>未完待续。。。</p>
 
             </div>
             <hr/>
@@ -648,9 +626,9 @@ TODO
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Android打造永不崩溃App》
+                    《网站迁移中....》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2017/05/21/android/Android打造永不崩溃App/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2020/05/28/project/网站更新/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Air
             </a> 采用
@@ -690,45 +668,63 @@ TODO
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2017/06/11/kotlin/Kotlin basic syntax/">
+                <a href="/2020/05/28/project/网站更新/">
                     <div class="card-image">
                         
-                        <img src="/images/kotlin_logo.jpg" class="responsive-img" alt="Kotlin basic syntax">
+                        <img src="/images/totem_two_logo.jpg" class="responsive-img" alt="网站迁移中....">
                         
-                        <span class="card-title">Kotlin basic syntax</span>
+                        <span class="card-title">网站迁移中....</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Kotlin basic syntax
+                            此网站暂不更新，新网站持续更新中。移步：https://air-website.github.io/
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2017-06-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-28
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Android/" class="post-category" target="_blank">
-                                    Android
+                            <a href="/categories/网站迁移/" class="post-category" target="_blank">
+                                    网站迁移
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Kotlin/" target="_blank">
-                        <span class="chip bg-color">Kotlin</span>
+                    <a href="/tags/DesignPatterns/" target="_blank">
+                        <span class="chip bg-color">DesignPatterns</span>
+                    </a>
+                    
+                    <a href="/tags/Dart/" target="_blank">
+                        <span class="chip bg-color">Dart</span>
+                    </a>
+                    
+                    <a href="/tags/Flutter/" target="_blank">
+                        <span class="chip bg-color">Flutter</span>
+                    </a>
+                    
+                    <a href="/tags/MVP/" target="_blank">
+                        <span class="chip bg-color">MVP</span>
+                    </a>
+                    
+                    <a href="/tags/Dio/" target="_blank">
+                        <span class="chip bg-color">Dio</span>
                     </a>
                     
                 </div>
@@ -742,30 +738,30 @@ TODO
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2017/03/06/project/Android项目实战示例/">
+                <a href="/2020/01/11/flutter/ai barcode/">
                     <div class="card-image">
                         
-                        <img src="/images/android_one_logo.jpg" class="responsive-img" alt="Android项目实战示例">
+                        <img src="/images/flutter_logo.jpg" class="responsive-img" alt="Flutter条码插件-ai_barcode|爱条码">
                         
-                        <span class="card-title">Android项目实战示例</span>
+                        <span class="card-title">Flutter条码插件-ai_barcode|爱条码</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Android登陆模块完整示例
+                            ai_barcode|爱条码：便捷、高效的条码插件｜支持Android、iOS！
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2017-03-06
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-01-11
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/项目示例/" class="post-category" target="_blank">
-                                    项目示例
+                            <a href="/categories/跨平台/" class="post-category" target="_blank">
+                                    跨平台
                                 </a>
                             
                             
@@ -775,32 +771,16 @@ TODO
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/" target="_blank">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/Dart/" target="_blank">
+                        <span class="chip bg-color">Dart</span>
                     </a>
                     
-                    <a href="/tags/DesignPatterns/" target="_blank">
-                        <span class="chip bg-color">DesignPatterns</span>
+                    <a href="/tags/Flutter/" target="_blank">
+                        <span class="chip bg-color">Flutter</span>
                     </a>
                     
-                    <a href="/tags/MVP/" target="_blank">
-                        <span class="chip bg-color">MVP</span>
-                    </a>
-                    
-                    <a href="/tags/RxJava/" target="_blank">
-                        <span class="chip bg-color">RxJava</span>
-                    </a>
-                    
-                    <a href="/tags/Retrofit/" target="_blank">
-                        <span class="chip bg-color">Retrofit</span>
-                    </a>
-                    
-                    <a href="/tags/OKHttp/" target="_blank">
-                        <span class="chip bg-color">OKHttp</span>
-                    </a>
-                    
-                    <a href="/tags/Glide/" target="_blank">
-                        <span class="chip bg-color">Glide</span>
+                    <a href="/tags/barcode/" target="_blank">
+                        <span class="chip bg-color">barcode</span>
                     </a>
                     
                 </div>
